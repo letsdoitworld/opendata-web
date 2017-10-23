@@ -1,0 +1,20 @@
+.error-screen {
+  width: 50%;
+  margin: 5% auto;
+
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+
+  button {
+    font-size: 32px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #C5BFB6;
+    border: none;
+    padding: 10px 25px;
+    color: white;
+    cursor: pointer;
+  }
+}

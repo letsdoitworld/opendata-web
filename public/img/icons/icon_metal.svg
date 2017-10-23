@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_metal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_metal" fill-rule="nonzero" fill="#000000">
+            <path d="M46.4822103,7 L17.4922833,7 L3,32 L17.4949635,57 L46.4848904,57 L60.9771737,32 L46.4822103,7 Z M31.9872468,45.9461955 C24.2503012,45.9461955 17.9820822,39.7014332 17.9820822,32 C17.9820822,24.2956311 24.2532494,18.0538045 31.9872468,18.0538045 C39.7212442,18.0538045 45.9950916,24.2959647 45.9950916,32 C45.9950916,39.7040353 39.7239243,45.9461955 31.9872468,45.9461955 L31.9872468,45.9461955 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

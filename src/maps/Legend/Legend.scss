@@ -1,0 +1,60 @@
+@media (max-width: 900px) {
+  .leaflet-top.leaflet-right {
+    .leaflet-control {
+      > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.legend {
+  @media (min-width: 900px) {
+    float: left;
+  }
+  span {
+    position: relative;
+    color: black;
+    font-size: 10px;
+    text-align: left;
+  }
+  
+  @media (max-width: 900px) {
+    float: none;
+    span {
+      display: inline-block;
+      width: .75rem;
+      height: 4vh;
+      margin-right: .25rem;
+    }
+    .color-container {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 5rem;
+      .label {
+        width: 1rem;
+        margin-right: 1rem;
+        text-align: right;
+      }
+      .color-box {
+        width: .75rem;
+      }
+    }
+  }
+  //wide devices - horizontal
+  @media (min-width: 900px) {
+    span {
+      display: block;
+      float: left;
+      height: 10px;
+      width: 30px;
+    }
+    .label {
+      top: .1rem;
+    }
+    .color-container {
+      height: .4rem;
+    }
+  }
+}

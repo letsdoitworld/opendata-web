@@ -1,0 +1,38 @@
+.container {
+	flex: 1;
+	> span {
+		margin-bottom: .5rem;
+		display: inline-block;
+	}
+	.bar {
+		width: calc(24.5vmax - 4px);
+		height: 3.5vmax;
+		background-repeat: repeat-x;
+		background-size: contain;
+      	@media (max-width: 900px) {
+			width: calc(24.5rem - 2px);
+			height: 3.5rem;
+		}
+		&.glass {background-image: url(/img/icons/icon_glass.svg);}
+		&.plastic {background-image: url(/img/icons/icon_plastic.svg);}
+		&.metal {background-image: url(/img/icons/icon_metal.svg);}
+		&.lumber {background-image: url(/img/icons/icon_lumber.svg);}
+		&.other {background-image: url(/img/icons/icon_other.svg);}
+		&.textile {background-image: url(/img/icons/icon_textile.svg);}
+		&.rubber {background-image: url(/img/icons/icon_rubber.svg);}
+		.progress {
+			height: 100%;
+			background-color: rgba(255,255,255,0.9);
+			float: right;
+			position: relative;
+			&:before {
+				//content: '';
+				width: 4rem;
+				height: 100%;
+				right: 0;
+				position: absolute;
+				background-image: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+			}
+		}
+	}
+}

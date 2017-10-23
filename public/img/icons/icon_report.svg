@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_report</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_report" fill-rule="nonzero" fill="#000000">
+            <g id="np_document_888746_000000" transform="translate(14.000000, 8.000000)">
+                <polygon id="Shape" points="8.47058824 0 0 7.41176471 8.47058824 7.41176471"></polygon>
+                <path d="M11.1188114,0 L11.1188114,11.1194576 L0,11.1194576 L0,47.6470588 L35.9970225,47.6470588 L36,0 L11.1188114,0 Z M28.0584991,38.1147883 L7.94462172,38.1147883 L7.94462172,34.9373648 L28.0615483,34.9373648 L28.0584991,38.1147883 Z M28.0584991,30.1758035 L7.94462172,30.1758035 L7.94462172,26.99838 L28.0615483,26.99838 L28.0584991,30.1758035 Z M28.0584991,22.2337694 L7.94462172,22.2337694 L7.94462172,19.0563459 L28.0615483,19.0563459 L28.0584991,22.2337694 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

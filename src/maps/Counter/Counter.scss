@@ -1,0 +1,28 @@
+.leaflet-right {
+  .counter {
+    text-align: right;
+  }
+}
+
+.counter {
+  font-family: 'Roboto Mono', sans-serif;
+  text-align: left;
+  b {
+    font-size: 2.5rem;
+    letter-spacing: -.2rem;
+    line-height: 2.5rem;
+    font-weight: 200;
+  }
+  h4 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      text-align: right;
+    }
+    margin: 0;
+  }
+}

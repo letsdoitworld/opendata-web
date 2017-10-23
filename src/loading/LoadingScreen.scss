@@ -1,0 +1,33 @@
+.loading-screen {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 2rem 3rem;
+  p {
+    max-width: 25rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+  .icon-trash {
+    margin: 1rem;
+    min-width: 5rem;
+    min-height: 5rem;
+  }
+  h1 {
+    margin: 2rem;
+    max-width: 40rem;
+  }
+  button {
+    margin: 3rem;
+    font-size: 2rem;
+    background-color: black;
+    border: none;
+    padding: 10px 25px;
+    color: white;
+    cursor: pointer;
+  }
+}

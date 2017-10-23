@@ -1,0 +1,74 @@
+[
+  {
+    "id": "LetsDoItRomania",
+    "name": "Let's Do It, Romania!",
+    "url": "letsdoitromania.ro",
+    "href": "http://letsdoitromania.ro/",
+    "googleUrl": "https://play.google.com/store/apps/details?id=com.qualitanceEnterprise.ldr",
+    "appleUrl": "https://itunes.apple.com/ro/app/lets-do-it-romania/id1010637819?mt=8",
+    "webAppUrl": ""
+  },
+  {
+    "id": "MarineDebrisTracker",
+    "name": "Marine Debris Tracker",
+    "url": "marinedebris.engr.uga.edu",
+    "href": "http://www.marinedebris.engr.uga.edu/",
+    "googleUrl": "https://play.google.com/store/apps/details?id=edu.uga.engr.geolog.marinedebristrack",
+    "appleUrl": "https://itunes.apple.com/us/app/marinedebristracker/id432758761?mt=8",
+    "webAppUrl": ""
+  },
+  {
+    "id": "MarineLitterWatch",
+    "name": "Marine LitterWatch",
+    "url": "eea.europa.eu",
+    "href": "https://www.eea.europa.eu/themes/coast_sea/marine-litterwatch",
+    "googleUrl": "https://play.google.com/store/apps/details?id=com.litterwatch",
+    "appleUrl": "https://itunes.apple.com/us/app/marine-litterwatch/id850977882?mt=8",
+    "webAppUrl": ""
+  },
+  {
+    "id": "OceanConservancy",
+    "name": "Ocean Conservancy",
+    "url": "oceanconservancy.org",
+    "href": "https://oceanconservancy.org/",
+    "googleUrl": "https://play.google.com/store/apps/details?id=org.oceanconservancy.cleanswell",
+    "appleUrl": "https://itunes.apple.com/us/app/clean-swell/id985692119?mt=8",
+    "webAppUrl": ""
+  },
+  {
+    "id": "Ocistimo",
+    "name": "Očistimo",
+    "url": "ebm.si/en",
+    "href": "https://ebm.si/en/",
+    "googleUrl": "",
+    "appleUrl": "",
+    "webAppUrl": "http://register.ocistimo.si"
+  },
+  {
+    "id": "Pirika",
+    "name": "Pirika, Inc.",
+    "url": "en.corp.pirika.org",
+    "href": "http://en.corp.pirika.org/",
+    "googleUrl": "https://play.google.com/store/apps/details?id=com.epirka.mobile.android",
+    "appleUrl": "https://itunes.apple.com/en/app/gomi-shiiapuri-pirikadekantanborantia!/id434984120?mt=8",
+    "webAppUrl": ""
+  },
+  {
+    "id": "Trashout",
+    "name": "TrashOut",
+    "url": "trashout.ngo",
+    "href": "https://www.trashout.ngo/",
+    "googleUrl": "https://play.google.com/store/apps/details?id=me.trashout",
+    "appleUrl": "https://itunes.apple.com/en/app/trashout/id501471692",
+    "webAppUrl": ""
+  },
+  {
+    "id": "WorldCleanupDay",
+    "name": "World Cleanup Day",
+    "url": "letsdoitworld.org",
+    "href": "https://www.letsdoitworld.org/",
+    "googleUrl": "https://play.google.com/store/apps/details?id=com.teeme.ldi",
+    "appleUrl": "https://itunes.apple.com/us/app/world-cleanup/id1237553057",
+    "webAppUrl": ""
+  }
+]
