@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React, {Component} from 'react';
 import $ from 'jquery';
 import * as moment from 'moment';
+import ReactGA from 'react-ga';
 import classNames from 'classnames';
 import queryString from 'query-string';
 import StatsMap from './maps/StatsMap';
@@ -28,6 +29,9 @@ export default class App extends Component {
             aboutPageVisible: false,
         };
         this.onTimelineChange = this.onTimelineChange.bind(this);
+
+        // Init Google Analytics
+        ReactGA.initialize('UA-109735778-1');
     }
     componentDidMount() {
         $.when(
@@ -38,6 +42,10 @@ export default class App extends Component {
                 state: States.state.LOADED,
             });
             Helpers.validatePopulationData(this.state.geoJSON, populationData);
+
+            // Record pageview
+            ReactGA.set({page: window.location.pathname + window.location.search});
+            ReactGA.pageview(window.location.pathname + window.location.search);
         }).fail(() => {
             this.setState({
                 state: States.state.ERROR,
@@ -49,6 +57,18 @@ export default class App extends Component {
             mode,
             selectedCountry,
         });
+
+        // Record pageview
+        if (selectedCountry.name) {
+            const path = window.location.pathname + '#country=' + selectedCountry.name;
+            ReactGA.set({page: path});
+            ReactGA.pageview(path);
+            ReactGA.event({
+                category: 'Nav',
+                action: 'Changed country',
+                label: selectedCountry.name,
+            });
+        }
     };
     onTimelineChange(date, numberOfReports) {
         this.setState({
@@ -61,6 +81,10 @@ export default class App extends Component {
     };
     showAboutPage = () => {
         this.setState({aboutPageVisible: true});
+
+        // Record pageview
+        ReactGA.set({page: window.location.pathname + window.location.search});
+        ReactGA.modalview('/about/');
     };
     initGraphData() {
         return $.get('/json/graphData.json', (data) => {

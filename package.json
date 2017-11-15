@@ -14,6 +14,7 @@
     "query-string": "^5.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-ga": "^2.3.5",
     "react-leaflet": "^1.5.0",
     "react-leaflet-choropleth": "^2.0.0",
     "react-leaflet-control": "^1.4.0",
@@ -38,7 +39,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "4.3.0",
+    "eslint": "^4.11.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
