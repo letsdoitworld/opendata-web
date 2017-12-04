@@ -13,7 +13,8 @@ import CountriesLayer from './CountriesLayer/CountriesLayer';
 import TrashReportIndex from './TrashReportIndex/TrashReportIndex';
 import calculateTRI from '../trashReportIndex';
 import Country from '../Country';
-import AboutButton from '../about/AboutButton';
+import AboutButton from '../overlay/about/AboutButton';
+import AboutEnvAssemblyButton from '../overlay/aboutUnEnvironmentAssembly/AboutAssemblyButton';
 
 export default class StatsMap extends Component {
     static get propTypes() {
@@ -25,6 +26,7 @@ export default class StatsMap extends Component {
             mode: PropTypes.string,
             onModeChange: PropTypes.func,
             onAboutButtonClick: PropTypes.func,
+            onAssemblyButtonClick: PropTypes.func,
             selectedCountry: PropTypes.instanceOf(Country),
         };
     }
@@ -37,6 +39,7 @@ export default class StatsMap extends Component {
             mode: Modes.mode.WORLD,
             onModeChange: () => {},
             onAboutButtonClick: () => {},
+            onAssemblyButtonClick: () => {},
             selectedCountry: new Country(),
         };
     }
@@ -123,8 +126,11 @@ export default class StatsMap extends Component {
         const topRightControl = mode === Modes.mode.WORLD ?
             (
                 <div>
-                    <AboutButton onClick={this.props.onAboutButtonClick} />
-                    <Legend />
+                    <div>
+                        <AboutButton onClick={this.props.onAboutButtonClick} />
+                        <Legend />
+                    </div>
+                    <AboutEnvAssemblyButton onClick={this.props.onAssemblyButtonClick} />
                 </div>
             ) : <CloseButton onClick={this.resetSelectedCountry} />;
         const bottomLeftControl = mode === Modes.mode.WORLD ?

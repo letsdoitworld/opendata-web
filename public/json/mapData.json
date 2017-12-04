@@ -912,7 +912,10 @@
           "2016-03-01": "1",
           "2016-06-01": "2",
           "2016-10-01": "10",
-          "2016-11-01": "13"
+          "2016-11-01": "13",
+          "2017-10-01": "21",
+          "2017-11-01": "24",
+          "2017-12-01": "26"
         },
         "reporters": [
           {
@@ -921,7 +924,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 10
+            "count": 23
           },
           {
             "reporter": "Trashout",
@@ -931,19 +934,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 9
+            "count": 20
           },
           {
             "trash_type": "construction",
-            "count": 1
+            "count": 5
           },
           {
             "trash_type": "hazardous",
-            "count": 2
+            "count": 5
           },
           {
             "trash_type": "bulky",
-            "count": 8
+            "count": 13
           },
           {
             "trash_type": "litter",
@@ -951,15 +954,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 4
-          },
-          {
-            "trash_type": "glass",
             "count": 6
           },
           {
+            "trash_type": "glass",
+            "count": 12
+          },
+          {
             "trash_type": "plastic",
-            "count": 8
+            "count": 19
           },
           {
             "trash_type": "textile",
@@ -967,19 +970,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 1
-          },
-          {
-            "trash_type": "metal",
             "count": 4
           },
           {
+            "trash_type": "metal",
+            "count": 13
+          },
+          {
             "trash_type": "rubber",
-            "count": 1
+            "count": 7
           },
           {
             "trash_type": "other",
-            "count": 8
+            "count": 19
           }
         ],
         "iso2": "AE"
@@ -1102,7 +1105,8 @@
           "2017-01-01": "19",
           "2017-06-01": "26",
           "2017-07-01": "48",
-          "2017-08-01": "49"
+          "2017-08-01": "49",
+          "2017-10-01": "50"
         },
         "reporters": [
           {
@@ -1111,7 +1115,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 4
+            "count": 5
           },
           {
             "reporter": "Trashout",
@@ -1125,7 +1129,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 22
+            "count": 23
           },
           {
             "trash_type": "construction",
@@ -1137,7 +1141,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "litter",
@@ -1149,11 +1153,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 15
+            "count": 16
           },
           {
             "trash_type": "plastic",
-            "count": 26
+            "count": 27
           },
           {
             "trash_type": "textile",
@@ -1161,19 +1165,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 9
+            "count": 10
           },
           {
             "trash_type": "metal",
-            "count": 17
+            "count": 18
           },
           {
             "trash_type": "rubber",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "other",
-            "count": 3
+            "count": 4
           }
         ],
         "iso2": "AR"
@@ -4606,7 +4610,9 @@
           "2017-07-01": "351",
           "2017-08-01": "354",
           "2017-09-01": "356",
-          "2017-10-01": "357"
+          "2017-10-01": "360",
+          "2017-11-01": "365",
+          "2017-12-01": "367"
         },
         "reporters": [
           {
@@ -4615,7 +4621,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 66
+            "count": 76
           },
           {
             "reporter": "Trashout",
@@ -4625,7 +4631,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 63
+            "count": 73
           },
           {
             "trash_type": "construction",
@@ -4637,7 +4643,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 23
+            "count": 26
           },
           {
             "trash_type": "litter",
@@ -4649,11 +4655,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 23
+            "count": 27
           },
           {
             "trash_type": "plastic",
-            "count": 238
+            "count": 247
           },
           {
             "trash_type": "textile",
@@ -4665,15 +4671,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 33
+            "count": 40
           },
           {
             "trash_type": "rubber",
-            "count": 33
+            "count": 35
           },
           {
             "trash_type": "other",
-            "count": 60
+            "count": 70
           }
         ],
         "iso2": "AU"
@@ -6282,7 +6288,9 @@
           "2016-09-01": "43",
           "2016-10-01": "44",
           "2017-07-01": "46",
-          "2017-09-01": "47"
+          "2017-09-01": "47",
+          "2017-10-01": "48",
+          "2017-11-01": "49"
         },
         "reporters": [
           {
@@ -6295,7 +6303,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 4
+            "count": 6
           },
           {
             "reporter": "Trashout",
@@ -6305,7 +6313,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 4
+            "count": 6
           },
           {
             "trash_type": "construction",
@@ -6333,7 +6341,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 9
+            "count": 10
           },
           {
             "trash_type": "textile",
@@ -6353,7 +6361,7 @@
           },
           {
             "trash_type": "other",
-            "count": 4
+            "count": 6
           }
         ],
         "iso2": "BE"
@@ -7239,7 +7247,9 @@
           "2016-10-01": "20",
           "2016-11-01": "23",
           "2017-05-01": "34",
-          "2017-07-01": "35"
+          "2017-07-01": "35",
+          "2017-10-01": "48",
+          "2017-11-01": "53"
         },
         "reporters": [
           {
@@ -7248,25 +7258,25 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 33
+            "count": 51
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 33
+            "count": 51
           },
           {
             "trash_type": "construction",
-            "count": 12
+            "count": 23
           },
           {
             "trash_type": "hazardous",
-            "count": 13
+            "count": 24
           },
           {
             "trash_type": "bulky",
-            "count": 28
+            "count": 40
           },
           {
             "trash_type": "litter",
@@ -7278,11 +7288,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 27
+            "count": 41
           },
           {
             "trash_type": "plastic",
-            "count": 33
+            "count": 51
           },
           {
             "trash_type": "textile",
@@ -7290,19 +7300,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 14
+            "count": 22
           },
           {
             "trash_type": "metal",
-            "count": 23
+            "count": 38
           },
           {
             "trash_type": "rubber",
-            "count": 24
+            "count": 33
           },
           {
             "trash_type": "other",
-            "count": 33
+            "count": 50
           }
         ],
         "iso2": "BS"
@@ -8045,7 +8055,9 @@
           "2016-12-01": "161",
           "2017-05-01": "220",
           "2017-06-01": "292",
-          "2017-08-01": "293"
+          "2017-08-01": "293",
+          "2017-10-01": "295",
+          "2017-12-01": "297"
         },
         "reporters": [
           {
@@ -8054,13 +8066,13 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 40
+            "count": 44
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 40
+            "count": 44
           },
           {
             "trash_type": "construction",
@@ -8072,7 +8084,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 30
+            "count": 33
           },
           {
             "trash_type": "litter",
@@ -8084,11 +8096,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 63
+            "count": 67
           },
           {
             "trash_type": "plastic",
-            "count": 148
+            "count": 152
           },
           {
             "trash_type": "textile",
@@ -8100,7 +8112,7 @@
           },
           {
             "trash_type": "metal",
-            "count": 38
+            "count": 41
           },
           {
             "trash_type": "rubber",
@@ -8108,7 +8120,7 @@
           },
           {
             "trash_type": "other",
-            "count": 127
+            "count": 131
           }
         ],
         "iso2": "BM"
@@ -8816,12 +8828,15 @@
           "2017-05-01": "197",
           "2017-07-01": "199",
           "2017-08-01": "201",
-          "2017-09-01": "203"
+          "2017-09-01": "204",
+          "2017-10-01": "219",
+          "2017-11-01": "223",
+          "2017-12-01": "224"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 156
+            "count": 157
           },
           {
             "reporter": "MarineLitterWatch",
@@ -8829,7 +8844,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 33
+            "count": 53
           },
           {
             "reporter": "Trashout",
@@ -8839,19 +8854,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 30
+            "count": 50
           },
           {
             "trash_type": "construction",
-            "count": 5
+            "count": 21
           },
           {
             "trash_type": "hazardous",
-            "count": 4
+            "count": 14
           },
           {
             "trash_type": "bulky",
-            "count": 16
+            "count": 30
           },
           {
             "trash_type": "litter",
@@ -8859,15 +8874,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 173
+            "count": 174
           },
           {
             "trash_type": "glass",
-            "count": 17
+            "count": 35
           },
           {
             "trash_type": "plastic",
-            "count": 151
+            "count": 171
           },
           {
             "trash_type": "textile",
@@ -8875,19 +8890,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 5
+            "count": 18
           },
           {
             "trash_type": "metal",
-            "count": 28
+            "count": 44
           },
           {
             "trash_type": "rubber",
-            "count": 10
+            "count": 24
           },
           {
             "trash_type": "other",
-            "count": 42
+            "count": 61
           }
         ],
         "iso2": "BR"
@@ -9721,7 +9736,8 @@
           "2011-12-01": "6",
           "2012-01-01": "7",
           "2016-10-01": "8",
-          "2016-11-01": "14"
+          "2016-11-01": "14",
+          "2017-10-01": "54"
         },
         "reporters": [
           {
@@ -9730,25 +9746,25 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 7
+            "count": 47
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 7
+            "count": 43
           },
           {
             "trash_type": "construction",
-            "count": 6
+            "count": 8
           },
           {
             "trash_type": "hazardous",
-            "count": 6
+            "count": 8
           },
           {
             "trash_type": "bulky",
-            "count": 6
+            "count": 23
           },
           {
             "trash_type": "litter",
@@ -9756,15 +9772,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 7
+            "count": 11
           },
           {
             "trash_type": "glass",
-            "count": 7
+            "count": 31
           },
           {
             "trash_type": "plastic",
-            "count": 11
+            "count": 47
           },
           {
             "trash_type": "textile",
@@ -9772,19 +9788,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 9
+            "count": 12
           },
           {
             "trash_type": "metal",
-            "count": 7
+            "count": 32
           },
           {
             "trash_type": "rubber",
-            "count": 7
+            "count": 15
           },
           {
             "trash_type": "other",
-            "count": 7
+            "count": 42
           }
         ],
         "iso2": "BN"
@@ -10412,73 +10428,84 @@
           "2012-03-01": "7",
           "2012-04-01": "12",
           "2012-05-01": "18",
-          "2012-06-01": "25",
-          "2012-07-01": "30",
-          "2012-08-01": "35",
-          "2012-09-01": "40",
-          "2012-10-01": "43",
-          "2012-11-01": "44",
-          "2012-12-01": "50",
-          "2013-01-01": "57",
-          "2013-02-01": "62",
-          "2013-10-01": "182",
-          "2013-11-01": "381",
-          "2013-12-01": "414",
-          "2014-01-01": "418",
-          "2014-02-01": "432",
-          "2014-03-01": "455",
-          "2014-04-01": "496",
-          "2014-05-01": "515",
-          "2014-06-01": "517",
-          "2014-07-01": "525",
-          "2014-08-01": "528",
-          "2014-09-01": "533",
-          "2014-10-01": "548",
-          "2014-11-01": "650",
-          "2014-12-01": "654",
-          "2015-01-01": "656",
-          "2015-02-01": "669",
-          "2015-03-01": "670",
-          "2015-04-01": "671",
-          "2015-05-01": "677",
-          "2015-06-01": "681",
-          "2015-07-01": "684",
-          "2015-08-01": "700",
-          "2015-09-01": "709",
-          "2015-10-01": "731",
-          "2015-11-01": "739",
-          "2015-12-01": "940",
-          "2016-01-01": "942",
-          "2016-02-01": "954",
-          "2016-03-01": "964",
-          "2016-04-01": "986",
-          "2016-05-01": "1003",
-          "2016-06-01": "1400",
-          "2016-07-01": "1402",
-          "2016-08-01": "1422",
-          "2016-09-01": "1626",
-          "2016-10-01": "2117",
-          "2016-11-01": "2335",
-          "2016-12-01": "2417",
-          "2017-01-01": "2425",
-          "2017-02-01": "2427",
-          "2017-03-01": "2431",
-          "2017-04-01": "2443",
-          "2017-05-01": "2445",
-          "2017-06-01": "2506",
-          "2017-07-01": "3224",
-          "2017-08-01": "3368",
-          "2017-09-01": "3456",
-          "2017-10-01": "3465"
+          "2012-06-01": "36",
+          "2012-07-01": "52",
+          "2012-08-01": "79",
+          "2012-09-01": "96",
+          "2012-10-01": "102",
+          "2012-11-01": "103",
+          "2012-12-01": "119",
+          "2013-01-01": "129",
+          "2013-02-01": "137",
+          "2013-03-01": "142",
+          "2013-04-01": "147",
+          "2013-06-01": "154",
+          "2013-07-01": "157",
+          "2013-08-01": "159",
+          "2013-09-01": "171",
+          "2013-10-01": "300",
+          "2013-11-01": "503",
+          "2013-12-01": "538",
+          "2014-01-01": "552",
+          "2014-02-01": "567",
+          "2014-03-01": "592",
+          "2014-04-01": "633",
+          "2014-05-01": "655",
+          "2014-06-01": "659",
+          "2014-07-01": "670",
+          "2014-08-01": "675",
+          "2014-09-01": "682",
+          "2014-10-01": "699",
+          "2014-11-01": "803",
+          "2014-12-01": "808",
+          "2015-01-01": "812",
+          "2015-02-01": "825",
+          "2015-03-01": "828",
+          "2015-04-01": "829",
+          "2015-05-01": "837",
+          "2015-06-01": "841",
+          "2015-07-01": "844",
+          "2015-08-01": "861",
+          "2015-09-01": "870",
+          "2015-10-01": "892",
+          "2015-11-01": "900",
+          "2015-12-01": "1101",
+          "2016-01-01": "1103",
+          "2016-02-01": "1115",
+          "2016-03-01": "1125",
+          "2016-04-01": "1147",
+          "2016-05-01": "1164",
+          "2016-06-01": "1561",
+          "2016-07-01": "1563",
+          "2016-08-01": "1583",
+          "2016-09-01": "1834",
+          "2016-10-01": "2385",
+          "2016-11-01": "2603",
+          "2016-12-01": "2685",
+          "2017-01-01": "2693",
+          "2017-02-01": "2695",
+          "2017-03-01": "2699",
+          "2017-04-01": "2711",
+          "2017-05-01": "2713",
+          "2017-06-01": "2774",
+          "2017-07-01": "3492",
+          "2017-08-01": "3636",
+          "2017-09-01": "3724",
+          "2017-10-01": "3752",
+          "2017-11-01": "3780"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 1977
+            "count": 2108
+          },
+          {
+            "reporter": "NOAA",
+            "count": 161
           },
           {
             "reporter": "OceanConservancy",
-            "count": 806
+            "count": 829
           },
           {
             "reporter": "Trashout",
@@ -10488,55 +10515,55 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 802
+            "count": 821
           },
           {
             "trash_type": "construction",
-            "count": 504
+            "count": 507
           },
           {
             "trash_type": "hazardous",
-            "count": 257
+            "count": 259
           },
           {
             "trash_type": "bulky",
-            "count": 413
+            "count": 447
           },
           {
             "trash_type": "litter",
-            "count": 0
+            "count": 18
           },
           {
             "trash_type": "uncategorized",
-            "count": 2661
+            "count": 2912
           },
           {
             "trash_type": "glass",
-            "count": 568
+            "count": 591
           },
           {
             "trash_type": "plastic",
-            "count": 1849
+            "count": 2099
           },
           {
             "trash_type": "textile",
-            "count": 56
+            "count": 77
           },
           {
             "trash_type": "lumber",
-            "count": 584
+            "count": 654
           },
           {
             "trash_type": "metal",
-            "count": 723
+            "count": 774
           },
           {
             "trash_type": "rubber",
-            "count": 435
+            "count": 462
           },
           {
             "trash_type": "other",
-            "count": 1206
+            "count": 1248
           }
         ],
         "iso2": "CA"
@@ -13851,12 +13878,14 @@
           "2016-10-01": "28",
           "2016-12-01": "29",
           "2017-04-01": "31",
-          "2017-05-01": "123",
-          "2017-06-01": "224",
-          "2017-07-01": "312",
-          "2017-08-01": "384",
-          "2017-09-01": "466",
-          "2017-10-01": "470"
+          "2017-05-01": "129",
+          "2017-06-01": "242",
+          "2017-07-01": "340",
+          "2017-08-01": "431",
+          "2017-09-01": "527",
+          "2017-10-01": "605",
+          "2017-11-01": "678",
+          "2017-12-01": "696"
         },
         "reporters": [
           {
@@ -13865,7 +13894,11 @@
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 444
+            "count": 669
+          },
+          {
+            "reporter": "OceanConservancy",
+            "count": 1
           },
           {
             "reporter": "Trashout",
@@ -13875,19 +13908,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "construction",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "hazardous",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "bulky",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "litter",
@@ -13895,35 +13928,35 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 470
+            "count": 695
           },
           {
             "trash_type": "glass",
-            "count": 293
+            "count": 422
           },
           {
             "trash_type": "plastic",
-            "count": 437
+            "count": 650
           },
           {
             "trash_type": "textile",
-            "count": 175
+            "count": 243
           },
           {
             "trash_type": "lumber",
-            "count": 360
+            "count": 517
           },
           {
             "trash_type": "metal",
-            "count": 358
+            "count": 513
           },
           {
             "trash_type": "rubber",
-            "count": 179
+            "count": 248
           },
           {
             "trash_type": "other",
-            "count": 0
+            "count": 1
           }
         ],
         "iso2": "CH"
@@ -14053,7 +14086,8 @@
           "2016-10-01": "102",
           "2016-11-01": "107",
           "2017-03-01": "110",
-          "2017-04-01": "111"
+          "2017-04-01": "111",
+          "2017-10-01": "116"
         },
         "reporters": [
           {
@@ -14066,7 +14100,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 95
+            "count": 100
           },
           {
             "reporter": "Trashout",
@@ -14076,19 +14110,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 95
+            "count": 99
           },
           {
             "trash_type": "construction",
-            "count": 82
+            "count": 83
           },
           {
             "trash_type": "hazardous",
-            "count": 81
+            "count": 82
           },
           {
             "trash_type": "bulky",
-            "count": 88
+            "count": 89
           },
           {
             "trash_type": "litter",
@@ -14096,15 +14130,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 16
+            "count": 17
           },
           {
             "trash_type": "glass",
-            "count": 92
+            "count": 95
           },
           {
             "trash_type": "plastic",
-            "count": 98
+            "count": 102
           },
           {
             "trash_type": "textile",
@@ -14112,19 +14146,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 79
+            "count": 80
           },
           {
             "trash_type": "metal",
-            "count": 94
+            "count": 97
           },
           {
             "trash_type": "rubber",
-            "count": 77
+            "count": 78
           },
           {
             "trash_type": "other",
-            "count": 95
+            "count": 99
           }
         ],
         "iso2": "CL"
@@ -14620,12 +14654,13 @@
           "2016-11-01": "112",
           "2016-12-01": "166",
           "2017-06-01": "169",
-          "2017-10-01": "170"
+          "2017-10-01": "173",
+          "2017-11-01": "176"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 164
+            "count": 170
           },
           {
             "reporter": "Trashout",
@@ -14635,19 +14670,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 134
+            "count": 138
           },
           {
             "trash_type": "construction",
-            "count": 114
+            "count": 115
           },
           {
             "trash_type": "hazardous",
-            "count": 87
+            "count": 88
           },
           {
             "trash_type": "bulky",
-            "count": 112
+            "count": 115
           },
           {
             "trash_type": "litter",
@@ -14655,15 +14690,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 36
+            "count": 38
           },
           {
             "trash_type": "glass",
-            "count": 120
+            "count": 123
           },
           {
             "trash_type": "plastic",
-            "count": 148
+            "count": 152
           },
           {
             "trash_type": "textile",
@@ -14671,11 +14706,11 @@
           },
           {
             "trash_type": "lumber",
-            "count": 91
+            "count": 92
           },
           {
             "trash_type": "metal",
-            "count": 114
+            "count": 116
           },
           {
             "trash_type": "rubber",
@@ -14683,7 +14718,7 @@
           },
           {
             "trash_type": "other",
-            "count": 130
+            "count": 134
           }
         ],
         "iso2": "CN"
@@ -16924,12 +16959,13 @@
           "2015-07-01": "26",
           "2015-12-01": "27",
           "2016-10-01": "30",
-          "2016-11-01": "31"
+          "2016-11-01": "31",
+          "2017-10-01": "33"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 4
+            "count": 6
           },
           {
             "reporter": "Trashout",
@@ -16939,7 +16975,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "construction",
@@ -16951,7 +16987,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "litter",
@@ -16959,15 +16995,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 27
+            "count": 28
           },
           {
             "trash_type": "glass",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "plastic",
-            "count": 3
+            "count": 4
           },
           {
             "trash_type": "textile",
@@ -16979,15 +17015,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 3
+            "count": 4
           },
           {
             "trash_type": "rubber",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "other",
-            "count": 4
+            "count": 5
           }
         ],
         "iso2": "CO"
@@ -17406,20 +17442,25 @@
       "properties": {
         "name": "Costa Rica",
         "dates": {
-          "2013-12-01": "1",
-          "2014-04-01": "21",
-          "2014-08-01": "22",
-          "2015-05-01": "68",
-          "2015-08-01": "138",
-          "2015-10-01": "139",
-          "2016-07-01": "140",
-          "2016-08-01": "142",
-          "2016-09-01": "143",
-          "2016-10-01": "146",
-          "2016-11-01": "147",
-          "2017-02-01": "148",
-          "2017-08-01": "149",
-          "2017-10-01": "152"
+          "2013-07-01": "2",
+          "2013-08-01": "43",
+          "2013-09-01": "56",
+          "2013-12-01": "57",
+          "2014-04-01": "77",
+          "2014-08-01": "78",
+          "2015-05-01": "124",
+          "2015-08-01": "194",
+          "2015-10-01": "195",
+          "2016-07-01": "196",
+          "2016-08-01": "198",
+          "2016-09-01": "199",
+          "2016-10-01": "202",
+          "2016-11-01": "203",
+          "2017-02-01": "204",
+          "2017-08-01": "205",
+          "2017-10-01": "212",
+          "2017-11-01": "222",
+          "2017-12-01": "223"
         },
         "reporters": [
           {
@@ -17431,8 +17472,12 @@
             "count": 1
           },
           {
+            "reporter": "NOAA",
+            "count": 56
+          },
+          {
             "reporter": "OceanConservancy",
-            "count": 14
+            "count": 28
           },
           {
             "reporter": "Trashout",
@@ -17442,55 +17487,55 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 13
+            "count": 26
           },
           {
             "trash_type": "construction",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "hazardous",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "bulky",
-            "count": 7
+            "count": 38
           },
           {
             "trash_type": "litter",
-            "count": 0
+            "count": 14
           },
           {
             "trash_type": "uncategorized",
-            "count": 140
+            "count": 164
           },
           {
             "trash_type": "glass",
-            "count": 13
+            "count": 31
           },
           {
             "trash_type": "plastic",
-            "count": 125
+            "count": 194
           },
           {
             "trash_type": "textile",
-            "count": 4
+            "count": 31
           },
           {
             "trash_type": "lumber",
-            "count": 7
+            "count": 40
           },
           {
             "trash_type": "metal",
-            "count": 21
+            "count": 34
           },
           {
             "trash_type": "rubber",
-            "count": 3
+            "count": 26
           },
           {
             "trash_type": "other",
-            "count": 16
+            "count": 28
           }
         ],
         "iso2": "CR"
@@ -18179,9 +18224,15 @@
           "2016-10-01": "1337",
           "2016-11-01": "1344",
           "2016-12-01": "1359",
-          "2017-01-01": "1364"
+          "2017-01-01": "1364",
+          "2017-10-01": "1365",
+          "2017-11-01": "1367"
         },
         "reporters": [
+          {
+            "reporter": "OceanConservancy",
+            "count": 3
+          },
           {
             "reporter": "Trashout",
             "count": 1364
@@ -18190,7 +18241,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 0
+            "count": 3
           },
           {
             "trash_type": "construction",
@@ -18218,7 +18269,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "textile",
@@ -18234,11 +18285,11 @@
           },
           {
             "trash_type": "rubber",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "other",
-            "count": 0
+            "count": 3
           }
         ],
         "iso2": "CZ"
@@ -18460,7 +18511,9 @@
           "2017-06-01": "668",
           "2017-07-01": "680",
           "2017-08-01": "690",
-          "2017-09-01": "696"
+          "2017-09-01": "696",
+          "2017-10-01": "729",
+          "2017-11-01": "735"
         },
         "reporters": [
           {
@@ -18469,11 +18522,11 @@
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 18
+            "count": 23
           },
           {
             "reporter": "OceanConservancy",
-            "count": 61
+            "count": 95
           },
           {
             "reporter": "Trashout",
@@ -18483,11 +18536,11 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 60
+            "count": 94
           },
           {
             "trash_type": "construction",
-            "count": 22
+            "count": 41
           },
           {
             "trash_type": "hazardous",
@@ -18495,7 +18548,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 38
+            "count": 55
           },
           {
             "trash_type": "litter",
@@ -18503,15 +18556,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 635
+            "count": 640
           },
           {
             "trash_type": "glass",
-            "count": 46
+            "count": 70
           },
           {
             "trash_type": "plastic",
-            "count": 78
+            "count": 116
           },
           {
             "trash_type": "textile",
@@ -18519,19 +18572,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 26
+            "count": 38
           },
           {
             "trash_type": "metal",
-            "count": 53
+            "count": 74
           },
           {
             "trash_type": "rubber",
-            "count": 51
+            "count": 78
           },
           {
             "trash_type": "other",
-            "count": 61
+            "count": 93
           }
         ],
         "iso2": "DE"
@@ -18883,23 +18936,25 @@
           "2015-11-01": "73",
           "2016-02-01": "74",
           "2016-04-01": "76",
-          "2016-05-01": "94",
-          "2016-06-01": "97",
-          "2016-07-01": "101",
-          "2016-08-01": "107",
-          "2016-09-01": "108",
-          "2016-10-01": "115",
-          "2016-11-01": "123",
-          "2017-02-01": "124",
-          "2017-05-01": "139",
-          "2017-06-01": "146",
-          "2017-07-01": "150",
-          "2017-08-01": "159"
+          "2016-05-01": "102",
+          "2016-06-01": "105",
+          "2016-07-01": "109",
+          "2016-08-01": "115",
+          "2016-09-01": "116",
+          "2016-10-01": "123",
+          "2016-11-01": "131",
+          "2017-02-01": "132",
+          "2017-05-01": "150",
+          "2017-06-01": "157",
+          "2017-07-01": "161",
+          "2017-08-01": "170",
+          "2017-11-01": "173",
+          "2017-12-01": "174"
         },
         "reporters": [
           {
             "reporter": "MarineLitterWatch",
-            "count": 130
+            "count": 145
           },
           {
             "reporter": "OceanConservancy",
@@ -18933,31 +18988,31 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 141
+            "count": 156
           },
           {
             "trash_type": "glass",
-            "count": 109
+            "count": 121
           },
           {
             "trash_type": "plastic",
-            "count": 144
+            "count": 158
           },
           {
             "trash_type": "textile",
-            "count": 77
+            "count": 85
           },
           {
             "trash_type": "lumber",
-            "count": 103
+            "count": 110
           },
           {
             "trash_type": "metal",
-            "count": 106
+            "count": 115
           },
           {
             "trash_type": "rubber",
-            "count": 74
+            "count": 79
           },
           {
             "trash_type": "other",
@@ -19089,12 +19144,14 @@
           "2015-11-01": "8",
           "2016-08-01": "9",
           "2016-10-01": "72",
-          "2016-11-01": "74"
+          "2016-11-01": "74",
+          "2017-10-01": "90",
+          "2017-11-01": "94"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 67
+            "count": 87
           },
           {
             "reporter": "Trashout",
@@ -19104,19 +19161,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 66
+            "count": 84
           },
           {
             "trash_type": "construction",
-            "count": 47
+            "count": 63
           },
           {
             "trash_type": "hazardous",
-            "count": 48
+            "count": 62
           },
           {
             "trash_type": "bulky",
-            "count": 49
+            "count": 64
           },
           {
             "trash_type": "litter",
@@ -19124,15 +19181,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "glass",
-            "count": 64
+            "count": 82
           },
           {
             "trash_type": "plastic",
-            "count": 66
+            "count": 84
           },
           {
             "trash_type": "textile",
@@ -19140,19 +19197,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 48
+            "count": 64
           },
           {
             "trash_type": "metal",
-            "count": 55
+            "count": 73
           },
           {
             "trash_type": "rubber",
-            "count": 52
+            "count": 68
           },
           {
             "trash_type": "other",
-            "count": 65
+            "count": 83
           }
         ],
         "iso2": "DO"
@@ -19619,7 +19676,10 @@
           "2016-08-01": "265",
           "2016-10-01": "422",
           "2017-02-01": "533",
-          "2017-05-01": "581"
+          "2017-05-01": "581",
+          "2017-10-01": "583",
+          "2017-11-01": "589",
+          "2017-12-01": "590"
         },
         "reporters": [
           {
@@ -19628,7 +19688,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 158
+            "count": 167
           },
           {
             "reporter": "Trashout",
@@ -19638,7 +19698,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 158
+            "count": 167
           },
           {
             "trash_type": "construction",
@@ -19650,7 +19710,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 144
+            "count": 147
           },
           {
             "trash_type": "litter",
@@ -19662,11 +19722,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 167
+            "count": 170
           },
           {
             "trash_type": "plastic",
-            "count": 443
+            "count": 452
           },
           {
             "trash_type": "textile",
@@ -19678,15 +19738,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 145
+            "count": 146
           },
           {
             "trash_type": "rubber",
-            "count": 141
+            "count": 143
           },
           {
             "trash_type": "other",
-            "count": 258
+            "count": 265
           }
         ],
         "iso2": "EC"
@@ -20275,20 +20335,23 @@
           "2017-05-01": "487",
           "2017-06-01": "491",
           "2017-08-01": "492",
-          "2017-09-01": "495"
+          "2017-09-01": "495",
+          "2017-10-01": "496",
+          "2017-11-01": "513",
+          "2017-12-01": "514"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 166
+            "count": 181
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 55
+            "count": 56
           },
           {
             "reporter": "OceanConservancy",
-            "count": 66
+            "count": 69
           },
           {
             "reporter": "Trashout",
@@ -20298,7 +20361,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 63
+            "count": 65
           },
           {
             "trash_type": "construction",
@@ -20310,7 +20373,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 50
+            "count": 51
           },
           {
             "trash_type": "litter",
@@ -20318,15 +20381,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 430
+            "count": 446
           },
           {
             "trash_type": "glass",
-            "count": 81
+            "count": 82
           },
           {
             "trash_type": "plastic",
-            "count": 234
+            "count": 248
           },
           {
             "trash_type": "textile",
@@ -20338,15 +20401,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 88
+            "count": 89
           },
           {
             "trash_type": "rubber",
-            "count": 54
+            "count": 55
           },
           {
             "trash_type": "other",
-            "count": 92
+            "count": 97
           }
         ],
         "iso2": "ES"
@@ -21338,12 +21401,14 @@
           "2015-10-01": "14",
           "2015-11-01": "15",
           "2015-12-01": "16",
-          "2017-09-01": "21"
+          "2017-09-01": "21",
+          "2017-10-01": "22",
+          "2017-11-01": "23"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 5
+            "count": 7
           },
           {
             "reporter": "Trashout",
@@ -21353,7 +21418,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "construction",
@@ -21365,7 +21430,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "litter",
@@ -21377,11 +21442,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 4
+            "count": 6
           },
           {
             "trash_type": "plastic",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "textile",
@@ -21393,7 +21458,7 @@
           },
           {
             "trash_type": "metal",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "rubber",
@@ -21401,7 +21466,7 @@
           },
           {
             "trash_type": "other",
-            "count": 5
+            "count": 7
           }
         ],
         "iso2": "FJ"
@@ -21632,25 +21697,28 @@
           "2016-11-01": "1193",
           "2016-12-01": "1214",
           "2017-01-01": "1220",
-          "2017-04-01": "1223",
-          "2017-05-01": "1227",
-          "2017-06-01": "1230",
-          "2017-07-01": "1232",
-          "2017-08-01": "1236",
-          "2017-09-01": "1240"
+          "2017-04-01": "1224",
+          "2017-05-01": "1228",
+          "2017-06-01": "1231",
+          "2017-07-01": "1233",
+          "2017-08-01": "1237",
+          "2017-09-01": "1241",
+          "2017-10-01": "1251",
+          "2017-11-01": "1254",
+          "2017-12-01": "1273"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 6
+            "count": 26
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 220
+            "count": 225
           },
           {
             "reporter": "OceanConservancy",
-            "count": 12
+            "count": 20
           },
           {
             "reporter": "Trashout",
@@ -21660,55 +21728,55 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 11
+            "count": 16
           },
           {
             "trash_type": "construction",
-            "count": 2
+            "count": 5
           },
           {
             "trash_type": "hazardous",
-            "count": 1
+            "count": 4
           },
           {
             "trash_type": "bulky",
-            "count": 8
+            "count": 12
           },
           {
             "trash_type": "litter",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "uncategorized",
-            "count": 1229
+            "count": 1255
           },
           {
             "trash_type": "glass",
-            "count": 196
+            "count": 202
           },
           {
             "trash_type": "plastic",
-            "count": 221
+            "count": 240
           },
           {
             "trash_type": "textile",
-            "count": 133
+            "count": 137
           },
           {
             "trash_type": "lumber",
-            "count": 30
+            "count": 36
           },
           {
             "trash_type": "metal",
-            "count": 186
+            "count": 196
           },
           {
             "trash_type": "rubber",
-            "count": 96
+            "count": 102
           },
           {
             "trash_type": "other",
-            "count": 11
+            "count": 20
           }
         ],
         "iso2": "FR"
@@ -22155,21 +22223,23 @@
           "2017-06-01": "1886",
           "2017-07-01": "1889",
           "2017-08-01": "1893",
-          "2017-09-01": "1960",
-          "2017-10-01": "1972"
+          "2017-09-01": "1967",
+          "2017-10-01": "2015",
+          "2017-11-01": "2023",
+          "2017-12-01": "2031"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 1224
+            "count": 1259
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 41
+            "count": 45
           },
           {
             "reporter": "OceanConservancy",
-            "count": 443
+            "count": 463
           },
           {
             "reporter": "Trashout",
@@ -22179,55 +22249,55 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 435
+            "count": 453
           },
           {
             "trash_type": "construction",
-            "count": 340
+            "count": 342
           },
           {
             "trash_type": "hazardous",
-            "count": 158
+            "count": 160
           },
           {
             "trash_type": "bulky",
-            "count": 365
+            "count": 378
           },
           {
             "trash_type": "litter",
-            "count": 0
+            "count": 3
           },
           {
             "trash_type": "uncategorized",
-            "count": 1535
+            "count": 1573
           },
           {
             "trash_type": "glass",
-            "count": 288
+            "count": 296
           },
           {
             "trash_type": "plastic",
-            "count": 1229
+            "count": 1281
           },
           {
             "trash_type": "textile",
-            "count": 53
+            "count": 55
           },
           {
             "trash_type": "lumber",
-            "count": 225
+            "count": 227
           },
           {
             "trash_type": "metal",
-            "count": 422
+            "count": 438
           },
           {
             "trash_type": "rubber",
-            "count": 311
+            "count": 321
           },
           {
             "trash_type": "other",
-            "count": 782
+            "count": 800
           }
         ],
         "iso2": "GB"
@@ -22661,12 +22731,13 @@
           "2014-03-01": "1",
           "2016-10-01": "2",
           "2016-12-01": "3",
-          "2017-07-01": "4"
+          "2017-07-01": "4",
+          "2017-10-01": "11"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 2
+            "count": 9
           },
           {
             "reporter": "Trashout",
@@ -22680,19 +22751,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 3
+            "count": 10
           },
           {
             "trash_type": "construction",
-            "count": 3
+            "count": 10
           },
           {
             "trash_type": "hazardous",
-            "count": 1
+            "count": 8
           },
           {
             "trash_type": "bulky",
-            "count": 2
+            "count": 9
           },
           {
             "trash_type": "litter",
@@ -22704,11 +22775,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 3
+            "count": 10
           },
           {
             "trash_type": "plastic",
-            "count": 3
+            "count": 10
           },
           {
             "trash_type": "textile",
@@ -22716,19 +22787,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 3
+            "count": 10
           },
           {
             "trash_type": "metal",
-            "count": 2
+            "count": 9
           },
           {
             "trash_type": "rubber",
-            "count": 2
+            "count": 9
           },
           {
             "trash_type": "other",
-            "count": 2
+            "count": 9
           }
         ],
         "iso2": "GH"
@@ -23464,7 +23535,8 @@
           "2016-11-01": "139",
           "2017-08-01": "141",
           "2017-09-01": "144",
-          "2017-10-01": "145"
+          "2017-10-01": "148",
+          "2017-11-01": "150"
         },
         "reporters": [
           {
@@ -23473,11 +23545,11 @@
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 42
+            "count": 43
           },
           {
             "reporter": "OceanConservancy",
-            "count": 29
+            "count": 33
           },
           {
             "reporter": "Trashout",
@@ -23487,11 +23559,11 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 26
+            "count": 30
           },
           {
             "trash_type": "construction",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "hazardous",
@@ -23499,7 +23571,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 15
+            "count": 19
           },
           {
             "trash_type": "litter",
@@ -23507,35 +23579,35 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 118
+            "count": 119
           },
           {
             "trash_type": "glass",
-            "count": 39
+            "count": 42
           },
           {
             "trash_type": "plastic",
-            "count": 66
+            "count": 71
           },
           {
             "trash_type": "textile",
-            "count": 26
+            "count": 27
           },
           {
             "trash_type": "lumber",
-            "count": 24
+            "count": 26
           },
           {
             "trash_type": "metal",
-            "count": 35
+            "count": 38
           },
           {
             "trash_type": "rubber",
-            "count": 25
+            "count": 28
           },
           {
             "trash_type": "other",
-            "count": 25
+            "count": 29
           }
         ],
         "iso2": "GR"
@@ -25938,7 +26010,9 @@
           "2017-04-01": "178",
           "2017-06-01": "180",
           "2017-07-01": "228",
-          "2017-10-01": "237"
+          "2017-10-01": "251",
+          "2017-11-01": "252",
+          "2017-12-01": "253"
         },
         "reporters": [
           {
@@ -25947,7 +26021,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 66
+            "count": 82
           },
           {
             "reporter": "Trashout",
@@ -25957,19 +26031,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 62
+            "count": 76
           },
           {
             "trash_type": "construction",
-            "count": 3
+            "count": 4
           },
           {
             "trash_type": "hazardous",
-            "count": 6
+            "count": 7
           },
           {
             "trash_type": "bulky",
-            "count": 15
+            "count": 17
           },
           {
             "trash_type": "litter",
@@ -25977,15 +26051,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 175
+            "count": 177
           },
           {
             "trash_type": "glass",
-            "count": 28
+            "count": 34
           },
           {
             "trash_type": "plastic",
-            "count": 106
+            "count": 119
           },
           {
             "trash_type": "textile",
@@ -25993,19 +26067,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "metal",
-            "count": 36
+            "count": 44
           },
           {
             "trash_type": "rubber",
-            "count": 10
+            "count": 14
           },
           {
             "trash_type": "other",
-            "count": 54
+            "count": 68
           }
         ],
         "iso2": "ID"
@@ -27102,7 +27176,8 @@
           "2016-12-01": "140",
           "2017-01-01": "141",
           "2017-03-01": "142",
-          "2017-07-01": "144"
+          "2017-07-01": "144",
+          "2017-11-01": "147"
         },
         "reporters": [
           {
@@ -27111,7 +27186,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 110
+            "count": 113
           },
           {
             "reporter": "Trashout",
@@ -27125,7 +27200,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 110
+            "count": 113
           },
           {
             "trash_type": "construction",
@@ -27149,11 +27224,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 62
+            "count": 65
           },
           {
             "trash_type": "plastic",
-            "count": 107
+            "count": 110
           },
           {
             "trash_type": "textile",
@@ -27165,7 +27240,7 @@
           },
           {
             "trash_type": "metal",
-            "count": 65
+            "count": 67
           },
           {
             "trash_type": "rubber",
@@ -27173,7 +27248,7 @@
           },
           {
             "trash_type": "other",
-            "count": 69
+            "count": 72
           }
         ],
         "iso2": "IN"
@@ -27748,7 +27823,8 @@
           "2016-05-01": "33",
           "2016-07-01": "41",
           "2016-08-01": "42",
-          "2016-10-01": "46"
+          "2016-10-01": "46",
+          "2017-10-01": "47"
         },
         "reporters": [
           {
@@ -27757,7 +27833,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 6
+            "count": 7
           },
           {
             "reporter": "Trashout",
@@ -27767,19 +27843,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 6
+            "count": 7
           },
           {
             "trash_type": "construction",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "hazardous",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "bulky",
-            "count": 3
+            "count": 4
           },
           {
             "trash_type": "litter",
@@ -27791,11 +27867,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 8
+            "count": 9
           },
           {
             "trash_type": "plastic",
-            "count": 36
+            "count": 37
           },
           {
             "trash_type": "textile",
@@ -27803,19 +27879,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 18
+            "count": 19
           },
           {
             "trash_type": "metal",
-            "count": 17
+            "count": 18
           },
           {
             "trash_type": "rubber",
-            "count": 14
+            "count": 15
           },
           {
             "trash_type": "other",
-            "count": 5
+            "count": 6
           }
         ],
         "iso2": "IE"
@@ -27887,12 +27963,17 @@
         "name": "Iran",
         "dates": {
           "2014-07-01": "3",
-          "2016-02-01": "4"
+          "2016-02-01": "4",
+          "2016-11-01": "5"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
             "count": 4
+          },
+          {
+            "reporter": "MarineLitterWatch",
+            "count": 1
           }
         ],
         "trash_stats": [
@@ -27918,31 +27999,31 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "glass",
-            "count": 0
-          },
-          {
-            "trash_type": "plastic",
             "count": 1
           },
           {
-            "trash_type": "textile",
-            "count": 0
-          },
-          {
-            "trash_type": "lumber",
-            "count": 0
-          },
-          {
-            "trash_type": "metal",
+            "trash_type": "plastic",
             "count": 2
           },
           {
+            "trash_type": "textile",
+            "count": 1
+          },
+          {
+            "trash_type": "lumber",
+            "count": 1
+          },
+          {
+            "trash_type": "metal",
+            "count": 3
+          },
+          {
             "trash_type": "rubber",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "other",
@@ -28401,9 +28482,70 @@
       "id": "ISL",
       "properties": {
         "name": "Iceland",
-        "dates": {},
-        "reporters": [],
-        "trash_stats": []
+        "dates": {
+          "2017-10-01": "1"
+        },
+        "reporters": [
+          {
+            "reporter": "OceanConservancy",
+            "count": 1
+          }
+        ],
+        "trash_stats": [
+          {
+            "trash_type": "household",
+            "count": 1
+          },
+          {
+            "trash_type": "construction",
+            "count": 0
+          },
+          {
+            "trash_type": "hazardous",
+            "count": 0
+          },
+          {
+            "trash_type": "bulky",
+            "count": 0
+          },
+          {
+            "trash_type": "litter",
+            "count": 0
+          },
+          {
+            "trash_type": "uncategorized",
+            "count": 0
+          },
+          {
+            "trash_type": "glass",
+            "count": 0
+          },
+          {
+            "trash_type": "plastic",
+            "count": 1
+          },
+          {
+            "trash_type": "textile",
+            "count": 0
+          },
+          {
+            "trash_type": "lumber",
+            "count": 0
+          },
+          {
+            "trash_type": "metal",
+            "count": 0
+          },
+          {
+            "trash_type": "rubber",
+            "count": 0
+          },
+          {
+            "trash_type": "other",
+            "count": 0
+          }
+        ],
+        "iso2": "IS"
       },
       "geometry": {
         "type": "Polygon",
@@ -28714,54 +28856,57 @@
           "2014-02-01": "123",
           "2014-03-01": "127",
           "2014-05-01": "128",
-          "2014-06-01": "141",
-          "2014-07-01": "293",
-          "2014-08-01": "386",
-          "2014-09-01": "390",
-          "2014-10-01": "399",
-          "2014-11-01": "419",
-          "2014-12-01": "428",
-          "2015-01-01": "429",
-          "2015-04-01": "460",
-          "2015-05-01": "504",
-          "2015-06-01": "563",
-          "2015-07-01": "578",
-          "2015-08-01": "595",
-          "2015-09-01": "652",
-          "2015-10-01": "694",
-          "2015-11-01": "756",
-          "2015-12-01": "795",
-          "2016-01-01": "843",
-          "2016-02-01": "1034",
-          "2016-03-01": "1059",
-          "2016-04-01": "1119",
-          "2016-05-01": "1166",
-          "2016-06-01": "1208",
-          "2016-07-01": "1228",
-          "2016-08-01": "1244",
-          "2016-09-01": "1257",
-          "2016-10-01": "1291",
-          "2016-11-01": "1313",
-          "2016-12-01": "1323",
-          "2017-01-01": "1330",
-          "2017-04-01": "1332",
-          "2017-06-01": "1334",
-          "2017-07-01": "1335",
-          "2017-08-01": "1337",
-          "2017-09-01": "1343"
+          "2014-06-01": "155",
+          "2014-07-01": "307",
+          "2014-08-01": "400",
+          "2014-09-01": "404",
+          "2014-10-01": "413",
+          "2014-11-01": "433",
+          "2014-12-01": "442",
+          "2015-01-01": "443",
+          "2015-04-01": "474",
+          "2015-05-01": "521",
+          "2015-06-01": "591",
+          "2015-07-01": "606",
+          "2015-08-01": "624",
+          "2015-09-01": "681",
+          "2015-10-01": "723",
+          "2015-11-01": "785",
+          "2015-12-01": "824",
+          "2016-01-01": "872",
+          "2016-02-01": "1063",
+          "2016-03-01": "1088",
+          "2016-04-01": "1148",
+          "2016-05-01": "1196",
+          "2016-06-01": "1264",
+          "2016-07-01": "1284",
+          "2016-08-01": "1300",
+          "2016-09-01": "1313",
+          "2016-10-01": "1347",
+          "2016-11-01": "1369",
+          "2016-12-01": "1379",
+          "2017-01-01": "1386",
+          "2017-04-01": "1389",
+          "2017-05-01": "1438",
+          "2017-06-01": "1444",
+          "2017-07-01": "1445",
+          "2017-08-01": "1447",
+          "2017-09-01": "1453",
+          "2017-10-01": "1454",
+          "2017-11-01": "1464"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 3
+            "count": 13
           },
           {
             "reporter": "MarineLitterWatch",
-            "count": 47
+            "count": 157
           },
           {
             "reporter": "OceanConservancy",
-            "count": 12
+            "count": 13
           },
           {
             "reporter": "Ocistimo",
@@ -28775,7 +28920,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 14
+            "count": 15
           },
           {
             "trash_type": "construction",
@@ -28787,7 +28932,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 6
+            "count": 7
           },
           {
             "trash_type": "litter",
@@ -28795,35 +28940,35 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 1328
+            "count": 1448
           },
           {
             "trash_type": "glass",
-            "count": 43
+            "count": 147
           },
           {
             "trash_type": "plastic",
-            "count": 59
+            "count": 173
           },
           {
             "trash_type": "textile",
-            "count": 33
+            "count": 125
           },
           {
             "trash_type": "lumber",
-            "count": 12
+            "count": 114
           },
           {
             "trash_type": "metal",
-            "count": 36
+            "count": 141
           },
           {
             "trash_type": "rubber",
-            "count": 33
+            "count": 120
           },
           {
             "trash_type": "other",
-            "count": 11
+            "count": 14
           }
         ],
         "iso2": "IT"
@@ -29200,12 +29345,14 @@
       "properties": {
         "name": "Jamaica",
         "dates": {
-          "2016-10-01": "140"
+          "2016-10-01": "140",
+          "2017-10-01": "270",
+          "2017-11-01": "273"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 139
+            "count": 272
           },
           {
             "reporter": "Trashout",
@@ -29215,19 +29362,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 139
+            "count": 271
           },
           {
             "trash_type": "construction",
-            "count": 123
+            "count": 241
           },
           {
             "trash_type": "hazardous",
-            "count": 115
+            "count": 220
           },
           {
             "trash_type": "bulky",
-            "count": 126
+            "count": 247
           },
           {
             "trash_type": "litter",
@@ -29239,11 +29386,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 136
+            "count": 266
           },
           {
             "trash_type": "plastic",
-            "count": 139
+            "count": 271
           },
           {
             "trash_type": "textile",
@@ -29251,19 +29398,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 120
+            "count": 234
           },
           {
             "trash_type": "metal",
-            "count": 135
+            "count": 259
           },
           {
             "trash_type": "rubber",
-            "count": 118
+            "count": 226
           },
           {
             "trash_type": "other",
-            "count": 138
+            "count": 271
           }
         ],
         "iso2": "JM"
@@ -29509,7 +29656,8 @@
           "2017-02-01": "850",
           "2017-03-01": "851",
           "2017-04-01": "852",
-          "2017-07-01": "880"
+          "2017-07-01": "880",
+          "2017-10-01": "884"
         },
         "reporters": [
           {
@@ -29518,7 +29666,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 138
+            "count": 142
           },
           {
             "reporter": "Pirika",
@@ -29532,7 +29680,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 138
+            "count": 142
           },
           {
             "trash_type": "construction",
@@ -29544,7 +29692,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 104
+            "count": 107
           },
           {
             "trash_type": "litter",
@@ -29556,11 +29704,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 128
+            "count": 129
           },
           {
             "trash_type": "plastic",
-            "count": 555
+            "count": 559
           },
           {
             "trash_type": "textile",
@@ -29572,15 +29720,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 287
+            "count": 290
           },
           {
             "trash_type": "rubber",
-            "count": 34
+            "count": 35
           },
           {
             "trash_type": "other",
-            "count": 832
+            "count": 836
           }
         ],
         "iso2": "JP"
@@ -30419,7 +30567,8 @@
           "2015-10-01": "4",
           "2016-10-01": "38",
           "2016-12-01": "39",
-          "2017-07-01": "166"
+          "2017-07-01": "166",
+          "2017-10-01": "174"
         },
         "reporters": [
           {
@@ -30428,7 +30577,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 35
+            "count": 43
           },
           {
             "reporter": "Trashout",
@@ -30442,19 +30591,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 144
+            "count": 152
           },
           {
             "trash_type": "construction",
-            "count": 33
+            "count": 39
           },
           {
             "trash_type": "hazardous",
-            "count": 26
+            "count": 33
           },
           {
             "trash_type": "bulky",
-            "count": 27
+            "count": 34
           },
           {
             "trash_type": "litter",
@@ -30466,11 +30615,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 54
+            "count": 61
           },
           {
             "trash_type": "plastic",
-            "count": 136
+            "count": 144
           },
           {
             "trash_type": "textile",
@@ -30478,19 +30627,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 116
+            "count": 123
           },
           {
             "trash_type": "metal",
-            "count": 43
+            "count": 50
           },
           {
             "trash_type": "rubber",
-            "count": 28
+            "count": 35
           },
           {
             "trash_type": "other",
-            "count": 35
+            "count": 43
           }
         ],
         "iso2": "KE"
@@ -32318,9 +32467,16 @@
           "2013-12-01": "1",
           "2014-11-01": "2",
           "2016-10-01": "23",
-          "2016-11-01": "24"
+          "2016-11-01": "24",
+          "2017-04-01": "60",
+          "2017-05-01": "105",
+          "2017-06-01": "114"
         },
         "reporters": [
+          {
+            "reporter": "CleanCoastIndexSriLanka",
+            "count": 90
+          },
           {
             "reporter": "OceanConservancy",
             "count": 22
@@ -32337,7 +32493,7 @@
           },
           {
             "trash_type": "construction",
-            "count": 19
+            "count": 39
           },
           {
             "trash_type": "hazardous",
@@ -32353,35 +32509,35 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 2
+            "count": 72
           },
           {
             "trash_type": "glass",
-            "count": 21
+            "count": 72
           },
           {
             "trash_type": "plastic",
-            "count": 22
+            "count": 112
           },
           {
             "trash_type": "textile",
-            "count": 0
+            "count": 43
           },
           {
             "trash_type": "lumber",
-            "count": 18
+            "count": 59
           },
           {
             "trash_type": "metal",
-            "count": 20
+            "count": 77
           },
           {
             "trash_type": "rubber",
-            "count": 21
+            "count": 81
           },
           {
             "trash_type": "other",
-            "count": 22
+            "count": 96
           }
         ],
         "iso2": "LK"
@@ -32899,16 +33055,22 @@
           "2015-07-01": "2",
           "2015-10-01": "3",
           "2016-10-01": "5",
-          "2017-01-01": "6"
+          "2017-01-01": "6",
+          "2017-11-01": "7",
+          "2017-12-01": "9"
         },
         "reporters": [
+          {
+            "reporter": "MarineDebrisTracker",
+            "count": 1
+          },
           {
             "reporter": "MarineLitterWatch",
             "count": 2
           },
           {
             "reporter": "OceanConservancy",
-            "count": 2
+            "count": 4
           },
           {
             "reporter": "Trashout",
@@ -32918,7 +33080,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "construction",
@@ -32938,7 +33100,7 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "glass",
@@ -32946,7 +33108,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 4
+            "count": 7
           },
           {
             "trash_type": "textile",
@@ -32954,11 +33116,11 @@
           },
           {
             "trash_type": "lumber",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "metal",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "rubber",
@@ -32966,7 +33128,7 @@
           },
           {
             "trash_type": "other",
-            "count": 2
+            "count": 3
           }
         ],
         "iso2": "MA"
@@ -33731,34 +33893,42 @@
           "2014-05-01": "1066",
           "2014-06-01": "1067",
           "2014-10-01": "1068",
-          "2015-10-01": "1070",
-          "2015-11-01": "1080",
-          "2015-12-01": "1093",
-          "2016-06-01": "1095",
-          "2016-07-01": "1097",
-          "2016-08-01": "1099",
-          "2016-09-01": "1122",
-          "2016-10-01": "1179",
-          "2016-11-01": "1264",
-          "2016-12-01": "1290",
-          "2017-01-01": "1297",
-          "2017-02-01": "1305",
-          "2017-03-01": "1313",
-          "2017-04-01": "1321",
-          "2017-05-01": "1330",
-          "2017-06-01": "1336",
-          "2017-07-01": "1395",
-          "2017-08-01": "1404",
-          "2017-09-01": "1407"
+          "2015-08-01": "1069",
+          "2015-10-01": "1071",
+          "2015-11-01": "1081",
+          "2015-12-01": "1094",
+          "2016-06-01": "1096",
+          "2016-07-01": "1098",
+          "2016-08-01": "1100",
+          "2016-09-01": "1123",
+          "2016-10-01": "1180",
+          "2016-11-01": "1265",
+          "2016-12-01": "1291",
+          "2017-01-01": "1298",
+          "2017-02-01": "1307",
+          "2017-03-01": "1315",
+          "2017-04-01": "1323",
+          "2017-05-01": "1334",
+          "2017-06-01": "1343",
+          "2017-07-01": "1405",
+          "2017-08-01": "1417",
+          "2017-09-01": "1420",
+          "2017-10-01": "1494",
+          "2017-11-01": "1537",
+          "2017-12-01": "1563"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 144
+            "count": 255
+          },
+          {
+            "reporter": "NOAA",
+            "count": 1
           },
           {
             "reporter": "OceanConservancy",
-            "count": 206
+            "count": 250
           },
           {
             "reporter": "Trashout",
@@ -33768,19 +33938,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 204
+            "count": 248
           },
           {
             "trash_type": "construction",
-            "count": 107
+            "count": 144
           },
           {
             "trash_type": "hazardous",
-            "count": 79
+            "count": 109
           },
           {
             "trash_type": "bulky",
-            "count": 111
+            "count": 148
           },
           {
             "trash_type": "litter",
@@ -33788,35 +33958,35 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 1203
+            "count": 1315
           },
           {
             "trash_type": "glass",
-            "count": 126
+            "count": 173
           },
           {
             "trash_type": "plastic",
-            "count": 306
+            "count": 416
           },
           {
             "trash_type": "textile",
-            "count": 0
+            "count": 7
           },
           {
             "trash_type": "lumber",
-            "count": 79
+            "count": 113
           },
           {
             "trash_type": "metal",
-            "count": 140
+            "count": 182
           },
           {
             "trash_type": "rubber",
-            "count": 94
+            "count": 128
           },
           {
             "trash_type": "other",
-            "count": 181
+            "count": 237
           }
         ],
         "iso2": "MX"
@@ -35021,9 +35191,14 @@
           "2016-06-01": "331",
           "2016-10-01": "343",
           "2016-11-01": "362",
-          "2016-12-01": "363"
+          "2016-12-01": "363",
+          "2017-11-01": "410"
         },
         "reporters": [
+          {
+            "reporter": "MarineDebrisTracker",
+            "count": 47
+          },
           {
             "reporter": "MarineLitterWatch",
             "count": 1
@@ -35060,7 +35235,7 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 357
+            "count": 404
           },
           {
             "trash_type": "glass",
@@ -35068,7 +35243,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 7
+            "count": 11
           },
           {
             "trash_type": "textile",
@@ -35080,7 +35255,7 @@
           },
           {
             "trash_type": "metal",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "rubber",
@@ -35088,7 +35263,7 @@
           },
           {
             "trash_type": "other",
-            "count": 6
+            "count": 48
           }
         ],
         "iso2": "MT"
@@ -36019,12 +36194,14 @@
           "2016-08-01": "8",
           "2016-10-01": "9",
           "2017-01-01": "10",
-          "2017-05-01": "11"
+          "2017-05-01": "11",
+          "2017-08-01": "12",
+          "2017-10-01": "13"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 10
+            "count": 12
           },
           {
             "reporter": "Trashout",
@@ -36034,19 +36211,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 10
+            "count": 12
           },
           {
             "trash_type": "construction",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "hazardous",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "bulky",
-            "count": 9
+            "count": 11
           },
           {
             "trash_type": "litter",
@@ -36058,11 +36235,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 9
+            "count": 11
           },
           {
             "trash_type": "plastic",
-            "count": 10
+            "count": 12
           },
           {
             "trash_type": "textile",
@@ -36070,19 +36247,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "metal",
-            "count": 10
+            "count": 12
           },
           {
             "trash_type": "rubber",
-            "count": 9
+            "count": 11
           },
           {
             "trash_type": "other",
-            "count": 10
+            "count": 12
           }
         ],
         "iso2": "MZ"
@@ -36643,30 +36820,31 @@
       "properties": {
         "name": "Malawi",
         "dates": {
-          "2016-11-01": "1"
+          "2016-11-01": "1",
+          "2017-10-01": "2"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 1
+            "count": 2
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "construction",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "hazardous",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "bulky",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "litter",
@@ -36678,11 +36856,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "plastic",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "textile",
@@ -36690,19 +36868,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "metal",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "rubber",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "other",
-            "count": 1
+            "count": 2
           }
         ],
         "iso2": "MW"
@@ -36856,7 +37034,9 @@
           "2017-07-01": "53",
           "2017-08-01": "58",
           "2017-09-01": "60",
-          "2017-10-01": "61"
+          "2017-10-01": "66",
+          "2017-11-01": "71",
+          "2017-12-01": "72"
         },
         "reporters": [
           {
@@ -36865,7 +37045,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 46
+            "count": 57
           },
           {
             "reporter": "Trashout",
@@ -36875,19 +37055,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 44
+            "count": 54
           },
           {
             "trash_type": "construction",
-            "count": 1
+            "count": 6
           },
           {
             "trash_type": "hazardous",
-            "count": 2
+            "count": 6
           },
           {
             "trash_type": "bulky",
-            "count": 21
+            "count": 28
           },
           {
             "trash_type": "litter",
@@ -36895,15 +37075,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 17
+            "count": 18
           },
           {
             "trash_type": "glass",
-            "count": 30
+            "count": 38
           },
           {
             "trash_type": "plastic",
-            "count": 45
+            "count": 55
           },
           {
             "trash_type": "textile",
@@ -36911,19 +37091,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 3
+            "count": 7
           },
           {
             "trash_type": "metal",
-            "count": 37
+            "count": 44
           },
           {
             "trash_type": "rubber",
-            "count": 10
+            "count": 12
           },
           {
             "trash_type": "other",
-            "count": 42
+            "count": 52
           }
         ],
         "iso2": "MY"
@@ -37231,7 +37411,9 @@
           "2016-10-01": "12",
           "2017-01-01": "24",
           "2017-06-01": "25",
-          "2017-08-01": "26"
+          "2017-08-01": "26",
+          "2017-10-01": "28",
+          "2017-11-01": "37"
         },
         "reporters": [
           {
@@ -37240,7 +37422,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 10
+            "count": 21
           },
           {
             "reporter": "Trashout",
@@ -37250,19 +37432,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 9
+            "count": 19
           },
           {
             "trash_type": "construction",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "hazardous",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "bulky",
-            "count": 8
+            "count": 15
           },
           {
             "trash_type": "litter",
@@ -37270,15 +37452,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 17
+            "count": 18
           },
           {
             "trash_type": "glass",
-            "count": 9
+            "count": 17
           },
           {
             "trash_type": "plastic",
-            "count": 16
+            "count": 26
           },
           {
             "trash_type": "textile",
@@ -37286,19 +37468,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 8
+            "count": 10
           },
           {
             "trash_type": "metal",
-            "count": 10
+            "count": 17
           },
           {
             "trash_type": "rubber",
-            "count": 7
+            "count": 16
           },
           {
             "trash_type": "other",
-            "count": 10
+            "count": 20
           }
         ],
         "iso2": "SG"
@@ -38006,12 +38188,13 @@
           "2012-12-01": "4",
           "2016-10-01": "5",
           "2017-07-01": "33",
-          "2017-08-01": "39"
+          "2017-08-01": "39",
+          "2017-10-01": "47"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 1
+            "count": 9
           },
           {
             "reporter": "Trashout",
@@ -38025,19 +38208,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 34
+            "count": 42
           },
           {
             "trash_type": "construction",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "hazardous",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "bulky",
-            "count": 1
+            "count": 5
           },
           {
             "trash_type": "litter",
@@ -38049,11 +38232,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 14
+            "count": 20
           },
           {
             "trash_type": "plastic",
-            "count": 29
+            "count": 37
           },
           {
             "trash_type": "textile",
@@ -38061,19 +38244,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 25
+            "count": 26
           },
           {
             "trash_type": "metal",
-            "count": 8
+            "count": 13
           },
           {
             "trash_type": "rubber",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "other",
-            "count": 1
+            "count": 7
           }
         ],
         "iso2": "NG"
@@ -38330,12 +38513,13 @@
           "2016-06-01": "4",
           "2016-10-01": "20",
           "2016-11-01": "25",
-          "2017-02-01": "26"
+          "2017-02-01": "26",
+          "2017-10-01": "27"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 23
+            "count": 24
           },
           {
             "reporter": "Trashout",
@@ -38345,19 +38529,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 23
+            "count": 24
           },
           {
             "trash_type": "construction",
-            "count": 15
+            "count": 16
           },
           {
             "trash_type": "hazardous",
-            "count": 10
+            "count": 11
           },
           {
             "trash_type": "bulky",
-            "count": 16
+            "count": 17
           },
           {
             "trash_type": "litter",
@@ -38369,11 +38553,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 18
+            "count": 19
           },
           {
             "trash_type": "plastic",
-            "count": 23
+            "count": 24
           },
           {
             "trash_type": "textile",
@@ -38381,19 +38565,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 11
-          },
-          {
-            "trash_type": "metal",
-            "count": 17
-          },
-          {
-            "trash_type": "rubber",
             "count": 12
           },
           {
+            "trash_type": "metal",
+            "count": 18
+          },
+          {
+            "trash_type": "rubber",
+            "count": 13
+          },
+          {
             "trash_type": "other",
-            "count": 22
+            "count": 23
           }
         ],
         "iso2": "NI"
@@ -38645,7 +38829,8 @@
           "2017-03-01": "241",
           "2017-05-01": "242",
           "2017-07-01": "244",
-          "2017-08-01": "246"
+          "2017-08-01": "246",
+          "2017-11-01": "247"
         },
         "reporters": [
           {
@@ -38658,7 +38843,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 16
+            "count": 17
           },
           {
             "reporter": "Trashout",
@@ -38668,7 +38853,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 16
+            "count": 17
           },
           {
             "trash_type": "construction",
@@ -38680,7 +38865,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 8
+            "count": 9
           },
           {
             "trash_type": "litter",
@@ -38696,7 +38881,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 26
+            "count": 27
           },
           {
             "trash_type": "textile",
@@ -38708,15 +38893,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 15
+            "count": 16
           },
           {
             "trash_type": "rubber",
-            "count": 9
+            "count": 10
           },
           {
             "trash_type": "other",
-            "count": 14
+            "count": 15
           }
         ],
         "iso2": "NL"
@@ -38808,7 +38993,7 @@
           "2016-10-01": "227",
           "2016-11-01": "238",
           "2017-04-01": "239",
-          "2017-10-01": "240"
+          "2017-10-01": "323"
         },
         "reporters": [
           {
@@ -38821,7 +39006,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 30
+            "count": 113
           },
           {
             "reporter": "Trashout",
@@ -38831,19 +39016,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 24
+            "count": 76
           },
           {
             "trash_type": "construction",
-            "count": 0
+            "count": 34
           },
           {
             "trash_type": "hazardous",
-            "count": 0
+            "count": 28
           },
           {
             "trash_type": "bulky",
-            "count": 4
+            "count": 34
           },
           {
             "trash_type": "litter",
@@ -38851,15 +39036,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 216
+            "count": 246
           },
           {
             "trash_type": "glass",
-            "count": 7
+            "count": 26
           },
           {
             "trash_type": "plastic",
-            "count": 167
+            "count": 238
           },
           {
             "trash_type": "textile",
@@ -38867,19 +39052,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 5
+            "count": 9
           },
           {
             "trash_type": "metal",
-            "count": 11
+            "count": 40
           },
           {
             "trash_type": "rubber",
-            "count": 5
+            "count": 19
           },
           {
             "trash_type": "other",
-            "count": 44
+            "count": 88
           }
         ],
         "iso2": "NO"
@@ -39452,7 +39637,8 @@
           "2016-10-01": "36",
           "2016-11-01": "38",
           "2017-06-01": "39",
-          "2017-09-01": "41"
+          "2017-09-01": "41",
+          "2017-10-01": "43"
         },
         "reporters": [
           {
@@ -39461,7 +39647,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 27
+            "count": 29
           },
           {
             "reporter": "Trashout",
@@ -39471,7 +39657,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 26
+            "count": 28
           },
           {
             "trash_type": "construction",
@@ -39499,7 +39685,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 32
+            "count": 34
           },
           {
             "trash_type": "textile",
@@ -39515,11 +39701,11 @@
           },
           {
             "trash_type": "rubber",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "other",
-            "count": 24
+            "count": 26
           }
         ],
         "iso2": "NZ"
@@ -40029,12 +40215,14 @@
           "2013-02-01": "19",
           "2014-03-01": "20",
           "2016-10-01": "21",
-          "2016-11-01": "22"
+          "2016-11-01": "22",
+          "2017-10-01": "23",
+          "2017-12-01": "24"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 2
+            "count": 4
           },
           {
             "reporter": "Trashout",
@@ -40044,7 +40232,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "construction",
@@ -40056,7 +40244,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "litter",
@@ -40068,11 +40256,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "plastic",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "textile",
@@ -40084,15 +40272,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "rubber",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "other",
-            "count": 1
+            "count": 3
           }
         ],
         "iso2": "PK"
@@ -40382,12 +40570,14 @@
           "2017-07-01": "29",
           "2017-08-01": "40",
           "2017-09-01": "60",
-          "2017-10-01": "61"
+          "2017-10-01": "72",
+          "2017-11-01": "77",
+          "2017-12-01": "86"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 60
+            "count": 85
           },
           {
             "reporter": "Trashout",
@@ -40397,7 +40587,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 60
+            "count": 85
           },
           {
             "trash_type": "construction",
@@ -40409,7 +40599,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 9
+            "count": 10
           },
           {
             "trash_type": "litter",
@@ -40421,11 +40611,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 24
+            "count": 36
           },
           {
             "trash_type": "plastic",
-            "count": 60
+            "count": 85
           },
           {
             "trash_type": "textile",
@@ -40437,15 +40627,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 41
+            "count": 60
           },
           {
             "trash_type": "rubber",
-            "count": 16
+            "count": 21
           },
           {
             "trash_type": "other",
-            "count": 57
+            "count": 82
           }
         ],
         "iso2": "PA"
@@ -40679,7 +40869,8 @@
           "2016-07-01": "9",
           "2016-08-01": "10",
           "2016-10-01": "33",
-          "2016-11-01": "41"
+          "2016-11-01": "41",
+          "2017-10-01": "43"
         },
         "reporters": [
           {
@@ -40688,7 +40879,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 34
+            "count": 36
           },
           {
             "reporter": "Trashout",
@@ -40698,19 +40889,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 34
+            "count": 36
           },
           {
             "trash_type": "construction",
-            "count": 32
+            "count": 34
           },
           {
             "trash_type": "hazardous",
-            "count": 29
+            "count": 30
           },
           {
             "trash_type": "bulky",
-            "count": 31
+            "count": 33
           },
           {
             "trash_type": "litter",
@@ -40722,11 +40913,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 34
+            "count": 36
           },
           {
             "trash_type": "plastic",
-            "count": 35
+            "count": 37
           },
           {
             "trash_type": "textile",
@@ -40734,19 +40925,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 31
+            "count": 32
           },
           {
             "trash_type": "metal",
-            "count": 31
-          },
-          {
-            "trash_type": "rubber",
             "count": 33
           },
           {
-            "trash_type": "other",
+            "trash_type": "rubber",
             "count": 35
+          },
+          {
+            "trash_type": "other",
+            "count": 37
           }
         ],
         "iso2": "PE"
@@ -41086,7 +41277,10 @@
           "2017-06-01": "167",
           "2017-07-01": "309",
           "2017-08-01": "320",
-          "2017-09-01": "321"
+          "2017-09-01": "327",
+          "2017-10-01": "371",
+          "2017-11-01": "379",
+          "2017-12-01": "384"
         },
         "reporters": [
           {
@@ -41095,7 +41289,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 65
+            "count": 128
           },
           {
             "reporter": "Trashout",
@@ -41109,19 +41303,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 121
+            "count": 179
           },
           {
             "trash_type": "construction",
-            "count": 38
+            "count": 42
           },
           {
             "trash_type": "hazardous",
-            "count": 16
+            "count": 17
           },
           {
             "trash_type": "bulky",
-            "count": 30
+            "count": 50
           },
           {
             "trash_type": "litter",
@@ -41129,15 +41323,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 192
+            "count": 197
           },
           {
             "trash_type": "glass",
-            "count": 70
+            "count": 115
           },
           {
             "trash_type": "plastic",
-            "count": 182
+            "count": 238
           },
           {
             "trash_type": "textile",
@@ -41145,19 +41339,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 48
+            "count": 61
           },
           {
             "trash_type": "metal",
-            "count": 56
+            "count": 94
           },
           {
             "trash_type": "rubber",
-            "count": 8
+            "count": 17
           },
           {
             "trash_type": "other",
-            "count": 63
+            "count": 118
           }
         ],
         "iso2": "PH"
@@ -42580,12 +42774,14 @@
           "2017-07-01": "210",
           "2017-08-01": "233",
           "2017-09-01": "248",
-          "2017-10-01": "250"
+          "2017-10-01": "279",
+          "2017-11-01": "284",
+          "2017-12-01": "285"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 1
+            "count": 11
           },
           {
             "reporter": "MarineLitterWatch",
@@ -42593,7 +42789,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 54
+            "count": 79
           },
           {
             "reporter": "Trashout",
@@ -42603,19 +42799,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 53
+            "count": 77
           },
           {
             "trash_type": "construction",
-            "count": 2
+            "count": 5
           },
           {
             "trash_type": "hazardous",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "bulky",
-            "count": 11
+            "count": 25
           },
           {
             "trash_type": "litter",
@@ -42623,15 +42819,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 197
+            "count": 208
           },
           {
             "trash_type": "glass",
-            "count": 19
+            "count": 34
           },
           {
             "trash_type": "plastic",
-            "count": 64
+            "count": 95
           },
           {
             "trash_type": "textile",
@@ -42639,19 +42835,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 7
+            "count": 10
           },
           {
             "trash_type": "metal",
-            "count": 24
+            "count": 35
           },
           {
             "trash_type": "rubber",
-            "count": 11
+            "count": 20
           },
           {
             "trash_type": "other",
-            "count": 27
+            "count": 49
           }
         ],
         "iso2": "PT"
@@ -43020,18 +43216,19 @@
         "name": "Qatar",
         "dates": {
           "2016-10-01": "1",
-          "2017-10-01": "2"
+          "2017-10-01": "3",
+          "2017-11-01": "4"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 2
+            "count": 4
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "construction",
@@ -43043,7 +43240,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "litter",
@@ -43055,11 +43252,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "plastic",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "textile",
@@ -43071,15 +43268,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "rubber",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "other",
-            "count": 2
+            "count": 4
           }
         ],
         "iso2": "QA"
@@ -43508,14 +43705,14 @@
           "2016-04-01": "930",
           "2016-05-01": "950",
           "2016-06-01": "962",
-          "2016-07-01": "965",
-          "2016-08-01": "987",
-          "2016-09-01": "1027",
-          "2016-10-01": "1035",
-          "2016-11-01": "1059",
-          "2016-12-01": "1068",
-          "2017-01-01": "1070",
-          "2017-07-01": "1072"
+          "2016-07-01": "967",
+          "2016-08-01": "989",
+          "2016-09-01": "1029",
+          "2016-10-01": "1037",
+          "2016-11-01": "1061",
+          "2016-12-01": "1070",
+          "2017-01-01": "1072",
+          "2017-07-01": "1074"
         },
         "reporters": [
           {
@@ -47232,18 +47429,23 @@
       "properties": {
         "name": "Senegal",
         "dates": {
-          "2016-01-01": "1"
+          "2016-01-01": "1",
+          "2017-10-01": "2"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
+            "count": 1
+          },
+          {
+            "reporter": "OceanConservancy",
             "count": 1
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "construction",
@@ -47271,7 +47473,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "textile",
@@ -48478,12 +48680,14 @@
       "properties": {
         "name": "Suriname",
         "dates": {
-          "2016-10-01": "2"
+          "2016-10-01": "2",
+          "2017-10-01": "3",
+          "2017-11-01": "5"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 1
+            "count": 4
           },
           {
             "reporter": "Trashout",
@@ -48493,19 +48697,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 1
+            "count": 4
           },
           {
             "trash_type": "construction",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "hazardous",
-            "count": 0
+            "count": 2
           },
           {
             "trash_type": "bulky",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "litter",
@@ -48517,11 +48721,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "plastic",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "textile",
@@ -48533,7 +48737,7 @@
           },
           {
             "trash_type": "metal",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "rubber",
@@ -48541,7 +48745,7 @@
           },
           {
             "trash_type": "other",
-            "count": 1
+            "count": 4
           }
         ],
         "iso2": "SR"
@@ -48975,40 +49179,42 @@
           "2014-08-01": "11751",
           "2014-10-01": "11754",
           "2014-11-01": "11759",
-          "2015-01-01": "11856",
-          "2015-02-01": "12007",
-          "2015-03-01": "12020",
-          "2015-04-01": "12187",
-          "2015-05-01": "12367",
-          "2015-06-01": "12406",
-          "2015-07-01": "12409",
-          "2015-08-01": "12420",
-          "2015-09-01": "12459",
-          "2015-10-01": "12496",
-          "2015-11-01": "12703",
-          "2015-12-01": "12704",
-          "2016-01-01": "12718",
-          "2016-02-01": "12730",
-          "2016-03-01": "12835",
-          "2016-04-01": "12881",
-          "2016-05-01": "12891",
-          "2016-06-01": "12951",
-          "2016-08-01": "12956",
-          "2016-09-01": "12976",
-          "2016-10-01": "12979",
-          "2016-11-01": "13003",
-          "2016-12-01": "13007",
-          "2017-02-01": "13086",
-          "2017-03-01": "13123",
-          "2017-04-01": "13159",
-          "2017-05-01": "13170",
-          "2017-06-01": "13171",
-          "2017-07-01": "13172"
+          "2015-01-01": "11862",
+          "2015-02-01": "12013",
+          "2015-03-01": "12026",
+          "2015-04-01": "12197",
+          "2015-05-01": "12377",
+          "2015-06-01": "12416",
+          "2015-07-01": "12419",
+          "2015-08-01": "12430",
+          "2015-09-01": "12469",
+          "2015-10-01": "12506",
+          "2015-11-01": "12713",
+          "2015-12-01": "12714",
+          "2016-01-01": "12728",
+          "2016-02-01": "12740",
+          "2016-03-01": "12845",
+          "2016-04-01": "12891",
+          "2016-05-01": "12901",
+          "2016-06-01": "12961",
+          "2016-08-01": "12966",
+          "2016-09-01": "12986",
+          "2016-10-01": "12989",
+          "2016-11-01": "13013",
+          "2016-12-01": "13017",
+          "2017-02-01": "13096",
+          "2017-03-01": "13133",
+          "2017-04-01": "13169",
+          "2017-05-01": "13180",
+          "2017-06-01": "13185",
+          "2017-07-01": "13186",
+          "2017-08-01": "13190",
+          "2017-10-01": "13210"
         },
         "reporters": [
           {
             "reporter": "MarineLitterWatch",
-            "count": 34
+            "count": 72
           },
           {
             "reporter": "OceanConservancy",
@@ -49046,31 +49252,31 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 342
+            "count": 380
           },
           {
             "trash_type": "glass",
-            "count": 34
+            "count": 72
           },
           {
             "trash_type": "plastic",
-            "count": 36
+            "count": 74
           },
           {
             "trash_type": "textile",
-            "count": 24
+            "count": 56
           },
           {
             "trash_type": "lumber",
-            "count": 31
+            "count": 68
           },
           {
             "trash_type": "metal",
-            "count": 33
+            "count": 69
           },
           {
             "trash_type": "rubber",
-            "count": 26
+            "count": 55
           },
           {
             "trash_type": "other",
@@ -49192,7 +49398,9 @@
           "2016-01-01": "55",
           "2016-10-01": "108",
           "2016-11-01": "130",
-          "2016-12-01": "131"
+          "2016-12-01": "131",
+          "2017-11-01": "134",
+          "2017-12-01": "135"
         },
         "reporters": [
           {
@@ -49205,7 +49413,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 75
+            "count": 79
           },
           {
             "reporter": "Trashout",
@@ -49215,7 +49423,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 75
+            "count": 77
           },
           {
             "trash_type": "construction",
@@ -49227,7 +49435,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 14
+            "count": 15
           },
           {
             "trash_type": "litter",
@@ -49235,15 +49443,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 56
+            "count": 58
           },
           {
             "trash_type": "glass",
-            "count": 16
+            "count": 17
           },
           {
             "trash_type": "plastic",
-            "count": 55
+            "count": 57
           },
           {
             "trash_type": "textile",
@@ -49255,7 +49463,7 @@
           },
           {
             "trash_type": "metal",
-            "count": 21
+            "count": 22
           },
           {
             "trash_type": "rubber",
@@ -49263,7 +49471,7 @@
           },
           {
             "trash_type": "other",
-            "count": 41
+            "count": 43
           }
         ],
         "iso2": "SE"
@@ -50196,7 +50404,8 @@
           "2017-07-01": "164",
           "2017-08-01": "169",
           "2017-09-01": "173",
-          "2017-10-01": "174"
+          "2017-10-01": "180",
+          "2017-11-01": "182"
         },
         "reporters": [
           {
@@ -50205,7 +50414,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 105
+            "count": 113
           },
           {
             "reporter": "Trashout",
@@ -50215,7 +50424,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 103
+            "count": 108
           },
           {
             "trash_type": "construction",
@@ -50227,7 +50436,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 92
+            "count": 97
           },
           {
             "trash_type": "litter",
@@ -50235,15 +50444,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 70
+            "count": 73
           },
           {
             "trash_type": "glass",
-            "count": 92
+            "count": 97
           },
           {
             "trash_type": "plastic",
-            "count": 154
+            "count": 159
           },
           {
             "trash_type": "textile",
@@ -50255,15 +50464,15 @@
           },
           {
             "trash_type": "metal",
-            "count": 74
+            "count": 78
           },
           {
             "trash_type": "rubber",
-            "count": 21
+            "count": 23
           },
           {
             "trash_type": "other",
-            "count": 104
+            "count": 109
           }
         ],
         "iso2": "TH"
@@ -51146,7 +51355,8 @@
           "2012-07-01": "4",
           "2013-02-01": "5",
           "2016-04-01": "65",
-          "2016-10-01": "88"
+          "2016-10-01": "88",
+          "2017-10-01": "97"
         },
         "reporters": [
           {
@@ -51155,7 +51365,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 23
+            "count": 32
           },
           {
             "reporter": "Trashout",
@@ -51165,19 +51375,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 23
+            "count": 32
           },
           {
             "trash_type": "construction",
-            "count": 20
+            "count": 29
           },
           {
             "trash_type": "hazardous",
-            "count": 19
+            "count": 28
           },
           {
             "trash_type": "bulky",
-            "count": 19
+            "count": 28
           },
           {
             "trash_type": "litter",
@@ -51189,11 +51399,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 24
+            "count": 33
           },
           {
             "trash_type": "plastic",
-            "count": 72
+            "count": 81
           },
           {
             "trash_type": "textile",
@@ -51201,19 +51411,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 22
+            "count": 31
           },
           {
             "trash_type": "metal",
-            "count": 25
+            "count": 34
           },
           {
             "trash_type": "rubber",
-            "count": 19
+            "count": 28
           },
           {
             "trash_type": "other",
-            "count": 26
+            "count": 35
           }
         ],
         "iso2": "TT"
@@ -52008,12 +52218,13 @@
           "2016-11-01": "8",
           "2016-12-01": "16",
           "2017-07-01": "17",
-          "2017-09-01": "18"
+          "2017-09-01": "18",
+          "2017-10-01": "20"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 3
+            "count": 5
           },
           {
             "reporter": "Trashout",
@@ -52027,19 +52238,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "construction",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "hazardous",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "bulky",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "litter",
@@ -52051,11 +52262,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "plastic",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "textile",
@@ -52063,19 +52274,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "metal",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "rubber",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "other",
-            "count": 2
+            "count": 4
           }
         ],
         "iso2": "TZ"
@@ -52441,17 +52652,23 @@
           "2016-01-01": "83",
           "2016-02-01": "85",
           "2016-03-01": "112",
-          "2016-08-01": "124",
-          "2016-09-01": "143",
-          "2016-10-01": "144",
-          "2016-11-01": "149",
-          "2017-06-01": "150",
-          "2017-07-01": "151"
+          "2016-07-01": "113",
+          "2016-08-01": "125",
+          "2016-09-01": "144",
+          "2016-10-01": "145",
+          "2016-11-01": "150",
+          "2017-06-01": "151",
+          "2017-07-01": "152",
+          "2017-10-01": "153"
         },
         "reporters": [
           {
             "reporter": "MarineLitterWatch",
             "count": 2
+          },
+          {
+            "reporter": "OceanConservancy",
+            "count": 1
           },
           {
             "reporter": "Trashout",
@@ -52461,19 +52678,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "construction",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "hazardous",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "bulky",
-            "count": 0
+            "count": 1
           },
           {
             "trash_type": "litter",
@@ -52485,11 +52702,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "plastic",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "textile",
@@ -52497,19 +52714,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "metal",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "rubber",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "other",
-            "count": 0
+            "count": 1
           }
         ],
         "iso2": "UA"
@@ -53088,96 +53305,106 @@
       "properties": {
         "name": "United States of America",
         "dates": {
-          "2011-01-01": "14",
-          "2011-04-01": "131",
-          "2011-05-01": "151",
-          "2011-06-01": "196",
-          "2011-07-01": "371",
-          "2011-08-01": "445",
-          "2011-09-01": "540",
-          "2011-10-01": "630",
-          "2011-11-01": "2192",
-          "2011-12-01": "2538",
-          "2012-01-01": "2802",
-          "2012-02-01": "3135",
-          "2012-03-01": "3408",
-          "2012-04-01": "3688",
-          "2012-05-01": "4166",
-          "2012-06-01": "4775",
-          "2012-07-01": "5309",
-          "2012-08-01": "6029",
-          "2012-09-01": "6390",
-          "2012-10-01": "6690",
-          "2012-11-01": "7009",
-          "2012-12-01": "7285",
-          "2013-01-01": "7603",
-          "2013-02-01": "7954",
-          "2013-03-01": "8201",
-          "2013-04-01": "8679",
-          "2013-05-01": "9302",
-          "2013-06-01": "10274",
-          "2013-07-01": "10668",
-          "2013-08-01": "11344",
-          "2013-09-01": "11771",
-          "2013-10-01": "12412",
-          "2013-11-01": "12775",
-          "2013-12-01": "12924",
-          "2014-01-01": "13179",
-          "2014-02-01": "13730",
-          "2014-03-01": "14090",
-          "2014-04-01": "14795",
-          "2014-05-01": "15429",
-          "2014-06-01": "15978",
-          "2014-07-01": "16576",
-          "2014-08-01": "17072",
-          "2014-09-01": "17322",
-          "2014-10-01": "17794",
-          "2014-11-01": "18547",
-          "2014-12-01": "19180",
-          "2015-01-01": "19624",
-          "2015-02-01": "20186",
-          "2015-03-01": "20997",
-          "2015-04-01": "21978",
-          "2015-05-01": "22816",
-          "2015-06-01": "24402",
-          "2015-07-01": "26530",
-          "2015-08-01": "28412",
-          "2015-09-01": "30166",
-          "2015-10-01": "32203",
-          "2015-11-01": "33372",
-          "2015-12-01": "35126",
-          "2016-01-01": "36277",
-          "2016-02-01": "37552",
-          "2016-03-01": "39281",
-          "2016-04-01": "40986",
-          "2016-05-01": "43898",
-          "2016-06-01": "46033",
-          "2016-07-01": "49038",
-          "2016-08-01": "52186",
-          "2016-09-01": "54226",
-          "2016-10-01": "60154",
-          "2016-11-01": "62859",
-          "2016-12-01": "66434",
-          "2017-01-01": "67382",
-          "2017-02-01": "71360",
-          "2017-03-01": "73723",
-          "2017-04-01": "77931",
-          "2017-05-01": "81418",
-          "2017-06-01": "85581",
-          "2017-07-01": "91037",
-          "2017-08-01": "94189",
-          "2017-09-01": "97537",
-          "2017-10-01": "98101",
-          "2017-12-01": "98102"
+          "2010-04-01": "1",
+          "2010-06-01": "3",
+          "2010-09-01": "4",
+          "2010-10-01": "14",
+          "2010-11-01": "19",
+          "2011-01-01": "33",
+          "2011-04-01": "151",
+          "2011-05-01": "172",
+          "2011-06-01": "217",
+          "2011-07-01": "404",
+          "2011-08-01": "523",
+          "2011-09-01": "675",
+          "2011-10-01": "811",
+          "2011-11-01": "2425",
+          "2011-12-01": "2816",
+          "2012-01-01": "3100",
+          "2012-02-01": "3433",
+          "2012-03-01": "3707",
+          "2012-04-01": "3988",
+          "2012-05-01": "4467",
+          "2012-06-01": "5086",
+          "2012-07-01": "5655",
+          "2012-08-01": "6408",
+          "2012-09-01": "6808",
+          "2012-10-01": "7110",
+          "2012-11-01": "7438",
+          "2012-12-01": "7723",
+          "2013-01-01": "8051",
+          "2013-02-01": "8411",
+          "2013-03-01": "8671",
+          "2013-04-01": "9161",
+          "2013-05-01": "9796",
+          "2013-06-01": "10789",
+          "2013-07-01": "11203",
+          "2013-08-01": "11901",
+          "2013-09-01": "12353",
+          "2013-10-01": "13004",
+          "2013-11-01": "13378",
+          "2013-12-01": "13537",
+          "2014-01-01": "13801",
+          "2014-02-01": "14363",
+          "2014-03-01": "14732",
+          "2014-04-01": "15447",
+          "2014-05-01": "16104",
+          "2014-06-01": "16680",
+          "2014-07-01": "17307",
+          "2014-08-01": "17836",
+          "2014-09-01": "18108",
+          "2014-10-01": "18595",
+          "2014-11-01": "19372",
+          "2014-12-01": "20022",
+          "2015-01-01": "20482",
+          "2015-02-01": "21058",
+          "2015-03-01": "21882",
+          "2015-04-01": "22884",
+          "2015-05-01": "23740",
+          "2015-06-01": "25343",
+          "2015-07-01": "27488",
+          "2015-08-01": "29392",
+          "2015-09-01": "31167",
+          "2015-10-01": "33224",
+          "2015-11-01": "34410",
+          "2015-12-01": "36172",
+          "2016-01-01": "37369",
+          "2016-02-01": "38644",
+          "2016-03-01": "40373",
+          "2016-04-01": "42078",
+          "2016-05-01": "44990",
+          "2016-06-01": "47134",
+          "2016-07-01": "50147",
+          "2016-08-01": "53305",
+          "2016-09-01": "55358",
+          "2016-10-01": "61295",
+          "2016-11-01": "64003",
+          "2016-12-01": "67870",
+          "2017-01-01": "68827",
+          "2017-02-01": "72810",
+          "2017-03-01": "75174",
+          "2017-04-01": "79387",
+          "2017-05-01": "82923",
+          "2017-06-01": "87183",
+          "2017-07-01": "92644",
+          "2017-08-01": "95800",
+          "2017-09-01": "99179",
+          "2017-10-01": "105292",
+          "2017-11-01": "110540",
+          "2017-12-01": "112425"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 86282
+            "count": 95915
+          },
+          {
+            "reporter": "NOAA",
+            "count": 1003
           },
           {
             "reporter": "OceanConservancy",
-            "count": 9367
+            "count": 13089
           },
           {
             "reporter": "Trashout",
@@ -53187,55 +53414,55 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 8956
+            "count": 12301
           },
           {
             "trash_type": "construction",
-            "count": 2435
+            "count": 3512
           },
           {
             "trash_type": "hazardous",
-            "count": 1604
+            "count": 2250
           },
           {
             "trash_type": "bulky",
-            "count": 4624
+            "count": 6629
           },
           {
             "trash_type": "litter",
-            "count": 1182
+            "count": 1441
           },
           {
             "trash_type": "uncategorized",
-            "count": 87897
+            "count": 98566
           },
           {
             "trash_type": "glass",
-            "count": 7265
+            "count": 9758
           },
           {
             "trash_type": "plastic",
-            "count": 68392
+            "count": 79303
           },
           {
             "trash_type": "textile",
-            "count": 1983
+            "count": 2309
           },
           {
             "trash_type": "lumber",
-            "count": 10053
+            "count": 12052
           },
           {
             "trash_type": "metal",
-            "count": 11323
+            "count": 14154
           },
           {
             "trash_type": "rubber",
-            "count": 4876
+            "count": 6540
           },
           {
             "trash_type": "other",
-            "count": 17045
+            "count": 21277
           }
         ],
         "iso2": "US"
@@ -55300,12 +55527,13 @@
           "2016-09-01": "1",
           "2016-10-01": "165",
           "2016-12-01": "168",
-          "2017-01-01": "170"
+          "2017-01-01": "170",
+          "2017-10-01": "188"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 169
+            "count": 187
           },
           {
             "reporter": "Trashout",
@@ -55315,19 +55543,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 169
+            "count": 187
           },
           {
             "trash_type": "construction",
-            "count": 115
+            "count": 129
           },
           {
             "trash_type": "hazardous",
-            "count": 113
+            "count": 125
           },
           {
             "trash_type": "bulky",
-            "count": 110
+            "count": 124
           },
           {
             "trash_type": "litter",
@@ -55339,11 +55567,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 160
+            "count": 177
           },
           {
             "trash_type": "plastic",
-            "count": 169
+            "count": 187
           },
           {
             "trash_type": "textile",
@@ -55351,19 +55579,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 128
+            "count": 141
           },
           {
             "trash_type": "metal",
-            "count": 154
+            "count": 171
           },
           {
             "trash_type": "rubber",
-            "count": 106
+            "count": 120
           },
           {
             "trash_type": "other",
-            "count": 169
+            "count": 186
           }
         ],
         "iso2": "VE"
@@ -55755,16 +55983,17 @@
           "2016-07-01": "194",
           "2016-10-01": "331",
           "2016-11-01": "333",
-          "2016-12-01": "334"
+          "2016-12-01": "334",
+          "2017-10-01": "495"
         },
         "reporters": [
           {
             "reporter": "MarineDebrisTracker",
-            "count": 327
+            "count": 485
           },
           {
             "reporter": "OceanConservancy",
-            "count": 6
+            "count": 9
           },
           {
             "reporter": "Trashout",
@@ -55774,19 +56003,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 6
+            "count": 9
           },
           {
             "trash_type": "construction",
-            "count": 2
+            "count": 3
           },
           {
             "trash_type": "hazardous",
-            "count": 1
+            "count": 2
           },
           {
             "trash_type": "bulky",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "litter",
@@ -55794,35 +56023,35 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 328
+            "count": 486
           },
           {
             "trash_type": "glass",
-            "count": 17
+            "count": 22
           },
           {
             "trash_type": "plastic",
-            "count": 169
+            "count": 298
           },
           {
             "trash_type": "textile",
-            "count": 18
+            "count": 22
           },
           {
             "trash_type": "lumber",
-            "count": 18
+            "count": 19
           },
           {
             "trash_type": "metal",
-            "count": 10
+            "count": 14
           },
           {
             "trash_type": "rubber",
-            "count": 7
+            "count": 13
           },
           {
             "trash_type": "other",
-            "count": 112
+            "count": 131
           }
         ],
         "iso2": "VN"
@@ -56021,30 +56250,33 @@
           "2016-11-01": "8",
           "2017-02-01": "11",
           "2017-03-01": "15",
-          "2017-05-01": "16"
+          "2017-05-01": "16",
+          "2017-09-01": "17",
+          "2017-10-01": "23",
+          "2017-11-01": "25"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 16
+            "count": 25
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 16
+            "count": 25
           },
           {
             "trash_type": "construction",
-            "count": 6
+            "count": 13
           },
           {
             "trash_type": "hazardous",
-            "count": 4
+            "count": 9
           },
           {
             "trash_type": "bulky",
-            "count": 5
+            "count": 11
           },
           {
             "trash_type": "litter",
@@ -56056,11 +56288,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 8
+            "count": 16
           },
           {
             "trash_type": "plastic",
-            "count": 13
+            "count": 22
           },
           {
             "trash_type": "textile",
@@ -56068,19 +56300,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 6
+            "count": 12
           },
           {
             "trash_type": "metal",
-            "count": 15
+            "count": 23
           },
           {
             "trash_type": "rubber",
-            "count": 6
+            "count": 11
           },
           {
             "trash_type": "other",
-            "count": 16
+            "count": 25
           }
         ],
         "iso2": "VU"
@@ -56486,7 +56718,9 @@
           "2017-07-01": "122",
           "2017-08-01": "274",
           "2017-09-01": "324",
-          "2017-10-01": "331"
+          "2017-10-01": "407",
+          "2017-11-01": "425",
+          "2017-12-01": "440"
         },
         "reporters": [
           {
@@ -56495,7 +56729,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 150
+            "count": 259
           },
           {
             "reporter": "Trashout",
@@ -56505,19 +56739,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 148
+            "count": 246
           },
           {
             "trash_type": "construction",
-            "count": 42
+            "count": 70
           },
           {
             "trash_type": "hazardous",
-            "count": 45
+            "count": 71
           },
           {
             "trash_type": "bulky",
-            "count": 87
+            "count": 146
           },
           {
             "trash_type": "litter",
@@ -56525,15 +56759,15 @@
           },
           {
             "trash_type": "uncategorized",
-            "count": 182
+            "count": 193
           },
           {
             "trash_type": "glass",
-            "count": 94
+            "count": 159
           },
           {
             "trash_type": "plastic",
-            "count": 276
+            "count": 373
           },
           {
             "trash_type": "textile",
@@ -56541,19 +56775,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 41
+            "count": 55
           },
           {
             "trash_type": "metal",
-            "count": 83
+            "count": 136
           },
           {
             "trash_type": "rubber",
-            "count": 57
+            "count": 90
           },
           {
             "trash_type": "other",
-            "count": 165
+            "count": 253
           }
         ],
         "iso2": "ZA"
@@ -58020,7 +58254,9 @@
           "2016-04-01": "2",
           "2016-10-01": "3",
           "2016-11-01": "4",
-          "2016-12-01": "5"
+          "2016-12-01": "5",
+          "2017-07-01": "6",
+          "2017-08-01": "7"
         },
         "reporters": [
           {
@@ -58029,25 +58265,25 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 3
+            "count": 5
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "construction",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "hazardous",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "bulky",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "litter",
@@ -58059,11 +58295,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "plastic",
-            "count": 4
+            "count": 6
           },
           {
             "trash_type": "textile",
@@ -58071,19 +58307,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 2
-          },
-          {
-            "trash_type": "metal",
             "count": 3
           },
           {
+            "trash_type": "metal",
+            "count": 5
+          },
+          {
             "trash_type": "rubber",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "other",
-            "count": 4
+            "count": 6
           }
         ],
         "iso2": "VG"
@@ -58652,30 +58888,31 @@
       "properties": {
         "name": "Cayman Islands",
         "dates": {
-          "2016-10-01": "1"
+          "2016-10-01": "1",
+          "2017-10-01": "6"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 1
+            "count": 6
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 1
+            "count": 6
           },
           {
             "trash_type": "construction",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "hazardous",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "bulky",
-            "count": 1
+            "count": 4
           },
           {
             "trash_type": "litter",
@@ -58687,11 +58924,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 1
+            "count": 6
           },
           {
             "trash_type": "plastic",
-            "count": 1
+            "count": 6
           },
           {
             "trash_type": "textile",
@@ -58699,19 +58936,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "metal",
-            "count": 1
+            "count": 5
           },
           {
             "trash_type": "rubber",
-            "count": 1
+            "count": 3
           },
           {
             "trash_type": "other",
-            "count": 1
+            "count": 6
           }
         ],
         "iso2": "KY"
@@ -58996,12 +59233,14 @@
           "2012-12-01": "4",
           "2016-10-01": "7",
           "2017-04-01": "9",
-          "2017-07-01": "10"
+          "2017-07-01": "10",
+          "2017-09-01": "11",
+          "2017-12-01": "12"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 6
+            "count": 8
           },
           {
             "reporter": "Trashout",
@@ -59011,11 +59250,11 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 6
+            "count": 8
           },
           {
             "trash_type": "construction",
-            "count": 4
+            "count": 5
           },
           {
             "trash_type": "hazardous",
@@ -59023,7 +59262,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "litter",
@@ -59039,7 +59278,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "textile",
@@ -59047,19 +59286,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 2
-          },
-          {
-            "trash_type": "metal",
             "count": 3
           },
           {
+            "trash_type": "metal",
+            "count": 5
+          },
+          {
             "trash_type": "rubber",
-            "count": 2
+            "count": 4
           },
           {
             "trash_type": "other",
-            "count": 5
+            "count": 7
           }
         ],
         "iso2": "GD"
@@ -59226,30 +59465,31 @@
         "dates": {
           "2016-01-01": "1",
           "2016-10-01": "20",
-          "2017-02-01": "23"
+          "2017-02-01": "23",
+          "2017-10-01": "24"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 23
+            "count": 24
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 23
+            "count": 24
           },
           {
             "trash_type": "construction",
-            "count": 16
-          },
-          {
-            "trash_type": "hazardous",
             "count": 17
           },
           {
+            "trash_type": "hazardous",
+            "count": 18
+          },
+          {
             "trash_type": "bulky",
-            "count": 21
+            "count": 22
           },
           {
             "trash_type": "litter",
@@ -59261,11 +59501,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 20
+            "count": 21
           },
           {
             "trash_type": "plastic",
-            "count": 21
+            "count": 22
           },
           {
             "trash_type": "textile",
@@ -59273,19 +59513,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 17
+            "count": 18
           },
           {
             "trash_type": "metal",
-            "count": 22
+            "count": 23
           },
           {
             "trash_type": "rubber",
-            "count": 16
+            "count": 17
           },
           {
             "trash_type": "other",
-            "count": 23
+            "count": 24
           }
         ],
         "iso2": "GU"
@@ -59769,7 +60009,8 @@
           "2015-05-01": "1",
           "2016-10-01": "3",
           "2016-11-01": "5",
-          "2016-12-01": "6"
+          "2016-12-01": "6",
+          "2017-10-01": "8"
         },
         "reporters": [
           {
@@ -59778,7 +60019,7 @@
           },
           {
             "reporter": "OceanConservancy",
-            "count": 4
+            "count": 6
           },
           {
             "reporter": "Trashout",
@@ -59788,19 +60029,19 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 4
+            "count": 6
           },
           {
             "trash_type": "construction",
-            "count": 4
+            "count": 6
           },
           {
             "trash_type": "hazardous",
-            "count": 4
+            "count": 6
           },
           {
             "trash_type": "bulky",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "litter",
@@ -59812,11 +60053,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "plastic",
-            "count": 5
+            "count": 7
           },
           {
             "trash_type": "textile",
@@ -59824,19 +60065,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 3
-          },
-          {
-            "trash_type": "metal",
             "count": 5
           },
           {
+            "trash_type": "metal",
+            "count": 7
+          },
+          {
             "trash_type": "rubber",
-            "count": 3
+            "count": 5
           },
           {
             "trash_type": "other",
-            "count": 4
+            "count": 6
           }
         ],
         "iso2": "MU"
@@ -60263,30 +60504,31 @@
       "properties": {
         "name": "Saint Kitts and Nevis",
         "dates": {
-          "2016-10-01": "1"
+          "2016-10-01": "1",
+          "2017-11-01": "29"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 1
+            "count": 29
           }
         ],
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 1
+            "count": 29
           },
           {
             "trash_type": "construction",
-            "count": 1
+            "count": 27
           },
           {
             "trash_type": "hazardous",
-            "count": 1
+            "count": 21
           },
           {
             "trash_type": "bulky",
-            "count": 1
+            "count": 25
           },
           {
             "trash_type": "litter",
@@ -60298,11 +60540,11 @@
           },
           {
             "trash_type": "glass",
-            "count": 1
+            "count": 26
           },
           {
             "trash_type": "plastic",
-            "count": 1
+            "count": 29
           },
           {
             "trash_type": "textile",
@@ -60310,19 +60552,19 @@
           },
           {
             "trash_type": "lumber",
-            "count": 1
+            "count": 18
           },
           {
             "trash_type": "metal",
-            "count": 1
+            "count": 25
           },
           {
             "trash_type": "rubber",
-            "count": 1
+            "count": 17
           },
           {
             "trash_type": "other",
-            "count": 1
+            "count": 29
           }
         ],
         "iso2": "KN"
@@ -60600,12 +60842,13 @@
           "2012-10-01": "4",
           "2012-11-01": "5",
           "2016-08-01": "6",
-          "2016-10-01": "15"
+          "2016-10-01": "15",
+          "2017-11-01": "16"
         },
         "reporters": [
           {
             "reporter": "OceanConservancy",
-            "count": 10
+            "count": 11
           },
           {
             "reporter": "Trashout",
@@ -60615,7 +60858,7 @@
         "trash_stats": [
           {
             "trash_type": "household",
-            "count": 10
+            "count": 11
           },
           {
             "trash_type": "construction",
@@ -60627,7 +60870,7 @@
           },
           {
             "trash_type": "bulky",
-            "count": 9
+            "count": 10
           },
           {
             "trash_type": "litter",
@@ -60643,7 +60886,7 @@
           },
           {
             "trash_type": "plastic",
-            "count": 10
+            "count": 11
           },
           {
             "trash_type": "textile",
@@ -60663,7 +60906,7 @@
           },
           {
             "trash_type": "other",
-            "count": 10
+            "count": 11
           }
         ],
         "iso2": "VC"

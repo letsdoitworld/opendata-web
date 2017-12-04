@@ -16,7 +16,8 @@
     "react/prefer-stateless-function": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "react/forbid-prop-types": "off"
   },
   "env": {
     "browser": true,

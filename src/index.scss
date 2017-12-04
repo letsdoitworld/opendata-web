@@ -76,4 +76,6 @@ small {
 @import 'loading/LoadingScreen';
 @import 'error/ErrorScreen';
 @import 'details/Details';
-@import 'about/About';
+@import 'overlay/OverlayWindow';
+@import 'overlay/about/About';
+@import 'overlay/aboutUnEnvironmentAssembly/AboutAssembly';

@@ -1,0 +1,137 @@
+.modal.assembly-content {
+  h1 {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  p.header {
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  ul {
+    margin-bottom: 1rem;
+    li {
+      font-size: .8rem;
+      margin-bottom: .5rem;
+      letter-spacing: -.025rem;
+      list-style-type: none;
+      &:before {
+        position: absolute;
+        margin-left: -1.3rem;
+        content: '→';
+        color: #bbb;
+        transform: scale(1.5) translateY(-.1rem);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.modal {
+  .modal-content {
+    .legend {
+      float: none;
+      margin-right: 1rem;
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: .5rem;
+        width: .5rem;
+        height: .5rem;
+      }
+      &.recycled:before {
+        background: #81E217;
+      }
+      &.landfill:before {
+        background: #ddd;
+      }
+      &.mismanaged:before {
+        background: indianred;
+      }
+    }
+
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      h3 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
+      > div {
+        flex: 1;
+        min-width: 280px;
+      }
+      .info-content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 2.6rem;
+        > p {
+          line-height: 1rem;
+        }
+      }
+    }
+    a.img-container {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      img {
+        width: 100%;
+        padding: 0;
+      }
+      &:hover::after {
+        z-index: 2;
+        content: 'Detailed view →';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(255,255,255,0.4);
+      }
+    }
+    .label {
+    }
+    .waste-index {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: -.15rem;
+      margin-bottom: 0.2rem !important;
+    }
+    ul {
+      li {
+        line-height: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+    ul.small {
+      li {
+        margin-bottom: .25rem;
+        &:before {
+          font-size: .8rem;
+          transform: none;
+          margin-left: -1rem;
+        }
+      }
+    }
+  }
+}
+
+@import 'AboutAssemblyButton';
+@import 'AssemblyCountrySwitcher';

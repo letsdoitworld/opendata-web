@@ -16,9 +16,12 @@ import Helpers from './Helpers';
 import populationData from './json/country-by-population.json';
 import Country from './Country';
 import calculateTRI from './trashReportIndex';
-import About from './about/About';
+import About from './overlay/about/About';
+import AboutAssembly from './overlay/aboutUnEnvironmentAssembly/AboutAssembly';
 
 export default class App extends Component {
+    static ABOUT_PAGE = 'about';
+    static ASSEMBLY_PAGE = 'assembly';
     constructor(props) {
         const parsedHash = queryString.parse(window.location.hash);
         super(props);
@@ -26,7 +29,7 @@ export default class App extends Component {
             state: States.state.LOADING,
             mode: parsedHash.country ? Modes.mode.COUNTRY : Modes.mode.WORLD,
             selectedCountry: new Country(),
-            aboutPageVisible: false,
+            visibleOverlay: null,
         };
         this.onTimelineChange = this.onTimelineChange.bind(this);
 
@@ -76,15 +79,18 @@ export default class App extends Component {
             numberOfReports,
         });
     }
-    hideAboutPage = () => {
-        this.setState({aboutPageVisible: false});
+    hideOverlay = () => {
+        this.setState({visibleOverlay: null});
     };
     showAboutPage = () => {
-        this.setState({aboutPageVisible: true});
+        this.setState({visibleOverlay: App.ABOUT_PAGE});
 
         // Record pageview
         ReactGA.set({page: window.location.pathname + window.location.search});
         ReactGA.modalview('/about/');
+    };
+    showAssemblyPage = () => {
+        this.setState({visibleOverlay: App.ASSEMBLY_PAGE});
     };
     initGraphData() {
         return $.get('/json/graphData.json', (data) => {
@@ -158,6 +164,7 @@ export default class App extends Component {
                             mode={this.state.mode}
                             selectedCountry={this.state.selectedCountry}
                             onAboutButtonClick={this.showAboutPage}
+                            onAssemblyButtonClick={this.showAssemblyPage}
                         />
                         <TimeLine
                             mode={this.state.mode}
@@ -175,8 +182,12 @@ export default class App extends Component {
                     </div>
                 </div>
                 <About
-                    visible={this.state.aboutPageVisible}
-                    onClose={this.hideAboutPage}
+                    visible={this.state.visibleOverlay === App.ABOUT_PAGE}
+                    onClose={this.hideOverlay}
+                />
+                <AboutAssembly
+                    visible={this.state.visibleOverlay === App.ASSEMBLY_PAGE}
+                    onClose={this.hideOverlay}
                 />
             </div>
         );

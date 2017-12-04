@@ -1,0 +1,25 @@
+.assembly-button {
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  float: right;
+  @media (min-width: 900px) {
+    img {
+      margin-top: -.5rem;
+    }
+  }
+  img {
+    width: 3.5em;
+    transition: all .3s;
+    &:hover {
+    	opacity: .6;
+    }
+    &:active {
+    	transition: all 0s;
+    	transform: scale(.8);
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}

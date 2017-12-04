@@ -1,0 +1,47 @@
+[
+  {
+    "name": "USA",
+    "population": 324459463,
+    "municipalWaste": 228614990,
+    "gdp": 57466,
+    "recycled": 23.8,
+    "mismanaged": 0,
+    "cartoURL": "https://worldcleanupday.carto.com/builder/9a556c37-7330-4dc6-8dbc-efd933f655f8/embed"
+  },
+  {
+    "name": "Kenya",
+    "population": 49699862,
+    "municipalWaste": 5442134.89,
+    "gdp": 3155,
+    "recycled": 0,
+    "mismanaged": 70,
+    "cartoURL": "https://worldcleanupday.carto.com/builder/bbb21bf9-3e66-438e-adb5-98b550e48155/embed"
+  },
+  {
+    "name": "Thailand",
+    "population": 69037513,
+    "municipalWaste": 25374273,
+    "gdp": 16916,
+    "recycled": 11,
+    "mismanaged": 60,
+    "cartoURL": "https://worldcleanupday.carto.com/builder/879029a9-a347-4d69-adf1-c6b6d3d17a97/embed"
+  },
+  {
+    "name": "Germany",
+    "population": 82114224,
+    "municipalWaste": 51321390,
+    "gdp": 48729,
+    "recycled": 64,
+    "mismanaged": 0,
+    "cartoURL": "https://worldcleanupday.carto.com/builder/d65b80e8-14dd-4138-88af-b0786a743e05/embed"
+  },
+  {
+    "name": "Argentina",
+    "population": 44271041,
+    "municipalWaste": 13694435,
+    "gdp": 19934,
+    "recycled": 0,
+    "mismanaged": 35,
+    "cartoURL": "https://worldcleanupday.carto.com/builder/30c79297-6b49-4871-abdd-adad3f116468/embed"
+  }
+]
