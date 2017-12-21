@@ -42,6 +42,13 @@ export default class About extends Component {
                         href="https://opendata.letsdoitworld.org/analytics/single/?appid=3d7e26a3-298b-4cb8-aef9-80ec65196542&sheet=jjsmF&opt=currsel&select=country,World"
                     >
                         data from eight trash mapping apps
+                    </a>, data compiled by&nbsp;
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="http://andrewgray.ucr.edu/"
+                    >
+                    Gray’s Lab
                     </a>&nbsp;and we will continue this quest until all the trash is mapped.
                 </p>
                 <p>
@@ -81,7 +88,8 @@ export default class About extends Component {
                     </a> and population on
                     <a className="no-highlight" target="_blank" rel="noreferrer noopener" href="http://api.population.io/">
                         World Population API
-                    </a> data.
+                    </a> data.<br />
+                    Additional sources: NOAA, Clean Cost Index.
                 </small>
             </OverlayWindow>
 

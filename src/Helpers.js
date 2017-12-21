@@ -67,4 +67,10 @@ export default class Helpers {
 
         return output;
     }
+    static separateThousands(input) {
+        if (isNaN(parseFloat(input))) {
+            return input;
+        }
+        return parseFloat(input).toLocaleString('en-US').split(',').join(' ');
+    }
 }

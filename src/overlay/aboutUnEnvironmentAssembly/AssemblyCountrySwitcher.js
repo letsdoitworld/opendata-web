@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helpers from '../../Helpers';
 
 const calculateAdditionalValues = (country) => {
     const wastePerPerson = (country.municipalWaste / country.population) * 1000;
@@ -19,7 +20,13 @@ const Country = ({country, onClick}) => {
     const onCountryClick = () => {
         onClick(country);
     };
-    const {wastePerPerson, recycled, landfill, mismanaged} = calculateAdditionalValues(country);
+    const {
+        wasteIndex,
+        wastePerPerson,
+        recycled,
+        landfill,
+        mismanaged,
+    } = calculateAdditionalValues(country);
     const recycledHeight = (wastePerPerson * (recycled / 100)) / 2;
     const landfillHeight = (wastePerPerson * (landfill / 100)) / 2;
     const mismanagedHeight = (wastePerPerson * (mismanaged / 100)) / 2;
@@ -31,6 +38,9 @@ const Country = ({country, onClick}) => {
                     <div className="bar landfill" style={{height: `${landfillHeight}px`}} />
                     <div className="bar mismanaged" style={{height: `${mismanagedHeight}px`}} />
                 </div>
+                <small className="country-index">
+                    Waste Index {wasteIndex.toFixed(2)}%
+                </small>
                 <div className="country-name">
                     {country.name}
                 </div>
@@ -61,7 +71,7 @@ const AssemblyCountrySwitcher = ({countries, onCountrySelected}) => (
         <br />
         <small className="legend landfill">Collected and not recycled/composted</small>
         <br />
-        <small>* Click on the country name for more information.</small>
+        <small>* Click on the country name for more information below.</small>
     </div>
 );
 
@@ -87,7 +97,7 @@ const DetailedCountryInfo = ({country}) => {
                     />
                 </a>
                 <div style={{position: 'relative', bottom: '3.1rem', marginBottom: '-3.1rem', marginLeft: '0.3rem', pointerEvents: 'none'}}>
-                    <p className="waste-index">{Math.floor(wasteIndex * 100) / 100}</p>
+                    <p className="waste-index">{wasteIndex.toFixed(2)}</p>
                     <p className="label">World Waste Index</p>
                 </div>
             </div>
@@ -96,10 +106,10 @@ const DetailedCountryInfo = ({country}) => {
                 <p>Mismanaged disposal, not collected <b>{country.mismanaged}%</b></p>
                 <p>Recycled and composted <b>{country.recycled}%</b></p>
                 <p>Not recycled/composted <b>{landfill}%</b></p>
-                <p>Number of people <b>{country.population}</b></p>
+                <p>Number of people <b>{Helpers.separateThousands(country.population)}</b></p>
                 <p>MSW per person <b>{wastePerPerson.toFixed(2)} kg</b></p>
-                <p>MSW per country <b>{country.municipalWaste} kg</b></p>
-                <p>GDP US2016 <b>{country.gdp}</b> dollars per person</p>
+                <p>MSW per country <b>{Helpers.separateThousands(country.municipalWaste)} kg</b></p>
+                <p>GDP US2016 <b>{Helpers.separateThousands(country.gdp)}</b> dollars per person</p>
             </div>
         </div>
     );
