@@ -39,7 +39,7 @@ const Country = ({country, onClick}) => {
                     <div className="bar mismanaged" style={{height: `${mismanagedHeight}px`}} />
                 </div>
                 <small className="country-index">
-                    Waste Index {wasteIndex.toFixed(2)}%
+                    Waste Index {wasteIndex.toFixed(2)}
                 </small>
                 <div className="country-name">
                     {country.name}
