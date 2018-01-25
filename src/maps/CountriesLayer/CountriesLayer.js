@@ -54,7 +54,7 @@ export default class CountriesLayer extends Component {
                 this.selectCountry(countryLayer);
             }
         } else {
-            this.props.onModeChange(Modes.mode.WORLD, new Country());
+            this.props.onModeChange(Modes.mode.WORLD);
             this.props.onBoundsChange(bounds);
         }
     };
@@ -108,8 +108,6 @@ export default class CountriesLayer extends Component {
         if (this.props.mode === Modes.mode.COUNTRY) return;
         const countryLayer = e.target;
         this.selectCountry(countryLayer);
-        const hash = queryString.stringify({country: countryLayer.feature.properties.name});
-        window.location.hash = '#' + hash;
     };
     selectCountry(countryLayer) {
         const selectedCountry = new Country(

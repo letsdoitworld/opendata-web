@@ -3,6 +3,7 @@ export default class Modes {
         return {
             WORLD: 'WORLD',
             COUNTRY: 'COUNTRY',
+            ABOUT_ASSEMBLY: 'DEMO',
         };
     }
 }

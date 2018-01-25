@@ -111,11 +111,10 @@ export default class StatsMap extends Component {
         <div>Loading...</div>
     );
     resetSelectedCountry = () => {
-        this.props.onModeChange(Modes.mode.WORLD, new Country());
+        this.props.onModeChange(Modes.mode.WORLD);
         this.setState({
             bounds: this.state.maxBounds,
         });
-        window.location.hash = '';
     };
     render() {
         const {selectedCountry, population, numberOfReports, mode, date} = this.props;

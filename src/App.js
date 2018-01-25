@@ -22,6 +22,18 @@ import AboutAssembly from './overlay/aboutUnEnvironmentAssembly/AboutAssembly';
 export default class App extends Component {
     static ABOUT_PAGE = 'about';
     static ASSEMBLY_PAGE = 'assembly';
+    static getQueryObject(mode, selectedCountry) {
+        if (mode === Modes.mode.ABOUT_ASSEMBLY) {
+            return {demo: null};
+        } else if (mode === Modes.mode.COUNTRY && selectedCountry.name) {
+            return {country: selectedCountry.name};
+        }
+        return {};
+    }
+    static setWindowLocationHash(queryObject) {
+        const hash = !queryObject ? '' : queryString.stringify(queryObject);
+        window.location.hash = '#' + hash;
+    }
     constructor(props) {
         const parsedHash = queryString.parse(window.location.hash);
         super(props);
@@ -46,6 +58,10 @@ export default class App extends Component {
             });
             Helpers.validatePopulationData(this.state.geoJSON, populationData);
 
+            if (Object.keys(queryString.parse(window.location.hash)).indexOf('demo') !== -1) {
+                this.setState({visibleOverlay: App.ASSEMBLY_PAGE});
+            }
+
             // Record pageview
             ReactGA.set({page: window.location.pathname + window.location.search});
             ReactGA.pageview(window.location.pathname + window.location.search);
@@ -56,10 +72,17 @@ export default class App extends Component {
         });
     }
     onModeChange = (mode, selectedCountry) => {
+        if (this.state.visibleOverlay) {
+            return;
+        }
+        if (!selectedCountry) {
+            selectedCountry = new Country();
+        }
         this.setState({
             mode,
             selectedCountry,
         });
+        App.setWindowLocationHash(App.getQueryObject(mode, selectedCountry));
 
         // Record pageview
         if (selectedCountry.name) {
@@ -81,6 +104,7 @@ export default class App extends Component {
     }
     hideOverlay = () => {
         this.setState({visibleOverlay: null});
+        App.setWindowLocationHash(App.getQueryObject(Modes.mode.WORLD));
     };
     showAboutPage = () => {
         this.setState({visibleOverlay: App.ABOUT_PAGE});
@@ -91,6 +115,8 @@ export default class App extends Component {
     };
     showAssemblyPage = () => {
         this.setState({visibleOverlay: App.ASSEMBLY_PAGE});
+        App.setWindowLocationHash(App.getQueryObject(Modes.mode.ABOUT_ASSEMBLY));
+        ReactGA.modalview('/demo/');
     };
     initGraphData() {
         return $.get('/json/graphData.json', (data) => {

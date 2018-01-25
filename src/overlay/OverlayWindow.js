@@ -12,11 +12,16 @@ const OverlayWindow = ({visible, onClose, children, className}) => (
     </div>
 );
 
+OverlayWindow.defaultProps = {
+    className: '',
+};
+
+
 OverlayWindow.propTypes = {
     visible: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
-    children: PropTypes.object.isRequired,
-    className: PropTypes.string.isRequired,
+    children: PropTypes.array.isRequired,
+    className: PropTypes.string,
 };
 
 export default OverlayWindow;

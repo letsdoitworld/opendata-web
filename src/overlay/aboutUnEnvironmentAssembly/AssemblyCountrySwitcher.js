@@ -60,6 +60,7 @@ const AssemblyCountrySwitcher = ({countries, onCountrySelected}) => (
         <div className="bar-graph">
             {countries.map(country => (
                 <Country
+                    key={country.name}
                     country={country}
                     onClick={onCountrySelected}
                 />
@@ -76,7 +77,7 @@ const AssemblyCountrySwitcher = ({countries, onCountrySelected}) => (
 );
 
 AssemblyCountrySwitcher.propTypes = {
-    countries: PropTypes.instanceOf(PropTypes.object).isRequired,
+    countries: PropTypes.array.isRequired,
     onCountrySelected: PropTypes.func.isRequired,
 };
 
