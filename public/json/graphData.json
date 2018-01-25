@@ -291,95 +291,103 @@
     },
     {
       "day": "2016-01-31T22:00:00.000Z",
-      "number_of_reports": "74657"
+      "number_of_reports": "74660"
     },
     {
       "day": "2016-02-29T22:00:00.000Z",
-      "number_of_reports": "77227"
+      "number_of_reports": "77235"
     },
     {
       "day": "2016-03-31T21:00:00.000Z",
-      "number_of_reports": "79772"
+      "number_of_reports": "79803"
     },
     {
       "day": "2016-04-30T21:00:00.000Z",
-      "number_of_reports": "83463"
+      "number_of_reports": "83723"
     },
     {
       "day": "2016-05-31T21:00:00.000Z",
-      "number_of_reports": "86736"
+      "number_of_reports": "87300"
     },
     {
       "day": "2016-06-30T21:00:00.000Z",
-      "number_of_reports": "90138"
+      "number_of_reports": "90884"
     },
     {
       "day": "2016-07-31T21:00:00.000Z",
-      "number_of_reports": "93835"
+      "number_of_reports": "94692"
     },
     {
       "day": "2016-08-31T21:00:00.000Z",
-      "number_of_reports": "97025"
+      "number_of_reports": "97982"
     },
     {
       "day": "2016-09-30T21:00:00.000Z",
-      "number_of_reports": "106855"
+      "number_of_reports": "108215"
     },
     {
       "day": "2016-10-31T22:00:00.000Z",
-      "number_of_reports": "110599"
+      "number_of_reports": "112135"
     },
     {
       "day": "2016-11-30T22:00:00.000Z",
-      "number_of_reports": "114924"
+      "number_of_reports": "116494"
     },
     {
       "day": "2016-12-31T22:00:00.000Z",
-      "number_of_reports": "116556"
+      "number_of_reports": "118131"
     },
     {
       "day": "2017-01-31T22:00:00.000Z",
-      "number_of_reports": "120828"
+      "number_of_reports": "123067"
     },
     {
       "day": "2017-02-28T22:00:00.000Z",
-      "number_of_reports": "123432"
+      "number_of_reports": "126253"
     },
     {
       "day": "2017-03-31T21:00:00.000Z",
-      "number_of_reports": "127922"
+      "number_of_reports": "131386"
     },
     {
       "day": "2017-04-30T21:00:00.000Z",
-      "number_of_reports": "132589"
+      "number_of_reports": "136676"
     },
     {
       "day": "2017-05-31T21:00:00.000Z",
-      "number_of_reports": "137431"
+      "number_of_reports": "142110"
     },
     {
       "day": "2017-06-30T21:00:00.000Z",
-      "number_of_reports": "144421"
+      "number_of_reports": "149361"
     },
     {
       "day": "2017-07-31T21:00:00.000Z",
-      "number_of_reports": "148173"
+      "number_of_reports": "153714"
     },
     {
       "day": "2017-08-31T21:00:00.000Z",
-      "number_of_reports": "152026"
+      "number_of_reports": "158212"
     },
     {
       "day": "2017-09-30T21:00:00.000Z",
-      "number_of_reports": "159333"
+      "number_of_reports": "166334"
     },
     {
       "day": "2017-10-31T22:00:00.000Z",
-      "number_of_reports": "165085"
+      "number_of_reports": "173369"
     },
     {
       "day": "2017-11-30T22:00:00.000Z",
-      "number_of_reports": "167109"
+      "number_of_reports": "176376"
+    },
+    {
+      "day": "2017-12-31T22:00:00.000Z",
+      "number_of_reports": "177125"
+    },
+    {
+      "day": "2018-01-31T22:00:00.000Z",
+      "number_of_reports": "177156"
     }
   ]
 }
