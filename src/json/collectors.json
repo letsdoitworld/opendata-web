@@ -70,5 +70,32 @@
     "googleUrl": "https://play.google.com/store/apps/details?id=com.teeme.ldi",
     "appleUrl": "https://itunes.apple.com/us/app/world-cleanup/id1237553057",
     "webAppUrl": ""
+  },
+  {
+    "id": "NOAA",
+    "name": "National Oceanic and Atmospheric Administration",
+    "url": "www.noaa.gov",
+    "href": "http://www.noaa.gov/",
+    "googleUrl": "",
+    "appleUrl": "",
+    "webAppUrl": ""
+  },
+  {
+    "id": "ShorelineCleanup",
+    "name": "Great Canadian Shoreline Cleanup",
+    "url": "shorelinecleanup.ca",
+    "href": "http://shorelinecleanup.ca/",
+    "googleUrl": "",
+    "appleUrl": "",
+    "webAppUrl": ""
+  },
+  {
+    "id": "AmericanRivers",
+    "name": "American Rivers",
+    "url": "www.americanrivers.org",
+    "href": "https://www.americanrivers.org/",
+    "googleUrl": "",
+    "appleUrl": "",
+    "webAppUrl": ""
   }
 ]
