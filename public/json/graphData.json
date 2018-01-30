@@ -7,387 +7,391 @@
     },
     {
       "day": "2010-01-31T22:00:00.000Z",
-      "number_of_reports": "7"
+      "number_of_reports": "10"
     },
     {
       "day": "2010-02-28T22:00:00.000Z",
-      "number_of_reports": "23"
+      "number_of_reports": "29"
     },
     {
       "day": "2010-03-31T21:00:00.000Z",
-      "number_of_reports": "174"
+      "number_of_reports": "180"
     },
     {
       "day": "2010-04-30T21:00:00.000Z",
-      "number_of_reports": "915"
+      "number_of_reports": "921"
     },
     {
       "day": "2010-05-31T21:00:00.000Z",
-      "number_of_reports": "920"
+      "number_of_reports": "927"
     },
     {
       "day": "2010-06-30T21:00:00.000Z",
-      "number_of_reports": "923"
+      "number_of_reports": "931"
     },
     {
       "day": "2010-07-31T21:00:00.000Z",
-      "number_of_reports": "925"
+      "number_of_reports": "935"
     },
     {
       "day": "2010-08-31T21:00:00.000Z",
-      "number_of_reports": "926"
+      "number_of_reports": "948"
     },
     {
       "day": "2010-09-30T21:00:00.000Z",
-      "number_of_reports": "949"
+      "number_of_reports": "3204"
     },
     {
       "day": "2010-10-31T22:00:00.000Z",
-      "number_of_reports": "958"
+      "number_of_reports": "3889"
+    },
+    {
+      "day": "2010-11-30T22:00:00.000Z",
+      "number_of_reports": "4896"
     },
     {
       "day": "2010-12-31T22:00:00.000Z",
-      "number_of_reports": "972"
+      "number_of_reports": "4917"
     },
     {
       "day": "2011-01-31T22:00:00.000Z",
-      "number_of_reports": "990"
+      "number_of_reports": "4935"
     },
     {
       "day": "2011-02-28T22:00:00.000Z",
-      "number_of_reports": "5303"
+      "number_of_reports": "9249"
     },
     {
       "day": "2011-03-31T21:00:00.000Z",
-      "number_of_reports": "5952"
+      "number_of_reports": "9898"
     },
     {
       "day": "2011-04-30T21:00:00.000Z",
-      "number_of_reports": "7771"
+      "number_of_reports": "11717"
     },
     {
       "day": "2011-05-31T21:00:00.000Z",
-      "number_of_reports": "8107"
+      "number_of_reports": "12055"
     },
     {
       "day": "2011-06-30T21:00:00.000Z",
-      "number_of_reports": "8345"
+      "number_of_reports": "12297"
     },
     {
       "day": "2011-07-31T21:00:00.000Z",
-      "number_of_reports": "8479"
+      "number_of_reports": "12432"
     },
     {
       "day": "2011-08-31T21:00:00.000Z",
-      "number_of_reports": "8678"
+      "number_of_reports": "12655"
     },
     {
       "day": "2011-09-30T21:00:00.000Z",
-      "number_of_reports": "9750"
+      "number_of_reports": "17912"
     },
     {
       "day": "2011-10-31T22:00:00.000Z",
-      "number_of_reports": "11489"
+      "number_of_reports": "20453"
     },
     {
       "day": "2011-11-30T22:00:00.000Z",
-      "number_of_reports": "11947"
+      "number_of_reports": "21013"
     },
     {
       "day": "2011-12-31T22:00:00.000Z",
-      "number_of_reports": "12414"
+      "number_of_reports": "21572"
     },
     {
       "day": "2012-01-31T22:00:00.000Z",
-      "number_of_reports": "13286"
+      "number_of_reports": "22444"
     },
     {
       "day": "2012-02-29T22:00:00.000Z",
-      "number_of_reports": "14119"
+      "number_of_reports": "23277"
     },
     {
       "day": "2012-03-31T21:00:00.000Z",
-      "number_of_reports": "15780"
+      "number_of_reports": "24938"
     },
     {
       "day": "2012-04-30T21:00:00.000Z",
-      "number_of_reports": "16933"
+      "number_of_reports": "26095"
     },
     {
       "day": "2012-05-31T21:00:00.000Z",
-      "number_of_reports": "18119"
+      "number_of_reports": "27282"
     },
     {
       "day": "2012-06-30T21:00:00.000Z",
-      "number_of_reports": "19174"
+      "number_of_reports": "28339"
     },
     {
       "day": "2012-07-31T21:00:00.000Z",
-      "number_of_reports": "20829"
+      "number_of_reports": "29996"
     },
     {
       "day": "2012-08-31T21:00:00.000Z",
-      "number_of_reports": "21694"
+      "number_of_reports": "30871"
     },
     {
       "day": "2012-09-30T21:00:00.000Z",
-      "number_of_reports": "22503"
+      "number_of_reports": "35539"
     },
     {
       "day": "2012-10-31T22:00:00.000Z",
-      "number_of_reports": "23255"
+      "number_of_reports": "36925"
     },
     {
       "day": "2012-11-30T22:00:00.000Z",
-      "number_of_reports": "24029"
+      "number_of_reports": "37780"
     },
     {
       "day": "2012-12-31T22:00:00.000Z",
-      "number_of_reports": "24860"
+      "number_of_reports": "38641"
     },
     {
       "day": "2013-01-31T22:00:00.000Z",
-      "number_of_reports": "25747"
+      "number_of_reports": "39528"
     },
     {
       "day": "2013-02-28T22:00:00.000Z",
-      "number_of_reports": "26030"
+      "number_of_reports": "39813"
     },
     {
       "day": "2013-03-31T21:00:00.000Z",
-      "number_of_reports": "26566"
+      "number_of_reports": "40349"
     },
     {
       "day": "2013-04-30T21:00:00.000Z",
-      "number_of_reports": "27354"
+      "number_of_reports": "41137"
     },
     {
       "day": "2013-05-31T21:00:00.000Z",
-      "number_of_reports": "28372"
+      "number_of_reports": "42155"
     },
     {
       "day": "2013-06-30T21:00:00.000Z",
-      "number_of_reports": "28890"
+      "number_of_reports": "42673"
     },
     {
       "day": "2013-07-31T21:00:00.000Z",
-      "number_of_reports": "29765"
+      "number_of_reports": "43548"
     },
     {
       "day": "2013-08-31T21:00:00.000Z",
-      "number_of_reports": "30944"
+      "number_of_reports": "44727"
     },
     {
       "day": "2013-09-30T21:00:00.000Z",
-      "number_of_reports": "32384"
+      "number_of_reports": "46168"
     },
     {
       "day": "2013-10-31T22:00:00.000Z",
-      "number_of_reports": "33399"
+      "number_of_reports": "47183"
     },
     {
       "day": "2013-11-30T22:00:00.000Z",
-      "number_of_reports": "34217"
+      "number_of_reports": "48001"
     },
     {
       "day": "2013-12-31T22:00:00.000Z",
-      "number_of_reports": "34711"
+      "number_of_reports": "48495"
     },
     {
       "day": "2014-01-31T22:00:00.000Z",
-      "number_of_reports": "35608"
+      "number_of_reports": "49392"
     },
     {
       "day": "2014-02-28T22:00:00.000Z",
-      "number_of_reports": "36368"
+      "number_of_reports": "50152"
     },
     {
       "day": "2014-03-31T21:00:00.000Z",
-      "number_of_reports": "37959"
+      "number_of_reports": "51743"
     },
     {
       "day": "2014-04-30T21:00:00.000Z",
-      "number_of_reports": "39290"
+      "number_of_reports": "53074"
     },
     {
       "day": "2014-05-31T21:00:00.000Z",
-      "number_of_reports": "40417"
+      "number_of_reports": "54201"
     },
     {
       "day": "2014-06-30T21:00:00.000Z",
-      "number_of_reports": "41498"
+      "number_of_reports": "55282"
     },
     {
       "day": "2014-07-31T21:00:00.000Z",
-      "number_of_reports": "42380"
+      "number_of_reports": "56164"
     },
     {
       "day": "2014-08-31T21:00:00.000Z",
-      "number_of_reports": "42924"
+      "number_of_reports": "56708"
     },
     {
       "day": "2014-09-30T21:00:00.000Z",
-      "number_of_reports": "43916"
+      "number_of_reports": "57700"
     },
     {
       "day": "2014-10-31T22:00:00.000Z",
-      "number_of_reports": "45098"
+      "number_of_reports": "58882"
     },
     {
       "day": "2014-11-30T22:00:00.000Z",
-      "number_of_reports": "46349"
+      "number_of_reports": "60133"
     },
     {
       "day": "2014-12-31T22:00:00.000Z",
-      "number_of_reports": "47289"
+      "number_of_reports": "61073"
     },
     {
       "day": "2015-01-31T22:00:00.000Z",
-      "number_of_reports": "48421"
+      "number_of_reports": "62205"
     },
     {
       "day": "2015-02-28T22:00:00.000Z",
-      "number_of_reports": "50102"
+      "number_of_reports": "63886"
     },
     {
       "day": "2015-03-31T21:00:00.000Z",
-      "number_of_reports": "52644"
+      "number_of_reports": "66429"
     },
     {
       "day": "2015-04-30T21:00:00.000Z",
-      "number_of_reports": "54555"
+      "number_of_reports": "68343"
     },
     {
       "day": "2015-05-31T21:00:00.000Z",
-      "number_of_reports": "56854"
+      "number_of_reports": "70646"
     },
     {
       "day": "2015-06-30T21:00:00.000Z",
-      "number_of_reports": "59271"
+      "number_of_reports": "73065"
     },
     {
       "day": "2015-07-31T21:00:00.000Z",
-      "number_of_reports": "61515"
+      "number_of_reports": "75312"
     },
     {
       "day": "2015-08-31T21:00:00.000Z",
-      "number_of_reports": "63892"
+      "number_of_reports": "77701"
     },
     {
       "day": "2015-09-30T21:00:00.000Z",
-      "number_of_reports": "66606"
+      "number_of_reports": "80441"
     },
     {
       "day": "2015-10-31T22:00:00.000Z",
-      "number_of_reports": "68531"
+      "number_of_reports": "82371"
     },
     {
       "day": "2015-11-30T22:00:00.000Z",
-      "number_of_reports": "70871"
+      "number_of_reports": "84716"
     },
     {
       "day": "2015-12-31T22:00:00.000Z",
-      "number_of_reports": "72682"
+      "number_of_reports": "86527"
     },
     {
       "day": "2016-01-31T22:00:00.000Z",
-      "number_of_reports": "74660"
+      "number_of_reports": "89793"
     },
     {
       "day": "2016-02-29T22:00:00.000Z",
-      "number_of_reports": "77235"
+      "number_of_reports": "94123"
     },
     {
       "day": "2016-03-31T21:00:00.000Z",
-      "number_of_reports": "79803"
+      "number_of_reports": "98501"
     },
     {
       "day": "2016-04-30T21:00:00.000Z",
-      "number_of_reports": "83723"
+      "number_of_reports": "105311"
     },
     {
       "day": "2016-05-31T21:00:00.000Z",
-      "number_of_reports": "87300"
+      "number_of_reports": "111503"
     },
     {
       "day": "2016-06-30T21:00:00.000Z",
-      "number_of_reports": "90884"
+      "number_of_reports": "117891"
     },
     {
       "day": "2016-07-31T21:00:00.000Z",
-      "number_of_reports": "94692"
+      "number_of_reports": "124731"
     },
     {
       "day": "2016-08-31T21:00:00.000Z",
-      "number_of_reports": "97982"
+      "number_of_reports": "129860"
     },
     {
       "day": "2016-09-30T21:00:00.000Z",
-      "number_of_reports": "108215"
+      "number_of_reports": "141923"
     },
     {
       "day": "2016-10-31T22:00:00.000Z",
-      "number_of_reports": "112135"
+      "number_of_reports": "147781"
     },
     {
       "day": "2016-11-30T22:00:00.000Z",
-      "number_of_reports": "116494"
+      "number_of_reports": "155471"
     },
     {
       "day": "2016-12-31T22:00:00.000Z",
-      "number_of_reports": "118131"
+      "number_of_reports": "158292"
     },
     {
       "day": "2017-01-31T22:00:00.000Z",
-      "number_of_reports": "123067"
+      "number_of_reports": "163228"
     },
     {
       "day": "2017-02-28T22:00:00.000Z",
-      "number_of_reports": "126253"
+      "number_of_reports": "166414"
     },
     {
       "day": "2017-03-31T21:00:00.000Z",
-      "number_of_reports": "131386"
+      "number_of_reports": "171547"
     },
     {
       "day": "2017-04-30T21:00:00.000Z",
-      "number_of_reports": "136676"
+      "number_of_reports": "176837"
     },
     {
       "day": "2017-05-31T21:00:00.000Z",
-      "number_of_reports": "142110"
+      "number_of_reports": "182271"
     },
     {
       "day": "2017-06-30T21:00:00.000Z",
-      "number_of_reports": "149361"
+      "number_of_reports": "189522"
     },
     {
       "day": "2017-07-31T21:00:00.000Z",
-      "number_of_reports": "153714"
+      "number_of_reports": "193875"
     },
     {
       "day": "2017-08-31T21:00:00.000Z",
-      "number_of_reports": "158212"
+      "number_of_reports": "198373"
     },
     {
       "day": "2017-09-30T21:00:00.000Z",
-      "number_of_reports": "166334"
+      "number_of_reports": "206495"
     },
     {
       "day": "2017-10-31T22:00:00.000Z",
-      "number_of_reports": "173369"
+      "number_of_reports": "213530"
     },
     {
       "day": "2017-11-30T22:00:00.000Z",
-      "number_of_reports": "176376"
+      "number_of_reports": "216537"
     },
     {
       "day": "2017-12-31T22:00:00.000Z",
-      "number_of_reports": "177125"
+      "number_of_reports": "217286"
     },
     {
       "day": "2018-01-31T22:00:00.000Z",
-      "number_of_reports": "177156"
+      "number_of_reports": "217317"
     }
   ]
 }
