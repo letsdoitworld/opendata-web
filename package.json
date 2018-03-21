@@ -9,7 +9,7 @@
     "dateformat": "^2.0.0",
     "jquery": "^3.2.1",
     "leaflet": "^1.2.0",
-    "moment": "^2.18.1",
+    "moment": "^2.21.0",
     "prop-types": "^15.5.10",
     "query-string": "^5.0.0",
     "react": "^15.6.1",
