@@ -92,7 +92,7 @@
     @supports (display: grid) {
       &.map-only {
         display: grid;
-        grid-template-rows: auto 100px;
+        grid-template-rows: 0 auto 100px;
         #map {
           grid-row: 1;
         }
@@ -102,13 +102,13 @@
       }
       &.map-with-details {
         display: grid;
-        grid-template-columns: 2fr 1.1fr;
-        #map {
-          grid-column: 1;
-        }
+        grid-template-columns: 1.1fr 2fr;
         .scrolling-panel {
           border-left: 1px solid rgba(0, 0, 0, 0.25);
           overflow-y: scroll;
+          grid-column: 1;
+        }
+        #map {
           grid-column: 2;
         }
         @include hide-timeline();

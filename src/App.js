@@ -1,15 +1,11 @@
 import 'babel-polyfill';
 import React, {Component} from 'react';
-import $ from 'jquery';
-import * as moment from 'moment';
+import {Map as RepMap, TileLayer as Basemap} from 'react-leaflet';
+import carto from 'carto.js';
 import ReactGA from 'react-ga';
 import classNames from 'classnames';
 import queryString from 'query-string';
-import StatsMap from './maps/StatsMap';
-import TimeLine from './timeline/TimeLine';
 import States from './States';
-import LoadingScreen from './loading/LoadingScreen';
-import ErrorScreen from './error/ErrorScreen';
 import Details from './details/Details';
 import Modes from './Modes';
 import Helpers from './Helpers';
@@ -19,9 +15,18 @@ import calculateTRI from './trashReportIndex';
 import About from './overlay/about/About';
 import AboutAssembly from './overlay/aboutUnEnvironmentAssembly/AboutAssembly';
 
+import Layer from './maps/Layer';
+
+import Timeseries from './timeline/Timeseries';
+import cartoMapData from './data/cartoMapData';
+import {buildStyle} from './utils/styleFormatter';
+
+const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png';
+
 export default class App extends Component {
     static ABOUT_PAGE = 'about';
     static ASSEMBLY_PAGE = 'assembly';
+
     static getQueryObject(mode, selectedCountry) {
         if (mode === Modes.mode.ABOUT_ASSEMBLY) {
             return {demo: null};
@@ -30,10 +35,12 @@ export default class App extends Component {
         }
         return {};
     }
+
     static setWindowLocationHash(queryObject) {
         const hash = !queryObject ? '' : queryString.stringify(queryObject);
         window.location.hash = '#' + hash;
     }
+
     constructor(props) {
         const parsedHash = queryString.parse(window.location.hash);
         super(props);
@@ -42,35 +49,29 @@ export default class App extends Component {
             mode: parsedHash.country ? Modes.mode.COUNTRY : Modes.mode.WORLD,
             selectedCountry: new Country(),
             visibleOverlay: null,
+            center: [40.42, -3.7],
+            zoom: 13,
+            nativeMap: undefined,
+            layerStyle: cartoMapData.style,
+            hidelayers: true,
         };
-        this.onTimelineChange = this.onTimelineChange.bind(this);
+        this.onTimeseriesChanged = this.onTimeseriesChanged.bind(this);
 
         // Init Google Analytics
         ReactGA.initialize('UA-109735778-1');
     }
+
+    /* eslint-disable */
     componentDidMount() {
-        $.when(
-            this.initGraphData(),
-            this.initMapData(),
-        ).done(() => {
-            this.setState({
-                state: States.state.LOADED,
-            });
-            Helpers.validatePopulationData(this.state.geoJSON, populationData);
-
-            if (Object.keys(queryString.parse(window.location.hash)).indexOf('demo') !== -1) {
-                this.setState({visibleOverlay: App.ASSEMBLY_PAGE});
-            }
-
-            // Record pageview
-            ReactGA.set({page: window.location.pathname + window.location.search});
-            ReactGA.pageview(window.location.pathname + window.location.search);
-        }).fail(() => {
-            this.setState({
-                state: States.state.ERROR,
-            });
-        });
+        this.setState({nativeMap: this.nativeMap});
     }
+    /* eslint-enable */
+
+    onTimeseriesChanged(data) {
+        const newStyle = buildStyle(data);
+        this.setState({layerStyle: newStyle, hidelayers: false});
+    }
+
     onModeChange = (mode, selectedCountry) => {
         if (this.state.visibleOverlay) {
             return;
@@ -96,12 +97,15 @@ export default class App extends Component {
             });
         }
     };
+
     onTimelineChange(date, numberOfReports) {
         this.setState({
             currentDate: date,
             numberOfReports,
         });
     }
+    cartoClient = new carto.Client({apiKey: '7947aa9e7fcdff0f5f8891a5f83b1e6fa6350687', username: 'worldcleanupday'});
+
     hideOverlay = () => {
         this.setState({visibleOverlay: null});
         App.setWindowLocationHash(App.getQueryObject(Modes.mode.WORLD));
@@ -118,47 +122,15 @@ export default class App extends Component {
         App.setWindowLocationHash(App.getQueryObject(Modes.mode.ABOUT_ASSEMBLY));
         ReactGA.modalview('/demo/');
     };
-    initGraphData() {
-        return $.get('/json/graphData.json', (data) => {
-            data.data.forEach((e) => {
-                e.day = new Date(e.day);
-                e.number_of_reports = parseInt(e.number_of_reports, 10);
-            });
-            this.setState({
-                graphData: data.data,
-            });
-        });
-    }
-    initMapData() {
-        return $.get('/json/mapData.json').done((data) => {
-            data.world.forEach((e) => {
-                e.properties.datesMap = new Map();
-                Object.entries(e.properties.dates).forEach(([key, value]) => {
-                    e.properties.datesMap.set(moment(key).toDate(), parseInt(value, 10));
-                });
-                const transformRussiaPolygons = true;
-                // hack to display Russia correctly
-                if (transformRussiaPolygons && e.id === 'RUS') {
-                    // https://stackoverflow.com/a/38537668
-                    e.geometry.coordinates.forEach((a) => {
-                        a.forEach((b) => {
-                            b.forEach((c) => {
-                                if (c[0] < -160) c[0] += 360;
-                            });
-                        });
-                    });
-                }
-            });
-            const removeAntarctica = true;
-            if (removeAntarctica) {
-                const antarcticaIndex = data.world.findIndex(e => e.id === 'ATA');
-                if (antarcticaIndex > -1) data.world.splice(antarcticaIndex, 1);
-            }
-            this.setState({
-                geoJSON: data.world,
-            });
-        });
-    }
+    renderTimeseries = () => (
+        <Timeseries
+            client={this.cartoClient}
+            source={cartoMapData.source}
+            nativeMap={this.state.nativeMap}
+            onDataChanged={this.onTimeseriesChanged}
+        />
+    )
+
     render() {
         const wrapperClassNames = classNames(
             {'map-only': this.state.mode === Modes.mode.WORLD},
@@ -176,28 +148,11 @@ export default class App extends Component {
             this.state.selectedCountry.reportCount,
             populationDataElement ? populationDataElement.population : 0,
         );
+        const {center, nativeMap, zoom} = this.state;
+
         const runningScreen = (
             <div>
                 <div id="wrapper" className={wrapperClassNames}>
-                    <div className="static-panel">
-                        <StatsMap
-                            numberOfReports={this.state.numberOfReports}
-                            population={populationDataElement ?
-                                populationDataElement.population : 0}
-                            geoJSON={this.state.geoJSON}
-                            date={this.state.currentDate}
-                            onModeChange={this.onModeChange}
-                            mode={this.state.mode}
-                            selectedCountry={this.state.selectedCountry}
-                            onAboutButtonClick={this.showAboutPage}
-                            onAssemblyButtonClick={this.showAssemblyPage}
-                        />
-                        <TimeLine
-                            mode={this.state.mode}
-                            graphData={this.state.graphData}
-                            onTimelineChange={this.onTimelineChange}
-                        />
-                    </div>
                     <div className={scrollingPanelClassNames}>
                         <Details
                             country={this.state.selectedCountry}
@@ -205,6 +160,25 @@ export default class App extends Component {
                             visible={this.state.mode === Modes.mode.COUNTRY}
                             population={population}
                         />
+                    </div>
+                    <div className="static-panel">
+                        <RepMap
+                            center={center}
+                            zoom={zoom}
+                            ref={(node) => { this.nativeMap = node && node.leafletElement; }}
+                        >
+                            <Basemap attribution="" url={CARTO_BASEMAP} />
+
+                            <Layer
+                                source={cartoMapData.source}
+                                style={this.state.layerStyle}
+                                client={this.cartoClient}
+                                hidden={this.state.hidelayers}
+                            />
+                        </RepMap>
+
+                        {nativeMap && this.renderTimeseries()}
+
                     </div>
                 </div>
                 <About
@@ -217,16 +191,10 @@ export default class App extends Component {
                 />
             </div>
         );
-        const showLoadingScreen = this.state.state === States.state.LOADING ||
-            this.state.state === States.state.LOADED;
         return (
             <div className="App">
-                {showLoadingScreen ? <LoadingScreen
-                    loaded={this.state.state === States.state.LOADED}
-                    onProceed={() => this.setState({state: States.state.RUNNING})}
-                /> : null}
-                {this.state.state === States.state.ERROR ? <ErrorScreen /> : null}
-                {this.state.state === States.state.RUNNING ? runningScreen : null}
+
+                {runningScreen}
             </div>
         );
     }
