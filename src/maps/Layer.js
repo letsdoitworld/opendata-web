@@ -32,6 +32,11 @@ class Layer extends Component {
 
         this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
         this.setVisibility(hidden);
+
+        this.layer.setFeatureClickColumns(['country']);
+        this.layer.on('featureClicked', (featureEvent) => {
+            alert(`Mouse over city with name: ${featureEvent.data.country}`);
+        });
     }
 
     componentDidMount() {
@@ -52,6 +57,7 @@ class Layer extends Component {
           this.layer.show();
       }
   }
+
 
   render() {
       const {hidden, style} = this.props;

@@ -136,10 +136,7 @@ export default class App extends Component {
             {'map-only': this.state.mode === Modes.mode.WORLD},
             {'map-with-details': this.state.mode === Modes.mode.COUNTRY},
         );
-        const scrollingPanelClassNames = classNames(
-            'scrolling-panel',
-            {visible: this.state.mode === Modes.mode.COUNTRY},
-        );
+
         const populationDataElement = populationData
             .find(e => e.country === this.state.selectedCountry.name);
         const population = populationDataElement ?
@@ -153,7 +150,7 @@ export default class App extends Component {
         const runningScreen = (
             <div>
                 <div id="wrapper" className={wrapperClassNames}>
-                    <div className={scrollingPanelClassNames}>
+                    <div>
                         <Details
                             country={this.state.selectedCountry}
                             trashReportIndex={trashReportIndex}

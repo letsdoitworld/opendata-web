@@ -87,16 +87,27 @@
     bottom: 0;
     right: 0;
   }
+  .static-panel {
+
+  }
   #wrapper {
 
     @supports (display: grid) {
       &.map-only {
         display: grid;
-        grid-template-rows: 0 auto 100px;
-        #map {
+        grid-template-columns: repeat(2, 1fr);
+
+        .scrolling-panel {
+          border-left: 1px solid rgba(0, 0, 0, 0.25);
+          grid-column: 1 ;
+          grid-row: 1/2;
+        }
+        .static-panel {
+          grid-column: 2 ;
           grid-row: 1;
         }
         #timeline {
+          grid-column: 2;
           grid-row: 2;
         }
       }
