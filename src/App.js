@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {Map as RepMap, TileLayer as Basemap} from 'react-leaflet';
 import carto from 'carto.js';
 import ReactGA from 'react-ga';
-import classNames from 'classnames';
 import queryString from 'query-string';
 import States from './States';
 import Details from './details/Details';
@@ -129,14 +128,9 @@ export default class App extends Component {
             nativeMap={this.state.nativeMap}
             onDataChanged={this.onTimeseriesChanged}
         />
-    )
+    );
 
     render() {
-        const wrapperClassNames = classNames(
-            {'map-only': this.state.mode === Modes.mode.WORLD},
-            {'map-with-details': this.state.mode === Modes.mode.COUNTRY},
-        );
-
         const populationDataElement = populationData
             .find(e => e.country === this.state.selectedCountry.name);
         const population = populationDataElement ?
@@ -149,7 +143,7 @@ export default class App extends Component {
 
         const runningScreen = (
             <div>
-                <div id="wrapper" className={wrapperClassNames}>
+                <div id="wrapper">
                     <div>
                         <Details
                             country={this.state.selectedCountry}
@@ -158,7 +152,7 @@ export default class App extends Component {
                             population={population}
                         />
                     </div>
-                    <div className="static-panel">
+                    <div className="map-container">
                         <RepMap
                             center={center}
                             zoom={zoom}
@@ -173,9 +167,9 @@ export default class App extends Component {
                                 hidden={this.state.hidelayers}
                             />
                         </RepMap>
-
+                    </div>
+                    <div className="timeseries-container">
                         {nativeMap && this.renderTimeseries()}
-
                     </div>
                 </div>
                 <About

@@ -1,10 +1,3 @@
-@mixin hide-timeline() {
-  #timeline,
-  .current-time {
-    visibility: hidden;
-  }
-}
-
 @mixin bad-browser-support() {
   &.map-only {
     #map {
@@ -26,7 +19,6 @@
       width: 30%;
       height: 100%;
     }
-    @include hide-timeline();
   }
 }
 
@@ -66,7 +58,6 @@
       }
     }
     &.map-with-details {
-      @include hide-timeline();
     }
   }
 }
@@ -93,37 +84,25 @@
   #wrapper {
 
     @supports (display: grid) {
-      &.map-only {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
 
-        .scrolling-panel {
-          border-left: 1px solid rgba(0, 0, 0, 0.25);
-          grid-column: 1 ;
+        display: grid;
+        grid-template-columns: 20% auto;
+        grid-template-rows: 85% auto;
+
+        .scroll-panel {
+          grid-column: 1;
           grid-row: 1/2;
         }
-        .static-panel {
-          grid-column: 2 ;
+
+        .map-container {
+          grid-column: 2;
           grid-row: 1;
         }
-        #timeline {
+
+        .timeseries-container {
           grid-column: 2;
           grid-row: 2;
         }
-      }
-      &.map-with-details {
-        display: grid;
-        grid-template-columns: 1.1fr 2fr;
-        .scrolling-panel {
-          border-left: 1px solid rgba(0, 0, 0, 0.25);
-          overflow-y: scroll;
-          grid-column: 1;
-        }
-        #map {
-          grid-column: 2;
-        }
-        @include hide-timeline();
-      }
     }
 
     // Edge browser support
