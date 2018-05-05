@@ -60,7 +60,7 @@ class Timeseries extends Component {
 
     render() {
         return (
-            <div className="Timeseries">
+            <div id="timeline" className="Timeseries">
                 <ul className="Timeseries-bins">
                     {this.renderBins()}
                 </ul>

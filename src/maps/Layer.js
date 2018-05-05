@@ -1,6 +1,9 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 import carto from 'carto.js';
+import EventSystem from '../EventSystem';
+import EventType from '../EventType';
+import TrashPoint from '../TrashPoint';
 
 class Layer extends Component {
   static contextTypes = {
@@ -32,6 +35,13 @@ class Layer extends Component {
 
         this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
         this.setVisibility(hidden);
+
+        this.layer.setFeatureClickColumns(['country']);
+        this.layer.on('featureClicked', (featureEvent) => {
+            EventSystem.publish(
+                EventType.eventType.TRASHPOINT_SELECTED,
+                new TrashPoint(featureEvent.data));
+        });
     }
 
     componentDidMount() {
@@ -52,6 +62,7 @@ class Layer extends Component {
           this.layer.show();
       }
   }
+
 
   render() {
       const {hidden, style} = this.props;
