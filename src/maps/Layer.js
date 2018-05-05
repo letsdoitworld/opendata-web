@@ -1,6 +1,9 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 import carto from 'carto.js';
+import EventSystem from '../EventSystem';
+import EventType from '../EventType';
+import TrashPoint from '../TrashPoint';
 
 class Layer extends Component {
   static contextTypes = {
@@ -35,7 +38,9 @@ class Layer extends Component {
 
         this.layer.setFeatureClickColumns(['country']);
         this.layer.on('featureClicked', (featureEvent) => {
-            alert(`Mouse over city with name: ${featureEvent.data.country}`);
+            EventSystem.publish(
+                EventType.eventType.TRASHPOINT_SELECTED,
+                new TrashPoint(featureEvent.data));
         });
     }
 
