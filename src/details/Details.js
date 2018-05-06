@@ -16,7 +16,7 @@ export default class Details extends Component {
     }
 
     trashPointSelected(trashPoint: TrashPoint) {
-        this.setState(trashPoint);
+        this.setState({trashPoint});
     }
 
     render() {
