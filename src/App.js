@@ -19,6 +19,8 @@ import Layer from './maps/Layer';
 import Timeseries from './timeline/Timeseries';
 import cartoMapData from './data/cartoMapData';
 import {buildStyle} from './utils/styleFormatter';
+import * as EventSystem from './EventSystem';
+import EventType from './EventType';
 
 const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png';
 
@@ -54,7 +56,6 @@ export default class App extends Component {
             layerStyle: cartoMapData.style,
             hidelayers: true,
         };
-        this.onTimeseriesChanged = this.onTimeseriesChanged.bind(this);
 
         // Init Google Analytics
         ReactGA.initialize('UA-109735778-1');
@@ -63,14 +64,17 @@ export default class App extends Component {
     /* eslint-disable */
     componentDidMount() {
         this.setState({nativeMap: this.nativeMap});
+        EventSystem.subscribe(
+            EventType.eventType.TIMESERIES_CHANGED,
+            this.onDataChanged.bind(this));
     }
     /* eslint-enable */
 
-    onTimeseriesChanged(data) {
+    onDataChanged = (data) => {
+        this.setState(data);
         const newStyle = buildStyle(data);
         this.setState({layerStyle: newStyle, hidelayers: false});
     }
-
     onModeChange = (mode, selectedCountry) => {
         if (this.state.visibleOverlay) {
             return;
@@ -126,7 +130,6 @@ export default class App extends Component {
             client={this.cartoClient}
             source={cartoMapData.source}
             nativeMap={this.state.nativeMap}
-            onDataChanged={this.onTimeseriesChanged}
         />
     );
 

@@ -3,20 +3,21 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import carto from 'carto.js';
 import '../css/timeline/Timeseries.css';
+import * as EventSystem from '../EventSystem';
+import EventType from '../EventType';
+import {buildStyle} from '../utils/styleFormatter';
 
 class Timeseries extends Component {
     static propTypes = {
         client: PropTypes.object,
         source: PropTypes.string,
         nativeMap: PropTypes.object,
-        onDataChanged: PropTypes.func,
     }
     static get defaultProps() {
         return {
             client: this.client,
             source: this.source,
             nativeMap: this.nativeMap,
-            onDataChanged: '',
         };
     }
 
@@ -31,7 +32,11 @@ class Timeseries extends Component {
             aggregation: 'year',
         });
         this.timeseriesView.addFilter(bboxFilter);
-        this.timeseriesView.on('dataChanged', this.onDataChanged);
+        this.timeseriesView.on('dataChanged', (newData) => {
+            EventSystem.publish(
+                EventType.eventType.TIMESERIES_CHANGED,
+                newData);
+        });
 
         props.client.addDataview(this.timeseriesView);
     }
@@ -39,13 +44,19 @@ class Timeseries extends Component {
     state = {
         bins: [],
     }
+
+    componentDidMount() {
+        EventSystem.subscribe(
+            EventType.eventType.TIMESERIES_CHANGED,
+            this.onDataChanged.bind(this));
+    }
     componentWillUnmount() {
         this.timeseriesView.off('dataChanged');
     }
-
     onDataChanged = (data) => {
         this.setState(data);
-        this.props.onDataChanged(data);
+        const newStyle = buildStyle(data);
+        this.setState({layerStyle: newStyle, hidelayers: false});
     }
 
     renderBins = () => this.state.bins.map((bin, index) => {
@@ -54,13 +65,14 @@ class Timeseries extends Component {
         return (
             <li className="Timeseries-bin" key={`${index}-${freq}`}>
                 <span className="Timeseries-bin--fill" style={{background: '#fcde9c', height: `${normalized * 100}%`}} />
+
             </li>
         );
     })
 
     render() {
         return (
-            <div id="timeline" className="Timeseries">
+            <div className="Timeseries">
                 <ul className="Timeseries-bins">
                     {this.renderBins()}
                 </ul>
