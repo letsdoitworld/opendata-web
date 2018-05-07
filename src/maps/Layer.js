@@ -46,7 +46,6 @@ class Layer extends Component {
 
     componentDidMount() {
         const {client} = this.props;
-
         client.addLayer(this.layer);
         client.getLeafletLayer().addTo(this.context.map);
     }
