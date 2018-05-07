@@ -23,13 +23,9 @@ export default class Details extends Component {
         return (
             <div className="details-container">
                 <div className="row tpr">
-                    {this.state.trashPoint &&
-                        <div className="icon-label-container tpr">
-                            <span className="label">TrashPoints details</span>
-                            <h1>{this.state.trashPoint.country}</h1>
-                            <h1>{this.state.trashPoint.id}</h1>
-                        </div>
-                    }
+                    <h3>static text</h3>
+                    <a href="#" className="next">See a country list &raquo;</a>
+
                 </div>
             </div>
         );
