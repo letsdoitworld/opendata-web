@@ -5,7 +5,6 @@ import carto from 'carto.js';
 import ReactGA from 'react-ga';
 import queryString from 'query-string';
 import States from './States';
-import Details from './details/Details';
 import Modes from './Modes';
 import Helpers from './Helpers';
 import populationData from './json/country-by-population.json';
@@ -21,6 +20,7 @@ import cartoMapData from './data/cartoMapData';
 import {buildStyle} from './utils/styleFormatter';
 import * as EventSystem from './EventSystem';
 import EventType from './EventType';
+import CountryList from './details/CountryList';
 
 const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png';
 
@@ -148,7 +148,7 @@ export default class App extends Component {
             <div>
                 <div id="wrapper">
                     <div>
-                        <Details
+                        <CountryList
                             country={this.state.selectedCountry}
                             trashReportIndex={trashReportIndex}
                             visible={this.state.mode === Modes.mode.COUNTRY}
