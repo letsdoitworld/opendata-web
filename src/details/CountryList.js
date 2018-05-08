@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import ReactCountryFlag from 'react-country-flag';
 import EventType from '../EventType';
 import * as EventSystem from '../EventSystem';
@@ -29,20 +30,18 @@ export default class CountryList extends Component {
 
     render() {
         return (
-            <div className="details-container">
-                <div className="row tpr">
-                    <ReactCountryFlag code="JM" svg />
-                    <a href="#" className="previous">&laquo; Back to intro</a>
-                    <table>
-                        <tbody>{this.countries.map((item, key) => (
-                            <tr key={key}>
-                                <td> <ReactCountryFlag code={item.country_code} svg /></td>
-                                <td>{item.country_code}</td>
-                            </tr>
-                        ))}</tbody>
-                    </table>
-                    <p>{this.countries[0].count}</p>
-                </div>
+            <div className="country-list">
+                <Link to={'/'}>Back to intro&raquo; </Link>
+                <h3>Country list</h3>
+                <table>
+                    <tbody>{this.countries.map((item, key) => (
+                        <tr key={key}>
+                            <td> <ReactCountryFlag code={item.country_code} svg /></td>
+                            <td> <Link to={`/country/${item.country_code}`} > {item.country_code} </Link> </td>
+                            <td>{item.tpr}</td>
+                        </tr>
+                    ))}</tbody>
+                </table>
             </div>
         );
     }

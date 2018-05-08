@@ -1,4 +1,5 @@
 import React from 'react';
+import {HashRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import App from './App';
@@ -14,4 +15,4 @@ function unregisterServiceWorker() {
 }
 unregisterServiceWorker();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'));

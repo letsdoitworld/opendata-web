@@ -1,24 +1,27 @@
 import {Component} from 'react';
+import {withRouter} from 'react-router';
 import PropTypes from 'prop-types';
 import carto from 'carto.js';
-import EventSystem from '../EventSystem';
-import EventType from '../EventType';
-import TrashPoint from '../TrashPoint';
 
 class Layer extends Component {
-  static contextTypes = {
-      map: PropTypes.object,
-  };
+    static contextTypes = {
+        map: PropTypes.object,
+    };
 
     static propTypes = {
         source: PropTypes.string,
         style: PropTypes.string,
         client: PropTypes.object,
+        location: PropTypes.object,
+        history: PropTypes.object,
         hidden: PropTypes.bool,
     }
+
     static get defaultProps() {
         return {
             client: this.client,
+            location: this.location,
+            history: this.location,
             style: this.style,
             source: this.source,
             hidden: false,
@@ -38,9 +41,10 @@ class Layer extends Component {
 
         this.layer.setFeatureClickColumns(['country']);
         this.layer.on('featureClicked', (featureEvent) => {
-            EventSystem.publish(
-                EventType.eventType.TRASHPOINT_SELECTED,
-                new TrashPoint(featureEvent.data));
+            const navigateToDetails = `/details/${featureEvent.data.cartodb_id}`;
+            if (this.props.location && this.props.location.pathname !== navigateToDetails) {
+                this.props.history.push(navigateToDetails);
+            }
         });
     }
 
@@ -54,23 +58,23 @@ class Layer extends Component {
         return nextProps.style !== this.props.style || nextProps.hidden !== this.props.hidden;
     }
 
-  setVisibility = (isHidden) => {
-      if (isHidden) {
-          this.layer.hide();
-      } else {
-          this.layer.show();
-      }
-  }
+    setVisibility = (isHidden) => {
+        if (isHidden) {
+            this.layer.hide();
+        } else {
+            this.layer.show();
+        }
+    }
 
 
-  render() {
-      const {hidden, style} = this.props;
-      const layerStyle = this.layer.getStyle();
+    render() {
+        const {hidden, style} = this.props;
+        const layerStyle = this.layer.getStyle();
 
-      layerStyle.setContent(style).then(() => this.setVisibility(hidden));
+        layerStyle.setContent(style).then(() => this.setVisibility(hidden));
 
-      return null;
-  }
+        return null;
+    }
 }
 
-export default Layer;
+export default withRouter(Layer);
