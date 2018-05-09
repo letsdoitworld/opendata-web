@@ -1,26 +1,25 @@
 import 'babel-polyfill';
 import React, {Component} from 'react';
+import {Switch, Route} from 'react-router-dom';
 import {Map as RepMap, TileLayer as Basemap} from 'react-leaflet';
 import carto from 'carto.js';
 import ReactGA from 'react-ga';
 import queryString from 'query-string';
 import States from './States';
 import Modes from './Modes';
-import Helpers from './Helpers';
-import populationData from './json/country-by-population.json';
 import Country from './Country';
-import calculateTRI from './trashReportIndex';
+import IntroText from './IntroText';
+import Details from './details/Details';
 import About from './overlay/about/About';
 import AboutAssembly from './overlay/aboutUnEnvironmentAssembly/AboutAssembly';
-
 import Layer from './maps/Layer';
-
 import Timeseries from './timeline/Timeseries';
 import cartoMapData from './data/cartoMapData';
 import {buildStyle} from './utils/styleFormatter';
 import * as EventSystem from './EventSystem';
 import EventType from './EventType';
 import CountryList from './details/CountryList';
+import CountryDetails from './details/CountryDetails';
 
 const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png';
 
@@ -68,6 +67,7 @@ export default class App extends Component {
             EventType.eventType.TIMESERIES_CHANGED,
             this.onDataChanged.bind(this));
     }
+
     /* eslint-enable */
 
     onDataChanged = (data) => {
@@ -107,6 +107,7 @@ export default class App extends Component {
             numberOfReports,
         });
     }
+
     cartoClient = new carto.Client({apiKey: '7947aa9e7fcdff0f5f8891a5f83b1e6fa6350687', username: 'worldcleanupday'});
 
     hideOverlay = () => {
@@ -134,27 +135,21 @@ export default class App extends Component {
     );
 
     render() {
-        const populationDataElement = populationData
-            .find(e => e.country === this.state.selectedCountry.name);
-        const population = populationDataElement ?
-            Helpers.compactInteger(populationDataElement.population, 2) : '0';
-        const trashReportIndex = calculateTRI(
-            this.state.selectedCountry.reportCount,
-            populationDataElement ? populationDataElement.population : 0,
-        );
         const {center, nativeMap, zoom} = this.state;
+
+        const LeftPanel = () => (
+            <Switch>
+                <Route exact path={'/'} component={IntroText} />
+                <Route path={'/countries'} component={CountryList} />
+                <Route path={'/country/:countryCode'} component={CountryDetails} />
+                <Route path={'/details/:number'} component={Details} />
+            </Switch>
+        );
 
         const runningScreen = (
             <div>
                 <div id="wrapper">
-                    <div>
-                        <CountryList
-                            country={this.state.selectedCountry}
-                            trashReportIndex={trashReportIndex}
-                            visible={this.state.mode === Modes.mode.COUNTRY}
-                            population={population}
-                        />
-                    </div>
+                    <LeftPanel />
                     <div className="map-container">
                         <RepMap
                             center={center}
