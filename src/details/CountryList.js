@@ -30,7 +30,7 @@ export default class CountryList extends Component {
                         <tbody>{JSON.parse(this.countryDataSTR).map((item, key) => (
                             <tr key={key}>
                                 <td> <ReactCountryFlag code={item.country_code} svg /></td>
-                                <td> <Link to={`/country/${item.country_code}`} > {countries[item.country_code].name} </Link> </td>
+                                <td> <Link to={`/country/${item.country_code.toLowerCase()}`} > {countries[item.country_code].name} </Link> </td>
                                 <td>{item.tpr}</td>
                             </tr>
                         ))}</tbody>

@@ -39,9 +39,9 @@ class Layer extends Component {
         this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
         this.setVisibility(hidden);
 
-        this.layer.setFeatureClickColumns(['country']);
+        this.layer.setFeatureClickColumns(['id']);
         this.layer.on('featureClicked', (featureEvent) => {
-            const navigateToDetails = `/details/${featureEvent.data.cartodb_id}`;
+            const navigateToDetails = `/details/${featureEvent.data.id}`;
             if (this.props.location && this.props.location.pathname !== navigateToDetails) {
                 this.props.history.push(navigateToDetails);
             }

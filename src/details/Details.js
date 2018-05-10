@@ -17,26 +17,35 @@ export default class Details extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {data: [], url: 'https://opendata.wemakesoftware.eu/api/trashpoint/' + this.props.match.params.number};
+        this.loadData();
     }
-
     componentDidMount() {
         EventSystem.subscribe(
             EventType.eventType.TRASHPOINT_SELECTED,
             this.trashPointSelected.bind(this));
     }
-
+    loadData() {
+        fetch(this.state.url)
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({data});
+            })
+            .catch(err => console.error(this.state.url, err.toString()));
+    }
     trashPointSelected(trashPoint: TrashPoint) {
         this.setState({trashPoint});
     }
 
     render() {
+        this.countryDataSTR = JSON.stringify(this.state.data.sources);
         return (
             <div className="details-container">
                 <div className="row tpr">
                     <h3>TrashPoint details</h3>
 
                     id : { parseInt(this.props.match.params.number, 10)}
+                    data : {this.countryDataSTR}
                 </div>
             </div>
         );
