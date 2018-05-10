@@ -20,8 +20,8 @@ function _createRule() {
         `;
 
 }* */
-export function buildStyle(data) {
-    const rules = data.bins.map((bin, index) => _createRule(bin, COLORS[index])).join('');
+export function buildStyle() {
+    const rules = _createRule();
 
     return `
         #layer {
