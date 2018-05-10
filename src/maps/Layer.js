@@ -15,7 +15,7 @@ class Layer extends Component {
         location: PropTypes.object,
         history: PropTypes.object,
         hidden: PropTypes.bool,
-    }
+    };
 
     static get defaultProps() {
         return {
@@ -31,13 +31,14 @@ class Layer extends Component {
     constructor(props) {
         super(props);
 
-        const {hidden, source, style} = props;
+        const {source, style} = props;
 
         const cartoSource = new carto.source.SQL(source);
         const cartoStyle = new carto.style.CartoCSS(style);
 
         this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
-        this.setVisibility(hidden);
+        this.layer.getStyle().setContent(style);
+        this.setVisibility(false);
 
         this.layer.setFeatureClickColumns(['id']);
         this.layer.on('featureClicked', (featureEvent) => {
@@ -54,10 +55,6 @@ class Layer extends Component {
         client.getLeafletLayer().addTo(this.context.map);
     }
 
-    shouldComponentUpdate(nextProps) {
-        return nextProps.style !== this.props.style || nextProps.hidden !== this.props.hidden;
-    }
-
     setVisibility = (isHidden) => {
         if (isHidden) {
             this.layer.hide();
@@ -65,7 +62,6 @@ class Layer extends Component {
             this.layer.show();
         }
     }
-
 
     render() {
         const {hidden, style} = this.props;
