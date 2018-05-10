@@ -4,7 +4,6 @@ import {Switch, Route} from 'react-router-dom';
 import carto from 'carto.js';
 import ReactGA from 'react-ga';
 import States from './States';
-import Modes from './Modes';
 import Country from './Country';
 import IntroText from './IntroText';
 import Details from './details/Details';
@@ -20,16 +19,6 @@ import WorldMap from './maps/WorldMap';
 export default class App extends Component {
     static ABOUT_PAGE = 'about';
     static ASSEMBLY_PAGE = 'assembly';
-
-    static getQueryObject(mode, selectedCountry) {
-        if (mode === Modes.mode.ABOUT_ASSEMBLY) {
-            return {demo: null};
-        } else if (mode === Modes.mode.COUNTRY && selectedCountry.name) {
-            return {country: selectedCountry.name};
-        }
-        return {};
-    }
-
 
     constructor(props) {
         super(props);
@@ -117,24 +106,16 @@ export default class App extends Component {
         const LeftPanel = () => (
             <Switch>
                 <Route exact path={'/'} component={IntroText} />
-                <Route path={'/countries'} component={CountryList} />
+                <Route exact={false} path={'/countries'} component={CountryList} />
                 <Route path={'/country/:countryCode'} component={CountryDetails} />
                 <Route path={'/details/:number'} component={Details} />
             </Switch>
         );
 
-        const runningScreen = (
-            <div>
-                <div id="wrapper">
-                    <LeftPanel />
-                    <WorldMap />
-                </div>
-            </div>
-        );
         return (
-            <div className="App">
-
-                {runningScreen}
+            <div className="app-wrapper">
+                <LeftPanel />
+                <WorldMap />
             </div>
         );
     }

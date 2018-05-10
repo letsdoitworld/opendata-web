@@ -1,3 +1,126 @@
-.country-list {
-  overflow: auto;
+.county-list-container {
+  background: url(/img/logo_bg.png) 30px 60px no-repeat;
+}
+
+.go-back {
+  text-align: right;
+
+  .go-back__link {
+    background: url(/img/arrow_left.svg) left center no-repeat;
+    color: #313131;
+    font-weight: bold;
+    padding-left: 50px;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .go-back__link:hover {
+    color: #3B8FE7;
+  }
+
+  .go-back__link::before {
+    background: #f8f8f8;
+    content: '';
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+}
+
+.search-box {
+  .search-box__field {
+
+  }
+  .search-box__button {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(178,178,178, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: #3B8FE7;
+    height: 33px;
+    width: 33px;
+  }
+  .search-box__button:hover {
+    background-color: #3B8FE7;
+    color: #fff;
+  }
+  .search-box__button span {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    transform: rotate(-45deg);
+  }
+  .search-box__button span::before {
+    width: 2px;
+    height: 9px;
+    left: 9px;
+    top: 18px;
+    border-radius: 2px;
+    background: #3B8FE7;
+    position: absolute;
+    content: '';
+  }
+  .search-box__button span::after {
+    width: 15px;
+    height: 15px;
+    left: 0px;
+    top: 0px;
+    border-radius: 17px;
+    border: 2px solid #3B8FE7;
+    position: absolute;
+    content: '';
+  }
+}
+
+.countries-tabs {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  .countries-tabs__item {
+    text-align: center;
+  }
+  .countries-tabs__link {
+    position: relative;
+    border-bottom: #F4F5F7 1px solid;
+    border-right: #F4F5F7 1px solid;
+    display: block;
+    padding: 8px 0;
+  }
+  .countries-tabs__link:last-child {
+    border-right: none;
+  }
+  .countries-tabs__link.active {
+    font-weight: bold;
+  }
+  .countries-tabs__link.active::after {
+    content: '';
+    background-color: #3B8FE7;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    right: 0px;
+  }
+}
+
+.countries-list {
+  .countries-list__header {
+    display: grid;
+    grid-template-columns: 40px auto 60px;
+  }
+  .countries-list__item {
+    display: grid;
+    grid-template-columns: 40px auto 60px;
+    background-color: #fafafa;
+  }
+  .countries-list__item:nth-of-type(2n+1) {
+    background-color: #f4f5f7;
+  }
 }

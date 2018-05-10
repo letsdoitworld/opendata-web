@@ -1,120 +1,68 @@
-@mixin bad-browser-support() {
-  &.map-only {
-    #map {
-      height: calc(100vh - 100px);
-    }
-    #timeline {
-      height: 100px;
-    }
-  }
-  &.map-with-details {
-    .static-panel {
-      float: left;
-      width: 70%;
-      height: 100%;
-    }
-    .scrolling-panel {
-      float: right;
-      overflow-y: scroll;
-      width: 30%;
-      height: 100%;
-    }
-  }
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-// this is mobile layout
-@media (max-width: 900px) {
-  .static-panel {
-    display: grid;
-    grid-template-rows: auto 100px;
-    #map {
-      grid-row: 1;
-    }
-    #timeline {
-      grid-row: 2;
-    }
-  }
-  #wrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    .static-panel {
-      top: 0;
-      height: 100%;
-      min-height: 100%;
-      width: 100%;
-      #timeline {
-        position: relative;
-      }
-    }
-    .scrolling-panel {
-      position: relative;
-      width: 100%;
-      z-index: 1000;
-      background-color: white;
-      &.visible {
-        bottom: 10%;
-        min-height: 100%;
-      }
-    }
-    &.map-with-details {
-    }
-  }
+html {
+  font-size: 62.5%;
+}
+body {
+  color: #313131;
+  font-size: 1.6rem;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: normal;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+a {
+  color: #313131;
+  text-decoration: none;
+}
+a:hover {
+  color: #7b7b7b;
+}
+.h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 6.0rem;
+  text-transform: uppercase;
+  text-shadow: #fff13d 2px 0px;
+}
+.h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: normal;
+  font-size: 3.2rem;
+}
+.h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: normal;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+.intro {
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
-// this is desktop layout
-@media (min-width: 900px) {
-  html,
-  body,
-  #root,
-  .App,
-  #wrapper {
-    height: 100%;
-    margin: 0;
-    min-height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  .static-panel {
-
-  }
-  #wrapper {
-
-    @supports (display: grid) {
-
-        display: grid;
-        grid-template-columns: 30% auto;
-        grid-template-rows: 85% auto;
-
-        .scroll-panel {
-          grid-column: 1;
-          grid-row: 1/3;
-        }
-
-        .map-container {
-          grid-column: 2;
-          grid-row: 1/3;
-        }
-
-        .timeseries-container {
-          grid-column: 2;
-          grid-row: 2;
-        }
-    }
-
-    // Edge browser support
-    @supports not (display: grid) {
-      @include bad-browser-support();
-    }
-
-    // IE browser support
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      @include bad-browser-support();
-    }
-
-  }
+/**
+ * Application container
+ */
+.app-wrapper {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-rows: 100%;
+  height: 100vh;
 }
+.details-container {
+  box-shadow: 0 0 24px 0 rgba(178,178,178,0.5);
+  min-height: 100%;
+  padding: 30px;
+}
+.map-container {
 
+}
