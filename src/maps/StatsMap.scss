@@ -3,46 +3,46 @@
   height: 100%;
 }
 //overlay
-#map {
-  .leaflet-container {
-    background: white;
-  }
-  .map-gradient {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    pointer-events: none;
-    &.top {
-      top: 0;
-      height: 12rem;
-      background-image: linear-gradient(-180deg, rgba(255,255,255,0.61) 0%, rgba(255,255,255,0.00) 100%);
-    }
-    &.bottom {
-      bottom: 0;
-      height: 14rem;
-      background-image: linear-gradient(-180deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.61) 100%);
-    }
-  }
-  .leaflet-top, .leaflet-bottom {
-    margin: 2.5vw 1.5vw 1.5vw;
-  }
-  .leaflet-top.leaflet-left,
-  .leaflet-bottom.leaflet-left,
-  .leaflet-bottom.leaflet-right
-  {
-    * {
-      pointer-events: none;
-    }
-  }
-}
-
-.map-with-details {
-  .leaflet-interactive {
-    cursor: default;
-  }
-}
-@import "Counter/Counter";
-@import "Legend/Legend";
-@import "Heading/Heading";
-@import "CloseButton/CloseButton";
+//#map {
+//  .leaflet-container {
+//    background: white;
+//  }
+//  .map-gradient {
+//    position: absolute;
+//    left: 0;
+//    width: 100%;
+//    z-index: 1000;
+//    pointer-events: none;
+//    &.top {
+//      top: 0;
+//      height: 12rem;
+//      background-image: linear-gradient(-180deg, rgba(255,255,255,0.61) 0%, rgba(255,255,255,0.00) 100%);
+//    }
+//    &.bottom {
+//      bottom: 0;
+//      height: 14rem;
+//      background-image: linear-gradient(-180deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.61) 100%);
+//    }
+//  }
+//  .leaflet-top, .leaflet-bottom {
+//    margin: 2.5vw 1.5vw 1.5vw;
+//  }
+//  .leaflet-top.leaflet-left,
+//  .leaflet-bottom.leaflet-left,
+//  .leaflet-bottom.leaflet-right
+//  {
+//    * {
+//      pointer-events: none;
+//    }
+//  }
+//}
+//
+//.map-with-details {
+//  .leaflet-interactive {
+//    cursor: default;
+//  }
+//}
+//@import "Counter/Counter";
+//@import "Legend/Legend";
+//@import "Heading/Heading";
+//@import "CloseButton/CloseButton";

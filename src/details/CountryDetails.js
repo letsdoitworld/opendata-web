@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import EventType from '../EventType';
-import * as EventSystem from '../EventSystem';
-import TrashPoint from '../TrashPoint';
+import '../css/details/Details.css';
 
-export default class Details extends Component {
+export default class CountryDetails extends Component {
     static propTypes = {
         match: PropTypes.object,
     };
@@ -14,16 +13,10 @@ export default class Details extends Component {
             match: this.match,
         };
     }
-
     constructor(props) {
         super(props);
-        this.state = {data: [], url: 'https://opendata.wemakesoftware.eu/api/trashpoint/' + this.props.match.params.number};
+        this.state = {data: [], url: 'https://opendata.wemakesoftware.eu/api/reportsbycountry/' + this.props.match.params.countryCode};
         this.loadData();
-    }
-    componentDidMount() {
-        EventSystem.subscribe(
-            EventType.eventType.TRASHPOINT_SELECTED,
-            this.trashPointSelected.bind(this));
     }
     loadData() {
         fetch(this.state.url)
@@ -33,19 +26,14 @@ export default class Details extends Component {
             })
             .catch(err => console.error(this.state.url, err.toString()));
     }
-    trashPointSelected(trashPoint: TrashPoint) {
-        this.setState({trashPoint});
-    }
-
     render() {
         this.countryDataSTR = JSON.stringify(this.state.data.sources);
         return (
             <div className="details-container">
+                <Link to={'/countries'}>Back to countries list &raquo; </Link>
                 <div className="row tpr">
-                    <h3>TrashPoint details</h3>
-
-                    id : { parseInt(this.props.match.params.number, 10)}
-                    data : {this.countryDataSTR}
+                    country details here
+                    {this.countryDataSTR}
                 </div>
             </div>
         );
