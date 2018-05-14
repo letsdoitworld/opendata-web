@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,700&subset=latin-ext');
 
 * {
   box-sizing: border-box;
@@ -25,6 +27,15 @@ a {
 }
 a:hover {
   color: #7b7b7b;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 .h1 {
   font-family: 'Barlow Condensed', sans-serif;
@@ -62,7 +73,110 @@ a:hover {
   box-shadow: 0 0 24px 0 rgba(178,178,178,0.5);
   min-height: 100%;
   padding: 30px;
+  z-index: 1000;
 }
 .map-container {
 
+}
+
+
+.go-back {
+  text-align: right;
+
+  .go-back__link {
+    background: url(/img/arrow_left.svg) left center no-repeat;
+    color: #313131;
+    font-weight: bold;
+    padding-left: 50px;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .go-back__link:hover {
+    color: #3B8FE7;
+  }
+
+  .go-back__link::before {
+    background: #f8f8f8;
+    content: '';
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    margin-top: -9px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+}
+
+
+/**
+ * Search box
+ */
+.search-box {
+  display: grid;
+  grid-template-columns: auto 45px;
+  position: relative;
+
+  .search-box__input {
+    opacity: 0;
+  }
+  .search-box__button {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(178,178,178, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: #3B8FE7;
+    cursor: pointer;
+    height: 33px;
+    width: 33px;
+  }
+  .search-box__button:hover {
+    background-color: #3B8FE7;
+    color: #fff;
+  }
+}
+.search-box.active::after {
+  content: '';
+  background-color: #3B8FE7;
+  height: 4px;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  right: 0px;
+}
+.search-box.active  {
+  .search-box__input {
+    background: transparent;
+    border: #f00 1px dotted;
+    opacity: 0.3;
+    display: block;
+    font-size: 1.6rem;
+    height: 26px;
+  }
+  .search-box__input::after {
+    content: '';
+    background-color: #3B8FE7;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    right: 0px;
+  }
+  .search-box__button {
+    background: transparent;
+    box-shadow: none;
+    color: #3B8FE7;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.displayed {
+  display: block;
 }

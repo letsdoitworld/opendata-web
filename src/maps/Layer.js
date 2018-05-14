@@ -43,7 +43,9 @@ class Layer extends Component {
         this.layer.setFeatureClickColumns(['id']);
         this.layer.on('featureClicked', (featureEvent) => {
             const navigateToDetails = `/details/${featureEvent.data.id}`;
-            if (this.props.location && this.props.location.pathname !== navigateToDetails) {
+            // layer object does not receive this.props updates (carto.js restrictions)
+            // thus we check this.props.history instead of this.props.location
+            if (this.props.history && this.props.history.location.pathname !== navigateToDetails) {
                 this.props.history.push(navigateToDetails);
             }
         });

@@ -11,15 +11,15 @@ const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nol
 
 class WorldMap extends Component {
     static propTypes = {
-        location: PropTypes.object,
+        selectedTrashPoint: PropTypes.object,
     };
 
     static get defaultProps() {
         return {
             location: this.location,
+            selectedTrashPoint: this.selectedTrashPoint,
         };
     }
-
 
     constructor(props) {
         super(props);
@@ -34,20 +34,21 @@ class WorldMap extends Component {
         };
     }
 
-    shouldComponentUpdate(nextProps) {
-        if (this.props.location.pathname !== nextProps.location.pathname) {
-            // this.handleLocationChange(nextProps.location);
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.selectedTrashPoint
+            && nextProps.selectedTrashPoint
+            !== this.props.selectedTrashPoint) {
+            const center = [nextProps.selectedTrashPoint.lat, nextProps.selectedTrashPoint.long];
+
+            this.nativeMap.panTo(center);
+            return true;
         }
         return false;
     }
 
-    // handleLocationChange(nextLocation) {
-    // if (nextLocation) {
-    //
-    //     console.log('changing location to ' + this.JSON.stringify(nextLocation));
-    // }
-    // return false;
-    // }
+    shouldComponentUpdate() {
+        return false;
+    }
 
     render() {
         const {center, zoom} = this.state;

@@ -1,29 +1,33 @@
 import 'babel-polyfill';
+import {withRouter} from 'react-router';
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import carto from 'carto.js';
-import ReactGA from 'react-ga';
 import States from './States';
-import Country from './Country';
 import IntroText from './IntroText';
 import Details from './details/Details';
-import Timeseries from './timeline/Timeseries';
-import cartoMapData from './data/cartoMapData';
-import {buildStyle} from './utils/styleFormatter';
-import * as EventSystem from './EventSystem';
-import EventType from './EventType';
 import CountryList from './details/CountryList';
 import CountryDetails from './details/CountryDetails';
 import WorldMap from './maps/WorldMap';
 
-export default class App extends Component {
-    static ABOUT_PAGE = 'about';
-    static ASSEMBLY_PAGE = 'assembly';
+class App extends Component {
+    static propTypes = {
+        location: PropTypes.object,
+    };
+
+    static get defaultProps() {
+        return {
+            location: this.location,
+        };
+    }
 
     constructor(props) {
         super(props);
         this.state = {
             state: States.state.LOADING,
+            selectedCountry: {},
+            selectedTrashPoint: {},
         };
 
         // Init Google Analytics
@@ -33,90 +37,85 @@ export default class App extends Component {
     /* eslint-disable */
     componentDidMount() {
         this.setState({nativeMap: this.nativeMap});
-        EventSystem.subscribe(
-            EventType.eventType.TIMESERIES_CHANGED,
-            this.onDataChanged.bind(this));
+
+        if (this.isTrashPointDetailsRequired(this.props)) {
+            this.loadTrashPointDetails(this.props);
+        } else if (this.isCountryDetailsRequired(this.props)) {
+            this.loadCountryDetails(this.props);
+        }
+    }
+
+    loadTrashPointDetails(props) {
+        const trashPointId = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
+        console.log('loading trashpoint with id: ' + trashPointId);
+
+        fetch('https://opendata.wemakesoftware.eu/api/trashpoint/' + trashPointId)
+            .then(response => response.json())
+            .then((data) => {
+                console.log('data loaded' + JSON.stringify(data));
+
+                if (data && data.sources) {
+
+                    this.setState({selectedTrashPoint: data.sources[0]});
+                }
+            })
+            .catch(err => console.error(this.state.url, err.toString()));
+    }
+
+    loadCountryDetails(props) {
+        const countryCode = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
+        console.log('loading countrywith id: ' + countryCode);
+
+        fetch('https://opendata.wemakesoftware.eu/api/reportsbyparam?country_code=' + countryCode)
+            .then(response => response.json())
+            .then((data) => {
+
+                    console.log('data loaded' + JSON.stringify(data));
+                if (data) {
+                    this.setState({selectedCountry: {'countryCode': countryCode.toUpperCase(), trashPointsTotal: data.trashpoints_total, trashPoints:  data.trashpoints}});
+                }
+            })
+            .catch(err => console.error(this.state.url, err.toString()));
+    }
+
+    isTrashPointDetailsRequired(props) {
+        return props.location && props.location.pathname.startsWith('/details');
+    }
+    isCountryDetailsRequired(props) {
+        return props.location && props.location.pathname.startsWith('/country');
     }
 
     /* eslint-enable */
 
-    onDataChanged = (data) => {
-        this.setState(data);
-        const newStyle = buildStyle(data);
-        this.setState({layerStyle: newStyle, hidelayers: false});
-    };
-
-    onModeChange = (mode, selectedCountry) => {
-        if (this.state.visibleOverlay) {
-            return;
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.location !== this.props.location) {
+            console.log('componentWillReceiveProps');
+            if (this.isTrashPointDetailsRequired(nextProps)) {
+                this.loadTrashPointDetails(nextProps);
+            } else if (this.isCountryDetailsRequired(nextProps)) {
+                this.loadCountryDetails(nextProps);
+            }
         }
-        if (!selectedCountry) {
-            selectedCountry = new Country();
-        }
-        this.setState({
-            mode,
-            selectedCountry,
-        });
-
-        // Record pageview
-        if (selectedCountry.name) {
-            const path = window.location.pathname + '#country=' + selectedCountry.name;
-            ReactGA.set({page: path});
-            ReactGA.pageview(path);
-            ReactGA.event({
-                category: 'Nav',
-                action: 'Changed country',
-                label: selectedCountry.name,
-            });
-        }
-    };
-
-    onTimelineChange(date, numberOfReports) {
-        this.setState({
-            currentDate: date,
-            numberOfReports,
-        });
     }
 
     cartoClient = new carto.Client({apiKey: '7947aa9e7fcdff0f5f8891a5f83b1e6fa6350687', username: 'worldcleanupday'});
-
-    hideOverlay = () => {
-        this.setState({visibleOverlay: null});
-    };
-    showAboutPage = () => {
-        this.setState({visibleOverlay: App.ABOUT_PAGE});
-
-        // Record pageview
-        ReactGA.set({page: window.location.pathname + window.location.search});
-        ReactGA.modalview('/about/');
-    };
-    showAssemblyPage = () => {
-        this.setState({visibleOverlay: App.ASSEMBLY_PAGE});
-        ReactGA.modalview('/demo/');
-    };
-    renderTimeseries = () => (
-        <Timeseries
-            client={this.cartoClient}
-            source={cartoMapData.source}
-            nativeMap={this.state.nativeMap}
-        />
-    );
 
     render() {
         const LeftPanel = () => (
             <Switch>
                 <Route exact path={'/'} component={IntroText} />
                 <Route exact={false} path={'/countries'} component={CountryList} />
-                <Route path={'/country/:countryCode'} component={CountryDetails} />
-                <Route path={'/details/:number'} component={Details} />
+                <Route path={'/country/:countryCode'} render={props => <CountryDetails selectedCountry={this.state.selectedCountry} {...props} />} />
+                <Route path={'/details/:number'} render={props => <Details selectedTrashPoint={this.state.selectedTrashPoint} {...props} />} />
             </Switch>
         );
 
         return (
             <div className="app-wrapper">
                 <LeftPanel />
-                <WorldMap />
+                <WorldMap selectedTrashPoint={this.state.selectedTrashPoint} />
             </div>
         );
     }
 }
+export default withRouter(App);
