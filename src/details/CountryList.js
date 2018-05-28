@@ -2,35 +2,32 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import ReactCountryFlag from 'react-country-flag';
 import {countries} from 'country-data';
+import PropTypes from 'prop-types';
 import '../css/details/Details.css';
 import Navigation from '../Navigation';
 
 export default class CountryList extends Component {
+    static propTypes = {
+        allCountries: PropTypes.array,
+        topCountries: PropTypes.array,
+    };
+
+    static get defaultProps() {
+        return {
+            allCountries: this.allCountries,
+            topCountries: this.topCountries,
+        };
+    }
     constructor(props) {
         super(props);
-        // this.loadData();
         this.state = {};
         this.showTop10Countries = this.showTop10Countries.bind(this);
         this.showAllCountries = this.showAllCountries.bind(this);
     }
 
     componentDidMount() {
-        this.state = {data: [], url: 'https://opendata.wemakesoftware.eu/api/countries'};
-        this.loadData();
-    }
-
-    loadData() {
-        fetch(this.state.url)
-            .then(response => response.json())
-            .then((data) => {
-                if (data.status === 'SUCCESS') {
-                    const allCountries = [];
-                    data.sources.forEach(country => allCountries.push(country));
-                    this.setState({allCountries, topCountries: allCountries.slice(0, 10)});
-                    this.showTop10Countries();
-                }
-            })
-            .catch(err => console.error(this.state.url, err.toString()));
+        this.state = {data: []};
+        this.showTop10Countries();
     }
 
     showTop10Countries(e) {
@@ -38,14 +35,14 @@ export default class CountryList extends Component {
             e.preventDefault();
         }
 
-        this.setState({displayedCountries: this.state.topCountries});
+        this.setState({displayedCountries: this.props.topCountries});
     }
     showAllCountries(e) {
         if (e) {
             e.preventDefault();
         }
 
-        this.setState({displayedCountries: this.state.allCountries});
+        this.setState({displayedCountries: this.props.allCountries});
     }
 
     isTop10Displayed() {
@@ -79,7 +76,7 @@ export default class CountryList extends Component {
                     </div>
                     {this.state.displayedCountries &&
                      this.state.displayedCountries.map((item, key) => (
-                         <div className="countries-list__item">
+                         <div className="countries-list__item" key={key}>
                              <div className="col">{key + 1}</div>
                              <div className="col">
                                  <ReactCountryFlag code={item.country_code} svg />

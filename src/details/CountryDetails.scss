@@ -169,3 +169,254 @@
   background-color: #50E3C2;
 
 }
+.trashpoint-details {
+  background: #fff;
+  box-shadow: 0 0 24px 0 hsla(0,0%,70%,.5);
+  min-height: 100%;
+  padding: 0 9px;
+  z-index: 1001;
+  overflow: auto;
+  height: 100%;
+  position: absolute;
+  left: 30%;
+  top: 0px;
+  width: 25%;
+  .header {
+    font-family: Barlow Condensed,sans-serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    margin: 85px 0 10px 0;
+    text-align: center;
+  }
+  .h2 {
+    margin: 20px 0;
+  }
+
+  .address {
+    color: #7B7B7B;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .google-maps-link {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+
+    .google-maps-link__link {
+      background: url("/img/arrow_right.svg") right center no-repeat;
+      color: #313131;
+      font-weight: bold;
+      padding-right: 50px;
+      position: relative;
+      text-decoration: none;
+    }
+    .google-maps-link__link::after {
+      background: #f8f8f8;
+      content: '';
+      height: 19px;
+      width: 19px;
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      margin-top: -9px;
+      z-index: -1;
+      border-radius: 50%;
+    }
+  }
+
+  .note {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.0rem;
+    margin: 27px 20px 20px 20px;
+    text-align: center;
+  }
+
+  .alert {
+    background: #F4F5F7;
+    color: #7B7B7B;
+    font-size: 1.4rem;
+    line-height: 1.3rem;
+    margin: 20px -9px;
+    padding: 26px 15px 26px 60px;
+    position: relative;
+  }
+  .alert::before {
+    background: #FF548B;
+    content: '';
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    margin-top: -18px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  .progress {
+
+    .progress__icons {
+      display: grid;
+      grid-template-columns: auto auto auto 30px;
+      justify-items: stretch;
+      border-bottom: #3B8FE7 2px solid;
+      padding-bottom: 20px;
+      position: relative;
+      z-index: 20;
+    }
+    .progress__icon {
+      background-position: top left;
+      background-repeat: no-repeat;
+      height: 30px;
+      position: relative;
+    }
+    .progress__icon::after {
+      background: #3B8FE7;
+      border-radius: 2px 2px 0 0;
+      content: '';
+      height: 20px;
+      width: 4px;
+      position: absolute;
+      left: 10px;
+      bottom: -20px;
+      margin-right: -2px;
+    }
+    .progress__icon_hand {
+      background-image: url('/img/Handful_icon.svg');
+    }
+    .progress__icon_trashbag {
+      background-image: url('/img/Trashbag_icon.svg');
+    }
+    .progress__icon_wheelbarrow {
+      background-image: url('/img/Wheelbarrow_icon.svg');
+    }
+    .progress__icon_truck {
+      background-image: url('/img/Trashtruck_icon.svg');
+    }
+    .progress__bar {
+      background-color: #FFF13D;
+      border-radius: 5px;
+      height: 11px;
+      margin-top: -4px;
+      margin-left: 7px;
+      position: relative;
+      z-index: 1;
+      width: 3%;
+    }
+
+    .progress__description {
+      color: #7B7B7B;
+      font-size: 1.4rem;
+      margin: 25px 0;
+      text-align: center;
+    }
+  }
+
+  .progress__state_1 {
+    .progress__icon_hand { background-image: url('/img/Filledhand_icon.svg'); }
+
+  }
+  .progress__state_2 {
+    .progress__icon_hand { background-image: url('/img/Filledhand_icon.svg'); }
+    .progress__icon_trashbag { background-image: url('/img/Filledbag_icon.svg'); }
+    .progress__bar { width: 33%; }
+  }
+  .progress__state_3 {
+    .progress__icon_hand { background-image: url('/img/Filledhand_icon.svg'); }
+    .progress__icon_trashbag { background-image: url('/img/Filledbag_icon.svg'); }
+    .progress__icon_wheelbarrow { background-image: url('/img/Wheelbarrow_icon.svg'); }
+    .progress__bar { width: 63%; }
+  }
+  .progress__state_4 {
+    .progress__icon_hand { background-image: url('/img/Filledhand_icon.svg'); }
+    .progress__icon_trashbag { background-image: url('/img/Filledbag_icon.svg'); }
+    .progress__icon_wheelbarrow { background-image: url('/img/Wheelbarrow_icon.svg'); }
+    .progress__icon_truck { background-image: url('/img/Trashtruck_icon.svg'); }
+    .progress__bar {
+      width: 93%;
+    }
+  }
+
+  .gallery {
+    .gallery-images__item {
+      margin-right: 1rem;
+    }
+    .gallery-nav {
+      margin: 10px 6px;
+    }
+    .gallery-nav__prev {
+      background: url("/img/arrow_left.svg") left center no-repeat;
+      color: #313131;
+      display: inline-block;
+      height: 2rem;
+      position: relative;
+      text-decoration: none;
+      width: 5rem;
+    }
+    .gallery-nav__prev::after {
+      background: #f8f8f8;
+      content: '';
+      height: 19px;
+      width: 19px;
+      position: absolute;
+      left: -6px;
+      top: 50%;
+      margin-top: -9px;
+      z-index: -1;
+      border-radius: 50%;
+    }
+    .gallery-nav__next {
+      background: url("/img/arrow_right.svg") right center no-repeat;
+      color: #313131;
+      float: right;
+      height: 2rem;
+      position: relative;
+      text-decoration: none;
+      width: 5rem;
+    }
+    .gallery-nav__next::after {
+      background: #f8f8f8;
+      content: '';
+      height: 19px;
+      width: 19px;
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      margin-top: -9px;
+      z-index: -1;
+      border-radius: 50%;
+    }
+  }
+
+  .detailed-info {
+    padding: 0 11px;
+  }
+
+  .description {
+    font-weight: 500;
+    margin: 20px 0;
+  }
+
+  .details {
+    .details__item {
+      display: inline-block;
+      margin: 0 10px;
+      position: relative;
+    }
+    .details__item::before {
+      background: #FFF13D;
+      border-radius: 50%;
+      content: '';
+      height: 5px;
+      width: 5px;
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      margin-top: -3px;
+      z-index: 1;
+    }
+  }
+}

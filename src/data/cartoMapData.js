@@ -10,6 +10,6 @@ export default {
     `,
 
     source: `
-SELECT *  from reportslast
+SELECT *  from reportslast 
     `,
 };

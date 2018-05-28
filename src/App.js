@@ -6,7 +6,6 @@ import {Switch, Route} from 'react-router-dom';
 import carto from 'carto.js';
 import States from './States';
 import IntroText from './IntroText';
-import Details from './details/Details';
 import CountryList from './details/CountryList';
 import CountryDetails from './details/CountryDetails';
 import WorldMap from './maps/WorldMap';
@@ -29,27 +28,36 @@ class App extends Component {
             selectedCountry: {},
             selectedTrashPoint: {},
         };
-
         // Init Google Analytics
         // ReactGA.initialize('UA-109735778-1');
     }
 
     /* eslint-disable */
-    componentDidMount() {
+    async componentDidMount() {
         this.setState({nativeMap: this.nativeMap});
-
         if (this.isTrashPointDetailsRequired(this.props)) {
-            this.loadTrashPointDetails(this.props);
+            await this.loadTrashPointDetails(this.props);
+            if (this.state.selectedCountry.country_code==null){
+                await this.loadСountriesData();
+                await this.loadCountryDetails(this.state.selectedTrashPoint.country_code.toLowerCase());
+            }
+            //alert(this.state.selectedTrashPoint.country_Code);
         } else if (this.isCountryDetailsRequired(this.props)) {
-            this.loadCountryDetails(this.props);
+            if (this.state.allCountries==null) {
+                 await this.loadСountriesData(this.props);
+            }
+            const countryCode=this.props.location.pathname.substring(this.props.location.pathname.lastIndexOf('/') + 1);
+            this.loadCountryDetails(countryCode);
+        } else if (this.isCountryListRequired(this.props)) {
+            this.loadСountriesData();
         }
     }
 
-    loadTrashPointDetails(props) {
+    async loadTrashPointDetails(props) {
         const trashPointId = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
         console.log('loading trashpoint with id: ' + trashPointId);
 
-        fetch('https://opendata.wemakesoftware.eu/api/trashpoint/' + trashPointId)
+        await fetch('http://localhost:4000/api/trashpoint/' + trashPointId)
             .then(response => response.json())
             .then((data) => {
                 console.log('data loaded' + JSON.stringify(data));
@@ -62,38 +70,53 @@ class App extends Component {
             .catch(err => console.error(this.state.url, err.toString()));
     }
 
-    loadCountryDetails(props) {
-        const countryCode = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
-        console.log('loading countrywith id: ' + countryCode);
+    async loadCountryDetails(countryCode) {
+        let clickedCountry = this.state.allCountries.find(o => o.country_code.toLowerCase() == countryCode);
+        this.setState({selectedCountry: clickedCountry});
+    }
 
-        fetch('https://opendata.wemakesoftware.eu/api/reportsbyparam?country_code=' + countryCode)
+    async loadСountriesData() {
+        await fetch('http://localhost:4000/api/countries')
             .then(response => response.json())
             .then((data) => {
-
-                    console.log('data loaded' + JSON.stringify(data));
-                if (data) {
-                    this.setState({selectedCountry: {'countryCode': countryCode.toUpperCase(), trashPointsTotal: data.trashpoints_total, trashPoints:  data.trashpoints}});
+                console.log('countriesdata loaded');
+                if (data.status === 'SUCCESS') {
+                    const allCountries = [];
+                    data.sources.forEach(country => allCountries.push(country));
+                    this.setState({allCountries, topCountries: allCountries.slice(0, 10)});
                 }
             })
             .catch(err => console.error(this.state.url, err.toString()));
     }
-
     isTrashPointDetailsRequired(props) {
         return props.location && props.location.pathname.startsWith('/details');
     }
     isCountryDetailsRequired(props) {
         return props.location && props.location.pathname.startsWith('/country');
     }
-
+    isCountryListRequired(props) {
+        return props.location && props.location.pathname.startsWith('/countries');
+    }
     /* eslint-enable */
 
-    componentWillReceiveProps(nextProps) {
+    async componentWillReceiveProps(nextProps) {
         if (nextProps.location !== this.props.location) {
             console.log('componentWillReceiveProps');
             if (this.isTrashPointDetailsRequired(nextProps)) {
-                this.loadTrashPointDetails(nextProps);
+                await this.loadTrashPointDetails(nextProps);
+                if (this.state.selectedCountry.country_Code == null) {
+                    await this.loadСountriesData();
+                    await this.loadCountryDetails(
+                        this.state.selectedTrashPoint.country_code.toLowerCase());
+                }
             } else if (this.isCountryDetailsRequired(nextProps)) {
-                this.loadCountryDetails(nextProps);
+                if (this.state.allCountries == null) {
+                    await this.loadСountriesData();
+                }
+                const countryCode = nextProps.location.pathname.substring(nextProps.location.pathname.lastIndexOf('/') + 1);
+                this.loadCountryDetails(countryCode);
+            } else if (this.isCountryListRequired(nextProps)) {
+                this.loadСountriesData();
             }
         }
     }
@@ -104,9 +127,9 @@ class App extends Component {
         const LeftPanel = () => (
             <Switch>
                 <Route exact path={'/'} component={IntroText} />
-                <Route exact={false} path={'/countries'} component={CountryList} />
-                <Route path={'/country/:countryCode'} render={props => <CountryDetails selectedCountry={this.state.selectedCountry} {...props} />} />
-                <Route path={'/details/:number'} render={props => <Details selectedTrashPoint={this.state.selectedTrashPoint} {...props} />} />
+                <Route exact={false} path={'/countries'} render={props => <CountryList allCountries={this.state.allCountries} topCountries={this.state.topCountries} {...props} />} />
+                <Route path={'/country/:countryCode'} render={props => <CountryDetails selectedCountry={this.state.selectedCountry} selectedTrashPoint={null} {...props} />} />
+                <Route path={'/details/:number'} render={props => <CountryDetails selectedCountry={this.state.selectedCountry} selectedTrashPoint={this.state.selectedTrashPoint} {...props} />} />
             </Switch>
         );
 

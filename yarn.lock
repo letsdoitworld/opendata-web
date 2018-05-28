@@ -6776,6 +6776,10 @@ react-ga@^2.3.5:
     prop-types "^15.6.0"
     react "^15.6.2 || ^16.0"
 
+react-geocode@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-geocode/-/react-geocode-0.0.9.tgz#e2c805a680e6809330715aa506c8a2bcf411a41c"
+
 react-leaflet-choropleth@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-leaflet-choropleth/-/react-leaflet-choropleth-2.0.0.tgz#541ecc1fcd1023fbd9c4cd4e464e25fa38768a5d"
@@ -6866,9 +6870,18 @@ react-types@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/react-types/-/react-types-0.1.0.tgz#f64c8c70b4aedfb66ab8d4def138e284cbc33380"
 
-"react@^15.6.2 || ^16.0", react@^16.2.0:
+"react@^15.6.2 || ^16.0":
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
+react@^16.3.2:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
