@@ -57,7 +57,7 @@ class App extends Component {
         const trashPointId = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
         console.log('loading trashpoint with id: ' + trashPointId);
 
-        await fetch('http://localhost:4000/api/trashpoint/' + trashPointId)
+        await fetch('https://opendata.wemakesoftware.eu/api/trashpoint/' + trashPointId)
             .then(response => response.json())
             .then((data) => {
                 console.log('data loaded' + JSON.stringify(data));
@@ -76,7 +76,7 @@ class App extends Component {
     }
 
     async loadСountriesData() {
-        await fetch('http://localhost:4000/api/countries')
+        await fetch('https://opendata.wemakesoftware.eu/api/countries')
             .then(response => response.json())
             .then((data) => {
                 console.log('countriesdata loaded');
