@@ -18,9 +18,9 @@ export default class CountryDetails extends Component {
     }
     constructor(props) {
         super(props);
-        this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'hidden', address: ''};
+        this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'hidden', address: {name: '', subName: ''}};
         if (this.props.selectedTrashPoint != null) {
-            this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'displayed', address: ''};
+            this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'displayed', address: {name: '', subName: ''}};
         }
     }
 
@@ -35,24 +35,42 @@ export default class CountryDetails extends Component {
     }
 
     async getadressFromCoordinates() {
-        let address;
         // Get address from latidude & longitude.
+        const address = {name: '', subName: ''};
         await Geocode.fromLatLng(this.props.selectedTrashPoint.lat,
             this.props.selectedTrashPoint.long).then(
             (response) => {
-                address = response.results[0].formatted_address;
+                for (let i = 0; i < response.results.length; i++) {
+                    if (!response.results[i].formatted_address.startsWith('Unnamed')) {
+                        address.name = response.results[i].formatted_address;
+                        for (let n = 0; n < response.results[i].address_components.length; n++) {
+                            if (!address.name.startsWith(response.results[i]
+                                .address_components[n].long_name)) {
+                                address.subName = response.results[i]
+                                    .address_components[n].long_name;
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
             },
             (error) => {
                 console.error(error);
             },
         );
+        if (address.name === '') {
+            alert('aaa');
+            address.name = this.props.selectedTrashPoint.admin_area;
+            address.subName = this.props.selectedTrashPoint.admin_sub_area;
+        }
         return address;
     }
     async loadData() {
         const countrycode = this.props.selectedCountry != null ?
             this.props.selectedCountry.country_code.toLowerCase() :
             this.props.selectedTrashPoint.country_code.toLowerCase();
-        await fetch('https://opendata.wemakesoftware.eu/api/reportsbyparam?code=' + countrycode)
+        await fetch('http://localhost:4000/api/reportsbyparam?code=' + countrycode)
             .then(response => response.json())
             .then((data) => {
                 if (data) {
@@ -149,23 +167,16 @@ export default class CountryDetails extends Component {
                 </div>
                 <div className={'trashpoint-details ' + this.state.trashpointDetailClassName}>
                     {this.props.selectedTrashPoint ? <div>
-                        <h2 className="header">{this.state.address}</h2>
+                        <h2 className="header">{this.state.address.name}</h2>
 
-                        <div className="address">10415, Vana-Kalamaja, Põhja-Tallinn</div>
+                        <div className="address">{this.state.address.subName}</div>
 
                         <div className="google-maps-link">
                             <a href="#" className="google-maps-link__link">See directions in Google maps</a>
                         </div>
-
-                        <div className="note">
-                            <strong>Note:</strong>
-                        This point is located just around the corner
-                            of Kalamaja bakery near kids’ playground. It is in
-                        a visible place and hurts everyone’s eye.
-                        </div>
-
-                        <div className="alert">This point has hazardous amount of trash</div>
-
+                        <div className="note">{this.props.selectedTrashPoint.note}</div>
+                        {this.props.selectedTrashPoint.hazardous ?
+                            <div className="alert">This point has hazardous amount of trash</div> : null}
                         <div className="progress progress__state_1">
                             <div className="progress__icons">
                                 <div className="progress__icon progress__icon_hand" />
@@ -174,10 +185,10 @@ export default class CountryDetails extends Component {
                                 <div className="progress__icon progress__icon_truck" />
                             </div>
                             <div className="progress__bar" />
-                            <div className="progress__description">There is ca 33 bags of trash in this point</div>
+                            <div className="progress__description">This trash point is created {new Date(this.props.selectedTrashPoint.created_at).toString()} </div>
                         </div>
 
-                        <div className="gallery">
+                        {this.props.selectedTrashPoint.images ? <div className="gallery">
                             <div className="gallery-images">
                                 <a href="#" className="gallery-images__item"><img
                                     src="http://via.placeholder.com/160x100"
@@ -225,27 +236,39 @@ export default class CountryDetails extends Component {
                                     className="gallery-images__image"
                                 /></a>
                             </div>
-                        </div>
+                        </div> : null}
 
                         <div className="detailed-info">
                             <h3 className="h2">Trash origin</h3>
-                            <div className="description">Household</div>
+                            {this.props.selectedTrashPoint.household ?
+                                <div className="description">Household</div> : null}
 
+                            {this.props.selectedTrashPoint.construction ?
+                                <div className="description">Construction</div> : null}
                             <h3 className="h2">Trash type</h3>
 
                             <ul className="details">
-                                <li className="details__item">Glass</li>
-                                <li className="details__item">Bottles</li>
-                                <li className="details__item">Plastic</li>
-                                <li className="details__item">Packages</li>
-                                <li className="details__item">Glass</li>
-                                <li className="details__item">Bottles</li>
-                                <li className="details__item">Plastic</li>
-                                <li className="details__item">Packages</li>
-                                <li className="details__item">Glass</li>
-                                <li className="details__item">Bottles</li>
-                                <li className="details__item">Plastic</li>
-                                <li className="details__item">Packages</li>
+                                {this.props.selectedTrashPoint.glass ?
+                                    <li className="details__item">Glass</li>
+                                    : null}
+                                {this.props.selectedTrashPoint.lumber ?
+                                    <li className="details__item">Lumber</li>
+                                    : null}
+                                {this.props.selectedTrashPoint.plastic ?
+                                    <li className="details__item">Plastic</li>
+                                    : null}
+                                {this.props.selectedTrashPoint.metal ?
+                                    <li className="details__item">Metal</li>
+                                    : null}
+                                {this.props.selectedTrashPoint.rubber ?
+                                    <li className="details__item">Rubber</li>
+                                    : null}
+                                {this.props.selectedTrashPoint.other ?
+                                    <li className="details__item">Other</li>
+                                    : null}
+                                {this.props.selectedTrashPoint.textile ?
+                                    <li className="details__item">Textile</li>
+                                    : null}
                             </ul>
                         </div>
                     </div> : null}
