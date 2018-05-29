@@ -81,7 +81,7 @@ export default class CountryDetails extends Component {
         const countrycode = this.props.selectedCountry != null ?
             this.props.selectedCountry.country_code.toLowerCase() :
             this.props.selectedTrashPoint.country_code.toLowerCase();
-        await fetch('http://localhost:4000/api/reportsbyparam?code=' + countrycode)
+        await fetch('https://opendata.wemakesoftware.eu/api/reportsbyparam?code=' + countrycode)
             .then(response => response.json())
             .then((data) => {
                 if (data) {
