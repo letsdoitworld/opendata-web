@@ -21,6 +21,7 @@ export default class CountryDetails extends Component {
         this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'hidden', address: {name: '', subName: ''}};
         if (this.props.selectedTrashPoint != null) {
             this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'displayed', address: {name: '', subName: ''}};
+            this.setTrashSize();
         }
     }
 
@@ -60,11 +61,21 @@ export default class CountryDetails extends Component {
             },
         );
         if (address.name === '') {
-            alert('aaa');
             address.name = this.props.selectedTrashPoint.admin_area;
             address.subName = this.props.selectedTrashPoint.admin_sub_area;
         }
         return address;
+    }
+    setTrashSize() {
+        if (this.props.selectedTrashPoint.bulky) {
+            this.props.selectedTrashPoint.sizeState = 4;
+        } else if (this.props.selectedTrashPoint.litter) {
+            this.props.selectedTrashPoint.sizeState = 3;
+        } else if (this.props.selectedTrashPoint.uncategorized) {
+            this.props.selectedTrashPoint.sizeState = 2;
+        } else {
+            this.props.selectedTrashPoint.sizeState = 1;
+        }
     }
     async loadData() {
         const countrycode = this.props.selectedCountry != null ?
@@ -155,8 +166,8 @@ export default class CountryDetails extends Component {
 
                         {this.props.selectedCountry &&
                         this.state.trashpoints &&
-                        this.state.trashpoints.map(item => (
-                            <div className="reports-list__item status-one">
+                        this.state.trashpoints.map((item, key) => (
+                            <div className="reports-list__item status-one" key={key}>
                                 <div className="reports-list__title"><Link to={`/details/${item.id}`} >{item.type}</Link></div>
                                 <div className="reports-list__address">{item.country}</div>
                             </div>
@@ -177,7 +188,7 @@ export default class CountryDetails extends Component {
                         <div className="note">{this.props.selectedTrashPoint.note}</div>
                         {this.props.selectedTrashPoint.hazardous ?
                             <div className="alert">This point has hazardous amount of trash</div> : null}
-                        <div className="progress progress__state_1">
+                        <div className={'progress progress__state_' + this.props.selectedTrashPoint.sizeState}>
                             <div className="progress__icons">
                                 <div className="progress__icon progress__icon_hand" />
                                 <div className="progress__icon progress__icon_trashbag" />
