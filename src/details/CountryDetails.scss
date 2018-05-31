@@ -197,6 +197,11 @@
     font-size: 1.4rem;
     text-align: center;
     margin: 10px 0;
+    .address__value {
+      background: url("/img/Location.svg") left center no-repeat;
+      display: inline;
+      padding-left: 20px;
+    }
   }
 
   .google-maps-link {
@@ -255,7 +260,15 @@
     z-index: 1;
     border-radius: 50%;
   }
-
+  .alert.clean::before {
+    background: url("/img/Clean_point.svg") top left no-repeat;
+  }
+  .alert.unclean::before {
+    background: url("/img/Unclean_point.svg") top left no-repeat;
+  }
+  .alert.hazard::before {
+    background: url("/img/Hazardous_point.svg") top left no-repeat;
+  }
   .progress {
 
     .progress__icons {

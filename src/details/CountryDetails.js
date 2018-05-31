@@ -152,9 +152,9 @@ export default class CountryDetails extends Component {
                 <div className={'trashpoint-details ' + this.state.trashpointDetailClassName}>
                     {this.props.selectedTrashPoint ? <div>
                         <h2 className="header">{this.props.selectedTrashPoint.admin_area}</h2>
-
-                        <div className="address">{this.props.selectedTrashPoint.admin_sub_area}</div>
-
+                        <div className="address">
+                            <div className="address__value">{this.props.selectedTrashPoint.admin_sub_area}</div>
+                        </div>
                         <div className="google-maps-link">
                             <a href="#" className="google-maps-link__link">See directions in Google maps</a>
                         </div>

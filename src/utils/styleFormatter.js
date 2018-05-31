@@ -2,13 +2,13 @@ export const COLORS = ['#fcde9c', '#faa476', '#f0746e', '#e34f6f', '#dc3977', '#
 function _createRule() {
     return `
             [status='REPORTED'] {
-                marker-fill: #b9257a;
+                marker-fill: #FF548B;
             }
             [status='CONFIRMED'] {
-                marker-fill: #009999;
+                marker-fill: #FF548B;
             }
             [status='CLEANED'] {
-                marker-fill: #585858;
+                marker-fill: #50E3C2;
             }
         `;
 }
