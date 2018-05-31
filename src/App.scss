@@ -467,9 +467,5 @@ button {
 }
 
 .hidden {
-  display: none;
-}
-
-.displayed {
-  display: block;
+  display: none !important;
 }
