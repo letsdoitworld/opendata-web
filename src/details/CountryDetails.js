@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {countries} from 'country-data';
+import IntroText from '../IntroText';
 
 export default class CountryDetails extends Component {
     static propTypes = {
@@ -78,7 +79,7 @@ export default class CountryDetails extends Component {
 
     render() {
         return (
-            <div className="details-container country-container">
+            <div className={this.props.selectedCountry ? 'details-container country-container-' : ''}>
                 {this.props.selectedCountry ?
                     <div className="country-details">
                         <div className="go-back">
@@ -147,7 +148,7 @@ export default class CountryDetails extends Component {
                             </div>
                         </div>
 
-                    </div> : null}
+                    </div> : <IntroText />}
                 <div className={'trashpoint-details ' + this.state.trashpointDetailClassName}>
                     {this.props.selectedTrashPoint ? <div>
                         <h2 className="header">{this.props.selectedTrashPoint.admin_area}</h2>
