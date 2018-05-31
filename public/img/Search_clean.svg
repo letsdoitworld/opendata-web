@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Search_clean</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-1308.000000, -482.000000)">
+            <g id="Search-hover-and-active" transform="translate(1143.000000, 483.000000)">
+                <g id="Search_clean" transform="translate(166.000000, 0.000000)">
+                    <g id="Search">
+                        <g>
+                            <circle id="Oval" stroke="#3B8FE7" stroke-width="2" cx="6.5" cy="6.5" r="6.5"></circle>
+                            <path d="M12.8890873,9.3890873 L14.8890873,9.3890873 L14.8890873,17.3890873 C14.8890873,17.941372 14.441372,18.3890873 13.8890873,18.3890873 L13.8890873,18.3890873 C13.3368025,18.3890873 12.8890873,17.941372 12.8890873,17.3890873 L12.8890873,9.3890873 Z" id="Rectangle-5" fill="#3B8FE7" transform="translate(13.889087, 13.889087) scale(-1, 1) rotate(45.000000) translate(-13.889087, -13.889087) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
