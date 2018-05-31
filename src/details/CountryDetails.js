@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {countries} from 'country-data';
-import Geocode from 'react-geocode';
 
 export default class CountryDetails extends Component {
     static propTypes = {
@@ -16,56 +15,16 @@ export default class CountryDetails extends Component {
             selectedTrashPoint: this.selectedTrashPoint,
         };
     }
+
     constructor(props) {
         super(props);
-        this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'hidden', address: {name: '', subName: ''}};
+        this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'hidden'};
         if (this.props.selectedTrashPoint != null) {
-            this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'displayed', address: {name: '', subName: ''}};
+            this.state = {allTrashPointsClassName: 'hidden', trashpointDetailClassName: 'displayed'};
             this.setTrashSize();
         }
     }
 
-    async componentDidMount() {
-        this.setTrashPointAddress();
-    }
-    async setTrashPointAddress() {
-        if (this.props.selectedTrashPoint != null && this.props.selectedTrashPoint.lat != null) {
-            const address = await this.getadressFromCoordinates();
-            this.setState({address});
-        }
-    }
-
-    async getadressFromCoordinates() {
-        // Get address from latidude & longitude.
-        const address = {name: '', subName: ''};
-        await Geocode.fromLatLng(this.props.selectedTrashPoint.lat,
-            this.props.selectedTrashPoint.long).then(
-            (response) => {
-                for (let i = 0; i < response.results.length; i++) {
-                    if (!response.results[i].formatted_address.startsWith('Unnamed')) {
-                        address.name = response.results[i].formatted_address;
-                        for (let n = 0; n < response.results[i].address_components.length; n++) {
-                            if (!address.name.startsWith(response.results[i]
-                                .address_components[n].long_name)) {
-                                address.subName = response.results[i]
-                                    .address_components[n].long_name;
-                                break;
-                            }
-                        }
-                        break;
-                    }
-                }
-            },
-            (error) => {
-                console.error(error);
-            },
-        );
-        if (address.name === '') {
-            address.name = this.props.selectedTrashPoint.admin_area;
-            address.subName = this.props.selectedTrashPoint.admin_sub_area;
-        }
-        return address;
-    }
     setTrashSize() {
         if (this.props.selectedTrashPoint.bulky) {
             this.props.selectedTrashPoint.sizeState = 4;
@@ -75,6 +34,17 @@ export default class CountryDetails extends Component {
             this.props.selectedTrashPoint.sizeState = 2;
         } else {
             this.props.selectedTrashPoint.sizeState = 1;
+        }
+    }
+    getTrashStatus() {
+        for (let i = 0; i < this.state.trashpoints.length; i++) {
+            if (this.state.trashpoints[i].hazardous) {
+                this.state.trashpoints[i].trashViewStatus = 'two';
+            } else if (this.state.trashpoints[i].status === 'CLEANED') {
+                this.state.trashpoints[i].trashViewStatus = 'three';
+            } else {
+                this.state.trashpoints[i].trashViewStatus = 'one';
+            }
         }
     }
     async loadData() {
@@ -99,6 +69,7 @@ export default class CountryDetails extends Component {
         } else {
             if (this.state.trashpoints == null) {
                 await this.loadData();
+                this.getTrashStatus();
             }
             this.setState({trashpointDetailClassName: 'hidden'});
             this.setState({allTrashPointsClassName: 'displayed'});
@@ -108,79 +79,80 @@ export default class CountryDetails extends Component {
     render() {
         return (
             <div className="details-container country-container">
+                {this.props.selectedCountry ?
+                    <div className="country-details">
+                        <div className="go-back">
+                            <Link to={'/countries'} className="go-back__link">Back to countries list</Link>
+                        </div>
 
-                <div className="go-back">
-                    <Link to={'/countries'} className="go-back__link">Back to countries list</Link>
-                </div>
+                        <h1 className="h1">{ countries[this.props.selectedCountry.country_code] ? countries[this.props.selectedCountry.country_code].name : ''}</h1>
 
-                <h1 className="h1">{ countries[this.props.selectedCountry.country_code] ? countries[this.props.selectedCountry.country_code].name : ''}</h1>
+                        <div className="country-data__item">
+                            <div>
+                                <div className="country-data__title">TPR INDEX</div>
+                                <div className="country-data__note">*Trash Point Report index (TPR index) shows the number of trash reports per 10,000 people.</div>
+                                <a href="#" className="country-data__link">More on TPR index</a>
+                            </div>
+                            <div className="country-data__value">{Number(this.props.selectedCountry.tpr).toFixed(2)}</div>
+                        </div>
 
-                <div className="country-data__item">
-                    <div>
-                        <div className="country-data__title">TPR INDEX</div>
-                        <div className="country-data__note">*Trash Point Report index (TPR index) shows the number of trash reports per 10,000 people.</div>
-                        <a href="#" className="country-data__link">More on TPR index</a>
-                    </div>
-                    <div className="country-data__value">{this.props.selectedCountry.tpr}</div>
-                </div>
+                        <div className="country-data__item with-icon">
+                            <div className="country-data__icon">
+                                <img src="/img/population_icon.svg" alt="Population" />
+                            </div>
+                            <div className="country-data__title">POPULATION</div>
+                            <div className="country-data__value">{this.props.selectedCountry.population}</div>
+                        </div>
 
-                <div className="country-data__item with-icon">
-                    <div className="country-data__icon">
-                        <img src="/img/population_icon.svg" alt="Population" />
-                    </div>
-                    <div className="country-data__title">POPULATION</div>
-                    <div className="country-data__value">{this.props.selectedCountry.population}</div>
-                </div>
+                        <div className="country-data__item with-icon">
+                            <div className="country-data__icon">
+                                <img src="/img/report_icon.svg" alt="Report" />
+                            </div>
+                            <div className="country-data__title">REPORTS</div>
+                            <div className="country-data__value">{this.props.selectedCountry.reports_number}</div>
+                        </div>
 
-                <div className="country-data__item with-icon">
-                    <div className="country-data__icon">
-                        <img src="/img/report_icon.svg" alt="Report" />
-                    </div>
-                    <div className="country-data__title">REPORTS</div>
-                    <div className="country-data__value">{this.props.selectedCountry.reports_number}</div>
-                </div>
-
-
-                <a href="#" className="btn-detailed-data" onClick={this.showDetailedData}>
-                    <span>Get detailed data</span>
-                </a>
-
-                <div className="data-collectors">
-                    <h2 className="h2">Data collected by</h2>
-                    <ul>
+                        {this.props.selectedCountry.reports_number > 0 ?
+                            <a href="#" className="btn-detailed-data" onClick={this.showDetailedData}>
+                                <span>Get detailed data</span>
+                            </a> : null}
                         {this.props.selectedCountry.resources &&
-                        this.props.selectedCountry.resources.map((item, key) => (
-                            <li className="data-collectors__item" key={key}>
-                                <span className="data-collectors__name">{item.resourceName}</span>
-                                <a href="#" className="data-collectors__link">{item.link}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                        this.props.selectedCountry.resources.length > 0 ?
+                            <div className="data-collectors">
+                                <h2 className="h2">Data collected by</h2>
+                                <ul>
+                                    {this.props.selectedCountry.resources.map((item, key) => (
+                                        <li className="data-collectors__item" key={key}>
+                                            <span className="data-collectors__name">{item.resourceName}</span>
+                                            <a href={item.link} className="data-collectors__link">{item.link}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div> : null}
 
-                <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
+                        <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
 
-                    <h2 className="h2 header">All trash points</h2>
+                            <h2 className="h2 header">All trash points</h2>
 
-                    <div className="reports-list">
+                            <div className="reports-list">
 
-                        {this.props.selectedCountry &&
+                                {this.props.selectedCountry &&
                         this.state.trashpoints &&
                         this.state.trashpoints.map((item, key) => (
-                            <div className="reports-list__item status-one" key={key}>
-                                <div className="reports-list__title"><Link to={`/details/${item.id}`} >{item.type}</Link></div>
-                                <div className="reports-list__address">{item.country}</div>
+                            <div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
+                                <div className="reports-list__title"><Link to={`/details/${item.id}`} >{item.admin_area}</Link></div>
+                                <div className="reports-list__address">{item.admin_sub_area}</div>
                             </div>
                         ))}
-                    </div>
+                            </div>
+                        </div>
 
-
-                </div>
+                    </div> : null}
                 <div className={'trashpoint-details ' + this.state.trashpointDetailClassName}>
                     {this.props.selectedTrashPoint ? <div>
-                        <h2 className="header">{this.state.address.name}</h2>
+                        <h2 className="header">{this.props.selectedTrashPoint.admin_area}</h2>
 
-                        <div className="address">{this.state.address.subName}</div>
+                        <div className="address">{this.props.selectedTrashPoint.admin_sub_area}</div>
 
                         <div className="google-maps-link">
                             <a href="#" className="google-maps-link__link">See directions in Google maps</a>
@@ -250,37 +222,45 @@ export default class CountryDetails extends Component {
                         </div> : null}
 
                         <div className="detailed-info">
-                            <h3 className="h2">Trash origin</h3>
                             {this.props.selectedTrashPoint.household ?
-                                <div className="description">Household</div> : null}
+                                <div>
+                                    <h3 className="h2">Trash origin</h3>
+                                    <div className="description">Household</div></div> : null}
 
                             {this.props.selectedTrashPoint.construction ?
                                 <div className="description">Construction</div> : null}
-                            <h3 className="h2">Trash type</h3>
+                            { this.props.selectedTrashPoint.glass ||
+                            this.props.selectedTrashPoint.lumber ||
+                            this.props.selectedTrashPoint.metal ||
+                            this.props.selectedTrashPoint.plastic ||
+                            this.props.selectedTrashPoint.rubber ||
+                            this.props.selectedTrashPoint.other ||
+                            this.props.selectedTrashPoint.textile ? <div>
+                                <h3 className="h2">Trash type</h3>
 
-                            <ul className="details">
-                                {this.props.selectedTrashPoint.glass ?
-                                    <li className="details__item">Glass</li>
-                                    : null}
-                                {this.props.selectedTrashPoint.lumber ?
-                                    <li className="details__item">Lumber</li>
-                                    : null}
-                                {this.props.selectedTrashPoint.plastic ?
-                                    <li className="details__item">Plastic</li>
-                                    : null}
-                                {this.props.selectedTrashPoint.metal ?
-                                    <li className="details__item">Metal</li>
-                                    : null}
-                                {this.props.selectedTrashPoint.rubber ?
-                                    <li className="details__item">Rubber</li>
-                                    : null}
-                                {this.props.selectedTrashPoint.other ?
-                                    <li className="details__item">Other</li>
-                                    : null}
-                                {this.props.selectedTrashPoint.textile ?
-                                    <li className="details__item">Textile</li>
-                                    : null}
-                            </ul>
+                                <ul className="details">
+                                    {this.props.selectedTrashPoint.glass ?
+                                        <li className="details__item">Glass</li>
+                                        : null}
+                                    {this.props.selectedTrashPoint.lumber ?
+                                        <li className="details__item">Lumber</li>
+                                        : null}
+                                    {this.props.selectedTrashPoint.plastic ?
+                                        <li className="details__item">Plastic</li>
+                                        : null}
+                                    {this.props.selectedTrashPoint.metal ?
+                                        <li className="details__item">Metal</li>
+                                        : null}
+                                    {this.props.selectedTrashPoint.rubber ?
+                                        <li className="details__item">Rubber</li>
+                                        : null}
+                                    {this.props.selectedTrashPoint.other ?
+                                        <li className="details__item">Other</li>
+                                        : null}
+                                    {this.props.selectedTrashPoint.textile ?
+                                        <li className="details__item">Textile</li>
+                                        : null}
+                                </ul></div> : null}
                         </div>
                     </div> : null}
                 </div>

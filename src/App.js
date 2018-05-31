@@ -37,9 +37,14 @@ class App extends Component {
         this.setState({nativeMap: this.nativeMap});
         if (this.isTrashPointDetailsRequired(this.props)) {
             await this.loadTrashPointDetails(this.props);
-            if (this.state.selectedCountry.country_code==null){
+            if (this.state.selectedTrashPoint.country_code!=null){
                 await this.loadСountriesData();
-                await this.loadCountryDetails(this.state.selectedTrashPoint.country_code.toLowerCase());
+                if (this.state.selectedCountry==null ||
+                    this.state.selectedCountry.country_code!==this.state.selectedTrashPoint.country_code){
+                    await this.loadCountryDetails(this.state.selectedTrashPoint.country_code.toLowerCase());
+                }
+            } else {
+                this.setState({selectedCountry: null});
             }
             //alert(this.state.selectedTrashPoint.country_Code);
         } else if (this.isCountryDetailsRequired(this.props)) {
@@ -104,10 +109,16 @@ class App extends Component {
             console.log('componentWillReceiveProps');
             if (this.isTrashPointDetailsRequired(nextProps)) {
                 await this.loadTrashPointDetails(nextProps);
-                if (this.state.selectedCountry.country_Code == null) {
+                if (this.state.selectedTrashPoint.country_code != null) {
                     await this.loadСountriesData();
-                    await this.loadCountryDetails(
-                        this.state.selectedTrashPoint.country_code.toLowerCase());
+                    if (this.state.selectedCountry == null ||
+                        this.state.selectedCountry.country_code !==
+                        this.state.selectedTrashPoint.country_code) {
+                        await this.loadCountryDetails(
+                            this.state.selectedTrashPoint.country_code.toLowerCase());
+                    }
+                } else {
+                    this.setState({selectedCountry: null});
                 }
             } else if (this.isCountryDetailsRequired(nextProps)) {
                 if (this.state.allCountries == null) {

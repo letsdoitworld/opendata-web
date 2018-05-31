@@ -3,7 +3,7 @@
   "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "indent": ["error", 4, { "SwitchCase": 1 ,"ignoredNodes": ["JSXElement"]}],
     "jsx-a11y/href-no-hash": "off",
     "linebreak-style": ["error", "unix"],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
