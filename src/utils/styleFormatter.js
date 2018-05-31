@@ -6,16 +6,19 @@ function _createRule() {
                 marker-fill: #7c1d6f;
                 marker-line-color: #FF548B;
                 marker-line-width: 2;
+                marker-width: 6;
             }
             [status='CONFIRMED'] {
                 marker-fill: #7c1d6f;
                 marker-line-color: #FF548B;
                 marker-line-width: 2;
+                marker-width: 6;
             }
             [status='CLEANED'] {
                 marker-fill: #7c1d6f;
                 marker-line-color: #50E3C2;
                 marker-line-width: 2;
+                marker-width: 6;
             }
             }
             [hazardous=false] {
