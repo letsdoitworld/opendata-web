@@ -2,35 +2,35 @@ export const COLORS = ['#fcde9c', '#faa476', '#f0746e', '#e34f6f', '#dc3977', '#
 function _createRule() {
     return `
             [hazardous=true] {
-            [status='REPORTED'] {
-                marker-fill: #7c1d6f;
-                marker-line-color: #FF548B;
-                marker-line-width: 2;
-                marker-width: 6;
-            }
-            [status='CONFIRMED'] {
-                marker-fill: #7c1d6f;
-                marker-line-color: #FF548B;
-                marker-line-width: 2;
-                marker-width: 6;
-            }
-            [status='CLEANED'] {
-                marker-fill: #7c1d6f;
-                marker-line-color: #50E3C2;
-                marker-line-width: 2;
-                marker-width: 6;
-            }
+                [status='REPORTED'] {
+                    marker-fill: #7c1d6f;
+                    marker-line-color: #FF548B;
+                    marker-line-width: 2;
+                    marker-width: 6;
+                }
+                [status='CONFIRMED'] {
+                    marker-fill: #7c1d6f;
+                    marker-line-color: #FF548B;
+                    marker-line-width: 2;
+                    marker-width: 6;
+                }
+                [status='CLEANED'] {
+                    marker-fill: #7c1d6f;
+                    marker-line-color: #50E3C2;
+                    marker-line-width: 2;
+                    marker-width: 6;
+                }
             }
             [hazardous=false] {
-            [status='REPORTED'] {
-                marker-fill: #FF548B;
-            }
-            [status='CONFIRMED'] {
-                marker-fill: #FF548B;
-            }
-            [status='CLEANED'] {
-                marker-fill: #50E3C2;
-            }
+                [status='REPORTED'] {
+                    marker-fill: #FF548B;
+                }
+                [status='CONFIRMED'] {
+                    marker-fill: #FF548B;
+                }
+                [status='CLEANED'] {
+                    marker-fill: #50E3C2;
+                }
             }
         `;
 }

@@ -154,10 +154,10 @@ export default class CountryDetails extends Component {
                                 {this.props.selectedCountry &&
                         this.state.trashpoints &&
                         this.state.trashpoints.map((item, key) => (
-                            <div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
-                                <div className="reports-list__title"><Link to={`/details/${item.id}`} >{item.admin_area}</Link></div>
+                            <Link to={`/details/${item.id}`} ><div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
+                                <div className="reports-list__title">{item.admin_area ? item.admin_area : 'Trashpoint ' + item.id}</div>
                                 <div className="reports-list__address">{item.admin_sub_area}</div>
-                            </div>
+                            </div></Link>
                         ))}
                             </div>
                         </div>
@@ -170,7 +170,7 @@ export default class CountryDetails extends Component {
                             <div className="close" role="presentation" onClick={e => this.closePanel('trashpoint-details', e)}>
                                 <span className="close__link" />
                             </div>
-                            <h2 className="header">{this.props.selectedTrashPoint.admin_area}</h2>
+                            <h2 className="header">{this.props.selectedTrashPoint.admin_area ? this.props.selectedTrashPoint.admin_area : 'Trashpoint ' + this.props.selectedTrashPoint.id}</h2>
                             <div className="address">
                                 <div className="address__value">{this.props.selectedTrashPoint.admin_sub_area}</div>
                             </div>
