@@ -25,19 +25,20 @@ const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nol
 class WorldMap extends Component {
     static propTypes = {
         selectedTrashPoint: PropTypes.object,
+        mapClassName: PropTypes.string,
     };
 
     static get defaultProps() {
         return {
             location: this.location,
             selectedTrashPoint: this.selectedTrashPoint,
+            mapClassName: this.mapClassName,
         };
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            visibleOverlay: null,
             center: [40.42, -3.7],
             zoom: 13,
             nativeMap: undefined,
@@ -79,7 +80,7 @@ class WorldMap extends Component {
     render() {
         const {center, zoom} = this.state;
         return (
-            <div className="map-container">
+            <div className={'map-container ' + this.props.mapClassName}>
 
                 <Map
                     center={center}

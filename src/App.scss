@@ -469,3 +469,36 @@ button {
 .hidden {
   display: none !important;
 }
+
+.about-shown {
+  z-index: 8000;
+  position: absolute;
+  left: 30%;
+  height: 100%;
+  background: white;
+}
+
+/**
+ * Navigation
+ */
+.nav {
+  font-weight: bold;
+  margin: 20px 0;
+
+  .nav__item {
+    display: block;
+    line-height: 1.6rem;
+    margin: 0 0 19px 0;
+    padding: 0;
+  }
+  .nav__link {
+    color: #313131;
+    text-decoration: none;
+  }
+  .nav__link:hover {
+    color: #7b7b7b;
+  }
+  .nav__link.active {
+    color: #3b8fe7;
+  }
+}
