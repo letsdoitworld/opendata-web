@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import ReactCountryFlag from 'react-country-flag';
-import {countries} from 'country-data';
 import PropTypes from 'prop-types';
 import '../css/details/Details.css';
 import Navigation from '../Navigation';
@@ -64,8 +63,16 @@ export default class CountryList extends Component {
                     <button type="button" className="search-box__button" />
                 </div>
                 <nav className="countries-tabs">
-                    <a href="#" className={'countries-tabs__item countries-tabs__link ' + (this.isTop10Displayed.bind(this)() ? 'active' : '')} onClick={this.showTop10Countries}>Top 10 mappers</a>
-                    <a href="#" className={'countries-tabs__item countries-tabs__link ' + (!this.isTop10Displayed.bind(this)() ? 'active' : '')} onClick={this.showAllCountries}>All countries</a>
+                    <a
+                        href="#"
+                        className={'countries-tabs__item countries-tabs__link ' + (this.isTop10Displayed.bind(this)() ? 'active' : '')}
+                        onClick={this.showTop10Countries}
+                    >Top 10 mappers</a>
+                    <a
+                        href="#"
+                        className={'countries-tabs__item countries-tabs__link ' + (!this.isTop10Displayed.bind(this)() ? 'active' : '')}
+                        onClick={this.showAllCountries}
+                    >All countries</a>
                 </nav>
 
                 <div className="countries-list">
@@ -79,10 +86,10 @@ export default class CountryList extends Component {
                          <div className="countries-list__item" key={key}>
                              <div className="col">{key + 1}</div>
                              <div className="col">
-                                 <ReactCountryFlag code={item.country_code} svg />
+                                 <ReactCountryFlag code={item.code} svg />
                              </div>
                              <div className="col">
-                                 <Link to={`/country/${item.country_code.toLowerCase()}`} >{countries[item.country_code].name} </Link>
+                                 <Link to={`/country/${item.code.toLowerCase()}`} >{item.name} </Link>
                              </div>
                              <div className="col">{Number(item.tpr).toFixed(2)}</div>
                          </div>

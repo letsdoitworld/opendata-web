@@ -17,7 +17,8 @@
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
     "react/no-array-index-key": "off",
-    "react/forbid-prop-types": "off"
+    "react/forbid-prop-types": "off",
+    "max-len": ["error", 140]
   },
   "env": {
     "browser": true,

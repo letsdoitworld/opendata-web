@@ -12,9 +12,11 @@
     "dateformat": "^2.0.0",
     "jquery": "^3.2.1",
     "leaflet": "^1.2.0",
-    "moment": "^2.21.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "prop-types": "^15.6.0",
     "query-string": "^5.0.0",
+    "rc-calendar": "^9.6.1",
     "react": "^16.3.2",
     "react-country-flag": "^0.2.0",
     "react-dom": "^16.0.0",
@@ -31,7 +33,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-      "eslint",
+      "eslint --fix",
       "git add"
     ]
   },
@@ -53,7 +55,7 @@
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.7.0",
     "husky": "^0.14.3",
-    "lint-staged": "^4.0.3",
+    "lint-staged": "^4.3.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.5.3"

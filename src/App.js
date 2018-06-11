@@ -4,35 +4,39 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import carto from 'carto.js';
-import States from './States';
+import {countries} from 'country-data';
 import IntroText from './IntroText';
 import CountryList from './details/CountryList';
 import CountryDetails from './details/CountryDetails';
 import WorldMap from './maps/WorldMap';
 import AboutProject from './AboutProject';
 import Download from './Download';
+import Country from './Country';
 
 class App extends Component {
     static propTypes = {
         location: PropTypes.object,
+        apiURL: PropTypes.string,
     };
 
     static get defaultProps() {
         return {
             location: this.location,
+            apiURL: 'https://opendata.wemakesoftware.eu/api',
         };
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            state: States.state.LOADING,
             selectedCountry: {},
             selectedTrashPoint: {},
             aboutClassName: (this.isAboutInfoRequired(props) ? 'about-shown' : 'hidden'),
+            downloadClassName: (this.isDownloadPanelRequired(props) ? 'about-shown' : 'hidden'),
         };
         // Init Google Analytics
         // ReactGA.initialize('UA-109735778-1');
+        this.loadСountriesData();
     }
 
     /* eslint-disable */
@@ -43,13 +47,12 @@ class App extends Component {
             if (this.state.selectedTrashPoint.country_code != null) {
                 await this.loadСountriesData();
                 if (this.state.selectedCountry == null ||
-                    this.state.selectedCountry.country_code !== this.state.selectedTrashPoint.country_code) {
+                    this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
                     await this.loadCountryDetails(this.state.selectedTrashPoint.country_code.toLowerCase());
                 }
             } else {
                 this.setState({selectedCountry: null});
             }
-            //alert(this.state.selectedTrashPoint.country_Code);
         } else if (this.isCountryDetailsRequired(this.props)) {
             if (this.state.allCountries == null) {
                 await this.loadСountriesData(this.props);
@@ -65,10 +68,9 @@ class App extends Component {
         const trashPointId = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
         console.log('loading trashpoint with id: ' + trashPointId);
 
-        await fetch('https://opendata.wemakesoftware.eu/api/trashpoint/' + trashPointId)
+        await fetch(this.props.apiURL  + '/trashpoint/' + trashPointId)
             .then(response => response.json())
             .then((data) => {
-                console.log('data loaded' + JSON.stringify(data));
 
                 if (data && data.sources) {
 
@@ -79,19 +81,23 @@ class App extends Component {
     }
 
     async loadCountryDetails(countryCode) {
-        let clickedCountry = this.state.allCountries.find(o => o.country_code.toLowerCase() == countryCode);
+        let clickedCountry = this.state.allCountries.find(o => o.code.toLowerCase() == countryCode);
         this.setState({selectedCountry: clickedCountry});
     }
 
     async loadСountriesData() {
-        await fetch('https://opendata.wemakesoftware.eu/api/countries')
+
+        if (this.state.countriesDataLoaded) {
+            return;
+        }
+
+        await fetch( this.props.apiURL +  '/countries')
             .then(response => response.json())
             .then((data) => {
                 console.log('countriesdata loaded');
                 if (data.status === 'SUCCESS') {
-                    const allCountries = [];
-                    data.sources.forEach(country => allCountries.push(country));
-                    this.setState({allCountries, topCountries: allCountries.slice(0, 10)});
+                    const allCountries = data.sources.map(key => new Country(countries[key.country_code].name, key.country_code, key.reports_number, key.population, key.tpr));
+                    this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
                 }
             })
             .catch(err => console.error(this.state.url, err.toString()));
@@ -113,6 +119,10 @@ class App extends Component {
         return props.location && props.location.pathname.startsWith('/about');
     }
 
+    isDownloadPanelRequired(props) {
+        return props.location && props.location.pathname.startsWith('/download');
+    }
+
 
     /* eslint-enable */
 
@@ -121,13 +131,13 @@ class App extends Component {
             return false;
         }
         this.state.aboutClassName = 'hidden';
+        this.state.downloadClassName = 'hidden';
         if (this.isTrashPointDetailsRequired(nextProps)) {
             await this.loadTrashPointDetails(nextProps);
             if (this.state.selectedTrashPoint.country_code != null) {
                 await this.loadСountriesData();
                 if (this.state.selectedCountry == null ||
-                    this.state.selectedCountry.country_code !==
-                    this.state.selectedTrashPoint.country_code) {
+                    this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
                     await this.loadCountryDetails(
                         this.state.selectedTrashPoint.country_code.toLowerCase());
                 }
@@ -144,6 +154,8 @@ class App extends Component {
             this.loadСountriesData();
         } else if (this.isAboutInfoRequired(nextProps)) {
             this.state.aboutClassName = 'about-shown';
+        } else if (this.isDownloadPanelRequired(nextProps)) {
+            this.state.downloadClassName = 'about-shown';
         }
 
         return true;
@@ -154,19 +166,58 @@ class App extends Component {
     render() {
         const LeftPanel = () => (
             <Switch>
-                <Route exact path={'/(|about)'} component={IntroText} />
-                <Route exact path={'/download'} component={Download} />
-                <Route exact={false} path={'/countries'} render={props => <CountryList allCountries={this.state.allCountries} topCountries={this.state.topCountries} {...props} />} />
-                <Route path={'/country/:countryCode'} render={props => <CountryDetails selectedCountry={this.state.selectedCountry} selectedTrashPoint={null} {...props} />} />
-                <Route path={'/details/:number'} render={props => <CountryDetails selectedCountry={this.state.selectedCountry} selectedTrashPoint={this.state.selectedTrashPoint} {...props} />} />
+                <Route exact path={'/(|about|download)'} component={IntroText} />
+                <Route
+                    exact={false}
+                    path={'/countries'}
+                    render={
+                        props =>
+                            (<CountryList
+                                allCountries={this.state.allCountries}
+                                topCountries={this.state.topCountries}
+                                {...props}
+                            />)
+                    }
+                />
+                <Route
+                    path={'/country/:countryCode'}
+                    render={
+                        props =>
+                            (<CountryDetails
+                                selectedCountry={this.state.selectedCountry}
+                                apiURL={this.props.apiURL}
+                                selectedTrashPoint={null}
+                                {...props}
+                            />)}
+                />
+                <Route
+                    path={'/details/:number'}
+                    render={
+                        props =>
+                            (<CountryDetails
+                                selectedCountry={this.state.selectedCountry}
+                                apiURL={this.props.apiURL}
+                                selectedTrashPoint={this.state.selectedTrashPoint}
+                                {...props}
+                            />)}
+                />
             </Switch>
         );
 
         return (
-            <div className="app-wrapper">
-                <LeftPanel />
-                <AboutProject aboutClassName={this.state.aboutClassName} />
-                <WorldMap selectedTrashPoint={this.state.selectedTrashPoint} />
+            <div>
+                { this.state.countriesDataLoaded && (
+                    <div className="app-wrapper">
+                        <LeftPanel />
+                        <AboutProject aboutClassName={this.state.aboutClassName} />
+                        <Download
+                            downloadClassName={this.state.downloadClassName}
+                            allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}
+                            apiURL={this.props.apiURL}
+                        />
+                        <WorldMap selectedTrashPoint={this.state.selectedTrashPoint} />
+                    </div>
+                )}
             </div>
         );
     }

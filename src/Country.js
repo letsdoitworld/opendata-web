@@ -1,12 +1,14 @@
 export default class Country {
     name;
+    code;
     reportCount;
-    reporters;
-    trashStats;
-    constructor(name, reportCount, reporters, trashStats) {
+    population;
+    tpr;
+    constructor(name, code, reportCount, population, tpr) {
         this.name = name || '';
+        this.code = code || '';
         this.reportCount = reportCount || 0;
-        this.reporters = reporters || [];
-        this.trashStats = trashStats || [];
+        this.population = population || 0;
+        this.tpr = tpr || 0;
     }
 }

@@ -1,0 +1,77 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+	.app-wrapper {
+		display: table;
+		width: 100%;
+	}
+	.details-container {
+		display: table-cell;
+		width: 30%;
+	}
+	.map-container {
+		display: table-cell;
+		height: 100%;
+	}
+
+	.countries-tabs {
+		display: table;
+		width: 100%;
+	}
+	.countries-tabs .countries-tabs__item {
+		display: table-cell;
+		width: 50%;
+	}
+
+	.countries-list__header {
+		display: table;
+		width: 100%;
+	}
+	.countries-list__header .col {
+		display: table-cell;
+	}
+	.countries-list__header .countries-list__item-pos {
+		width: 82px;
+	}
+	.countries-list__header .countries-list__item-value {
+		width: 100px;
+	}
+	.countries-list__item {
+		display: table;
+		width: 100%;
+	}
+	.countries-list__item .col {
+		display: table-cell;
+		text-align: left;
+	}
+	.countries-list__item .countries-list__item-pos {
+		width: 42px;
+	}
+	.countries-list__item .countries-list__item-value {
+		width: 60px;
+	}
+
+	.country-data__item {
+		display: table;
+		width: 100%;
+	}
+	.country-data__item .country-data__icon {
+		display: table-cell;
+		width: 46px;
+	}
+	.country-data__item .country-data__title {
+		display: table-cell;
+	}
+	.country-data__item .country-data__value {
+		display: table-cell;
+		width: 30%;
+	}
+
+	.progress__icons {
+		display: table;
+		width: 100%;
+	}
+	.progress__icons .progress__icon {
+		display: table-cell;
+	}
+}
+
+

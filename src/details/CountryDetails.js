@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {countries} from 'country-data';
 import IntroText from '../IntroText';
+import TrashPointSize from './TrashPointSize';
 
 export default class CountryDetails extends Component {
     static propTypes = {
         selectedCountry: PropTypes.object,
         selectedTrashPoint: PropTypes.object,
+        apiURL: PropTypes.string,
     };
 
     static get defaultProps() {
         return {
             selectedCountry: this.selectedCountry,
             selectedTrashPoint: this.selectedTrashPoint,
+            apiURL: this.apiURL,
         };
     }
 
@@ -37,6 +39,7 @@ export default class CountryDetails extends Component {
             this.props.selectedTrashPoint.sizeState = 1;
         }
     }
+
     getTrashStatus() {
         for (let i = 0; i < this.state.trashpoints.length; i++) {
             if (this.state.trashpoints[i].hazardous) {
@@ -48,17 +51,19 @@ export default class CountryDetails extends Component {
             }
         }
     }
+
     async loadData() {
         const countrycode = this.props.selectedCountry != null ?
-            this.props.selectedCountry.country_code.toLowerCase() :
+            this.props.selectedCountry.code.toLowerCase() :
             this.props.selectedTrashPoint.country_code.toLowerCase();
-        await fetch('https://opendata.wemakesoftware.eu/api/reportsbyparam?code=' + countrycode)
+        await fetch(this.props.apiURL + '/reportsbyparam?country_code=' + countrycode)
             .then(response => response.json())
             .then((data) => {
                 if (data) {
-                    this.setState({trashpointsTotal:
-                        data.trashpoints_total,
-                    trashpoints: data.trashpoints});
+                    this.setState({
+                        trashpointsTotal: data.trashpoints_total,
+                        trashpoints: data.trashpoints,
+                    });
                 }
             })
             .catch(err => console.error(this.state.url, err.toString()));
@@ -96,15 +101,23 @@ export default class CountryDetails extends Component {
                             <Link to={'/countries'} className="go-back__link">Back to countries list</Link>
                         </div>
 
-                        <h1 className="h1">{ countries[this.props.selectedCountry.country_code] ? countries[this.props.selectedCountry.country_code].name : ''}</h1>
+                        {this.props.selectedCountry && (
+                            <h1 className="h1">
+                                {this.props.selectedCountry.name}
+                            </h1>
+                        )}
 
                         <div className="country-data__item">
                             <div>
                                 <div className="country-data__title">TPR INDEX</div>
-                                <div className="country-data__note">*Trash Point Report index (TPR index) shows the number of trash reports per 10,000 people.</div>
+                                <div className="country-data__note">
+                                    *Trash Point Report index (TPR index) shows the number of trash reports per 10,000 people.
+                                </div>
                                 <a href="#" className="country-data__link">More on TPR index</a>
                             </div>
-                            <div className="country-data__value">{Number(this.props.selectedCountry.tpr).toFixed(2)}</div>
+                            <div
+                                className="country-data__value"
+                            >{Number(this.props.selectedCountry.tpr).toFixed(2)}</div>
                         </div>
 
                         <div className="country-data__item with-icon">
@@ -120,13 +133,15 @@ export default class CountryDetails extends Component {
                                 <img src="/img/report_icon.svg" alt="Report" />
                             </div>
                             <div className="country-data__title">REPORTS</div>
-                            <div className="country-data__value">{this.props.selectedCountry.reports_number}</div>
+                            <div className="country-data__value">{this.props.selectedCountry.reportCount}</div>
                         </div>
 
-                        {this.props.selectedCountry.reports_number > 0 ?
+
+                        {this.props.selectedCountry.reportCount && (
                             <a href="#" className="btn-detailed-data" onClick={this.showDetailedData}>
                                 <span>Get detailed data</span>
-                            </a> : null}
+                            </a>)
+                        }
                         {this.props.selectedCountry.resources &&
                         this.props.selectedCountry.resources.length > 0 ?
                             <div className="data-collectors">
@@ -143,7 +158,11 @@ export default class CountryDetails extends Component {
 
                         <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
                             <div>
-                                <div className="close" role="presentation" onClick={e => this.closePanel('country-reports-list', e)} >
+                                <div
+                                    className="close"
+                                    role="presentation"
+                                    onClick={e => this.closePanel('country-reports-list', e)}
+                                >
                                     <span className="close__link" />
                                 </div>
                                 <h2 className="h2 header">All trash points</h2>
@@ -152,13 +171,17 @@ export default class CountryDetails extends Component {
                             <div className="reports-list">
 
                                 {this.props.selectedCountry &&
-                        this.state.trashpoints &&
-                        this.state.trashpoints.map((item, key) => (
-                            <Link to={`/details/${item.id}`} ><div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
-                                <div className="reports-list__title">{item.admin_area ? item.admin_area : 'Trashpoint ' + item.id}</div>
-                                <div className="reports-list__address">{item.admin_sub_area}</div>
-                            </div></Link>
-                        ))}
+                                this.state.trashpoints &&
+                                this.state.trashpoints.map((item, key) => (
+                                    <Link to={`/details/${item.id}`}>
+                                        <div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
+                                            <div
+                                                className="reports-list__title"
+                                            >{item.admin_area ? item.admin_area : 'Trashpoint ' + item.id}</div>
+                                            <div className="reports-list__address">{item.admin_sub_area}</div>
+                                        </div>
+                                    </Link>
+                                ))}
                             </div>
                         </div>
 
@@ -167,10 +190,18 @@ export default class CountryDetails extends Component {
                     {this.props.selectedTrashPoint ?
                         <div>
 
-                            <div className="close" role="presentation" onClick={e => this.closePanel('trashpoint-details', e)}>
+                            <div
+                                className="close"
+                                role="presentation"
+                                onClick={e => this.closePanel('trashpoint-details', e)}
+                            >
                                 <span className="close__link" />
                             </div>
-                            <h2 className="header">{this.props.selectedTrashPoint.admin_area ? this.props.selectedTrashPoint.admin_area : 'Trashpoint ' + this.props.selectedTrashPoint.id}</h2>
+                            <h2 className="header">
+                                {this.props.selectedTrashPoint.admin_area
+                                    ? this.props.selectedTrashPoint.admin_area
+                                    : 'Trashpoint ' + this.props.selectedTrashPoint.id}
+                            </h2>
                             <div className="address">
                                 <div className="address__value">{this.props.selectedTrashPoint.admin_sub_area}</div>
                             </div>
@@ -180,16 +211,13 @@ export default class CountryDetails extends Component {
                             <div className="note">{this.props.selectedTrashPoint.note}</div>
                             {this.props.selectedTrashPoint.hazardous ?
                                 <div className="alert hazard">This point has hazardous amount of trash</div> : null}
-                            <div className={'progress progress__state_' + this.props.selectedTrashPoint.sizeState}>
-                                <div className="progress__icons">
-                                    <div className="progress__icon progress__icon_hand" />
-                                    <div className="progress__icon progress__icon_trashbag" />
-                                    <div className="progress__icon progress__icon_wheelbarrow" />
-                                    <div className="progress__icon progress__icon_truck" />
-                                </div>
-                                <div className="progress__bar" />
-                                <div className="progress__description">This trash point is created {new Date(this.props.selectedTrashPoint.created_at).toString()} </div>
-                            </div>
+
+                            <TrashPointSize
+                                size={this.props.selectedTrashPoint.sizeState}
+                                description={
+                                    'This trash point is created ' + (new Date(this.props.selectedTrashPoint.created_at).toString())
+                                }
+                            />
 
                             {this.props.selectedTrashPoint.images ? <div className="gallery">
                                 <div className="gallery-images">
@@ -245,7 +273,8 @@ export default class CountryDetails extends Component {
                                 {this.props.selectedTrashPoint.household ?
                                     <div>
                                         <h3 className="h2">Trash origin</h3>
-                                        <div className="description">Household</div></div> : null}
+                                        <div className="description">Household</div>
+                                    </div> : null}
 
                                 {this.props.selectedTrashPoint.construction ?
                                     <div className="description">Construction</div> : null}
@@ -280,7 +309,8 @@ export default class CountryDetails extends Component {
                                         {this.props.selectedTrashPoint.textile ?
                                             <li className="details__item">Textile</li>
                                             : null}
-                                    </ul></div> : null}
+                                    </ul>
+                                </div> : null}
                             </div>
                         </div> : null}
                 </div>
