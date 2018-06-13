@@ -25,6 +25,7 @@ const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nol
 class WorldMap extends Component {
     static propTypes = {
         selectedTrashPoint: PropTypes.object,
+        selectedCountry: PropTypes.object,
         mapClassName: PropTypes.string,
     };
 
@@ -32,6 +33,7 @@ class WorldMap extends Component {
         return {
             location: this.location,
             selectedTrashPoint: this.selectedTrashPoint,
+            selectedCountry: this.selectedCountry,
             mapClassName: this.mapClassName,
         };
     }
@@ -67,6 +69,10 @@ class WorldMap extends Component {
             this.setState({marker});
             marker.addTo(this.nativeMap);
             return true;
+        } else if (nextProps.selectedCountry
+            && nextProps.selectedCountry !== this.props.selectedCountry
+            && nextProps.selectedCountry.bounds) {
+            this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
         }
         return false;
     }

@@ -96,7 +96,18 @@ class App extends Component {
             .then((data) => {
                 console.log('countriesdata loaded');
                 if (data.status === 'SUCCESS') {
-                    const allCountries = data.sources.map(key => new Country(countries[key.country_code].name, key.country_code, key.reports_number, key.population, key.tpr));
+                    const allCountries = data.sources.map(key =>
+                        new Country(
+                            countries[key.country_code].name,
+                            key.country_code,
+                            key.reports_number,
+                            key.population,
+                            key.tpr,
+                            key.bb_x1,
+                            key.bb_y1,
+                            key.bb_x2,
+                            key.bb_y2
+                        ));
                     this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
                 }
             })
@@ -215,7 +226,7 @@ class App extends Component {
                             allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}
                             apiURL={this.props.apiURL}
                         />
-                        <WorldMap selectedTrashPoint={this.state.selectedTrashPoint} />
+                        <WorldMap selectedTrashPoint={this.state.selectedTrashPoint} selectedCountry={this.state.selectedCountry} />
                     </div>
                 )}
             </div>
