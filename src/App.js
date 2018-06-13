@@ -106,7 +106,8 @@ class App extends Component {
                             key.bb_x1,
                             key.bb_y1,
                             key.bb_x2,
-                            key.bb_y2
+                            key.bb_y2,
+                            key.resources
                         ));
                     this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
                 }

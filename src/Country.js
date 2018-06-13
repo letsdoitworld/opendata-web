@@ -7,13 +7,15 @@ export default class Country {
     population;
     tpr;
     bounds;
+    resources;
 
-    constructor(name, code, reportCount, population, tpr, boundsX1, boundsY1, boundsX2, boundsY2) {
+    constructor(name, code, reportCount, population, tpr, boundsX1, boundsY1, boundsX2, boundsY2, resources) {
         this.name = name || '';
         this.code = code || '';
         this.reportCount = reportCount || 0;
         this.population = population || 0;
         this.tpr = tpr || 0;
+        this.resources = resources;
 
         if (boundsX1 == null || boundsY1 == null || boundsX2 == null || boundsY2 == null) {
             return;
