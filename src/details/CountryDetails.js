@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import IntroText from '../IntroText';
 import TrashPointSize from './TrashPointSize';
+import FacebookShareWrapper from '../utils/FacebookShareWrapper';
 
 export default class CountryDetails extends Component {
     static propTypes = {
@@ -155,6 +156,8 @@ export default class CountryDetails extends Component {
                                     ))}
                                 </ul>
                             </div> : null}
+
+                        <FacebookShareWrapper />
 
                         <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
                             <div>
@@ -313,6 +316,8 @@ export default class CountryDetails extends Component {
                                 </div> : null}
                             </div>
                         </div> : null}
+
+                    <FacebookShareWrapper />
                 </div>
             </div>
         );

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import FacebookShareWrapper from './utils/FacebookShareWrapper';
 import Navigation from './Navigation';
 
 export default class IntroText extends Component {
@@ -14,10 +15,7 @@ export default class IntroText extends Component {
 
                 <Navigation />
 
-                <nav className="lang-switcher">
-                    <a href="#" className="lang-switcher__link">
-                        <span className="lang-switcher__flag" />Est</a>
-                </nav>
+                <FacebookShareWrapper />
 
                 <img src="img/logo.png" className="logo__image" alt="Logo" />
 
