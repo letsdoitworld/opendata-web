@@ -157,7 +157,7 @@ export default class CountryDetails extends Component {
                             </div>)}
                         {this.state.trashpointDetailClassName === 'hidden' && (
 
-                        <FacebookShareWrapper />
+                        <FacebookShareWrapper linkToShare={'/country/' + this.props.selectedCountry.code} />
                         )}
 
                         <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
@@ -318,7 +318,7 @@ export default class CountryDetails extends Component {
                             </div>
                         </div> : null}
 
-                    <FacebookShareWrapper />
+                    <FacebookShareWrapper linkToShare={'/details/' + this.props.selectedTrashPoint.id} />
                 </div>
             </div>
         );
