@@ -63,13 +63,7 @@ class WorldMap extends Component {
     }
     componentWillReceiveProps(nextProps) {
         if (this.state.sourceFromFilter && this.state.sourceFromFilter !== '') {
-            this.nativeMap.eachLayer((layer) => {
-                if (layer._url !== CARTO_BASEMAP) {
-                    this.nativeMap.removeLayer(layer);
-                }
-            });
-            this.state.cartoClient.removeLayers(this.state.cartoClient.getLayers());
-            this.createCartoMap(this.state.sourceFromFilter);
+            this.recreateMap();
         } else {
             this.createCartoMap(cartoMapData.source, nextProps, true);
             if (nextProps.selectedTrashPoint
@@ -100,44 +94,59 @@ class WorldMap extends Component {
         return false;
     }
     getSourceFromFilter(data) {
-        this.setState({sourceFromFilter: data});
+        this.setState({sourceFromFilter: data}, () => this.componentWillReceiveProps(this.props));
+    }
+    recreateMap() {
+        this.nativeMap.eachLayer((layer) => {
+            if (layer._url !== CARTO_BASEMAP) {
+                this.nativeMap.removeLayer(layer);
+            }
+        });
+        this.state.cartoClient.removeLayers(this.state.cartoClient.getLayers());
+        this.createCartoMap(this.state.sourceFromFilter);
     }
     createCartoMap(source, props, isUpdate) {
         if (!isUpdate) {
-            L.tileLayer(CARTO_BASEMAP, {}).addTo(this.nativeMap);
-            const cartoSource = new carto.source.SQL(source);
-            const cartoStyle = new carto.style.CartoCSS(buildStyle());
-
-            this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
-            this.layer.getStyle().setContent(buildStyle());
-            this.layer.setFeatureClickColumns(['id']);
-            this.layer.on('featureClicked', (featureEvent) => {
-                const navigateToDetails = `/details/${featureEvent.data.id}`;
-                // layer object does not receive this.props updates (carto.js restrictions)
-                // thus we check this.props.history instead of this.props.location
-                if (this.props.history && this.props.history.location.pathname !== navigateToDetails) {
-                    this.props.history.push(navigateToDetails);
-                }
-            });
-            this.state.cartoClient.addLayer(this.layer);
+            this.createBasicLayer(source);
         }
         if (props && props.selectedCountry) {
             if (this.state.countryLeafletLayer) {
-                this.nativeMap.removeLayer(this.state.countryLeafletLayer);
-
-                this.state.cartoClient.removeLayer(this.state.countryLeafletLayer);
+                this.removeCountryLayer();
             }
-
-            const countryQuery = "select * from world_borders where iso2='" + props.selectedCountry.code + "'";
-            const cartoCountrySource = new carto.source.SQL(countryQuery);
-            const cartoCountryStyle = new carto.style.CartoCSS(
-                '#layer2 {polygon-fill: #6495ED;  polygon-opacity: 0.4;  line-color: #FFF;  line-width: 0.5;  line-opacity: 1;}');
-            this.layerCountry = new carto.layer.Layer(cartoCountrySource, cartoCountryStyle);
-            this.setState({countryLeafletLayer: this.layerCountry});
-            this.state.cartoClient.addLayer(this.layerCountry);
-            this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
+            this.createCountryLayer(props);
         }
         this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
+    }
+    createBasicLayer(source) {
+        L.tileLayer(CARTO_BASEMAP, {}).addTo(this.nativeMap);
+        const cartoSource = new carto.source.SQL(source);
+        const cartoStyle = new carto.style.CartoCSS(buildStyle());
+
+        this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
+        this.layer.getStyle().setContent(buildStyle());
+        this.layer.setFeatureClickColumns(['id']);
+        this.layer.on('featureClicked', (featureEvent) => {
+            const navigateToDetails = `/details/${featureEvent.data.id}`;
+            // layer object does not receive this.props updates (carto.js restrictions)
+            // thus we check this.props.history instead of this.props.location
+            if (this.props.history && this.props.history.location.pathname !== navigateToDetails) {
+                this.props.history.push(navigateToDetails);
+            }
+        });
+        this.state.cartoClient.addLayer(this.layer);
+    }
+    removeCountryLayer() {
+        this.nativeMap.removeLayer(this.state.countryLeafletLayer);
+        this.state.cartoClient.removeLayer(this.state.countryLeafletLayer);
+    }
+    createCountryLayer(props) {
+        const countryQuery = "select * from world_borders where iso2='" + props.selectedCountry.code + "'";
+        const cartoCountrySource = new carto.source.SQL(countryQuery);
+        const cartoCountryStyle = new carto.style.CartoCSS(
+            '#layer2 {polygon-fill: #6495ED;  polygon-opacity: 0.4;  line-color: #FFF;  line-width: 0.5;  line-opacity: 1;}');
+        this.layerCountry = new carto.layer.Layer(cartoCountrySource, cartoCountryStyle);
+        this.setState({countryLeafletLayer: this.layerCountry});
+        this.state.cartoClient.addLayer(this.layerCountry);
     }
 
     render() {

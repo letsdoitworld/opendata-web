@@ -11,7 +11,7 @@ export default class MapFilter extends Component {
 
     static get defaultProps() {
         return {
-            apiURL: this.apiURL,
+            apiURL: 'https://opendata.wemakesoftware.eu/api',
         };
     }
     constructor(props) {
@@ -22,9 +22,9 @@ export default class MapFilter extends Component {
             statusFilterShown: false,
             resourceFilterShown: false,
             statusFilter: [
-                {code: 'CLEANED', label: 'Clean', selected: false},
-                {code: 'REPORTED', label: 'Unclean', selected: false},
-                {code: 'hazardous', label: 'Hazardous', selected: false},
+                {name: 'CLEANED', label: 'Clean', selected: false},
+                {name: 'REPORTED', label: 'Unclean', selected: false},
+                {name: 'hazardous', label: 'Hazardous', selected: false},
             ],
         };
         this.selectFilterValue = this.selectFilterValue.bind(this);
@@ -47,15 +47,14 @@ export default class MapFilter extends Component {
             .catch(err => console.error(this.state.url, err.toString()));
     }
     composeFilterQuery(filterparams) {
-        let q = 'select * from opendata_public_reports where';
+        let q = 'select * from opendata_public_reports';
         for (let i = 0; filterparams.length > i; i++) {
-            q += (i === 0 ? ' (' : ' and (');
+            q += ' where' + (i === 0 ? ' (' : ' and (');
             for (let j = 0; filterparams[i].values.length > j; j++) {
                 q = q + (j === 0 ? ' ' : ' or ') + filterparams[i].name + "='" + filterparams[i].values[j] + "'";
             }
             q += ')';
         }
-
         this.props.srcFromFilter(q);
     }
     change(event) {
@@ -81,12 +80,12 @@ export default class MapFilter extends Component {
             if (selectedFilter[i].selected) {
                 for (let j = 0; filterParams.length > j; j++) {
                     if (filterParams[j].name === paramName) {
-                        filterParams[j].values.push(selectedFilter[i].code);
+                        filterParams[j].values.push(selectedFilter[i].name);
                         found = true;
                     }
                 }
                 if (!found) {
-                    const newParam = {name: paramName, values: [selectedFilter[i].code]};
+                    const newParam = {name: paramName, values: [selectedFilter[i].name]};
                     filterParams.push(newParam);
                 }
             }
@@ -127,7 +126,7 @@ export default class MapFilter extends Component {
                                                     role="none"
                                                     className={'select-options__item' +
                                                     (this.state.statusFilter[key].selected ? ' selected' : '')}
-                                                    key={this.state.statusFilter[key].code + '__' + item}
+                                                    key={this.state.statusFilter[key].name + '__' + item}
                                                     onClick={() => this.selectFilterValue('statusFilter', key, 'status')}
                                                 >
                                                     {this.state.statusFilter[key].label}
@@ -153,14 +152,16 @@ export default class MapFilter extends Component {
                                     </div>
                                     {this.state.resourceFilterShown && (
                                         <div className="select-options">
-                                            {this.state.resourceFilter.map((key, value) => (
+                                            {this.state.resourceFilter.map((item, key) => (
                                                 <div
                                                     role="none"
-                                                    className="select-options__item"
-                                                    key={this.state.resourceFilter[value].name + '__' + value}
-                                                    onClick={() => this.selectFilterValue('resourceFilter', key)}
+                                                    className={'select-options__item' +
+                                                    (this.state.resourceFilter[key].selected ? ' selected' : '')}
+                                                    key={this.state.resourceFilter[key].name + '__' + item}
+                                                    onClick={() => this.selectFilterValue('resourceFilter', key, 'type')}
                                                 >
-                                                    {this.state.resourceFilter[value].name}
+                                                    {this.state.resourceFilter[key].name}
+                                                    <span className="radiobtn" />
                                                 </div>
                                             ))}
                                         </div>
@@ -169,20 +170,6 @@ export default class MapFilter extends Component {
                             </div>
 
                         </div>
-                        <div className="onmap-filter__item">
-
-                            <div className="share-widget">
-                                <div className="share-widget__title">Share</div>
-                                <div className="share-widget__options">
-                                    <a href="#" className="share-widget__item link">Copy link</a>
-                                    <a href="#" className="share-widget__item facebook">Facebook</a>
-                                    <a href="#" className="share-widget__item twitter">Twitter</a>
-                                    <a href="#" className="share-widget__item messenger">Messenger</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="onmap-filter__item" />
                     </div>
                 </div>
 
