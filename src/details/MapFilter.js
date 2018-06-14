@@ -19,6 +19,7 @@ export default class MapFilter extends Component {
         this.state = {
             value: 'select',
             resourceFilter: [],
+            filters: [],
             statusFilterShown: false,
             resourceFilterShown: false,
             statusFilter: [
@@ -46,12 +47,12 @@ export default class MapFilter extends Component {
             })
             .catch(err => console.error(this.state.url, err.toString()));
     }
-    composeFilterQuery(filterparams) {
+    composeFilterQuery() {
         let q = 'select * from opendata_public_reports';
-        for (let i = 0; filterparams.length > i; i++) {
-            q += ' where' + (i === 0 ? ' (' : ' and (');
-            for (let j = 0; filterparams[i].values.length > j; j++) {
-                q = q + (j === 0 ? ' ' : ' or ') + filterparams[i].name + "='" + filterparams[i].values[j] + "'";
+        for (let i = 0; this.state.filters.length > i; i++) {
+            q += i === 0 ? ' where (' : ' and (';
+            for (let j = 0; this.state.filters[i].source.length > j; j++) {
+                q = q + (j === 0 ? ' ' : ' or ') + this.state.filters[i].paramname + "='" + this.state.filters[i].source[j].name + "'";
             }
             q += ')';
         }
@@ -66,7 +67,7 @@ export default class MapFilter extends Component {
         // this.props.srcFromFilter("select * from opendata_public_reports where country_code='"+this.state.value+"'");
         this.props.srcFromFilter(this.composeFilterQuery(filterParams));
     }
-    selectFilterValue(filterName, itemKey, paramName) {
+    selectFilterValue(filterName, itemKey, itemValue, paramName) {
         const selectedFilter = this.state[filterName];
         if (selectedFilter[itemKey].selected) {
             selectedFilter[itemKey].selected = false;
@@ -74,23 +75,31 @@ export default class MapFilter extends Component {
             selectedFilter[itemKey].selected = true;
         }
         this.setState({filterName: selectedFilter});
-        const filterParams = [];
+        let found = false;
+        const onlyselectedFilter = {filtername: filterName, source: [], paramname: paramName};
+        let hazardousFilter = null;
         for (let i = 0; selectedFilter.length > i; i++) {
-            let found = false;
             if (selectedFilter[i].selected) {
-                for (let j = 0; filterParams.length > j; j++) {
-                    if (filterParams[j].name === paramName) {
-                        filterParams[j].values.push(selectedFilter[i].name);
-                        found = true;
-                    }
-                }
-                if (!found) {
-                    const newParam = {name: paramName, values: [selectedFilter[i].name]};
-                    filterParams.push(newParam);
+                if (selectedFilter[i].name === 'hazardous') {
+                    hazardousFilter = {name: 'hazardousFilter', source: [{name: 'true'}], paramname: 'hazardous'};
+                } else {
+                    onlyselectedFilter.source.push(selectedFilter[i]);
                 }
             }
         }
-        this.composeFilterQuery(filterParams);
+        for (let i = 0; this.state.filters.length > i; i++) {
+            if (this.state.filters[i].filtername === onlyselectedFilter.filtername) {
+                this.state.filters[i] = onlyselectedFilter;
+                found = true;
+            }
+        }
+        if (!found) {
+            this.state.filters.push(onlyselectedFilter);
+        }
+        if (hazardousFilter) {
+            this.state.filters.push(hazardousFilter);
+        }
+        this.composeFilterQuery();
     }
 
     showHideFilter(filterName) {
@@ -127,7 +136,8 @@ export default class MapFilter extends Component {
                                                     className={'select-options__item' +
                                                     (this.state.statusFilter[key].selected ? ' selected' : '')}
                                                     key={this.state.statusFilter[key].name + '__' + item}
-                                                    onClick={() => this.selectFilterValue('statusFilter', key, 'status')}
+                                                    onClick={() => this.selectFilterValue('statusFilter',
+                                                        key, this.state.statusFilter[key].name, 'status')}
                                                 >
                                                     {this.state.statusFilter[key].label}
                                                     <span className="radiobtn" />
@@ -158,7 +168,8 @@ export default class MapFilter extends Component {
                                                     className={'select-options__item' +
                                                     (this.state.resourceFilter[key].selected ? ' selected' : '')}
                                                     key={this.state.resourceFilter[key].name + '__' + item}
-                                                    onClick={() => this.selectFilterValue('resourceFilter', key, 'type')}
+                                                    onClick={() => this.selectFilterValue('resourceFilter',
+                                                        key, this.state.resourceFilter[key].name, 'type')}
                                                 >
                                                     {this.state.resourceFilter[key].name}
                                                     <span className="radiobtn" />
