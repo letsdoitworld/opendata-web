@@ -124,7 +124,8 @@
 .onmap-filter {
   margin-top: 35px;
   margin-left: 45px;
-
+  z-index:1000;
+  position: relative;
   .onmap-filter__title {
     margin-bottom: 20px;
 

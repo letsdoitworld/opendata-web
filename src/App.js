@@ -31,6 +31,8 @@ class App extends Component {
         this.state = {
             selectedCountry: {},
             selectedTrashPoint: {},
+            updatedCountry: {},
+            updatedTrashPoint: {},
             aboutClassName: (this.isAboutInfoRequired(props) ? 'about-shown' : 'hidden'),
             downloadClassName: (this.isDownloadPanelRequired(props) ? 'about-shown' : 'hidden'),
         };
@@ -43,22 +45,13 @@ class App extends Component {
     async componentDidMount() {
         this.setState({nativeMap: this.nativeMap});
         if (this.isTrashPointDetailsRequired(this.props)) {
-            await this.loadTrashPointDetails(this.props);
-            if (this.state.selectedTrashPoint.country_code != null) {
-                await this.loadСountriesData();
-                if (this.state.selectedCountry == null ||
-                    this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
-                    await this.loadCountryDetails(this.state.selectedTrashPoint.country_code.toLowerCase());
-                }
-            } else {
-                this.setState({selectedCountry: null});
-            }
+            await this.updateTrashpointsData(this.props);
         } else if (this.isCountryDetailsRequired(this.props)) {
             if (this.state.allCountries == null) {
                 await this.loadСountriesData(this.props);
             }
             const countryCode = this.props.location.pathname.substring(this.props.location.pathname.lastIndexOf('/') + 1);
-            this.loadCountryDetails(countryCode);
+            this.loadCountryDetails(countryCode, false);
         } else if (this.isCountryListRequired(this.props)) {
             this.loadСountriesData();
         }
@@ -80,9 +73,28 @@ class App extends Component {
             .catch(err => console.error(this.state.url, err.toString()));
     }
 
-    async loadCountryDetails(countryCode) {
+    async loadCountryDetails(countryCode, inTrashpointProcess) {
         let clickedCountry = this.state.allCountries.find(o => o.code.toLowerCase() == countryCode);
-        this.setState({selectedCountry: clickedCountry});
+        if (inTrashpointProcess){
+            this.setState({selectedCountry: clickedCountry});
+        } else {
+            this.setState({selectedCountry: clickedCountry, updatedCountry: clickedCountry});
+        }
+    }
+
+    async updateTrashpointsData(props) {
+        await this.loadTrashPointDetails(props);
+        if (this.state.selectedTrashPoint.country_code != null) {
+            await this.loadСountriesData();
+            if (this.state.selectedCountry == null ||
+                this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
+                await this.loadCountryDetails(
+                    this.state.selectedTrashPoint.country_code.toLowerCase(), true);
+            }
+        } else {
+            this.setState({selectedCountry: null});
+        }
+        this.setState({updatedTrashPoint: this.state.selectedTrashPoint,  updatedCountry: this.state.selectedCountry});
     }
 
     async loadСountriesData() {
@@ -145,23 +157,13 @@ class App extends Component {
         this.state.aboutClassName = 'hidden';
         this.state.downloadClassName = 'hidden';
         if (this.isTrashPointDetailsRequired(nextProps)) {
-            await this.loadTrashPointDetails(nextProps);
-            if (this.state.selectedTrashPoint.country_code != null) {
-                await this.loadСountriesData();
-                if (this.state.selectedCountry == null ||
-                    this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
-                    await this.loadCountryDetails(
-                        this.state.selectedTrashPoint.country_code.toLowerCase());
-                }
-            } else {
-                this.setState({selectedCountry: null});
-            }
+            await this.updateTrashpointsData(nextProps);
         } else if (this.isCountryDetailsRequired(nextProps)) {
             if (this.state.allCountries == null) {
                 await this.loadСountriesData();
             }
             const countryCode = nextProps.location.pathname.substring(nextProps.location.pathname.lastIndexOf('/') + 1);
-            this.loadCountryDetails(countryCode);
+            this.loadCountryDetails(countryCode, false);
         } else if (this.isCountryListRequired(nextProps)) {
             this.loadСountriesData();
         } else if (this.isAboutInfoRequired(nextProps)) {
@@ -227,7 +229,7 @@ class App extends Component {
                             allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}
                             apiURL={this.props.apiURL}
                         />
-                        <WorldMap selectedTrashPoint={this.state.selectedTrashPoint} selectedCountry={this.state.selectedCountry} />
+                        <WorldMap selectedTrashPoint={this.state.updatedTrashPoint} selectedCountry={this.state.updatedCountry} />
                     </div>
                 )}
             </div>
