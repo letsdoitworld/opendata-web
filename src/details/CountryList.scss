@@ -1,12 +1,13 @@
 .county-list-wrapper {
   grid-template-columns: 27% auto;
 }
-.county-list-container {
+.country-list-container {
   background: url(/img/logo_bg.png) 30px 60px no-repeat;
   display: grid;
   grid-template-rows: auto auto auto auto 1fr;
   padding-left: 10px;
   padding-right: 10px;
+  height: 100vh;
 }
 
 .nav-wrap {
@@ -99,6 +100,9 @@
     }
     .countries-list__item-name {
       font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .countries-list__item-flag {
       background-position: 50% 50%;
@@ -115,6 +119,8 @@
       padding-right: 15px;
       text-align: right;
     }
+
+
   }
   .countries-list__item:nth-of-type(2n+1) {
     background-color: #f4f5f7;

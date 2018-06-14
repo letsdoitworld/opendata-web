@@ -51,7 +51,7 @@ export default class CountryList extends Component {
     render() {
         return (
 
-            <div className="details-container county-list-container">
+            <div className="details-container country-list-container">
 
                 <div className="go-back">
                     <Link to={'/'} className="go-back__link">Back to intro</Link>
@@ -84,14 +84,14 @@ export default class CountryList extends Component {
                     {this.state.displayedCountries &&
                      this.state.displayedCountries.map((item, key) => (
                          <div className="countries-list__item" key={key}>
-                             <div className="col">{key + 1}</div>
-                             <div className="col">
+                             <div className="col country__index">{key + 1}</div>
+                             <div className="col country__flag">
                                  <ReactCountryFlag code={item.code} svg />
                              </div>
-                             <div className="col">
+                             <div className="col countries-list__item-name" title={item.name}>
                                  <Link to={`/country/${item.code.toLowerCase()}`} >{item.name} </Link>
                              </div>
-                             <div className="col">{Number(item.tpr).toFixed(2)}</div>
+                             <div className="col country__tpr">{Number(item.tpr).toFixed(2)}</div>
                          </div>
                      ))}
 

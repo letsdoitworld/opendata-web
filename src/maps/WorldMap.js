@@ -44,8 +44,8 @@ class WorldMap extends Component {
         super(props);
         this.getSourceFromFilter = this.getSourceFromFilter.bind(this);
         this.state = {
-            center: [40.42, -3.7],
-            zoom: 13,
+            center: [46.255847, -10.318359],
+            zoom: 2.5,
             nativeMap: undefined,
             layerStyle: cartoMapData.style,
             hidelayers: true,

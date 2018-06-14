@@ -4,7 +4,6 @@ $gray: rgba(155, 155, 155, .3);
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 
-@import 'App';
 @import 'maps/StatsMap';
 //@import 'timeline/TimeLine';
 //@import 'loading/LoadingScreen';
@@ -17,3 +16,4 @@ $gray: rgba(155, 155, 155, .3);
 @import 'details/CountryDetails';
 @import 'IntroText';
 @import 'Download';
+@import 'App';

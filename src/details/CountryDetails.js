@@ -143,8 +143,7 @@ export default class CountryDetails extends Component {
                                 <span>Get detailed data</span>
                             </a>)
                         }
-                        {this.props.selectedCountry.resources &&
-                        this.props.selectedCountry.resources.length > 0 ?
+                        { this.props.selectedCountry.resources && this.props.selectedCountry.resources.length && (
                             <div className="data-collectors">
                                 <h2 className="h2">Data collected by</h2>
                                 <ul>
@@ -155,9 +154,11 @@ export default class CountryDetails extends Component {
                                         </li>
                                     ))}
                                 </ul>
-                            </div> : null}
+                            </div>)}
+                        {this.state.trashpointDetailClassName === 'hidden' && (
 
                         <FacebookShareWrapper />
+                        )}
 
                         <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
                             <div>

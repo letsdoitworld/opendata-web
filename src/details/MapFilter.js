@@ -11,7 +11,7 @@ export default class MapFilter extends Component {
 
     static get defaultProps() {
         return {
-            apiURL: 'https://opendata.wemakesoftware.eu/api',
+            apiURL: this.apiURL,
         };
     }
     constructor(props) {
