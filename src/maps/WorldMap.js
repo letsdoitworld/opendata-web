@@ -66,24 +66,24 @@ class WorldMap extends Component {
             this.recreateMap();
         } else {
             this.createCartoMap(cartoMapData.source, nextProps, true);
-            if (nextProps.selectedTrashPoint
+        }
+        if (nextProps.selectedTrashPoint
                 && nextProps.selectedTrashPoint !== this.props.selectedTrashPoint) {
-                const center = [nextProps.selectedTrashPoint.lat, nextProps.selectedTrashPoint.long];
-                this.nativeMap.panTo(center);
+            const center = [nextProps.selectedTrashPoint.lat, nextProps.selectedTrashPoint.long];
+            this.nativeMap.panTo(center);
 
-                if (this.state.marker) {
-                    this.nativeMap.removeLayer(this.state.marker);
-                }
-                const marker = Marker.prototype.createLeafletElement(
-                    {position: center, pane: this.nativeMap.getPane('markerPane')});
-                this.setState({marker});
-                marker.addTo(this.nativeMap);
-                return true;
-            } else if (nextProps.selectedCountry
+            if (this.state.marker) {
+                this.nativeMap.removeLayer(this.state.marker);
+            }
+            const marker = Marker.prototype.createLeafletElement(
+                {position: center, pane: this.nativeMap.getPane('markerPane')});
+            this.setState({marker});
+            marker.addTo(this.nativeMap);
+            return true;
+        } else if (nextProps.selectedCountry
                 && nextProps.selectedCountry !== this.props.selectedCountry
                 && nextProps.selectedCountry.bounds) {
-                this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
-            }
+            this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
         }
         return false;
     }
