@@ -318,7 +318,8 @@ export default class CountryDetails extends Component {
                             </div>
                         </div> : null}
 
-                    <FacebookShareWrapper linkToShare={'/details/' + this.props.selectedTrashPoint.id} />
+                    {this.props.selectedTrashPoint &&
+                    (<FacebookShareWrapper linkToShare={'/details/' + this.props.selectedTrashPoint.id} />)}
                 </div>
             </div>
         );
