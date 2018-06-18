@@ -118,13 +118,13 @@ export default class MapFilter extends Component {
         if (momentsArray[0]) {
             const selectedStartFilter = {filtername: 'startDateFilter',
                 source: [{name: momentsArray[0].format('YYYYMMDD').toString(), selected: true}],
-                paramname: 'last_updated>='};
+                paramname: 'last_updated >='};
             this.updateFilterStatuses(selectedStartFilter);
         }
         if (momentsArray[1]) {
             const selectedEndFilter = {filtername: 'endDateFilter',
                 source: [{name: momentsArray[1].format('YYYYMMDD').toString(), selected: true}],
-                paramname: 'last_update<='};
+                paramname: 'last_updated <='};
             this.updateFilterStatuses(selectedEndFilter);
         }
         this.composeFilterQuery();
