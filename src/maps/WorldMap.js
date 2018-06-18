@@ -63,7 +63,7 @@ class WorldMap extends Component {
     }
     componentWillReceiveProps(nextProps) {
         if (this.state.sourceFromFilter && this.state.sourceFromFilter !== '') {
-            this.recreateMap();
+            this.recreateMap(nextProps);
         } else {
             this.createCartoMap(cartoMapData.source, nextProps, true);
         }
@@ -96,14 +96,12 @@ class WorldMap extends Component {
     getSourceFromFilter(data) {
         this.setState({sourceFromFilter: data}, () => this.componentWillReceiveProps(this.props));
     }
-    recreateMap() {
+    recreateMap(props) {
         this.nativeMap.eachLayer((layer) => {
-            if (layer._url !== CARTO_BASEMAP) {
-                this.nativeMap.removeLayer(layer);
-            }
+            this.nativeMap.removeLayer(layer);
         });
         this.state.cartoClient.removeLayers(this.state.cartoClient.getLayers());
-        this.createCartoMap(this.state.sourceFromFilter);
+        this.createCartoMap(this.state.sourceFromFilter, props, false);
     }
     createCartoMap(source, props, isUpdate) {
         if (!isUpdate) {
@@ -140,13 +138,15 @@ class WorldMap extends Component {
         this.state.cartoClient.removeLayer(this.state.countryLeafletLayer);
     }
     createCountryLayer(props) {
-        const countryQuery = "select * from world_borders where iso2='" + props.selectedCountry.code + "'";
-        const cartoCountrySource = new carto.source.SQL(countryQuery);
-        const cartoCountryStyle = new carto.style.CartoCSS(
-            '#layer2 {polygon-fill: #6495ED;  polygon-opacity: 0.4;  line-color: #FFF;  line-width: 0.5;  line-opacity: 1;}');
-        this.layerCountry = new carto.layer.Layer(cartoCountrySource, cartoCountryStyle);
-        this.setState({countryLeafletLayer: this.layerCountry});
-        this.state.cartoClient.addLayer(this.layerCountry);
+        if (props.selectedCountry.code) {
+            const countryQuery = "select * from world_borders where iso2='" + props.selectedCountry.code + "'";
+            const cartoCountrySource = new carto.source.SQL(countryQuery);
+            const cartoCountryStyle = new carto.style.CartoCSS(
+                '#layer2 {polygon-fill: #6495ED;  polygon-opacity: 0.4;  line-color: #FFF;  line-width: 0.5;  line-opacity: 1;}');
+            this.layerCountry = new carto.layer.Layer(cartoCountrySource, cartoCountryStyle);
+            this.setState({countryLeafletLayer: this.layerCountry});
+            this.state.cartoClient.addLayer(this.layerCountry);
+        }
     }
 
     render() {

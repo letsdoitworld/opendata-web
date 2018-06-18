@@ -51,7 +51,7 @@ class App extends Component {
                 await this.loadСountriesData(this.props);
             }
             const countryCode = this.props.location.pathname.substring(this.props.location.pathname.lastIndexOf('/') + 1);
-            this.loadCountryDetails(countryCode, false);
+            this.loadCountryDetails(countryCode);
         } else if (this.isCountryListRequired(this.props)) {
             this.loadСountriesData();
         }
@@ -73,13 +73,9 @@ class App extends Component {
             .catch(err => console.error(this.state.url, err.toString()));
     }
 
-    async loadCountryDetails(countryCode, inTrashpointProcess) {
+    async loadCountryDetails(countryCode) {
         let clickedCountry = this.state.allCountries.find(o => o.code.toLowerCase() == countryCode);
-        if (inTrashpointProcess){
-            this.setState({selectedCountry: clickedCountry});
-        } else {
-            this.setState({selectedCountry: clickedCountry, updatedCountry: clickedCountry});
-        }
+        this.setState({selectedCountry: clickedCountry, updatedCountry: clickedCountry});
     }
 
     async updateTrashpointsData(props) {
@@ -89,7 +85,7 @@ class App extends Component {
             if (this.state.selectedCountry == null ||
                 this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
                 await this.loadCountryDetails(
-                    this.state.selectedTrashPoint.country_code.toLowerCase(), true);
+                    this.state.selectedTrashPoint.country_code.toLowerCase());
             }
         } else {
             this.setState({selectedCountry: null});
@@ -163,7 +159,7 @@ class App extends Component {
                 await this.loadСountriesData();
             }
             const countryCode = nextProps.location.pathname.substring(nextProps.location.pathname.lastIndexOf('/') + 1);
-            this.loadCountryDetails(countryCode, false);
+            this.loadCountryDetails(countryCode);
         } else if (this.isCountryListRequired(nextProps)) {
             this.loadСountriesData();
         } else if (this.isAboutInfoRequired(nextProps)) {
@@ -171,7 +167,6 @@ class App extends Component {
         } else if (this.isDownloadPanelRequired(nextProps)) {
             this.state.downloadClassName = 'about-shown';
         }
-
         return true;
     }
 

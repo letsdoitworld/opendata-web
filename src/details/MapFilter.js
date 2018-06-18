@@ -79,18 +79,12 @@ export default class MapFilter extends Component {
             }
             q += i === parsedFilter ? ')' : '';
         }
-        q += hazardous ? ' and (hazardous=true)' : '';
+        if (hazardous) {
+            q += parsedFilter >= 0 ? ' and (hazardous=true)' : ' (hazardous=true))';
+        }
         this.props.srcFromFilter(q);
     }
-    change(event) {
-        const filterParams = [
-            {name: 'status', values: ['CLEANED', 'CONFIRMED']},
-            {name: 'type', values: ['Trashout', 'WorldCleanupDay']},
-        ];
-        this.setState({value: event.target.value});
-        // this.props.srcFromFilter("select * from opendata_public_reports where country_code='"+this.state.value+"'");
-        this.props.srcFromFilter(this.composeFilterQuery(filterParams));
-    }
+
     selectFilterValue(filterName, itemKey, itemValue, paramName) {
         const selectedFilter = {filtername: filterName, source: this.state[filterName], paramname: paramName};
         if (selectedFilter.source[itemKey].selected) {
