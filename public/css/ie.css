@@ -48,6 +48,18 @@
 	.countries-list__item .countries-list__item-value {
 		width: 60px;
 	}
+	.countries-list__item .country__index {
+		width: 42px;
+	}
+	.countries-list__item .country__flag {
+		width: 40px;
+	}
+	.countries-list__item .countries-list__item-name {
+		width: auto;
+	}
+	.countries-list__item .country__tpr {
+		width: 60px;
+	}
 
 	.country-data__item {
 		display: table;
@@ -72,6 +84,46 @@
 	.progress__icons .progress__icon {
 		display: table-cell;
 	}
+
+	.progress__state_2 .progress__bar {
+		width: 26%;
+	}
+	.progress__state_3 .progress__bar {
+		width: 50%;
+	}
+	.progress__state_4 .progress__bar {
+		width: 76%;
 }
 
+	.about-shown {
+		top: 0px;
+	}
 
+	.with-filters {
+		display: table;
+		width: 100%;
+	}
+	.with-filters .filter {
+		display: table-cell;
+		width: 30%;
+	}
+	.with-filters .filtered-values {
+		display: table-cell;
+		padding-left: 70px;
+	}
+
+	.onmap-filter__title {
+		float: left;
+		width: 300px;
+	}
+	.onmap-filter__filters {
+		float: left;
+		display: table;
+		margin-top: 20px;
+		width: 320px;
+	}
+	.onmap-filter__filters .onmap-filter__item {
+		display: table-cell;
+		width: 50%;
+	}
+}
