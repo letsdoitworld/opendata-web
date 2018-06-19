@@ -224,7 +224,11 @@ class App extends Component {
                             allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}
                             apiURL={this.props.apiURL}
                         />
-                        <WorldMap selectedTrashPoint={this.state.updatedTrashPoint} selectedCountry={this.state.updatedCountry} />
+                        <WorldMap
+                            apiURL={this.props.apiURL}
+                            selectedTrashPoint={this.state.updatedTrashPoint}
+                            selectedCountry={this.state.updatedCountry}
+                        />
                     </div>
                 )}
             </div>

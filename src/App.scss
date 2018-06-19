@@ -235,7 +235,7 @@ button {
   .select-options {
     background-color: #fff;
     box-shadow: 0 0 8px 0 rgba(169,169,169,0.5);
-    max-height: 200px;
+
     overflow: auto;
 
     .select-options__item {
@@ -701,4 +701,5 @@ button {
 .z-index-9k-float-right {
   z-index: 9000;
   float: right;
+  padding-right: 30px;
 }

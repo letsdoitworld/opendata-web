@@ -1,129 +1,137 @@
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
-	.app-wrapper {
-		display: table;
-		width: 100%;
-	}
-	.details-container {
-		display: table-cell;
-		width: 30%;
-	}
-	.map-container {
-		display: table-cell;
-		height: 100%;
-	}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .app-wrapper {
+        display: table;
+        width: 100%;
+    }
+    .details-container {
+        display: table-cell;
+        width: 30%;
+    }
+    .map-container {
+        display: table-cell;
+        height: 100%;
+    }
 
-	.countries-tabs {
-		display: table;
-		width: 100%;
-	}
-	.countries-tabs .countries-tabs__item {
-		display: table-cell;
-		width: 50%;
-	}
+    .countries-tabs {
+        display: table;
+        width: 100%;
+    }
+    .countries-tabs .countries-tabs__item {
+        display: table-cell;
+        width: 50%;
+    }
 
-	.countries-list__header {
-		display: table;
-		width: 100%;
-	}
-	.countries-list__header .col {
-		display: table-cell;
-	}
-	.countries-list__header .countries-list__item-pos {
-		width: 82px;
-	}
-	.countries-list__header .countries-list__item-value {
-		width: 100px;
-	}
-	.countries-list__item {
-		display: table;
-		width: 100%;
-	}
-	.countries-list__item .col {
-		display: table-cell;
-		text-align: left;
-	}
-	.countries-list__item .countries-list__item-pos {
-		width: 42px;
-	}
-	.countries-list__item .countries-list__item-value {
-		width: 60px;
-	}
-	.countries-list__item .country__index {
-		width: 42px;
-	}
-	.countries-list__item .country__flag {
-		width: 40px;
-	}
-	.countries-list__item .countries-list__item-name {
-		width: auto;
-	}
-	.countries-list__item .country__tpr {
-		width: 60px;
-	}
+    .countries-tabs .countries-tabs__link {
+        display: table-cell !important;
+    }
 
-	.country-data__item {
-		display: table;
-		width: 100%;
-	}
-	.country-data__item .country-data__icon {
-		display: table-cell;
-		width: 46px;
-	}
-	.country-data__item .country-data__title {
-		display: table-cell;
-	}
-	.country-data__item .country-data__value {
-		display: table-cell;
-		width: 30%;
-	}
+    .countries-list__header {
+        display: table;
+        width: 100%;
+    }
+    .countries-list__header .col {
+        display: table-cell;
+    }
+    .countries-list__header .countries-list__item-pos {
+        width: 82px;
+    }
+    .countries-list__header .countries-list__item-value {
+        width: 100px;
+    }
+    .countries-list {
+        max-height: 450px !important;
+    }
+    .countries-list__item {
+        display: table;
+        width: 100%;
+    }
+    .countries-list__item .col {
+        display: table-cell;
+        text-align: left;
+    }
+    .countries-list__item .countries-list__item-pos {
+        width: 42px;
+    }
+    .countries-list__item .countries-list__item-value {
+        width: 60px;
+    }
+    .countries-list__item .country__index {
+        width: 42px;
+    }
+    .countries-list__item .country__flag {
+        width: 40px;
+    }
+    .countries-list__item .countries-list__item-name {
+        width: auto;
+    }
+    .countries-list__item .country__tpr {
+        width: 60px;
+    }
 
-	.progress__icons {
-		display: table;
-		width: 100%;
-	}
-	.progress__icons .progress__icon {
-		display: table-cell;
-	}
+    .country-data__item {
+        display: table;
+        width: 100%;
+    }
+    .country-data__item .country-data__icon {
+        display: table-cell;
+        width: 46px;
+    }
+    .country-data__item .country-data__title {
+        display: table-cell;
+    }
+    .country-data__item .country-data__value {
+        display: table-cell;
+        width: 30%;
+    }
 
-	.progress__state_2 .progress__bar {
-		width: 26%;
-	}
-	.progress__state_3 .progress__bar {
-		width: 50%;
-	}
-	.progress__state_4 .progress__bar {
-		width: 76%;
-}
+    .progress__icons {
+        display: table;
+        width: 100%;
+    }
+    .progress__icons .progress__icon {
+        display: table-cell;
+    }
 
-	.about-shown {
-		top: 0px;
-	}
+    .progress__state_2 .progress__bar {
+        width: 26%;
+    }
+    .progress__state_3 .progress__bar {
+        width: 50%;
+    }
+    .progress__state_4 .progress__bar {
+        width: 76%;
+    }
 
-	.with-filters {
-		display: table;
-		width: 100%;
-	}
-	.with-filters .filter {
-		display: table-cell;
-		width: 30%;
-	}
-	.with-filters .filtered-values {
-		display: table-cell;
-		padding-left: 70px;
-	}
+    .about-shown {
+        top: 0px;
+    }
 
-	.onmap-filter__title {
-		float: left;
-		width: 300px;
-	}
-	.onmap-filter__filters {
-		float: left;
-		display: table;
-		margin-top: 20px;
-		width: 320px;
-	}
-	.onmap-filter__filters .onmap-filter__item {
-		display: table-cell;
-		width: 50%;
-	}
+    .with-filters {
+        display: table;
+        width: 100%;
+    }
+    .with-filters .filter {
+        display: table-cell;
+        width: 30%;
+    }
+    .with-filters .filtered-values {
+        display: table-cell;
+        padding-left: 70px;
+    }
+
+    .onmap-filter__title {
+        float: left;
+        width: 300px;
+    }
+    .onmap-filter__filters {
+        float: left;
+        display: table;
+        margin-top: 20px;
+        width: 320px;
+    }
+    .onmap-filter__filters .onmap-filter__item {
+        display: table-cell;
+        padding-left: 20px;
+        width: 50%;
+    }
 }

@@ -1,3 +1,4 @@
+import lodash from 'lodash';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {withRouter} from 'react-router';
@@ -10,7 +11,8 @@ import {buildStyle} from '../utils/styleFormatter';
 // this is a workaround for https://github.com/PaulLeCam/react-leaflet/issues/255#issuecomment-261904061
 import L from 'leaflet'; // eslint-disable-line
 
-delete L.Icon.Default.prototype._getIconUrl;/**/
+delete L.Icon.Default.prototype._getIconUrl;
+/**/
 
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'), // eslint-disable-line
@@ -24,6 +26,7 @@ const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nol
 
 class WorldMap extends Component {
     static propTypes = {
+        apiURL: PropTypes.string,
         selectedTrashPoint: PropTypes.object,
         mapClassName: PropTypes.string,
         history: PropTypes.object,
@@ -32,6 +35,7 @@ class WorldMap extends Component {
 
     static get defaultProps() {
         return {
+            apiURL: this.apiURL,
             location: this.location,
             selectedTrashPoint: this.selectedTrashPoint,
             mapClassName: this.mapClassName,
@@ -43,6 +47,8 @@ class WorldMap extends Component {
     constructor(props) {
         super(props);
         this.getSourceFromFilter = this.getSourceFromFilter.bind(this);
+        this.createCartoMap = this.createCartoMap.bind(this);
+        this.createBasicLayer = this.createBasicLayer.bind(this);
         this.state = {
             center: [46.255847, -10.318359],
             zoom: 2.5,
@@ -58,17 +64,14 @@ class WorldMap extends Component {
             countryLeafletLayer: null,
         };
     }
+
     componentDidMount() {
-        this.createCartoMap(cartoMapData.source, this.props, false);
+        this.createCartoMap(cartoMapData.source, this.props, true);
     }
+
     componentWillReceiveProps(nextProps) {
-        if (this.state.sourceFromFilter && this.state.sourceFromFilter !== '') {
-            this.recreateMap(nextProps);
-        } else {
-            this.createCartoMap(cartoMapData.source, nextProps, true);
-        }
         if (nextProps.selectedTrashPoint
-                && nextProps.selectedTrashPoint !== this.props.selectedTrashPoint) {
+            && nextProps.selectedTrashPoint !== this.props.selectedTrashPoint) {
             const center = [nextProps.selectedTrashPoint.lat, nextProps.selectedTrashPoint.long];
             this.nativeMap.panTo(center);
 
@@ -79,12 +82,15 @@ class WorldMap extends Component {
                 {position: center, pane: this.nativeMap.getPane('markerPane')});
             this.setState({marker});
             marker.addTo(this.nativeMap);
-            return true;
-        } else if (nextProps.selectedCountry
-                && nextProps.selectedCountry !== this.props.selectedCountry
-                && nextProps.selectedCountry.bounds) {
+        }
+
+        if (nextProps.selectedCountry
+            && nextProps.selectedCountry !== this.props.selectedCountry
+            && nextProps.selectedCountry.bounds) {
+            this.createCountryLayer(nextProps);
             this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
         }
+
         return false;
     }
 
@@ -93,37 +99,41 @@ class WorldMap extends Component {
         // all interactions with the map are done programmatically inside componentWillReceiveProps
         return false;
     }
+
     getSourceFromFilter(data) {
-        this.setState({sourceFromFilter: data}, () => this.componentWillReceiveProps(this.props));
+        this.recreateMap(data, this.props);
     }
-    recreateMap(props) {
+
+    recreateMap(source, props) {
         this.nativeMap.eachLayer((layer) => {
             this.nativeMap.removeLayer(layer);
         });
         this.state.cartoClient.removeLayers(this.state.cartoClient.getLayers());
-        this.createCartoMap(this.state.sourceFromFilter, props, false);
+        this.createCartoMap(source, props, true);
     }
-    createCartoMap(source, props, isUpdate) {
-        if (!isUpdate) {
-            this.createBasicLayer(source);
+
+    createCartoMap(source, props, shouldCreateBaseLayer) {
+        if (shouldCreateBaseLayer) {
+            const baseLayer = this.createBasicLayer(source);
+            this.state.cartoClient.removeLayers(this.state.cartoClient.getLayers());
+            this.state.cartoClient.addLayer(baseLayer);
+            this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
         }
         if (props && props.selectedCountry) {
-            if (this.state.countryLeafletLayer) {
-                this.removeCountryLayer();
-            }
             this.createCountryLayer(props);
         }
         this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
     }
+
     createBasicLayer(source) {
         L.tileLayer(CARTO_BASEMAP, {}).addTo(this.nativeMap);
         const cartoSource = new carto.source.SQL(source);
         const cartoStyle = new carto.style.CartoCSS(buildStyle());
 
-        this.layer = new carto.layer.Layer(cartoSource, cartoStyle);
-        this.layer.getStyle().setContent(buildStyle());
-        this.layer.setFeatureClickColumns(['id']);
-        this.layer.on('featureClicked', (featureEvent) => {
+        const layer = new carto.layer.Layer(cartoSource, cartoStyle);
+        layer.getStyle().setContent(buildStyle());
+        layer.setFeatureClickColumns(['id']);
+        layer.on('featureClicked', (featureEvent) => {
             const navigateToDetails = `/details/${featureEvent.data.id}`;
             // layer object does not receive this.props updates (carto.js restrictions)
             // thus we check this.props.history instead of this.props.location
@@ -131,22 +141,24 @@ class WorldMap extends Component {
                 this.props.history.push(navigateToDetails);
             }
         });
-        this.state.cartoClient.addLayer(this.layer);
+        return layer;
     }
-    removeCountryLayer() {
-        this.nativeMap.removeLayer(this.state.countryLeafletLayer);
-        this.state.cartoClient.removeLayer(this.state.countryLeafletLayer);
-    }
+
     createCountryLayer(props) {
         if (props.selectedCountry.code) {
+            const oldLayer = lodash(this.state.cartoClient.getLayers()).find(layer => layer && layer.getId().startsWith('Layer_'));
+            if (oldLayer) {
+                this.state.cartoClient.removeLayer(oldLayer);
+            }
             const countryQuery = "select * from world_borders where iso2='" + props.selectedCountry.code + "'";
             const cartoCountrySource = new carto.source.SQL(countryQuery);
             const cartoCountryStyle = new carto.style.CartoCSS(
                 '#layer2 {polygon-fill: #6495ED;  polygon-opacity: 0.4;  line-color: #FFF;  line-width: 0.5;  line-opacity: 1;}');
-            this.layerCountry = new carto.layer.Layer(cartoCountrySource, cartoCountryStyle);
+            this.layerCountry = new carto.layer.Layer(cartoCountrySource, cartoCountryStyle, {id: ('Layer_' + props.selectedCountry.code)});
             this.setState({countryLeafletLayer: this.layerCountry});
             this.state.cartoClient.addLayer(this.layerCountry);
         }
+        return this.layerCountry;
     }
 
     render() {
@@ -159,7 +171,7 @@ class WorldMap extends Component {
                     zoom={zoom}
                     ref={(node) => { this.nativeMap = node && node.leafletElement; }}
                 >
-                    <MapFilter srcFromFilter={this.getSourceFromFilter} />
+                    <MapFilter srcFromFilter={this.getSourceFromFilter} apiURL={this.props.apiURL} />
                 </Map>
             </div>
         );

@@ -1,3 +1,4 @@
+import lodash from 'lodash';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import '../css/details/Details.css';
@@ -12,9 +13,10 @@ export default class MapFilter extends Component {
 
     static get defaultProps() {
         return {
-            apiURL: 'https://opendata.wemakesoftware.eu/api',
+            apiURL: this.apiURL,
         };
     }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -34,6 +36,7 @@ export default class MapFilter extends Component {
         this.selectFilterValue = this.selectFilterValue.bind(this);
         this.selectFilterDates = this.selectFilterDates.bind(this);
     }
+
     async componentDidMount() {
         if (this.state.resourceFilter.length === 0) {
             await this.loadResourcesData();
@@ -51,37 +54,35 @@ export default class MapFilter extends Component {
             })
             .catch(err => console.error(this.state.url, err.toString()));
     }
+
     composeFilterQuery() {
         let q = 'select * from opendata_public_reports';
-        let parsedFilter;
-        let selectedItems;
-        let notZeroParams;
-        let hazardous;
-        for (let i = 0; this.state.filters.length > i; i++) {
-            selectedItems = 0;
-            for (let j = 0; this.state.filters[i].source.length > j; j++) {
-                if (this.state.filters[i].source[j].selected) {
-                    selectedItems += 1;
-                    if (!notZeroParams) {
-                        q += ' where (';
-                        notZeroParams = true;
-                    } else {
-                        q += (i !== parsedFilter) ? ' and (' : '';
-                    }
-                    if (this.state.filters[i].source[j].name !== 'hazardous') {
-                        q += (selectedItems > 1 ? ' or ' : '')
-                            + this.state.filters[i].paramname + "'" + this.state.filters[i].source[j].name + "'";
-                        parsedFilter = i;
-                    } else {
-                        hazardous = true;
-                    }
+
+        const queryParams = [];
+
+        lodash(this.state.filters)
+            .filter(filter => filter.source)
+            .forEach((filter) => {
+                // collect selected filters into string
+                const items = lodash(filter.source)
+                    .filter(source => source.selected && source.name !== 'hazardous')
+                    .map(source => filter.paramname + "'" + source.name + "'")
+                    .join(' or ');
+
+                if (items) {
+                    queryParams.push('(' + items + ')');
                 }
-            }
-            q += i === parsedFilter ? ')' : '';
+                // hazardous has to have special treatment as it is not a status
+                // but a separate property inside the database
+                if (lodash(filter.source).some(source => source.selected && source.name === 'hazardous')) {
+                    queryParams.push('(hazardous = true)');
+                }
+            });
+
+        if (queryParams.length > 0) {
+            q += ' where ( ' + queryParams.join(' and ') + ' )';
         }
-        if (hazardous) {
-            q += parsedFilter >= 0 ? ' and (hazardous=true)' : ' (hazardous=true))';
-        }
+        console.log(q);
         this.props.srcFromFilter(q);
     }
 
@@ -96,6 +97,7 @@ export default class MapFilter extends Component {
         this.updateFilterStatuses(selectedFilter);
         this.composeFilterQuery();
     }
+
     updateFilterStatuses(filter) {
         let found = false;
         for (let i = 0; this.state.filters.length > i; i++) {
@@ -108,26 +110,33 @@ export default class MapFilter extends Component {
             this.state.filters.push(filter);
         }
     }
+
     selectFilterDates(momentsArray) {
         if (momentsArray[0]) {
-            const selectedStartFilter = {filtername: 'startDateFilter',
+            const selectedStartFilter = {
+                filtername: 'startDateFilter',
                 source: [{name: momentsArray[0].format('YYYYMMDD').toString(), selected: true}],
-                paramname: 'last_updated >='};
+                paramname: 'last_updated >=',
+            };
             this.updateFilterStatuses(selectedStartFilter);
         }
         if (momentsArray[1]) {
-            const selectedEndFilter = {filtername: 'endDateFilter',
+            const selectedEndFilter = {
+                filtername: 'endDateFilter',
                 source: [{name: momentsArray[1].format('YYYYMMDD').toString(), selected: true}],
-                paramname: 'last_updated <='};
+                paramname: 'last_updated <=',
+            };
             this.updateFilterStatuses(selectedEndFilter);
         }
         this.composeFilterQuery();
     }
+
     showHideFilter(filterName) {
         const newState = {};
         newState[filterName] = !this.state[filterName];
         this.setState(newState);
     }
+
     render() {
         return (
             <div className="map-container">
@@ -141,8 +150,9 @@ export default class MapFilter extends Component {
                             <h1 className="header__text">Filter by</h1>
                         </div>
                     </header>
-                    <div className="onmap-filter__title h2">Filter by</div>
                     <div className="onmap-filter__filters">
+
+                        <div className="onmap-filter__item" />
                         <div className="onmap-filter__item">
 
                             <div className="filter">

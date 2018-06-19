@@ -44,7 +44,7 @@ export default class TrashPointDateFilter extends Component {
                 dateInputPlaceholder={['start', 'end']}
                 defaultValue={[now, now.clone().add(1, 'months')]}
                 locale={{enUS: moment.locale('en-gb')}}
-                onChange={this.selectDate}
+                onSelect={this.selectDate}
             />
         );
 
