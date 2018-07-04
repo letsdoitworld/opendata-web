@@ -87,7 +87,7 @@ class WorldMap extends Component {
         if (nextProps.selectedCountry
             && nextProps.selectedCountry !== this.props.selectedCountry
             && nextProps.selectedCountry.bounds) {
-            this.createCountryLayer(nextProps);
+            // this.createCountryLayer(nextProps);
             this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
         }
 
@@ -120,7 +120,7 @@ class WorldMap extends Component {
             this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
         }
         if (props && props.selectedCountry) {
-            this.createCountryLayer(props);
+            // this.createCountryLayer(props);
         }
         this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
     }
@@ -144,6 +144,8 @@ class WorldMap extends Component {
         return layer;
     }
 
+    // this was commented out due to the CARTO.js not able to provide accurate
+    // countries' borders
     createCountryLayer(props) {
         if (props.selectedCountry.code) {
             const oldLayer = lodash(this.state.cartoClient.getLayers()).find(layer => layer && layer.getId().startsWith('Layer_'));
