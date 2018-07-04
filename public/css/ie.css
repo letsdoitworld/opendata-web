@@ -127,11 +127,11 @@
         float: left;
         display: table;
         margin-top: 20px;
-        width: 320px;
+        width:100%
     }
     .onmap-filter__filters .onmap-filter__item {
         display: table-cell;
         padding-left: 20px;
-        width: 50%;
+        width: 300px;
     }
 }

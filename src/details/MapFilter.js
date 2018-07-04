@@ -144,15 +144,12 @@ export default class MapFilter extends Component {
                 <div className="onmap-filter">
                     <header className="header">
                         <div className="header_filter">
-                            <TrashPointDateFilter
-                                filterValueSelectedCallback={this.selectFilterDates}
-                            />
                             <h1 className="header__text">Filter by</h1>
                         </div>
                     </header>
+
                     <div className="onmap-filter__filters">
 
-                        <div className="onmap-filter__item" />
                         <div className="onmap-filter__item">
 
                             <div className="filter">
@@ -218,6 +215,15 @@ export default class MapFilter extends Component {
                                 </div>
                             </div>
 
+                        </div>
+                        <div className="onmap-filter__item">
+                            <div>
+
+                                <TrashPointDateFilter
+                                    cssClass={'z-index-9k'}
+                                    filterValueSelectedCallback={this.selectFilterDates}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

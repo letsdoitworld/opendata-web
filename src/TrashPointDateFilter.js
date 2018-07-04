@@ -14,11 +14,13 @@ defaultCalendarValue.add(-1, 'month');
 export default class TrashPointDateFilter extends Component {
     static propTypes = {
         filterValueSelectedCallback: PropTypes.func,
+        cssClass: PropTypes.string,
     };
 
     static get defaultProps() {
         return {
             filterValueSelectedCallback: this.filterValueSelectedCallback,
+            cssClass: 'z-index-9k-float-right',
         };
     }
 
@@ -51,7 +53,7 @@ export default class TrashPointDateFilter extends Component {
         return (
 
             <Picker
-                prefixCls={'z-index-9k-float-right'}
+                prefixCls={this.props.cssClass}
                 value={this.state.selectedDate}
                 onChange={this.onChange}
                 animation="slide-up"
@@ -61,7 +63,7 @@ export default class TrashPointDateFilter extends Component {
                 {
                     () => (
                         <div className="time-filter">
-                            Time:
+                            { !this.state.selectedDate && (<span>Time</span>)}
                             <div className="select-container">
                                 <div className="selection">{
                                     lodash.map(

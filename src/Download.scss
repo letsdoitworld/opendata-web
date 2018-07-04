@@ -51,8 +51,12 @@
 
 .time-filter {
   float: right;
-  width: 300px;
+  width: 100%;
   clear: both;
+}
+
+.float-right {
+  float: right;
 }
 
 @media (max-width: 575.98px) {

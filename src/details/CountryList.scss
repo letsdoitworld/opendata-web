@@ -138,10 +138,15 @@
   }
   .onmap-filter__filters {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 20px;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 30px;
   }
   .onmap-filter__item {
 
   }
+}
+
+.rc-calendar {
+  float: right;
+  margin-right: 45px;
 }

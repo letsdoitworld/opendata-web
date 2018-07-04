@@ -97,9 +97,12 @@ export default class Download extends Component {
             <div className={'main-content download-page ' + this.props.downloadClassName}>
                 <header className="header">
                     <div className="header_filter">
-                        <TrashPointDateFilter
-                            filterValueSelectedCallback={this.selectFilterDates}
-                        />
+                        <div className="float-right">
+
+                            <TrashPointDateFilter
+                                filterValueSelectedCallback={this.selectFilterDates}
+                            />
+                        </div>
                         <h1 className="header__text">Filter by</h1>
                     </div>
                 </header>
