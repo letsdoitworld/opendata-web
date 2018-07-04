@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -219,102 +220,53 @@ export default class CountryDetails extends Component {
                             <TrashPointSize
                                 size={this.props.selectedTrashPoint.sizeState}
                                 description={
-                                    'This trash point is created ' + (new Date(this.props.selectedTrashPoint.created_at).toString())
+                                    'reported by "' + this.props.selectedTrashPoint.type + '" on ' +
+                                     (moment(this.props.selectedTrashPoint.created_at).format('DD/MM/YY HH:mm'))
                                 }
                             />
 
-                            {this.props.selectedTrashPoint.images ? <div className="gallery">
-                                <div className="gallery-images">
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                    <a href="#" className="gallery-images__item"><img
-                                        src="http://via.placeholder.com/160x100"
-                                        alt=""
-                                        className="gallery-images__image"
-                                    /></a>
-                                </div>
-                            </div> : null}
+                            {this.props.selectedTrashPoint.images && (
+                                <div className="gallery">
+                                    <div className="gallery-images">
+                                        <a href="#" className="gallery-images__item"><img
+                                            src="http://via.placeholder.com/160x100"
+                                            alt=""
+                                            className="gallery-images__image"
+                                        /></a>
+                                    </div>
+                                </div>)
+                            }
 
                             <div className="detailed-info">
-                                {this.props.selectedTrashPoint.household ?
+                                {this.props.selectedTrashPoint.household && (
                                     <div>
                                         <h3 className="h2">Trash origin</h3>
                                         <div className="description">Household</div>
-                                    </div> : null}
+                                    </div>)
+                                }
 
                                 {this.props.selectedTrashPoint.construction ?
                                     <div className="description">Construction</div> : null}
-                                { this.props.selectedTrashPoint.glass ||
+                                { (this.props.selectedTrashPoint.glass ||
                                 this.props.selectedTrashPoint.lumber ||
                                 this.props.selectedTrashPoint.metal ||
                                 this.props.selectedTrashPoint.plastic ||
                                 this.props.selectedTrashPoint.rubber ||
                                 this.props.selectedTrashPoint.other ||
-                                this.props.selectedTrashPoint.textile ? <div>
-                                    <h3 className="h2">Trash type</h3>
-
-                                    <ul className="details">
-                                        {this.props.selectedTrashPoint.glass ?
-                                            <li className="details__item">Glass</li>
-                                            : null}
-                                        {this.props.selectedTrashPoint.lumber ?
-                                            <li className="details__item">Lumber</li>
-                                            : null}
-                                        {this.props.selectedTrashPoint.plastic ?
-                                            <li className="details__item">Plastic</li>
-                                            : null}
-                                        {this.props.selectedTrashPoint.metal ?
-                                            <li className="details__item">Metal</li>
-                                            : null}
-                                        {this.props.selectedTrashPoint.rubber ?
-                                            <li className="details__item">Rubber</li>
-                                            : null}
-                                        {this.props.selectedTrashPoint.other ?
-                                            <li className="details__item">Other</li>
-                                            : null}
-                                        {this.props.selectedTrashPoint.textile ?
-                                            <li className="details__item">Textile</li>
-                                            : null}
-                                    </ul>
-                                </div> : null}
+                                this.props.selectedTrashPoint.textile) && (
+                                    <div>
+                                        <h3 className="h2">Trash type</h3>
+                                        <ul className="details">
+                                            {this.props.selectedTrashPoint.glass && (<li className="details__item">Glass</li>)}
+                                            {this.props.selectedTrashPoint.lumber && (<li className="details__item">Lumber</li>)}
+                                            {this.props.selectedTrashPoint.plastic && (<li className="details__item">Plastic</li>)}
+                                            {this.props.selectedTrashPoint.metal && (<li className="details__item">Metal</li>)}
+                                            {this.props.selectedTrashPoint.rubber && (<li className="details__item">Rubber</li>)}
+                                            {this.props.selectedTrashPoint.other && (<li className="details__item">Other</li>)}
+                                            {this.props.selectedTrashPoint.textile && (<li className="details__item">Textile</li>)}
+                                        </ul>
+                                    </div>)
+                                }
                             </div>
                         </div> : null}
 
