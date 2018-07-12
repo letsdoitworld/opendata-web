@@ -57,11 +57,6 @@ export default class CountryList extends Component {
                     <Link to={'/'} className="go-back__link">Back to intro</Link>
                 </div>
                 <Navigation />
-
-                <div className="search-box">
-                    <input type="text" className="search-box__input" />
-                    <button type="button" className="search-box__button" />
-                </div>
                 <nav className="countries-tabs">
                     <a
                         href="#"
