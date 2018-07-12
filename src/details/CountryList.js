@@ -74,7 +74,7 @@ export default class CountryList extends Component {
                     <div className="countries-list__header">
                         <div className="col">Rk</div>
                         <div className="col">Country</div>
-                        <div className="col">TPR index</div>
+                        <div className="col" title="The number of trash reports per 10,000 people">TPR index</div>
                     </div>
                     {this.state.displayedCountries &&
                      this.state.displayedCountries.map((item, key) => (
