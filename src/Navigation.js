@@ -17,9 +17,21 @@ class Navigation extends Component {
     render() {
         return (
             <nav className="nav">
-                <Link to={'/about'} className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/about') && 'active')}>About the project</Link>
-                <Link to={'/download'} className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/download') && 'active')}>Download data</Link>
-                <a href="#" className="nav__item nav__link">How to get involved</a>
+                <Link to={'/about'} className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/about') && 'active')}>
+                    About the project
+                </Link>
+                <Link
+                    to={'/download'}
+                    className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/download') && 'active')}
+                >
+                    Download data
+                </Link>
+                <Link
+                    to={'/getinvolved'}
+                    className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/getinvolved') && 'active')}
+                >
+                    How to get involved
+                </Link>
             </nav>
         );
     }

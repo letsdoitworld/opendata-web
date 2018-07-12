@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom';
 import carto from 'carto.js';
 import {countries} from 'country-data';
 import IntroText from './IntroText';
+import GetInvolved from './GetInvolved';
 import CountryList from './details/CountryList';
 import CountryDetails from './details/CountryDetails';
 import WorldMap from './maps/WorldMap';
@@ -35,6 +36,7 @@ class App extends Component {
             updatedTrashPoint: {},
             aboutClassName: (this.isAboutInfoRequired(props) ? 'about-shown' : 'hidden'),
             downloadClassName: (this.isDownloadPanelRequired(props) ? 'about-shown' : 'hidden'),
+            getInvolvedClassName: (this.isGetInvolvedRequired(props) ? 'about-shown' : 'hidden'),
         };
         // Init Google Analytics
         // ReactGA.initialize('UA-109735778-1');
@@ -143,6 +145,10 @@ class App extends Component {
         return props.location && props.location.pathname.startsWith('/download');
     }
 
+    isGetInvolvedRequired(props) {
+        return props.location && props.location.pathname.startsWith('/getinvolved');
+    }
+
 
     /* eslint-enable */
 
@@ -152,6 +158,7 @@ class App extends Component {
         }
         this.state.aboutClassName = 'hidden';
         this.state.downloadClassName = 'hidden';
+        this.state.getInvolvedClassName = 'hidden';
         if (this.isTrashPointDetailsRequired(nextProps)) {
             await this.updateTrashpointsData(nextProps);
         } else if (this.isCountryDetailsRequired(nextProps)) {
@@ -166,6 +173,8 @@ class App extends Component {
             this.state.aboutClassName = 'about-shown';
         } else if (this.isDownloadPanelRequired(nextProps)) {
             this.state.downloadClassName = 'about-shown';
+        } else if (this.isGetInvolvedRequired(nextProps)) {
+            this.state.getInvolvedClassName = 'about-shown';
         }
         return true;
     }
@@ -175,7 +184,7 @@ class App extends Component {
     render() {
         const LeftPanel = () => (
             <Switch>
-                <Route exact path={'/(|about|download)'} component={IntroText} />
+                <Route exact path={'/(|about|download|getinvolved)'} component={IntroText} />
                 <Route
                     exact={false}
                     path={'/countries'}
@@ -224,6 +233,7 @@ class App extends Component {
                             allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}
                             apiURL={this.props.apiURL}
                         />
+                        <GetInvolved className={this.state.getInvolvedClassName} />
                         <WorldMap
                             apiURL={this.props.apiURL}
                             selectedTrashPoint={this.state.updatedTrashPoint}
