@@ -31,6 +31,7 @@ export default class Download extends Component {
         };
         this.filterValueSelected = this.filterValueSelected.bind(this);
         this.downloadData = this.downloadData.bind(this);
+        this.clearFilters = this.clearFilters.bind(this);
         this.selectFilterDates = this.selectFilterDates.bind(this);
     }
 
@@ -48,6 +49,8 @@ export default class Download extends Component {
         if (momentsArray[1]) {
             this.state.selectedFilter.end_date = [momentsArray[1].format('YYYYMMDD')];
         }
+
+        this.setState({dateFilter: momentsArray});
     }
 
     filterValueSelected(filterName, filterValue, addNotRemove) {
@@ -56,34 +59,42 @@ export default class Download extends Component {
             return;
         }
 
-        let filterNameToStore = filterName;
-        let filterValueToStore = filterValue.code;
+        const selectedFilter = this.state.selectedFilter;
 
-        // this is a special case of filtering
-        if (filterName === 'status' && filterValue.code === 'hazardous') {
-            filterValueToStore = 'true';
-            filterNameToStore = 'hazardous';
-        }
-
-        if (!this.state.selectedFilter[filterNameToStore]) {
-            this.state.selectedFilter[filterNameToStore] = [];
+        if (!selectedFilter[filterName]) {
+            selectedFilter[filterName] = [];
         }
         if (addNotRemove) {
-            this.state.selectedFilter[filterNameToStore].push(filterValueToStore);
+            if (selectedFilter[filterName].indexOf(filterValue) < 0) {
+                selectedFilter[filterName].push(filterValue);
+            }
         } else {
-            this.state.selectedFilter[filterNameToStore].splice(
-                this.state.selectedFilter[filterNameToStore].indexOf(filterValueToStore), 1);
+            selectedFilter[filterName].splice(
+                selectedFilter[filterName].indexOf(filterValue), 1);
         }
+
+        this.setState({selectedFilter});
+    }
+
+    clearFilters() {
+        this.setState({selectedFilter: {}, dateFilter: []});
     }
 
     downloadData(e) {
         e.preventDefault();
+        const currentFilter = this.state.selectedFilter;
+
+        // special case for hazardous
+        if (currentFilter.status && currentFilter.status.indexOf('hazardous') >= 0) {
+            currentFilter.hazardous = [true];
+            currentFilter.status.splice(currentFilter.status.indexOf('hazardous'), 1);
+        }
 
         const urlParams = [];
         urlParams.push('download=true');
         ['status', 'hazardous', 'size', 'start_date', 'end_date', 'country_code'].forEach((filterName) => {
-            if (this.state.selectedFilter[filterName] && this.state.selectedFilter[filterName].length > 0) {
-                const urlParam = filterName + '=' + this.state.selectedFilter[filterName].join();
+            if (currentFilter[filterName] && currentFilter[filterName].length > 0) {
+                const urlParam = filterName + '=' + currentFilter[filterName].join();
                 urlParams.push(urlParam);
             }
         }, this);
@@ -101,6 +112,7 @@ export default class Download extends Component {
 
                             <TrashPointDateFilter
                                 filterValueSelectedCallback={this.selectFilterDates}
+                                selectedDate={this.state.dateFilter}
                             />
                         </div>
                         <h1 className="header__text">Filter by</h1>
@@ -113,6 +125,7 @@ export default class Download extends Component {
                     name={'status'}
                     filterValueSelectedCallback={this.filterValueSelected}
                     statusFilter={this.state.statusFilter}
+                    statusFilterSelected={this.state.selectedFilter.status}
                 />
 
                 <TrashPointFilter
@@ -120,6 +133,7 @@ export default class Download extends Component {
                     name={'country_code'}
                     filterValueSelectedCallback={this.filterValueSelected}
                     statusFilter={this.props.allCountries.map(key => ({code: key.code, label: key.name}))}
+                    statusFilterSelected={this.state.selectedFilter.country_code}
                 />
 
                 <TrashPointSizeFilter
@@ -128,7 +142,7 @@ export default class Download extends Component {
                 />
 
                 <div className="action-buttons">
-                    <button className="button">Clear filters</button>
+                    <button className="button" onClick={this.clearFilters}>Clear filters</button>
                     <button className="button-filled download-button" onClick={this.downloadData}>
                         <span>Download data</span></button>
                 </div>

@@ -15,12 +15,14 @@ export default class TrashPointDateFilter extends Component {
     static propTypes = {
         filterValueSelectedCallback: PropTypes.func,
         cssClass: PropTypes.string,
+        selectedDate: PropTypes.array,
     };
 
     static get defaultProps() {
         return {
             filterValueSelectedCallback: this.filterValueSelectedCallback,
             cssClass: 'z-index-9k-float-right',
+            selectedDate: null,
         };
     }
 
@@ -34,7 +36,7 @@ export default class TrashPointDateFilter extends Component {
     }
 
     selectDate(selectedDate) {
-        this.setState({selectedDate});
+        // this.setState({selectedDate});
         this.props.filterValueSelectedCallback(selectedDate);
     }
 
@@ -54,7 +56,7 @@ export default class TrashPointDateFilter extends Component {
 
             <Picker
                 prefixCls={this.props.cssClass}
-                value={this.state.selectedDate}
+                value={this.props.selectedDate}
                 onChange={this.onChange}
                 animation="slide-up"
                 calendar={calendar}
@@ -63,12 +65,12 @@ export default class TrashPointDateFilter extends Component {
                 {
                     () => (
                         <div className="time-filter">
-                            { !this.state.selectedDate && (<span>Time</span>)}
+                            { !this.props.selectedDate && (<span>Time</span>)}
                             <div className="select-container">
                                 <div className="selection">{
                                     lodash.map(
-                                        this.state.selectedDate,
-                                        singleDate => singleDate.format('DD.MM.YYYY'))
+                                        this.props.selectedDate,
+                                        singleDate => (singleDate ? singleDate.format('DD.MM.YYYY') : ''))
                                         .join(' - ')}</div>
                             </div>
                         </div>

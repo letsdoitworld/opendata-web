@@ -1,3 +1,4 @@
+import lodash from 'lodash';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,11 +8,13 @@ export default class TrashPointFilter extends Component {
         filterValueSelectedCallback: PropTypes.func,
         name: PropTypes.string,
         title: PropTypes.string,
+        statusFilterSelected: PropTypes.array,
     };
 
     static get defaultProps() {
         return {
             statusFilter: this.statusFilter,
+            statusFilterSelected: [],
             filterValueSelectedCallback: this.filterValueSelectedCallback,
             name: this.name,
             title: this.title,
@@ -22,7 +25,6 @@ export default class TrashPointFilter extends Component {
         super(props);
         this.state = {
             statusFilterShown: true,
-            statusFilterSelected: [],
         };
     }
 
@@ -32,31 +34,20 @@ export default class TrashPointFilter extends Component {
         this.setState(newState);
     }
 
-    selectFilterValue(filterName, filterValue) {
-        this._modifyFilterValue(filterName, filterValue, true);
+    selectFilterValue(filterValue) {
+        this._modifyFilterValue(filterValue, true);
     }
 
-    _modifyFilterValue(filterName, filterValue, addNotRemove) {
-        const filterValuesModel = filterName + 'Selected';
-
-        const selectedFilter = this.state[filterValuesModel];
-
-        const indexOfFilterValue = selectedFilter.indexOf(filterValue);
-        if (addNotRemove && indexOfFilterValue < 0) {
-            selectedFilter.push(filterValue);
-        } else if (!addNotRemove && indexOfFilterValue >= 0) {
-            selectedFilter.splice(indexOfFilterValue, 1);
-        } else {
-            return;
-        }
-
-        const newState = {};
-        newState[filterValuesModel] = selectedFilter;
-
-        this.setState(newState, () => this.props.filterValueSelectedCallback(this.props.name, filterValue, addNotRemove));
+    _modifyFilterValue(filterValue, addNotRemove) {
+        this.props.filterValueSelectedCallback(this.props.name, filterValue, addNotRemove);
     }
 
     render() {
+        const getLabelFromCode = (code) => {
+            const element = lodash(this.props.statusFilter).find(filterElement => filterElement.code === code);
+            return element ? element.label : '';
+        };
+
         return (
             <section className="section with-filters">
                 <div className="filter">
@@ -75,7 +66,7 @@ export default class TrashPointFilter extends Component {
                                         role="none"
                                         className="select-options__item"
                                         key={this.props.statusFilter[value].code + '__' + value}
-                                        onClick={() => this.selectFilterValue('statusFilter', key)}
+                                        onClick={() => this.selectFilterValue(key.code)}
                                     >
                                         {this.props.statusFilter[value].label}
                                     </div>
@@ -86,16 +77,16 @@ export default class TrashPointFilter extends Component {
                 </div>
                 <div className="filtered-values">
 
-                    {this.state.statusFilterSelected.length > 0 && (
+                    {this.props.statusFilterSelected.length > 0 && (
                         <div className="tags-container">
-                            {this.state.statusFilterSelected.map(key => (
+                            {this.props.statusFilterSelected.map(key => (
                                 <div
                                     role="none"
                                     className="tags__item"
-                                    key={key.code}
-                                    onClick={() => this._modifyFilterValue('statusFilter', key, false)}
+                                    key={key}
+                                    onClick={() => this._modifyFilterValue(key, false)}
                                 >
-                                    {key.label}
+                                    { getLabelFromCode(key)}
                                 </div>
                             ))}
                         </div>

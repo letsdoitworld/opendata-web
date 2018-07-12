@@ -128,6 +128,7 @@ export default class MapFilter extends Component {
             };
             this.updateFilterStatuses(selectedEndFilter);
         }
+        this.setState({selectedDates: momentsArray});
         this.composeFilterQuery();
     }
 
@@ -222,6 +223,7 @@ export default class MapFilter extends Component {
                                 <TrashPointDateFilter
                                     cssClass={'z-index-9k'}
                                     filterValueSelectedCallback={this.selectFilterDates}
+                                    selectedDate={this.state.selectedDates}
                                 />
                             </div>
                         </div>
