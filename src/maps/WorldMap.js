@@ -123,6 +123,10 @@ class WorldMap extends Component {
             // this.createCountryLayer(props);
         }
         this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
+        // Hack: Leaflet maps don't display all tiles unless the window is
+        // resized or `map.invalidateSize()` is called.
+        // https://github.com/Leaflet/Leaflet/issues/694
+        setTimeout(() => this.nativeMap.invalidateSize(), 300);
     }
 
     createBasicLayer(source) {
