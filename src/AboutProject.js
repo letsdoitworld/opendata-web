@@ -28,6 +28,8 @@ export default class AboutProject extends Component {
                             <a target="_blank" rel="noreferrer noopener" href="http://www.infovara.ee/">Infovara</a>
                             <span> in partnership with </span>
                             <a target="_blank" rel="noreferrer noopener" href="http://www.qlik.com/us">Qlik</a>
+                            <span> and </span>
+                            <a target="_blank" rel="noreferrer noopener" href="https://www.microsoft.com/en-gb">Microsoft</a>
                         </p>
                         <p><b>A world without waste is our dream.</b>
                             <br/>
