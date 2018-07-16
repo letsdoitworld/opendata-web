@@ -94,6 +94,7 @@ export default class Download extends Component {
 
         const urlParams = [];
         urlParams.push('download=true');
+        urlParams.push('max_records=-1');
         ['status', 'hazardous', 'size', 'start_date', 'end_date', 'country_code', 'resource'].forEach((filterName) => {
             if (currentFilter[filterName] && currentFilter[filterName].length > 0) {
                 const urlParam = filterName + '=' + currentFilter[filterName].join();
