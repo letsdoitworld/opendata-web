@@ -52,6 +52,7 @@ class WorldMap extends Component {
         this.state = {
             center: [46.255847, -10.318359],
             zoom: 2.5,
+            zoomControlAdded: false,
             nativeMap: undefined,
             layerStyle: cartoMapData.style,
             hidelayers: true,
@@ -123,9 +124,12 @@ class WorldMap extends Component {
             // this.createCountryLayer(props);
         }
         // add zoom control with your options
-        L.control.zoom({
-            position: 'bottomleft',
-        }).addTo(this.nativeMap);
+        if (!this.state.zoomControlAdded) {
+            L.control.zoom({
+                position: 'bottomleft',
+            }).addTo(this.nativeMap);
+            this.setState({zoomControlAdded: true});
+        }
 
         this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
         // Hack: Leaflet maps don't display all tiles unless the window is

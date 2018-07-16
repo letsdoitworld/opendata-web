@@ -189,7 +189,7 @@ export default class MapFilter extends Component {
                                                     onClick={() => this.selectFilterValue('resourceFilter',
                                                         key, this.state.resourceFilter[key].name, 'type=')}
                                                 >
-                                                    {this.state.resourceFilter[key].name}
+                                                    {this.state.resourceFilter[key].label}
                                                     <span className="radiobtn" />
                                                 </div>
                                             ))}

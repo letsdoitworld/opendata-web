@@ -142,7 +142,7 @@ export default class Download extends Component {
                     title={'Application'}
                     name={'resource'}
                     filterValueSelectedCallback={this.filterValueSelected}
-                    statusFilter={this.props.resources.map(key => ({code: key.name, label: key.name}))}
+                    statusFilter={this.props.resources.map(key => ({code: key.name, label: key.label}))}
                     statusFilterSelected={this.state.selectedFilter.resource}
                 />
 
