@@ -29,8 +29,7 @@ export default class IntroText extends Component {
                        all the trash is mapped.
                 </p>
 
-                <a href="#" className="read_more__link">Read more on World Waste Index</a>
-
+                <Link to={'/readmore'} className="read_more__link">Read more on World Waste Index</Link>
 
             </div>
         );

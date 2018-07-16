@@ -13,6 +13,7 @@ import WorldMap from './maps/WorldMap';
 import AboutProject from './AboutProject';
 import Download from './Download';
 import Country from './Country';
+import ReadMore from './ReadMore';
 
 class App extends Component {
     static propTypes = {
@@ -37,6 +38,7 @@ class App extends Component {
             aboutClassName: (this.isAboutInfoRequired(props) ? 'about-shown' : 'hidden'),
             downloadClassName: (this.isDownloadPanelRequired(props) ? 'about-shown' : 'hidden'),
             getInvolvedClassName: (this.isGetInvolvedRequired(props) ? 'about-shown' : 'hidden'),
+            readMoreClassName: (this.isReadMoreRequired(props) ? 'about-shown' : 'hidden'),
         };
         this.loadСountriesData();
         this.loadResourcesData();
@@ -73,7 +75,7 @@ class App extends Component {
         const trashPointId = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
         console.log('loading trashpoint with id: ' + trashPointId);
 
-        await fetch(this.props.apiURL  + '/trashpoint/' + trashPointId)
+        await fetch(this.props.apiURL + '/trashpoint/' + trashPointId)
             .then(response => response.json())
             .then((data) => {
 
@@ -102,7 +104,7 @@ class App extends Component {
         } else {
             this.setState({selectedCountry: null});
         }
-        this.setState({updatedTrashPoint: this.state.selectedTrashPoint,  updatedCountry: this.state.selectedCountry});
+        this.setState({updatedTrashPoint: this.state.selectedTrashPoint, updatedCountry: this.state.selectedCountry});
     }
 
     async loadСountriesData() {
@@ -111,7 +113,7 @@ class App extends Component {
             return;
         }
 
-        await fetch( this.props.apiURL +  '/countries')
+        await fetch(this.props.apiURL + '/countries')
             .then(response => response.json())
             .then((data) => {
                 console.log('countriesdata loaded');
@@ -159,6 +161,10 @@ class App extends Component {
         return props.location && props.location.pathname.startsWith('/getinvolved');
     }
 
+    isReadMoreRequired(props) {
+        return props.location && props.location.pathname.startsWith('/readmore');
+    }
+
 
     /* eslint-enable */
 
@@ -169,6 +175,7 @@ class App extends Component {
         this.state.aboutClassName = 'hidden';
         this.state.downloadClassName = 'hidden';
         this.state.getInvolvedClassName = 'hidden';
+        this.state.readMoreClassName = 'hidden';
         if (this.isTrashPointDetailsRequired(nextProps)) {
             await this.updateTrashpointsData(nextProps);
         } else if (this.isCountryDetailsRequired(nextProps)) {
@@ -185,6 +192,8 @@ class App extends Component {
             this.state.downloadClassName = 'about-shown';
         } else if (this.isGetInvolvedRequired(nextProps)) {
             this.state.getInvolvedClassName = 'about-shown';
+        } else if (this.isReadMoreRequired(nextProps)) {
+            this.state.readMoreClassName = 'about-shown';
         }
         return true;
     }
@@ -194,7 +203,7 @@ class App extends Component {
     render() {
         const LeftPanel = () => (
             <Switch>
-                <Route exact path={'/(|about|download|getinvolved)'} component={IntroText} />
+                <Route exact path={'/(|about|download|getinvolved|readmore)'} component={IntroText} />
                 <Route
                     exact={false}
                     path={'/countries'}
@@ -245,6 +254,7 @@ class App extends Component {
                             resources={this.state.resources}
                         />
                         <GetInvolved className={this.state.getInvolvedClassName} />
+                        <ReadMore className={this.state.readMoreClassName} />
                         <WorldMap
                             resources={this.state.resources}
                             selectedTrashPoint={this.state.updatedTrashPoint}
