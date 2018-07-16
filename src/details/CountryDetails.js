@@ -115,7 +115,6 @@ export default class CountryDetails extends Component {
                                 <div className="country-data__note">
                                     *Trash Point Report index (TPR index) shows the number of trash reports per 10,000 people.
                                 </div>
-                                <a href="#" className="country-data__link">More on TPR index</a>
                             </div>
                             <div
                                 className="country-data__value"
