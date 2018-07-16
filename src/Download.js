@@ -9,6 +9,7 @@ export default class Download extends Component {
         downloadClassName: PropTypes.string,
         allCountries: PropTypes.array,
         apiURL: PropTypes.string,
+        resources: PropTypes.array,
     };
 
     static get defaultProps() {
@@ -16,6 +17,7 @@ export default class Download extends Component {
             downloadClassName: this.downloadClassName,
             allCountries: this.allCountries,
             apiURL: this.apiURL,
+            resources: this.resources,
         };
     }
 
@@ -92,7 +94,7 @@ export default class Download extends Component {
 
         const urlParams = [];
         urlParams.push('download=true');
-        ['status', 'hazardous', 'size', 'start_date', 'end_date', 'country_code'].forEach((filterName) => {
+        ['status', 'hazardous', 'size', 'start_date', 'end_date', 'country_code', 'resource'].forEach((filterName) => {
             if (currentFilter[filterName] && currentFilter[filterName].length > 0) {
                 const urlParam = filterName + '=' + currentFilter[filterName].join();
                 urlParams.push(urlParam);
@@ -134,6 +136,14 @@ export default class Download extends Component {
                     filterValueSelectedCallback={this.filterValueSelected}
                     statusFilter={this.props.allCountries.map(key => ({code: key.code, label: key.name}))}
                     statusFilterSelected={this.state.selectedFilter.country_code}
+                />
+
+                <TrashPointFilter
+                    title={'Application'}
+                    name={'resource'}
+                    filterValueSelectedCallback={this.filterValueSelected}
+                    statusFilter={this.props.resources.map(key => ({code: key.name, label: key.name}))}
+                    statusFilterSelected={this.state.selectedFilter.resource}
                 />
 
                 <TrashPointSizeFilter

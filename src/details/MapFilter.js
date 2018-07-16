@@ -7,21 +7,22 @@ import TrashPointDateFilter from '../TrashPointDateFilter';
 
 export default class MapFilter extends Component {
     static propTypes = {
-        srcFromFilter: PropTypes.func.isRequired,
-        apiURL: PropTypes.string,
+        srcFromFilter: PropTypes.func,
+        resources: PropTypes.array,
     };
 
     static get defaultProps() {
         return {
-            apiURL: this.apiURL,
+            srcFromFilter: null,
+            resources: this.resources,
         };
     }
 
     constructor(props) {
         super(props);
         this.state = {
+            resourceFilter: this.props.resources,
             value: 'select',
-            resourceFilter: [],
             startDate: null,
             endDate: null,
             filters: [],
@@ -35,24 +36,6 @@ export default class MapFilter extends Component {
         };
         this.selectFilterValue = this.selectFilterValue.bind(this);
         this.selectFilterDates = this.selectFilterDates.bind(this);
-    }
-
-    async componentDidMount() {
-        if (this.state.resourceFilter.length === 0) {
-            await this.loadResourcesData();
-        }
-    }
-
-    async loadResourcesData() {
-        await fetch(this.props.apiURL + '/resources')
-            .then(response => response.json())
-            .then((data) => {
-                console.log('resources loaded');
-                if (data.status === 'SUCCESS') {
-                    this.setState({resourceFilter: data.sources});
-                }
-            })
-            .catch(err => console.error(this.state.url, err.toString()));
     }
 
     composeFilterQuery() {
@@ -82,7 +65,6 @@ export default class MapFilter extends Component {
         if (queryParams.length > 0) {
             q += ' where ( ' + queryParams.join(' and ') + ' )';
         }
-        console.log(q);
         this.props.srcFromFilter(q);
     }
 

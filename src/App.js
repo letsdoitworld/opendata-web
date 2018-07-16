@@ -38,9 +38,8 @@ class App extends Component {
             downloadClassName: (this.isDownloadPanelRequired(props) ? 'about-shown' : 'hidden'),
             getInvolvedClassName: (this.isGetInvolvedRequired(props) ? 'about-shown' : 'hidden'),
         };
-        // Init Google Analytics
-        // ReactGA.initialize('UA-109735778-1');
         this.loadСountriesData();
+        this.loadResourcesData();
     }
 
     /* eslint-disable */
@@ -57,6 +56,17 @@ class App extends Component {
         } else if (this.isCountryListRequired(this.props)) {
             this.loadСountriesData();
         }
+    }
+
+    async loadResourcesData() {
+        await fetch(this.props.apiURL + '/resources')
+            .then(response => response.json())
+            .then((data) => {
+                if (data.status === 'SUCCESS') {
+                    this.setState({resources: data.sources});
+                }
+            })
+            .catch(err => console.error(this.state.url, err.toString()));
     }
 
     async loadTrashPointDetails(props) {
@@ -232,10 +242,11 @@ class App extends Component {
                             downloadClassName={this.state.downloadClassName}
                             allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}
                             apiURL={this.props.apiURL}
+                            resources={this.state.resources}
                         />
                         <GetInvolved className={this.state.getInvolvedClassName} />
                         <WorldMap
-                            apiURL={this.props.apiURL}
+                            resources={this.state.resources}
                             selectedTrashPoint={this.state.updatedTrashPoint}
                             selectedCountry={this.state.updatedCountry}
                         />

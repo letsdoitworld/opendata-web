@@ -26,21 +26,21 @@ const CARTO_BASEMAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nol
 
 class WorldMap extends Component {
     static propTypes = {
-        apiURL: PropTypes.string,
         selectedTrashPoint: PropTypes.object,
         mapClassName: PropTypes.string,
         history: PropTypes.object,
         selectedCountry: PropTypes.object,
+        resources: PropTypes.array,
     };
 
     static get defaultProps() {
         return {
-            apiURL: this.apiURL,
             location: this.location,
             selectedTrashPoint: this.selectedTrashPoint,
             mapClassName: this.mapClassName,
             history: this.location,
             selectedCountry: this.selectedCountry,
+            resources: this.resources,
         };
     }
 
@@ -178,7 +178,7 @@ class WorldMap extends Component {
                     minZoom={2}
                     ref={(node) => { this.nativeMap = node && node.leafletElement; }}
                 >
-                    <MapFilter srcFromFilter={this.getSourceFromFilter} apiURL={this.props.apiURL} />
+                    <MapFilter srcFromFilter={this.getSourceFromFilter} resources={this.props.resources} />
                 </Map>
             </div>
         );
