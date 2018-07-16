@@ -122,6 +122,11 @@ class WorldMap extends Component {
         if (props && props.selectedCountry) {
             // this.createCountryLayer(props);
         }
+        // add zoom control with your options
+        L.control.zoom({
+            position: 'bottomleft',
+        }).addTo(this.nativeMap);
+
         this.state.cartoClient.getLeafletLayer().addTo(this.nativeMap);
         // Hack: Leaflet maps don't display all tiles unless the window is
         // resized or `map.invalidateSize()` is called.
@@ -176,6 +181,7 @@ class WorldMap extends Component {
                     center={center}
                     zoom={zoom}
                     minZoom={2}
+                    zoomControl={false}
                     ref={(node) => { this.nativeMap = node && node.leafletElement; }}
                 >
                     <MapFilter srcFromFilter={this.getSourceFromFilter} resources={this.props.resources} />
