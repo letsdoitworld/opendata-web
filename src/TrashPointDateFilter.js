@@ -47,7 +47,7 @@ export default class TrashPointDateFilter extends Component {
                 showWeekNumber={false}
                 dateInputPlaceholder={['start', 'end']}
                 defaultValue={[now, now.clone().add(1, 'months')]}
-                locale={{enUS: moment.locale('en-gb')}}
+                format={'DD.MM.YYYY'}
                 onSelect={this.selectDate}
             />
         );
