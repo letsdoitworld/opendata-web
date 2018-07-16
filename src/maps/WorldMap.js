@@ -175,6 +175,7 @@ class WorldMap extends Component {
                 <Map
                     center={center}
                     zoom={zoom}
+                    minZoom={2}
                     ref={(node) => { this.nativeMap = node && node.leafletElement; }}
                 >
                     <MapFilter srcFromFilter={this.getSourceFromFilter} apiURL={this.props.apiURL} />
