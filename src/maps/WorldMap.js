@@ -31,6 +31,7 @@ class WorldMap extends Component {
         history: PropTypes.object,
         selectedCountry: PropTypes.object,
         resources: PropTypes.array,
+        reportsCounter: PropTypes.number,
     };
 
     static get defaultProps() {
@@ -41,6 +42,7 @@ class WorldMap extends Component {
             history: this.location,
             selectedCountry: this.selectedCountry,
             resources: this.resources,
+            reportsCounter: 0,
         };
     }
 
@@ -190,6 +192,10 @@ class WorldMap extends Component {
                 >
                     <MapFilter srcFromFilter={this.getSourceFromFilter} resources={this.props.resources} />
                 </Map>
+
+                <div className="reports-counter">
+                    Reports <span className="reports-counter__number">{this.props.reportsCounter}</span>
+                </div>
             </div>
         );
     }

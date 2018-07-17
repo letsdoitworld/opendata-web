@@ -42,6 +42,7 @@ class App extends Component {
         };
         this.loadСountriesData();
         this.loadResourcesData();
+        this.loadReportsCounter();
     }
 
     /* eslint-disable */
@@ -66,6 +67,17 @@ class App extends Component {
             .then((data) => {
                 if (data.status === 'SUCCESS') {
                     this.setState({resources: data.sources});
+                }
+            })
+            .catch(err => console.error(this.state.url, err.toString()));
+    }
+
+    async loadReportsCounter() {
+        await fetch(this.props.apiURL + '/reports/count')
+            .then(response => response.json())
+            .then((data) => {
+                if (data.status === 'SUCCESS') {
+                    this.setState({reportsCounter: parseInt(data.reports_count)});
                 }
             })
             .catch(err => console.error(this.state.url, err.toString()));
@@ -259,6 +271,7 @@ class App extends Component {
                             resources={this.state.resources}
                             selectedTrashPoint={this.state.updatedTrashPoint}
                             selectedCountry={this.state.updatedCountry}
+                            reportsCounter={this.state.reportsCounter}
                         />
                     </div>
                 )}

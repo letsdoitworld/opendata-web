@@ -44,11 +44,11 @@ button {
   font-family: 'Catamaran', sans-serif;
 }
 .h1 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed bold', sans-serif;
   font-weight: 700;
   font-size: 6.0rem;
   text-transform: uppercase;
-  text-shadow: #fff13d 2px 0px;
+  text-shadow: #fff13d 5px 3px;
 }
 .h2 {
   font-family: 'Barlow Condensed', sans-serif;
@@ -588,6 +588,13 @@ button {
     color: #313131;
     text-decoration: none;
   }
+  .nav__item:after{
+    content:" ";background:#fff;border:3px solid #3b8fe7;
+    border-radius:50%;height:3px;width:3px;margin-top:-2px;position:absolute;
+    right:-6px;top:50%;bottom:0;z-index:500000
+  }
+
+
   .nav__link:hover {
     color: #7b7b7b;
   }
@@ -693,3 +700,6 @@ button {
 .overflow-scroll {
   overflow: scroll;
 }
+
+.reports-counter{color:#313131;font-family:Barlow Condensed;font-size:32px;font-weight:500;line-height:32px;position:absolute;right:46px;bottom:44px;z-index:1000}
+.reports-counter .reports-counter__number{font-size:60px;line-height:60px;margin-right:8px}
