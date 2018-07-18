@@ -147,12 +147,14 @@ export default class MapFilter extends Component {
 
 
                                     {this.state.statusFilterShown && (
-                                        <div className="select-options">
+                                        <div className="select-options select-options-state">
                                             {this.state.statusFilter.map((item, key) => (
                                                 <div
                                                     role="none"
-                                                    className={'select-options__item' +
-                                                    (this.state.statusFilter[key].selected ? ' selected' : '')}
+                                                    className={'select-options__item ' +
+                                                    (this.state.statusFilter[key].selected ? ' selected' : '') +
+                                                    (' state_' + key)
+                                                    }
                                                     key={this.state.statusFilter[key].name + '__' + item}
                                                     onClick={() => this.selectFilterValue('statusFilter',
                                                         key, this.state.statusFilter[key].name, 'status=')}
