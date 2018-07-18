@@ -87,6 +87,7 @@ export default class TrashPointFilter extends Component {
                                     onClick={() => this._modifyFilterValue(key, false)}
                                 >
                                     { getLabelFromCode(key)}
+                                    <i className="margin-left-5 fa fa-times-circle" />
                                 </div>
                             ))}
                         </div>
