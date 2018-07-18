@@ -19,8 +19,8 @@ export default class ReadMore extends Component {
                 <main className="main-content about-page">
                     <div className="modal-content">
                         <div>
-                            <h1>Welcome to World Waste Index demo</h1>
-                            <p>The World Waste Map’s main goals are to make mismanaged waste (including
+                            <h1>Welcome to World Waste Platform demo</h1>
+                            <p>The World Waste Platform’s main goals are to make mismanaged waste (including
                              illegal dumping and littering) visible around the globe,
                              and to show the evolution of waste managment around the world. To create the World Waste Index, we use an advanced algorythm to assess the quality
                               of waste management of countries that includes illegal waste in environment, the quanity of waste collected, the recycling rate, what kind of waste
