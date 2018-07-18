@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import TrashPointFilter from './TrashPointFilter';
-import TrashPointSizeFilter from './TrashPointSizeFilter';
 import TrashPointDateFilter from './TrashPointDateFilter';
 
 export default class Download extends Component {
@@ -145,11 +144,6 @@ export default class Download extends Component {
                     filterValueSelectedCallback={this.filterValueSelected}
                     statusFilter={this.props.resources.map(key => ({code: key.name, label: key.label}))}
                     statusFilterSelected={this.state.selectedFilter.resource}
-                />
-
-                <TrashPointSizeFilter
-                    filterValueSelectedCallback={this.filterValueSelected}
-                    name={'size'}
                 />
 
                 <div className="action-buttons">
