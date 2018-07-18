@@ -79,7 +79,7 @@ export default class CountryList extends Component {
                     {this.state.displayedCountries &&
                      this.state.displayedCountries.map((item, key) => (
                          <div className="countries-list__item" key={key}>
-                             <div className="col country__index">{key + 1}</div>
+                             <div className="col countries-list__item-pos country__index">{key + 1}</div>
                              <div className="col country__flag">
                                  <ReactCountryFlag code={item.code} svg />
                              </div>
