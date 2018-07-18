@@ -177,14 +177,14 @@ export default class CountryDetails extends Component {
                                 {this.props.selectedCountry &&
                                 this.state.trashpoints &&
                                 this.state.trashpoints.map((item, key) => (
-                                    <Link to={`/details/${item.id}`}>
-                                        <div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
+                                    <div className={'reports-list__item status-' + item.trashViewStatus} key={key}>
+                                        <Link to={`/details/${item.id}`} key={key}>
                                             <div
                                                 className="reports-list__title"
                                             >{item.admin_area ? item.admin_area : 'Trashpoint ' + item.id}</div>
                                             <div className="reports-list__address">{item.admin_sub_area}</div>
-                                        </div>
-                                    </Link>
+                                        </Link>
+                                    </div>
                                 ))}
                             </div>
                         </div>
