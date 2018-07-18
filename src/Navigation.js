@@ -17,21 +17,30 @@ class Navigation extends Component {
     render() {
         return (
             <nav className="nav">
-                <Link to={'/about'} className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/about') && 'active')}>
-                    About the project
-                </Link>
-                <Link
-                    to={'/download'}
-                    className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/download') && 'active')}
-                >
-                    Download data
-                </Link>
-                <Link
-                    to={'/getinvolved'}
-                    className={'nav__item nav__link ' + (this.props.location.pathname.startsWith('/getinvolved') && 'active')}
-                >
-                    How to get involved
-                </Link>
+                <div className="nav__item">
+                    <Link
+                        to={'/about'}
+                        className={'nav__link ' + (this.props.location.pathname.startsWith('/about') ? 'active' : 'inactive')}
+                    >
+                        About the project
+                    </Link>
+                </div>
+                <div className="nav__item">
+                    <Link
+                        to={'/download'}
+                        className={'nav__link ' + (this.props.location.pathname.startsWith('/download') ? 'active' : 'inactive')}
+                    >
+                        Download data
+                    </Link>
+                </div>
+                <div className="nav__item">
+                    <Link
+                        to={'/getinvolved'}
+                        className={'nav__link ' + (this.props.location.pathname.startsWith('/getinvolved') ? 'active' : 'inactive')}
+                    >
+                        How to get involved
+                    </Link>
+                </div>
             </nav>
         );
     }
