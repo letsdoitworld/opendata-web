@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {FacebookIcon, FacebookShareButton} from 'react-share';
+import {FacebookShareButton} from 'react-share';
 
 export default class FacebookShareWrapper extends Component {
     static propTypes = {
@@ -16,7 +16,7 @@ export default class FacebookShareWrapper extends Component {
     render() {
         const url = window.location.href.substr(0, window.location.href.indexOf('#'));
 
-        const facebookShare = () => (<div><FacebookIcon round size={32} /> </div>);
+        const facebookShare = () => (<div className="share-button"><span className="share-element">SHARE</span></div>);
 
         return (
             <FacebookShareButton url={url + '#' + this.props.linkToShare} children={facebookShare()} />

@@ -611,6 +611,16 @@ button {
   }
 }
 
+.share-button{
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+
+  .share-element::after {
+    content: url('/img/share-arrow.png');
+  }
+}
 
 .progress {
 
