@@ -1,17 +1,46 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router';
 import FacebookShareWrapper from './utils/FacebookShareWrapper';
 import Navigation from './Navigation';
 
-export default class IntroText extends Component {
+class IntroText extends Component {
+    static propTypes = {
+        location: PropTypes.object,
+    };
+
+    static get defaultProps() {
+        return {
+            location: this.location,
+        };
+    }
+
+
     render() {
+        const isInfoShown = () => this.props.location &&
+                (
+                    this.props.location.pathname.startsWith('/getinvolved') ||
+                    this.props.location.pathname.startsWith('/download') ||
+                    this.props.location.pathname.startsWith('/about')
+                );
+
         return (
 
             <div className="details-container">
 
-                <div className="open-country-list">
-                    <Link to={'/countries'} className="open-country-list__link">See a country list</Link>
-                </div>
+                {
+                    isInfoShown() && (
+                    <div className="go-back">
+                        <Link to={'/'} className="go-back__link">Back</Link>
+                    </div>)
+                }
+                {
+                    !isInfoShown() && (
+                    <div className="open-country-list">
+                        <Link to={'/countries'} className="open-country-list__link">See a country list</Link>
+                    </div>)
+                }
 
                 <Navigation />
 
@@ -35,3 +64,5 @@ export default class IntroText extends Component {
         );
     }
 }
+
+export default withRouter(IntroText);

@@ -471,17 +471,37 @@ button {
 @media (min-width: 576px) and (max-width: 767.98px) {
   .app-wrapper {
     grid-template-columns: 50% auto;
-    grid-template-rows: 100%;
+    grid-template-rows: 100%; }
+  .about-shown {
+    left: 50%;
+    width: 50%; }
+  .download-page {
+    left: 50%;
+    width: 50%;
+    overflow: scroll; }
+  .country-reports-list {
+    left: 50%; }
+  .trashpoint-details {
+    left: 50%; }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+  .app-wrapper {
+    grid-template-columns: 40% auto;
+    grid-template-rows: 100%
+  }
+  .country-container {
+    .h1 {
+      font-size: 4rem;
+    }
   }
   .about-shown {
     left: 40%;
-    width: 60%;
-  }
+    width: 60%; }
   .download-page {
     left: 40%;
     width: 60%;
-    overflow: scroll;
-  }
+    overflow: scroll; }
   .country-reports-list {
     left: 40%;
   }
