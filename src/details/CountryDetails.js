@@ -209,9 +209,6 @@ export default class CountryDetails extends Component {
                             <div className="address">
                                 <div className="address__value">{this.props.selectedTrashPoint.admin_sub_area}</div>
                             </div>
-                            <div className="google-maps-link">
-                                <a href="#" className="google-maps-link__link">See directions in Google maps</a>
-                            </div>
                             <div className="note">{this.props.selectedTrashPoint.note}</div>
                             {this.props.selectedTrashPoint.hazardous ?
                                 <div className="alert hazard">This point has hazardous amount of trash</div> : null}
