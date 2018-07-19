@@ -508,6 +508,10 @@ button {
   .trashpoint-details {
     left: 40%;
   }
+  .details-container {
+    min-height: unset;
+    height: unset;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -517,6 +521,7 @@ button {
   }
   .details-container {
     min-height: unset;
+    height: unset;
   }
   .country-reports-list {
     position: static;
@@ -732,4 +737,8 @@ button {
 
 .margin-left-5 {
   margin-left: 5px;
+}
+
+.button {
+  margin-bottom: 20px;
 }
