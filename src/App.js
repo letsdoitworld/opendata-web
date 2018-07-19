@@ -187,6 +187,7 @@ class App extends Component {
             this.loadCountryDetails(countryCode);
         } else if (this.isCountryListRequired(nextProps)) {
             this.loadCountriesData();
+            this.setState({updatedCountry: null, updatedTrashPoint: null});
         } else if (this.isAboutInfoRequired(nextProps)) {
             this.state.aboutClassName = 'about-shown';
         } else if (this.isDownloadPanelRequired(nextProps)) {

@@ -94,6 +94,15 @@ class WorldMap extends Component {
             this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
         }
 
+        if (!nextProps.selectedCountry) {
+            this.nativeMap.setView(this.state.center, this.state.zoom);
+        }
+
+        if (!nextProps.selectedTrashPoint && this.state.marker) {
+            this.nativeMap.removeLayer(this.state.marker);
+            this.state.marker = null;
+        }
+
         if (nextProps.reportsCounter !== this.props.reportsCounter) {
             this.reportsCounter.innerHTML = nextProps.reportsCounter;
         }
