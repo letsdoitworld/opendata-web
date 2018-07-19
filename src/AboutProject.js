@@ -31,7 +31,7 @@ export default class AboutProject extends Component {
                             <span> and </span>
                             <a target="_blank" rel="noreferrer noopener" href="https://www.microsoft.com/en-gb">Microsoft</a>
                         </p>
-                        <p><b>A world without waste is our dream.</b>
+                        <p><b>Reports on mismanaged waste</b>
                             <br/>
                             <br/>
                             In order to fully grasp the trash problem, we require reliable data on how much trash there
