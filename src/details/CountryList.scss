@@ -131,6 +131,13 @@
   margin-left: 45px;
   z-index:1000;
   position: relative;
+
+  .header .header_filter .header__text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+  }
+
   .onmap-filter__title {
     margin-bottom: 20px;
 
@@ -140,10 +147,19 @@
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 30px;
   }
-  .onmap-filter__item {
-
+  .onmap-filter__item .filter .select-container .selection {
+    font-size: 1.6rem;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
   }
+
 }
+  .time-filter {
+    color: #7b7b7b;
+    font-size: 1.6rem;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+  }
 
 .rc-calendar {
   float: right;
