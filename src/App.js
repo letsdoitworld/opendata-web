@@ -19,12 +19,16 @@ class App extends Component {
     static propTypes = {
         location: PropTypes.object,
         apiURL: PropTypes.string,
+        cartoApiKey: PropTypes.string,
+        cartoUsername: PropTypes.string,
     };
 
     static get defaultProps() {
         return {
             location: this.location,
             apiURL: 'https://opendata.wemakesoftware.eu/api',
+            cartoApiKey: '7947aa9e7fcdff0f5f8891a5f83b1e6fa6350687',
+            cartoUsername: 'worldcleanupday',
         };
     }
 
@@ -210,7 +214,7 @@ class App extends Component {
         return true;
     }
 
-    cartoClient = new carto.Client({apiKey: '7947aa9e7fcdff0f5f8891a5f83b1e6fa6350687', username: 'worldcleanupday'});
+    cartoClient = new carto.Client({apiKey: this.props.cartoApiKey, username: this.props.cartoUsername});
 
     render() {
         const LeftPanel = () => (
