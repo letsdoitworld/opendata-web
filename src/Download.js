@@ -94,7 +94,7 @@ export default class Download extends Component {
         const urlParams = [];
         urlParams.push('download=true');
         urlParams.push('max_records=-1');
-        ['status', 'hazardous', 'size', 'start_date', 'end_date', 'country_code', 'resource'].forEach((filterName) => {
+        ['status', 'hazardous', 'size', 'start_date', 'end_date', 'country_code', 'type'].forEach((filterName) => {
             if (currentFilter[filterName] && currentFilter[filterName].length > 0) {
                 const urlParam = filterName + '=' + currentFilter[filterName].join();
                 urlParams.push(urlParam);
@@ -140,10 +140,10 @@ export default class Download extends Component {
 
                 <TrashPointFilter
                     title={'Application'}
-                    name={'resource'}
+                    name={'type'}
                     filterValueSelectedCallback={this.filterValueSelected}
                     statusFilter={this.props.resources.map(key => ({code: key.name, label: key.label}))}
-                    statusFilterSelected={this.state.selectedFilter.resource}
+                    statusFilterSelected={this.state.selectedFilter.type}
                 />
 
                 <div className="action-buttons">
