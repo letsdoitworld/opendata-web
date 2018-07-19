@@ -44,63 +44,55 @@ class App extends Component {
             getInvolvedClassName: (this.isGetInvolvedRequired(props) ? 'about-shown' : 'hidden'),
             readMoreClassName: (this.isReadMoreRequired(props) ? 'about-shown' : 'hidden'),
         };
-        this.loadСountriesData();
-        this.loadResourcesData();
+        this.loadCountriesData();
         this.loadReportsCounter();
+        this.loadResourcesData();
     }
 
     /* eslint-disable */
     async componentDidMount() {
+
         this.setState({nativeMap: this.nativeMap});
         if (this.isTrashPointDetailsRequired(this.props)) {
             await this.updateTrashpointsData(this.props);
         } else if (this.isCountryDetailsRequired(this.props)) {
             if (this.state.allCountries == null) {
-                await this.loadСountriesData(this.props);
+                await this.loadCountriesData(this.props);
             }
             const countryCode = this.props.location.pathname.substring(this.props.location.pathname.lastIndexOf('/') + 1);
             this.loadCountryDetails(countryCode);
         } else if (this.isCountryListRequired(this.props)) {
-            this.loadСountriesData();
+            this.loadCountriesData();
         }
     }
 
     async loadResourcesData() {
-        await fetch(this.props.apiURL + '/resources')
+        const resources = await this.loadData('/resources', (data) => data.sources);
+        this.setState({resources});
+    }
+
+    async loadData(endpoint, dataTransformer) {
+        console.log('calling load data from: ' + endpoint);
+
+       return await fetch(this.props.apiURL + endpoint)
             .then(response => response.json())
             .then((data) => {
                 if (data.status === 'SUCCESS') {
-                    this.setState({resources: data.sources});
+                    return dataTransformer(data);
+                } else {
+                    console.error('endpoint ' + endpoint + ' failed ' + JSON.stringify(data));
                 }
             })
             .catch(err => console.error(this.state.url, err.toString()));
     }
 
     async loadReportsCounter() {
-        await fetch(this.props.apiURL + '/reports/count')
-            .then(response => response.json())
-            .then((data) => {
-                if (data.status === 'SUCCESS') {
-                    this.setState({reportsCounter: parseInt(data.reports_count)});
-                }
-            })
-            .catch(err => console.error(this.state.url, err.toString()));
+        this.setState({reportsCounter: await this.loadData('/reports/count', (data) => parseInt(data.reports_count))});
     }
 
     async loadTrashPointDetails(props) {
         const trashPointId = props.location.pathname.substring(props.location.pathname.lastIndexOf('/') + 1);
-        console.log('loading trashpoint with id: ' + trashPointId);
-
-        await fetch(this.props.apiURL + '/trashpoint/' + trashPointId)
-            .then(response => response.json())
-            .then((data) => {
-
-                if (data && data.sources) {
-
-                    this.setState({selectedTrashPoint: data.sources[0]});
-                }
-            })
-            .catch(err => console.error(this.state.url, err.toString()));
+        this.setState({selectedTrashPoint: await this.loadData('/trashpoint/' + trashPointId, (data) => data.sources[0])});
     }
 
     async loadCountryDetails(countryCode) {
@@ -111,7 +103,7 @@ class App extends Component {
     async updateTrashpointsData(props) {
         await this.loadTrashPointDetails(props);
         if (this.state.selectedTrashPoint.country_code != null) {
-            await this.loadСountriesData();
+            await this.loadCountriesData();
             if (this.state.selectedCountry == null ||
                 this.state.selectedCountry.code !== this.state.selectedTrashPoint.country_code) {
                 await this.loadCountryDetails(
@@ -123,34 +115,27 @@ class App extends Component {
         this.setState({updatedTrashPoint: this.state.selectedTrashPoint, updatedCountry: this.state.selectedCountry});
     }
 
-    async loadСountriesData() {
+    async loadCountriesData() {
 
         if (this.state.countriesDataLoaded) {
             return;
         }
 
-        await fetch(this.props.apiURL + '/countries')
-            .then(response => response.json())
-            .then((data) => {
-                console.log('countriesdata loaded');
-                if (data.status === 'SUCCESS') {
-                    const allCountries = data.sources.map(key =>
-                        new Country(
-                            countries[key.country_code].name,
-                            key.country_code,
-                            key.reports_number,
-                            key.population,
-                            key.tpr,
-                            key.bb_x1,
-                            key.bb_y1,
-                            key.bb_x2,
-                            key.bb_y2,
-                            key.resources
-                        ));
-                    this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
-                }
-            })
-            .catch(err => console.error(this.state.url, err.toString()));
+        const allCountries = await this.loadData('/countries', (data) => data.sources.map(key =>
+            new Country(
+                countries[key.country_code].name,
+                key.country_code,
+                key.reports_number,
+                key.population,
+                key.tpr,
+                key.bb_x1,
+                key.bb_y1,
+                key.bb_x2,
+                key.bb_y2,
+                key.resources
+            )));
+
+        this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
     }
 
     isTrashPointDetailsRequired(props) {
@@ -196,12 +181,12 @@ class App extends Component {
             await this.updateTrashpointsData(nextProps);
         } else if (this.isCountryDetailsRequired(nextProps)) {
             if (this.state.allCountries == null) {
-                await this.loadСountriesData();
+                await this.loadCountriesData();
             }
             const countryCode = nextProps.location.pathname.substring(nextProps.location.pathname.lastIndexOf('/') + 1);
             this.loadCountryDetails(countryCode);
         } else if (this.isCountryListRequired(nextProps)) {
-            this.loadСountriesData();
+            this.loadCountriesData();
         } else if (this.isAboutInfoRequired(nextProps)) {
             this.state.aboutClassName = 'about-shown';
         } else if (this.isDownloadPanelRequired(nextProps)) {

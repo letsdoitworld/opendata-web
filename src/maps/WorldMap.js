@@ -94,6 +94,10 @@ class WorldMap extends Component {
             this.nativeMap.fitBounds(nextProps.selectedCountry.bounds);
         }
 
+        if (nextProps.reportsCounter !== this.props.reportsCounter) {
+            this.reportsCounter.innerHTML = nextProps.reportsCounter;
+        }
+
         return false;
     }
 
@@ -194,7 +198,10 @@ class WorldMap extends Component {
                 </Map>
 
                 <div className="reports-counter">
-                    Reports <span className="reports-counter__number">{this.props.reportsCounter}</span>
+                    Reports&nbsp;
+                    <span className="reports-counter__number" ref={(node) => { this.reportsCounter = node; }}>
+                        {this.props.reportsCounter}
+                    </span>
                 </div>
             </div>
         );

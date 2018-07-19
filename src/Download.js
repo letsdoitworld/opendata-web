@@ -16,7 +16,7 @@ export default class Download extends Component {
             downloadClassName: this.downloadClassName,
             allCountries: this.allCountries,
             apiURL: this.apiURL,
-            resources: this.resources,
+            resources: [],
         };
     }
 
