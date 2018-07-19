@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import IntroText from '../IntroText';
 import TrashPointSize from './TrashPointSize';
 import FacebookShareWrapper from '../utils/FacebookShareWrapper';
+import {nFormatter} from '../utils/styleFormatter';
 
 export default class CountryDetails extends Component {
     static propTypes = {
@@ -126,7 +127,7 @@ export default class CountryDetails extends Component {
                                 <img src="/img/population_icon.svg" alt="Population" />
                             </div>
                             <div className="country-data__title">POPULATION</div>
-                            <div className="country-data__value">{this.props.selectedCountry.population}</div>
+                            <div className="country-data__value">{ nFormatter(this.props.selectedCountry.population, 2)}</div>
                         </div>
 
                         <div className="country-data__item with-icon">
@@ -140,7 +141,7 @@ export default class CountryDetails extends Component {
 
                         {this.props.selectedCountry.reportCount && (
                             <a href="#" className="btn-detailed-data" onClick={this.showDetailedData}>
-                                <span>Get detailed data</span>
+                                <span>Get last 50 by date</span>
                             </a>)
                         }
                         { this.props.selectedCountry.resources && this.props.selectedCountry.resources.length && (
@@ -169,7 +170,7 @@ export default class CountryDetails extends Component {
                                 >
                                     <span className="close__link" />
                                 </div>
-                                <h2 className="h2 header">All trash points</h2>
+                                <h2 className="h2 header">Last 50 by date</h2>
                             </div>
 
                             <div className="reports-list">
@@ -253,13 +254,20 @@ export default class CountryDetails extends Component {
                                     <div>
                                         <h3 className="h2">Trash type</h3>
                                         <ul className="details">
-                                            {this.props.selectedTrashPoint.glass && (<li className="details__item">Glass</li>)}
-                                            {this.props.selectedTrashPoint.lumber && (<li className="details__item">Lumber</li>)}
-                                            {this.props.selectedTrashPoint.plastic && (<li className="details__item">Plastic</li>)}
-                                            {this.props.selectedTrashPoint.metal && (<li className="details__item">Metal</li>)}
-                                            {this.props.selectedTrashPoint.rubber && (<li className="details__item">Rubber</li>)}
-                                            {this.props.selectedTrashPoint.other && (<li className="details__item">Other</li>)}
-                                            {this.props.selectedTrashPoint.textile && (<li className="details__item">Textile</li>)}
+                                            {this.props.selectedTrashPoint.glass && (
+                                                <li className="details__item">Glass</li>)}
+                                            {this.props.selectedTrashPoint.lumber && (
+                                                <li className="details__item">Lumber</li>)}
+                                            {this.props.selectedTrashPoint.plastic && (
+                                                <li className="details__item">Plastic</li>)}
+                                            {this.props.selectedTrashPoint.metal && (
+                                                <li className="details__item">Metal</li>)}
+                                            {this.props.selectedTrashPoint.rubber && (
+                                                <li className="details__item">Rubber</li>)}
+                                            {this.props.selectedTrashPoint.other && (
+                                                <li className="details__item">Other</li>)}
+                                            {this.props.selectedTrashPoint.textile && (
+                                                <li className="details__item">Textile</li>)}
                                         </ul>
                                     </div>)
                                 }
