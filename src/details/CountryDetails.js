@@ -1,5 +1,6 @@
 import moment from 'moment';
 import React, {Component} from 'react';
+import Slider from 'react-slick';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import IntroText from '../IntroText';
@@ -96,6 +97,13 @@ export default class CountryDetails extends Component {
     }
 
     render() {
+        const settings = {
+            infinite: true,
+            slidesToShow: 1,
+            variableWidth: true,
+            slidesToScroll: 1,
+        };
+
         return (
             <div className={this.props.selectedCountry ? 'details-container country-container' : ''}>
                 {this.props.selectedCountry ?
@@ -225,11 +233,15 @@ export default class CountryDetails extends Component {
                             {this.props.selectedTrashPoint.images && (
                                 <div className="gallery">
                                     <div className="gallery-images">
-                                        <a href="#" className="gallery-images__item"><img
-                                            src="http://via.placeholder.com/160x100"
-                                            alt=""
-                                            className="gallery-images__image"
-                                        /></a>
+                                        <Slider {... settings}>
+                                            <a href="#" className="gallery-images__item">
+                                                <img
+                                                    src="http://via.placeholder.com/160x100"
+                                                    alt=""
+                                                    className="gallery-images__image"
+                                                />
+                                            </a>
+                                        </Slider>
                                     </div>
                                 </div>)
                             }
