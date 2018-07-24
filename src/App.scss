@@ -483,6 +483,9 @@ button {
     left: 50%; }
   .trashpoint-details {
     left: 50%; }
+  .countries-list {
+    margin-bottom: 30px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1240px) {
@@ -510,11 +513,17 @@ button {
   }
   .details-container {
     min-height: unset;
-    height: unset;
+  }
+  .countries-list {
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 575.98px) {
+  .details-container {
+    min-height: unset;
+  }
+
   .app-wrapper {
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
