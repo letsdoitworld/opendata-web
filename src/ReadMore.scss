@@ -24,11 +24,6 @@
       margin-bottom: 0.5rem;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     p {
       margin-bottom: 1rem;
     }
@@ -36,6 +31,11 @@
 
   .info-disclaimer {
     font-size: 1.6rem;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
   }
 
 }
