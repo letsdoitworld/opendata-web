@@ -12,41 +12,48 @@ export default class GetInvolved extends Component {
         };
     }
 
-
     render() {
         return (
             <div className={this.props.className}>
                 <main className="main-content about-page">
                     <header className="header">
-                        <h1 className="header__text">Mismanaged trash reports</h1>
+                        <h1 className="header__text">Mismanaged waste reports</h1>
                     </header>
 
                     <section className="section">
-                        <h3 className="intro">Why we created this platform</h3>
+                        <h3 className="intro">Contributing with Data</h3>
                         <p>
-                            Text to be added later
+                            If you already have data from cleanups, surveys, drones,
+                             brand audits or other waste data and are happy to share, we would like to add it
+                              to our platform!
                         </p>
-
-
                     </section>
-
-                    <div className="header">
-                        <h2 className="header__text">World Waste Index</h2>
-                    </div>
 
                     <section className="section">
-                        <h3>What is World Waste Index</h3>
+                        <h3 className="intro">Contributing with Research Development</h3>
                         <p>
-                            Let’s Do It! World is a civic-led mass movement that began in Estonia
-                             in 2008 when 50,000 people united together to clean
-                              up the entire country
-                              in just five hours. Since then, Let’s Do It! has spread this model—one
-                               country in one day—around the world. To date, nearly 120 countries
-                                and 20 million people have joined us to clean up illegal waste.
+                            We have multiple ongoing research projects, some examples are precision mapping,
+                             economic waste index development, and artificial intelligence. We seek collaborators
+                              at any skill level to help us develop new data sets and tools to help end mismanaged
+                               waste.
                         </p>
-                        <h3>How it’s calculated</h3>
+                    </section>
+                    <section className="section">
+                        <h3 className="intro">Contributing with Expert Advice</h3>
+                        <p>
+                            If you are a scientist, policy maker, or manager and want to share your knowledge to
+                             help us on our mission to end mismanaged waste and destruction of resources,
+                              get in touch! We will see in which way your knowledge may be most useful and as our
+                               future programmes roll out.
+                        </p>
                     </section>
 
+                    <section className="section">
+                        <p>
+                            If you are interested in contributing with any of these topics, write to&nbsp;
+                            <a href="mailto:opendata@letsdoitworld.org">opendata@letsdoitworld.org</a>
+                        </p>
+                    </section>
                 </main>
             </div>
         );
