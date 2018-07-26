@@ -60,7 +60,7 @@ export default class ReadMore extends Component {
                         </div>
 
                         <div className="info-chart">
-                            <img src="http://ec.europa.eu/eurostat/documents/4187653/8516116/Municipal+waste/5e7630aa-d03d-4bed-960c-0b4764fd2f41?t=1516631338953" alt=""/>
+                            <img src="/img/chart.jpg" alt="chart"/>
                         </div>
 
                         <div className="info-container">
