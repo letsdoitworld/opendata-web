@@ -25,8 +25,8 @@ export default class ReadMore extends Component {
                         <div>
                             <p>The World Waste Platform’s main goals are to make mismanaged waste (including
                              illegal dumping and littering) visible around the globe,
-                             and to show the evolution of waste managment around the world. To create the World Waste Index, we use an advanced algorythm to assess the quality
-                              of waste management of countries that includes illegal waste in environment, the quanity of waste collected, the recycling rate, what kind of waste
+                             and to show the evolution of waste management around the world. To create the World Waste Index, we use an advanced algorythm to assess the quality
+                              of waste management of countries that includes illegal waste in environment, the quantity of waste collected, the recycling rate, what kind of waste
                                prevention mechanisms are present, etc.</p><p><b>The World Waste Index is divided into two parts:</b>
                         </p>
                             <ul>
