@@ -28,10 +28,10 @@
     .download-button span::after {
       background: url(/img/arrow_right_white.svg) left center no-repeat;
       content: '';
-      height: 19px;
+      height: 29px;
       width: 60px;
       position: absolute;
-      margin-top: -2px;
+      top: -2px !important;
     }
 
     .download-button:hover span::after {
