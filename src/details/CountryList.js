@@ -83,7 +83,7 @@ export default class CountryList extends Component {
                              <div className="col country__flag">
                                  <ReactCountryFlag code={item.code} svg />
                              </div>
-                             <div className="col countries-list__item-name" title={item.name}>
+                             <div className="col countries-list__item-name">
                                  <Link to={`/country/${item.code.toLowerCase()}`} >{item.name} </Link>
                              </div>
                              <div className="col country__tpr">{Number(item.tpr).toFixed(2)}</div>
