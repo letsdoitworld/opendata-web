@@ -484,11 +484,11 @@ button {
   .trashpoint-details {
     left: 50%; }
   .countries-list {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1240px) {
+@media (min-width: 768px)  {
   .app-wrapper {
     grid-template-columns: 40% auto;
     grid-template-rows: 100%
@@ -515,7 +515,7 @@ button {
     min-height: unset;
   }
   .countries-list {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 }
 
@@ -639,6 +639,9 @@ button {
   font-size: 2.2rem;
   text-transform: uppercase;
 
+  .share-element {
+    cursor: pointer;
+  }
   .share-element::after {
     content: url('/img/share-arrow.png');
   }
