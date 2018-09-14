@@ -26,7 +26,7 @@ class App extends Component {
     static get defaultProps() {
         return {
             location: this.location,
-            apiURL: 'https://opendata.wemakesoftware.eu/api',
+            apiURL: 'http://13.93.10.197:4000/api',
             cartoApiKey: '7947aa9e7fcdff0f5f8891a5f83b1e6fa6350687',
             cartoUsername: 'worldcleanupday',
         };
