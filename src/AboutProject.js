@@ -23,7 +23,7 @@ export default class AboutProject extends Component {
                             <a target="_blank" rel="noreferrer noopener" href="https://www.letsdoitworld.org">Let’s Do It Foundation</a>
                         </p>
                         <p className="center tighter"><span>Platform is developed by </span>
-                            <a target="_blank" rel="noreferrer noopener" href="https://wemakesoftware.eu/">Idakoidlik O&Uuml;</a>
+                            <a target="_blank" rel="noreferrer noopener" href="http://wemakesoftware.eu/">Idakoidlik O&Uuml;</a>
                             <span> and </span>
                             <a target="_blank" rel="noreferrer noopener" href="http://www.infovara.ee/">Infovara</a>
                             <span> in partnership with </span>
@@ -40,7 +40,7 @@ export default class AboutProject extends Component {
                             <a
                                 target="_blank"
                                 rel="noreferrer noopener"
-                                href="https://opendata.letsdoitworld.org/analytics/single/?appid=3d7e26a3-298b-4cb8-aef9-80ec65196542&amp;sheet=jjsmF&amp;opt=currsel&amp;select=country,World"
+                                href="http://opendata.letsdoitworld.org/analytics/single/?appid=3d7e26a3-298b-4cb8-aef9-80ec65196542&amp;sheet=jjsmF&amp;opt=currsel&amp;select=country,World"
                             >
                                 data from eight trash mapping apps
                             </a> , data compiled by&nbsp;
