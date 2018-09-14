@@ -60,7 +60,7 @@ export default class TrashPointFilter extends Component {
                             {this.props.title}
                         </div>
                         {this.state.statusFilterShown && (
-                            <div className="select-options">
+                            <div className="select-options height-300">
                                 {this.props.statusFilter.map((key, value) => (
                                     <div
                                         role="none"

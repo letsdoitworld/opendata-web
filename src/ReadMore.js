@@ -83,7 +83,7 @@ export default class ReadMore extends Component {
                         <div className="info-container">
                             <div>
                                 <h3 className="h3">Kenya</h3>
-                                <img src="https://opendata.letsdoitworld.org/img/environment-assembly/kenya.png" alt="Kenya"/>
+                                <img src="/img/environment-assembly/kenya.png" alt="Kenya"/>
                             </div>
                             <div>
                                 <h4 className="h4">Municipal waste:</h4>
