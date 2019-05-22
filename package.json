@@ -34,15 +34,15 @@
     "vis": "^4.20.1"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "src/**/*.{js,jsx}": ["eslint --fix", "git add"],
+    "*.{js,css,json}": ["prettier --write", "git add"],
+    "*.js": ["eslint --fix", "git add"]
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/css",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/css --watch --recursive",
+    "build-css":
+      "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/css",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/css --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
@@ -56,10 +56,15 @@
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.7.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.3.0",
+    "husky": ">=1",
+    "lint-staged": ">=8",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
