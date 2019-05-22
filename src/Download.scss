@@ -1,0 +1,93 @@
+.download-page {
+  width: 70%;
+  overflow: scroll;
+  .section {
+    margin-bottom: 15px;
+  }
+  .with-filters {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-column-gap: 70px;
+  }
+  .time-filter .select-container {
+    min-width: 250px;
+  }
+
+  .filtered-values {
+    min-width: 200px;
+  }
+
+  .action-buttons {
+    margin: 30px 0;
+    text-align: right;
+    .download-button span {
+      padding-right: 20px;
+      position: relative;
+    }
+
+    .download-button span::after {
+      background: url(/img/arrow_right_white.svg) left center no-repeat;
+      content: '';
+      height: 29px;
+      width: 60px;
+      position: absolute;
+      top: -2px !important;
+    }
+
+    .download-button:hover span::after {
+      background: url(/img/arrow_right.svg) left center no-repeat;
+    }
+  }
+}
+
+.time-filter {
+  float: right;
+  width: 100%;
+  clear: both;
+}
+
+.float-right {
+  float: right;
+}
+
+@media (max-width: 575.98px) {
+  .main-content {
+    padding: 50px 15px;
+  }
+  .download-page {
+    .with-filters {
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+      grid-column-gap: 0;
+      grid-row-gap: 20px;
+    }
+    .header {
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+
+      .header_filter {
+        text-align: left;
+      }
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 980px) {
+  .download-page {
+    overflow: scroll;
+    .header {
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+
+      .header_filter {
+        text-align: left;
+      }
+    }
+
+    .with-filters {
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+      grid-column-gap: 0;
+      grid-row-gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="13px" viewBox="0 0 10 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Location</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4th-state_trash-point-detail" transform="translate(-415.000000, -126.000000)">
+            <g id="Trash-point-list" transform="translate(370.000000, 0.000000)">
+                <g id="Trash-point-name-with-address" transform="translate(45.000000, 84.000000)">
+                    <g id="Address-line" transform="translate(0.000000, 42.000000)">
+                        <g id="Location">
+                            <g id="Group-2">
+                                <g id="Location-icon">
+                                    <path d="M4.96721088,0 L8.86515646,5.25854741 C10.460921,7.41132331 10.009374,10.4501157 7.85659811,12.0458802 C7.02068854,12.6655057 6.00773024,13 4.96721088,13 L4.96721088,13 C2.28748918,13 0.115145519,10.8276563 0.115145519,8.14793464 C0.115145519,7.10741527 0.449639815,6.09445698 1.0692653,5.25854741 L4.96721088,0 Z" id="Triangle" fill="#3B8FE7" transform="translate(4.967364, 6.500000) scale(1, -1) translate(-4.967364, -6.500000) "></path>
+                                    <ellipse id="Oval-2" fill="#FFFFFF" cx="5" cy="5.05555556" rx="2.14285714" ry="2.16666667"></ellipse>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

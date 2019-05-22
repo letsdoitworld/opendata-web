@@ -2,80 +2,12 @@ $gray: rgba(155, 155, 155, .3);
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-//usage
-//font-family: 'Oswald', sans-serif;
-//font-family: 'Roboto Mono', monospace;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-//Typography
-html {
-  font-size: calc(10px + .5vw); //scalable base unit
-  font-family: 'Roboto Mono', monospace;
-  line-height: 1.75rem;
-  color: #222;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Oswald', sans-serif;
-}
-h5 {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-}
-
-h1 {
-	font-size: 4rem;
-	line-height: 4rem;
-	text-transform: uppercase;
-	margin: 0;
-	padding: 0;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-p {
-  font-size: .8rem;
-  line-height: 1.5rem;
-  //line-height: 90%;
-  letter-spacing: -.025rem;
-  &.center {
-    text-align: center;
-  }
-}
-
-a {
-  color: #0E90FF;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-small {
-  color: gray;
-  letter-spacing: 0;
-  font-size: .6rem;
-  line-height: 1rem;
-}
-
+@import 'details/CountryList';
+@import 'details/CountryDetails';
+@import 'IntroText';
+@import 'ReadMore';
+@import 'Download';
 @import 'App';
-@import 'maps/StatsMap';
-@import 'timeline/TimeLine';
-@import 'loading/LoadingScreen';
-@import 'error/ErrorScreen';
-@import 'details/Details';
-@import 'overlay/OverlayWindow';
-@import 'overlay/about/About';
-@import 'overlay/aboutUnEnvironmentAssembly/AboutAssembly';
