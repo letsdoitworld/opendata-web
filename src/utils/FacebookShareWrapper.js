@@ -16,7 +16,11 @@ export default class FacebookShareWrapper extends Component {
     render() {
         const url = window.location.href.substr(0, window.location.href.indexOf('#'));
 
-        const facebookShare = () => (<div className="share-button"><span className="share-element">SHARE</span></div>);
+        const facebookShare = () => (
+            <div className="share-button">
+                    <span className="share-element">Share <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/facebook.svg" alt="Share on Facebook" /></span>
+            </div>
+        );
 
         return (
             <FacebookShareButton url={url + '#' + this.props.linkToShare} children={facebookShare()} />

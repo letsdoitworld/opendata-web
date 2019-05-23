@@ -19,10 +19,18 @@ class Navigation extends Component {
             <nav className="nav">
                 <div className="nav__item">
                     <Link
+                        to={'/ai'}
+                        className={'nav__link ' + (this.props.location.pathname.startsWith('/ai') ? 'active' : 'inactive')}
+                    >
+                        AI Trash Detection
+                    </Link>
+                </div>
+                <div className="nav__item">
+                    <Link
                         to={'/about'}
                         className={'nav__link ' + (this.props.location.pathname.startsWith('/about') ? 'active' : 'inactive')}
                     >
-                        About the project
+                        About the World Waste Platform
                     </Link>
                 </div>
                 <div className="nav__item">
@@ -30,7 +38,7 @@ class Navigation extends Component {
                         to={'/download'}
                         className={'nav__link ' + (this.props.location.pathname.startsWith('/download') ? 'active' : 'inactive')}
                     >
-                        Download data
+                        Download Data
                     </Link>
                 </div>
                 <div className="nav__item">
@@ -38,7 +46,7 @@ class Navigation extends Component {
                         to={'/getinvolved'}
                         className={'nav__link ' + (this.props.location.pathname.startsWith('/getinvolved') ? 'active' : 'inactive')}
                     >
-                        How to get involved
+                        How to Get Involved?
                     </Link>
                 </div>
             </nav>

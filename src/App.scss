@@ -44,6 +44,18 @@ input {
 button {
   font-family: 'Catamaran', sans-serif;
 }
+
+
+.fluid-image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 40%;
+  background-color: transparent;
+  padding-right:1rem;
+  padding-top:1rem;
+}
+
 .h1 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
@@ -467,11 +479,22 @@ button {
   background: white;
 }
 
+.ai-shown {
+  z-index: 8000;
+  position: absolute;
+  left: 30%;
+  height: 100%;
+  background: white;
+}
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   .app-wrapper {
     grid-template-columns: 50% auto;
     grid-template-rows: 100%; }
   .about-shown {
+    left: 50%;
+    width: 50%; }
+  .ai-shown {
     left: 50%;
     width: 50%; }
   .download-page {
@@ -496,6 +519,9 @@ button {
     }
   }
   .about-shown {
+    left: 40%;
+    width: 60%; }
+  .ai-shown {
     left: 40%;
     width: 60%; }
   .download-page {
@@ -554,6 +580,10 @@ button {
   }
 
   .about-shown {
+    position: static;
+    width: 100%;
+  }
+  .ai-shown {
     position: static;
     width: 100%;
   }
@@ -637,6 +667,8 @@ button {
   font-weight: 400;
   font-size: 2.2rem;
   text-transform: uppercase;
+  max-width: 47px;
+  max-height: 47px;
 
   .share-element {
     cursor: pointer;

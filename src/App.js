@@ -11,6 +11,7 @@ import CountryList from './details/CountryList';
 import CountryDetails from './details/CountryDetails';
 import WorldMap from './maps/WorldMap';
 import AboutProject from './AboutProject';
+import AI from './AI';
 import Download from './Download';
 import Country from './Country';
 import ReadMore from './ReadMore';
@@ -40,6 +41,7 @@ class App extends Component {
             updatedCountry: {},
             updatedTrashPoint: {},
             aboutClassName: (this.isAboutInfoRequired(props) ? 'about-shown' : 'hidden'),
+            aiClassName: (this.isAIRequired(props) ? 'ai-shown' : 'hidden'),
             downloadClassName: (this.isDownloadPanelRequired(props) ? 'about-shown' : 'hidden'),
             getInvolvedClassName: (this.isGetInvolvedRequired(props) ? 'about-shown' : 'hidden'),
             readMoreClassName: (this.isReadMoreRequired(props) ? 'about-shown' : 'hidden'),
@@ -135,7 +137,11 @@ class App extends Component {
                 key.resources
             )));
 
-        this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
+
+        // Check if countries exist
+        if (allCountries) {
+            this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
+        }
     }
 
     isTrashPointDetailsRequired(props) {
@@ -152,6 +158,10 @@ class App extends Component {
 
     isAboutInfoRequired(props) {
         return props.location && props.location.pathname.startsWith('/about');
+    }
+
+    isAIRequired(props) {
+        return props.location && props.location.pathname.startsWith('/ai');
     }
 
     isDownloadPanelRequired(props) {
@@ -174,6 +184,7 @@ class App extends Component {
             return false;
         }
         this.state.aboutClassName = 'hidden';
+        this.state.aiClassName = 'hidden';
         this.state.downloadClassName = 'hidden';
         this.state.getInvolvedClassName = 'hidden';
         this.state.readMoreClassName = 'hidden';
@@ -190,6 +201,8 @@ class App extends Component {
             this.setState({updatedCountry: null, updatedTrashPoint: null});
         } else if (this.isAboutInfoRequired(nextProps)) {
             this.state.aboutClassName = 'about-shown';
+        } else if (this.isAIRequired(nextProps)) {
+            this.state.aiClassName = 'ai-shown';
         } else if (this.isDownloadPanelRequired(nextProps)) {
             this.state.downloadClassName = 'about-shown';
         } else if (this.isGetInvolvedRequired(nextProps)) {
@@ -205,7 +218,7 @@ class App extends Component {
     render() {
         const LeftPanel = () => (
             <Switch>
-                <Route exact path={'/(|about|download|getinvolved|readmore)'} component={IntroText} />
+                <Route exact path={'/(|about|ai|download|getinvolved|readmore)'} component={IntroText} />
                 <Route
                     exact={false}
                     path={'/countries'}
@@ -249,6 +262,7 @@ class App extends Component {
                     <div className="app-wrapper">
                         <LeftPanel />
                         <AboutProject aboutClassName={this.state.aboutClassName} />
+                        <AI aiClassName={this.state.aiClassName} />
                         <Download
                             downloadClassName={this.state.downloadClassName}
                             allCountries={this.state.allCountries.sort((key, key1) => key.name.localeCompare(key1.name))}

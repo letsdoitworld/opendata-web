@@ -18,7 +18,7 @@ export default class ReadMore extends Component {
             <div className={this.props.className + ' overflow-scroll'}>
                 <main className="main-content info-page">
                     <header className="header">
-                        <h1 className="header__text">Welcome to World Waste Platform demo</h1>
+                        <h1 className="header__text">Welcome to World Waste Index demo</h1>
                     </header>
 
                     <section className="section">
