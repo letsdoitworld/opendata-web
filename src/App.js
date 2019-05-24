@@ -137,10 +137,13 @@ class App extends Component {
                 key.resources
             )));
 
-
         // Check if countries exist
         if (allCountries) {
+
             this.setState({allCountries, topCountries: allCountries.slice(0, 10), countriesDataLoaded: true});
+        } else {
+
+            console.log("Problem loading allCountries");
         }
     }
 
@@ -175,7 +178,6 @@ class App extends Component {
     isReadMoreRequired(props) {
         return props.location && props.location.pathname.startsWith('/readmore');
     }
-
 
     /* eslint-enable */
 

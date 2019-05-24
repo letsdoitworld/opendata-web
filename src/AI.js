@@ -41,7 +41,6 @@ export default class AI extends Component {
                         
                         <p className="center tighter">This is the main challenge with any image-based trash detection algorithm. Not everything that LOOKS like trash IS trash. Trash is a word people use of an object that lacks purpose, and the purpose of an object is often not obvious in the images we use for teaching an algorithm to spot trash. </p>
 
-
                         <h2>The plan</h2>
 
                         <p className="center tighter">The machine learning project was divided into 5 steps :</p>
@@ -136,49 +135,49 @@ export default class AI extends Component {
 
                         <p className="center tighter">At this point we had not yet incorporated the images from Google Street View. Our model was built from a collection of roughly 700 images, of which around 100 were selected from web searches and about 600 taken by volunteers at the Let’s Do It World events.</p> 
 
-                         <p className="center tighter">We trained the model with 115 epochs and 10 steps in each, with learning rate being 0,001. The parameters we set were quite similar to the Balloon example demonstrated on <a href="https://github.com/matterport/Mask_RCNN" target="_blank">https://github.com/matterport/Mask_RCNN</a>.</p>
+                        <p className="center tighter">We trained the model with 115 epochs and 10 steps in each, with learning rate being 0,001. The parameters we set were quite similar to the Balloon example demonstrated on <a href="https://github.com/matterport/Mask_RCNN" target="_blank">https://github.com/matterport/Mask_RCNN</a>.</p>
 
-                         <p className="center tighter">After some rounds of train-validate-repeat, we started testing the model on Google Street View images. We quickly discovered that these images were very different from the ones we had trained the model on. The quality of the images was slightly poorer and there were many image defects due to the fact that they were made on a moving car. </p>
+                        <p className="center tighter">After some rounds of train-validate-repeat, we started testing the model on Google Street View images. We quickly discovered that these images were very different from the ones we had trained the model on. The quality of the images was slightly poorer and there were many image defects due to the fact that they were made on a moving car. </p>
 
-                         <p className="center tighter">There were also some objects that the model had not learned in the previous training: the model did not understand light flares, road surface markings, roadside posts, or the Google Street View car’s camera shadow.</p>
+                        <p className="center tighter">There were also some objects that the model had not learned in the previous training: the model did not understand light flares, road surface markings, roadside posts, or the Google Street View car’s camera shadow.</p>
 
-                         <p className="center tighter">Camera shadows are not trash:</p>
+                        <p className="center tighter">Camera shadows are not trash:</p>
 
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/35709.jpg" />
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/35709.jpg" />
 
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/20610.jpg" />
-                         
-                         <p className="center tighter">Neither are light flares:</p>
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/20610.jpg" />
 
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/24947.jpg" />
-                         
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/41130.jpg" />
+                        <p className="center tighter">Neither are light flares:</p>
 
-                         <p className="center tighter">Road surface markings are also not trash:</p>
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/24947.jpg" />
 
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/6971.jpg" />
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/41130.jpg" />
 
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/12575.jpg" />
-                         
-                         <p className="center tighter">After seeing the mistakes, we added some Google Street View images to the training dataset. We had nearly 50 000 images to choose from, and from these, we made a selection of images that the model had labelled incorrectly. Finally, we had 1300 images in the training dataset. We trained 200 epochs, with 17 steps in each with a learning rate 0,001. </p>
+                        <p className="center tighter">Road surface markings are also not trash:</p>
 
-                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image30.png" />
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/6971.jpg" />
 
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image33.png" />
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/12575.jpg" />
 
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image27.png" />
-
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image31.png" />
-
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image25.png" />
-
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image24.png" />
-
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image23.png" />
-
-                          <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image28.png" />
-                         
+                        <p className="center tighter">After seeing the mistakes, we added some Google Street View images to the training dataset. We had nearly 50 000 images to choose from, and from these, we made a selection of images that the model had labelled incorrectly. Finally, we had 1300 images in the training dataset. We trained 200 epochs, with 17 steps in each with a learning rate 0,001. </p>
+                        
                         <p className="center tighter">The results are now starting to look quite promising.  To finish up the story about where we are now, here are number of positive examples:</p>
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image30.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image33.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image27.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image31.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image25.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image24.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image23.png" />
+
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image28.png" />
 
                         <h2>Next steps</h2>
                         <p className="center tighter">
@@ -198,7 +197,7 @@ export default class AI extends Component {
 
                         <p className="center tighter">Here are the examples of locations from USA</p>
 
-                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/thailand-outline.png" />
+                        <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/usa-outline.png" />
 
                         <p className="center tighter">and Thailand</p>
 
@@ -210,44 +209,42 @@ export default class AI extends Component {
                         <h2>The Team</h2>
 
                         <p className="center tighter">
+                            <ol>
+                                <li>Kristiina Kerge
+                                    Tech team lead 
+                                    Let’s Do It Foundation
+                                    kristiina@letsdoitworld.org 
+                                </li>
+                                
+                                <li>Win Cowger
+                                    Graduate Student, Environmental Sciences 
+                                    University of California, Riverside
+                                </li>
+                                
+                                <li>Kris Haamer
+                                    Programming the web and creating experiences across media
+                                </li>
+                                
+                                <li>Kristin Ehala
+                                    Data Scientist
+                                </li>
 
-                            <ul>
-                            <li>Kristiina Kerge
-                                Tech team lead 
-                                Let’s Do It Foundation
-                                kristiina@letsdoitworld.org 
-                            </li>
-                            
-                            <li>Win Cowger
-                                Graduate Student, Environmental Sciences 
-                                University of California, Riverside
-                            </li>
-                            
-                            <li>Kris Haamer
-                                Programming the web and creating experiences across media
-                            </li>
-                            
-                            <li>Kristin Ehala
-                                Data Scientist
-                            </li>
+                                <li>Kaarel Kivistik
+                                    AI architect
+                                </li>
 
-                            <li>Kaarel Kivistik
-                                AI architect
-                            </li>
-
-                            <li>Taavi Tammiste
-                                AI and ML Expert
-                            </li>
-                            
-                            <li>Merili Vares
-                                Executive Director 
-                                Let’s Do It Foundation
-                            </li>
-                            </ul>
+                                <li>Taavi Tammiste
+                                    AI and ML Expert
+                                </li>
+                                
+                                <li>Merili Vares
+                                    Executive Director 
+                                    Let’s Do It Foundation
+                                </li>
+                            </ol>
                         </p>
 
-                        <p className="center tighter">For more information please contact with Kristiina Kerge from Let’s Do It Foundation <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a>
-                        </p>
+                        <p className="center tighter">For more information please contact with Kristiina Kerge from Let’s Do It Foundation <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a></p>
 
                     </div>
                 </main>

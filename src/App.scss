@@ -29,15 +29,6 @@ a {
 a:hover {
   color: #7b7b7b;
 }
-ul {
-  margin: 0;
-  padding: 0;
-  li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-}
 input {
   font-family: 'Catamaran', sans-serif;
 }
@@ -45,6 +36,11 @@ button {
   font-family: 'Catamaran', sans-serif;
 }
 
+li {
+  margin-left: 1.4rem;
+  padding-left: 1rem;
+  margin-top:1rem;
+}
 
 .fluid-image {
   position: relative;
@@ -53,7 +49,8 @@ button {
   max-width: 40%;
   background-color: transparent;
   padding-right:1rem;
-  padding-top:1rem;
+  padding-top:0.2rem;
+  padding-bottom: 2rem;
 }
 
 .h1 {
