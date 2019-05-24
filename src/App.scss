@@ -53,6 +53,17 @@ li {
   padding-bottom: 2rem;
 }
 
+.avatar-image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  background-color: transparent;
+  padding-right:0.1rem;
+  padding-top:0.1rem;
+  padding-bottom: 0.1rem;
+}
+
 .h1 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;

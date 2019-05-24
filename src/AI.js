@@ -210,34 +210,48 @@ export default class AI extends Component {
 
                         <p className="center tighter">
                             <ol>
-                                <li>Kristiina Kerge <br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/K.Kerge+.jpg" className="avatar-image" /><br />
+                                    Kristiina Kerge<br />
                                     Tech team lead<br /> 
                                     Let’s Do It Foundation<br />
                                     <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a>
                                 </li>
                                 
-                                <li>Win Cowger<br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/win.jpg" className="avatar-image" /><br />
+                                    Win Cowger<br />
                                     Graduate Student, Environmental Sciences<br /> 
                                     University of California, Riverside<br />
                                 </li>
                                 
-                                <li>Kris Haamer<br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kris_Haamer.jpg" className="avatar-image" /><br />
+                                    Kris Haamer<br />
                                     Programming the web and creating experiences across media<br />
                                 </li>
                                 
-                                <li>Kristin Ehala<br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kristin+Ehala.jpg" className="avatar-image" /><br />
+                                    Kristin Ehala<br />
                                     Data Scientist
                                 </li>
 
-                                <li>Kaarel Kivistik<br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kaarel+Kivistik.jpg" className="avatar-image" /><br />
+                                    Kaarel Kivistik<br />
                                     AI architect
                                 </li>
 
-                                <li>Taavi Tammiste<br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Taavi+Tammiste.jpg" className="avatar-image" /><br />
+                                    Taavi Tammiste<br />
                                     AI and ML Expert
                                 </li>
                                 
-                                <li>Merili Vares<br />
+                                <li>
+                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/merili.jpg" className="avatar-image" /><br />
+                                    Merili Vares<br />
                                     Executive Director<br /> 
                                     Let’s Do It Foundation
                                 </li>
