@@ -210,35 +210,35 @@ export default class AI extends Component {
 
                         <p className="center tighter">
                             <ol>
-                                <li>Kristiina Kerge
-                                    Tech team lead 
-                                    Let’s Do It Foundation
-                                    kristiina@letsdoitworld.org 
+                                <li>Kristiina Kerge <br />
+                                    Tech team lead<br /> 
+                                    Let’s Do It Foundation<br />
+                                    <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a>
                                 </li>
                                 
-                                <li>Win Cowger
-                                    Graduate Student, Environmental Sciences 
-                                    University of California, Riverside
+                                <li>Win Cowger<br />
+                                    Graduate Student, Environmental Sciences<br /> 
+                                    University of California, Riverside<br />
                                 </li>
                                 
-                                <li>Kris Haamer
-                                    Programming the web and creating experiences across media
+                                <li>Kris Haamer<br />
+                                    Programming the web and creating experiences across media<br />
                                 </li>
                                 
-                                <li>Kristin Ehala
+                                <li>Kristin Ehala<br />
                                     Data Scientist
                                 </li>
 
-                                <li>Kaarel Kivistik
+                                <li>Kaarel Kivistik<br />
                                     AI architect
                                 </li>
 
-                                <li>Taavi Tammiste
+                                <li>Taavi Tammiste<br />
                                     AI and ML Expert
                                 </li>
                                 
-                                <li>Merili Vares
-                                    Executive Director 
+                                <li>Merili Vares<br />
+                                    Executive Director<br /> 
                                     Let’s Do It Foundation
                                 </li>
                             </ol>
