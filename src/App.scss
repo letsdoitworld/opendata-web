@@ -42,6 +42,23 @@ li {
   margin-top:1rem;
 }
 
+.logo__image {
+  max-width: 120px;
+}
+
+.red-box {
+  background-color: #f00;
+  border-radius: 6px;
+  padding: 1rem;
+  color: #fff;
+}
+
+.red-box a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .fluid-image {
   position: relative;
   display: inline-block;
