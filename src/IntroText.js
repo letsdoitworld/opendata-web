@@ -29,31 +29,25 @@ class IntroText extends Component {
 
             <div className="details-container">
 
-                {
-                    isInfoShown() && (
-                    <div className="go-back">
-                        <Link to={'/'} className="go-back__link">Back</Link>
-                    </div>)
-                }
-                {
-                    !isInfoShown() && (
-                    <div className="open-country-list">
-                        <Link to={'/countries'} className="open-country-list__link">See a country list</Link>
-                    </div>)
-                }
-
                 <Navigation />
 
-                <FacebookShareWrapper />
 
-                <img src="img/logo.png" className="logo__image" alt="Logo" />
+                <div class="red-box">
+                    <h2>This a Project Archive</h2>
+                    <p>Historical data is still available for  <Link to={'/download/'}>download</Link>.</p> 
 
-                <p className="intro">A world without waste is our dream.</p>
-                <p>
-                    In order to fully grasp the trash problem, we require reliable data on how much trash there is in the world - and we understood that there is no such database to collect this kind of data. And so the World Waste Platform was born. The map is currently showing data from 8 mapping apps compiled by Gray’s Lab.
-                </p>
+                    <p>However, unfortunately, we've had to stop further development for lack of resources. If you're interested in taking over the project, you can head over to GitHub for the open source code: [<a href="https://github.com/letsdoitworld/opendata-web" target="_blank">front-end</a> and <a href="https://github.com/letsdoitworld/opendata-api" target="_blank">back-end</a>].
+                    </p>
 
-                <Link to={'/readmore'} className="read_more__link">Read more on World Waste Index</Link>
+                    <p>
+                        You're also very welcome to get in touch with your ideas regarding potential solutions and parterships: <a href="mailto:kristiina@letsdoitworld.org" target="blank">kristiina@letsdoitworld.org</a>
+                    </p>
+                    
+                    <h2>A world without waste is our dream</h2>
+                    <p>
+                        In order to fully grasp the trash problem, we require reliable data on how much trash there is in the world - and we understood that there is no such database to collect this kind of data. The World Waste Platform is currently showing data from 8 mapping apps compiled by Gray’s Lab.
+                    </p>
+                </div>
 
             </div>
         );

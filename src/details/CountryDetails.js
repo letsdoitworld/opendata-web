@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import IntroText from '../IntroText';
 import TrashPointSize from './TrashPointSize';
-import FacebookShareWrapper from '../utils/FacebookShareWrapper';
 import {nFormatter} from '../utils/styleFormatter';
 
 export default class CountryDetails extends Component {
@@ -164,10 +163,6 @@ export default class CountryDetails extends Component {
                                     ))}
                                 </ul>
                             </div>)}
-                        {this.state.trashpointDetailClassName === 'hidden' && (
-
-                        <FacebookShareWrapper linkToShare={'/country/' + this.props.selectedCountry.code} />
-                        )}
 
                         <div className={'country-reports-list ' + this.state.allTrashPointsClassName}>
                             <div>
@@ -285,9 +280,6 @@ export default class CountryDetails extends Component {
                                 }
                             </div>
                         </div> : null}
-
-                    {this.props.selectedTrashPoint &&
-                    (<FacebookShareWrapper linkToShare={'/details/' + this.props.selectedTrashPoint.id} />)}
                 </div>
             </div>
         );

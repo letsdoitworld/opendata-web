@@ -52,10 +52,6 @@ export default class CountryList extends Component {
         return (
 
             <div className="details-container country-list-container">
-
-                <div className="go-back">
-                    <Link to={'/'} className="go-back__link">Back</Link>
-                </div>
                 <Navigation />
                 <nav className="countries-tabs">
                     <a

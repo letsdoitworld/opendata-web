@@ -73,8 +73,7 @@ export default class AI extends Component {
 
                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/1.png" />
 
-                        <p className="center tighter">For greater precision, we decided to use Mask R-CNN Python implementation (more info on Mask R-CNN: <a href="https://arxiv.org/abs/1703.06870" target="_blank">introductory paper</a>, <a href="https://github.com/matterport/Mask_RCNN" target="_blank">GitHub</a>) to get the benefit of both object detection and segmentation (<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-techniques-python/" target="_blank">a good explanation of both</a>). But this required even more manual annotation of the images: since Mask R-CNN uses polygons as its input, this time just dragging a box around trash was not enough. With the help of LDIW volunteers, we started annotating images with the <a href="http://www.robots.ox.ac.uk/~vgg/software/via/" target="_blank">VGG Image Annotator tool</a>.
-                        </p>
+                        <p className="center tighter">For greater precision, we decided to use Mask R-CNN Python implementation (more info on Mask R-CNN: <a href="https://arxiv.org/abs/1703.06870" target="_blank">introductory paper</a>, <a href="https://github.com/matterport/Mask_RCNN" target="_blank">GitHub</a>) to get the benefit of both object detection and segmentation (<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-image-segmentation-techniques-python/" target="_blank">a good explanation of both</a>). But this required even more manual annotation of the images: since Mask R-CNN uses polygons as its input, this time just dragging a box around trash was not enough. With the help of LDIW volunteers, we started annotating images with the <a href="http://www.robots.ox.ac.uk/~vgg/software/via/" target="_blank">VGG Image Annotator tool</a>.</p>
 
                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/Screenshot+2019-05-23+at+15.37.04.png" />
                     
@@ -82,18 +81,14 @@ export default class AI extends Component {
 
                         <p className="center tighter">The initial requirements of AI tool to help to detect trash were quite straight forward:</p>
 
-                        <p className="center tighter">
-                            <ol>
-                                <li>Detect piles of garbage</li>
-                                <li>Do not detect humans</li>
-                            </ol>
-                        </p>
+                        <ol>
+                            <li>Detect piles of garbage</li>
+                            <li>Do not detect humans</li>
+                        </ol>
 
-                        <p className="center tighter"><i>As a side note, we continued training the heads of coco weights, because earlier layers detect low level features (edges and corners), and later layers detect higher level features (car, person, cat) and in our case – trash.</i>
-                        </p>
+                        <p className="center tighter"><i>As a side note, we continued training the heads of coco weights, because earlier layers detect low level features (edges and corners), and later layers detect higher level features (car, person, cat) and in our case – trash.</i></p>
 
-                        <p className="center tighter">During the initial testing, it was decided that the model will be trained to detect piles of garbage, rather than single elements of trash on the ground. Our reasoning was that bigger piles are less likely to move (so they may be cleaned up by Let’s Do It World teams), and that trash piles should carry enough characteristics compared to the background to be easily detectable.
-                        </p>
+                        <p className="center tighter">During the initial testing, it was decided that the model will be trained to detect piles of garbage, rather than single elements of trash on the ground. Our reasoning was that bigger piles are less likely to move (so they may be cleaned up by Let’s Do It World teams), and that trash piles should carry enough characteristics compared to the background to be easily detectable.</p>
 
                         <h2>Learning what trash is</h2>
 
@@ -208,55 +203,53 @@ export default class AI extends Component {
 
                         <h2>The Team</h2>
 
-                        <p className="center tighter">
-                            <ol>
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/K.Kerge+.jpg" className="avatar-image" /><br />
-                                    Kristiina Kerge<br />
-                                    Tech team lead<br /> 
-                                    Let’s Do It Foundation<br />
-                                    <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a>
-                                </li>
-                                
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/win.jpg" className="avatar-image" /><br />
-                                    Win Cowger<br />
-                                    Graduate Student, Environmental Sciences<br /> 
-                                    University of California, Riverside<br />
-                                </li>
-                                
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kris_Haamer.jpg" className="avatar-image" /><br />
-                                    Kris Haamer<br />
-                                    Programming the web and creating experiences across media<br />
-                                </li>
-                                
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kristin+Ehala.jpg" className="avatar-image" /><br />
-                                    Kristin Ehala<br />
-                                    Data Scientist
-                                </li>
+                        <ol>
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/K.Kerge+.jpg" className="avatar-image" /><br />
+                                Kristiina Kerge<br />
+                                Tech team lead<br /> 
+                                Let’s Do It Foundation<br />
+                                <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a>
+                            </li>
+                            
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/win.jpg" className="avatar-image" /><br />
+                                Win Cowger<br />
+                                Graduate Student, Environmental Sciences<br /> 
+                                University of California, Riverside<br />
+                            </li>
+                            
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kris_Haamer.jpg" className="avatar-image" /><br />
+                                Kris Haamer<br />
+                                Programming the web and creating experiences across media<br />
+                            </li>
+                            
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kristin+Ehala.jpg" className="avatar-image" /><br />
+                                Kristin Ehala<br />
+                                Data Scientist
+                            </li>
 
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kaarel+Kivistik.jpg" className="avatar-image" /><br />
-                                    Kaarel Kivistik<br />
-                                    AI architect
-                                </li>
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Kaarel+Kivistik.jpg" className="avatar-image" /><br />
+                                Kaarel Kivistik<br />
+                                AI architect
+                            </li>
 
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Taavi+Tammiste.jpg" className="avatar-image" /><br />
-                                    Taavi Tammiste<br />
-                                    AI and ML Expert
-                                </li>
-                                
-                                <li>
-                                    <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/merili.jpg" className="avatar-image" /><br />
-                                    Merili Vares<br />
-                                    Executive Director<br /> 
-                                    Let’s Do It Foundation
-                                </li>
-                            </ol>
-                        </p>
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/Taavi+Tammiste.jpg" className="avatar-image" /><br />
+                                Taavi Tammiste<br />
+                                AI and ML Expert
+                            </li>
+                            
+                            <li>
+                                <img src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/team/merili.jpg" className="avatar-image" /><br />
+                                Merili Vares<br />
+                                Executive Director<br /> 
+                                Let’s Do It Foundation
+                            </li>
+                        </ol>
 
                         <p className="center tighter">For more information please contact with Kristiina Kerge from Let’s Do It Foundation <a href="mailto:kristiina@letsdoitworld.org" target="_blank">kristiina@letsdoitworld.org</a></p>
 

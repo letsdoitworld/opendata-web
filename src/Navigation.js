@@ -17,6 +17,17 @@ class Navigation extends Component {
     render() {
         return (
             <nav className="nav">
+                <Link to={'/'}>
+                    <img src="img/logo.png" className="logo__image" alt="Logo" />
+                </Link>
+                <div className="nav__item">
+                    <Link
+                        to={'/'}
+                        className={'nav__link ' + (Object.is(this.props.location.pathname, '/') ? 'active' : 'inactive')}
+                    >
+                        Home
+                    </Link>
+                </div>
                 <div className="nav__item">
                     <Link
                         to={'/ai'}
@@ -47,6 +58,22 @@ class Navigation extends Component {
                         className={'nav__link ' + (this.props.location.pathname.startsWith('/getinvolved') ? 'active' : 'inactive')}
                     >
                         How to Get Involved?
+                    </Link>
+                </div>
+                <div className="nav__item">
+                    <Link
+                        to={'/readmore'}
+                        className={'nav__link ' + (this.props.location.pathname.startsWith('/readmore') ? 'active' : 'inactive')}
+                    >
+                        World Waste Index
+                    </Link>
+                </div>
+                <div className="nav__item">
+                    <Link
+                        to={'/countries'}
+                        className={'nav__link ' + (this.props.location.pathname.startsWith('/countries') ? 'active' : 'inactive')}
+                    >
+                        Country List
                     </Link>
                 </div>
             </nav>

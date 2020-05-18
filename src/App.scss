@@ -103,7 +103,7 @@ li {
   height: 100vh;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 30px;
+  padding-top: 1.7rem;
   z-index: 10000;
 }
 .map-container, .leaflet-container  {
@@ -635,7 +635,6 @@ li {
  */
 .nav {
   font-weight: bold;
-  margin: 20px 0;
 
   .nav__item {
     display: block;
@@ -664,8 +663,8 @@ li {
     height: 11px;
     width: 11px;
     position: absolute;
-    right: -3px;
-    bottom: -2px;
+    right: -1.5rem;
+    bottom: 0.45rem;
     z-index: -1;
   }
 }
