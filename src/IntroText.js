@@ -33,10 +33,10 @@ class IntroText extends Component {
 
 
                 <div class="red-box">
-                    <h2>This a Project Archive</h2>
+                    <h2>This is a Project Archive</h2>
                     <p>Historical data is still available for  <Link to={'/download/'}>download</Link>.</p> 
 
-                    <p>However, unfortunately, we've had to stop further development for lack of resources. If you're interested in taking over the project, you can head over to GitHub for the open source code: [<a href="https://github.com/letsdoitworld/opendata-web" target="_blank">front-end</a> and <a href="https://github.com/letsdoitworld/opendata-api" target="_blank">back-end</a>].
+                    <p>Unfortunately, we've had to stop further development for lack of resources. If you're interested in taking over the project, you can head over to GitHub for the open source code: [<a href="https://github.com/letsdoitworld/opendata-web" target="_blank">front-end</a> and <a href="https://github.com/letsdoitworld/opendata-api" target="_blank">back-end</a>].
                     </p>
 
                     <p>
