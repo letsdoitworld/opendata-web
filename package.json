@@ -11,7 +11,7 @@
     "country-data": "^0.0.31",
     "dateformat": "^2.0.0",
     "jquery": "^3.5.1",
-    "leaflet": "^1.2.0",
+    "leaflet": "^1.6.0",
     "lodash": "^4.17.15",
     "moment": "^2.22.2",
     "prop-types": "^15.6.0",
