@@ -74,9 +74,10 @@ class App extends Component {
     }
 
     async loadData(endpoint, dataTransformer) {
-        console.log('calling load data from: ' + endpoint);
+        
+        //console.log('calling load data from: ' + endpoint);
 
-       return await fetch(this.props.apiURL + endpoint)
+        return await fetch(this.props.apiURL + endpoint)
             .then(response => response.json())
             .then((data) => {
                 if (data.status === 'SUCCESS') {

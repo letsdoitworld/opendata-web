@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
-import FacebookShareWrapper from './utils/FacebookShareWrapper';
 import Navigation from './Navigation';
 
 class IntroText extends Component {
@@ -18,12 +17,6 @@ class IntroText extends Component {
 
 
     render() {
-        const isInfoShown = () => this.props.location &&
-                (
-                    this.props.location.pathname.startsWith('/getinvolved') ||
-                    this.props.location.pathname.startsWith('/download') ||
-                    this.props.location.pathname.startsWith('/about')
-                );
 
         return (
 
@@ -32,11 +25,11 @@ class IntroText extends Component {
                 <Navigation />
 
 
-                <div class="red-box">
+                <div className="red-box">
                     <h2>This is a Project Archive</h2>
                     <p>Historical data is still available for  <Link to={'/download/'}>download</Link>.</p> 
 
-                    <p>Unfortunately, we've had to stop further development for lack of resources. If you're interested in taking over the project, you can head over to GitHub for the open source code: [<a href="https://github.com/letsdoitworld/opendata-web" target="_blank">front-end</a> and <a href="https://github.com/letsdoitworld/opendata-api" target="_blank">back-end</a>].
+                    <p>Unfortunately, we've had to stop further development for lack of resources. If you're interested in taking over the project, you can head over to GitHub for the open source code: [<a href="https://github.com/letsdoitworld/opendata-web" target="_blank" rel="noopener noreferrer">front-end</a> and <a href="https://github.com/letsdoitworld/opendata-api" target="_blank" rel="noopener noreferrer">back-end</a>].
                     </p>
 
                     <p>

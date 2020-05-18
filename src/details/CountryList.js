@@ -54,16 +54,14 @@ export default class CountryList extends Component {
             <div className="details-container country-list-container">
                 <Navigation />
                 <nav className="countries-tabs">
-                    <a
-                        href="#"
+                    <button
                         className={'countries-tabs__item countries-tabs__link ' + (this.isTop10Displayed.bind(this)() ? 'active' : '')}
                         onClick={this.showTop10Countries}
-                    >Top 10 mappers</a>
-                    <a
-                        href="#"
+                    >Top 10 mappers</button>
+                    <button
                         className={'countries-tabs__item countries-tabs__link ' + (!this.isTop10Displayed.bind(this)() ? 'active' : '')}
                         onClick={this.showAllCountries}
-                    >All countries</a>
+                    >All countries</button>
                 </nav>
 
                 <div className="countries-list">

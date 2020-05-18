@@ -30,7 +30,7 @@ export default class AI extends Component {
                         <p className="center tighter">By combining artificial intelligence with tens of thousands of publicly available photos, we can help solve this problem. We, <a href="https://www.letsdoitworld.org/" target="_blank">Let’s Do It Foundation</a> and <a href="https://sifr.ai/" target="_blank">SIFR</a> in partnership with Microsoft, have developed an AI algorithm for detecting trash in geolocated images. Today, our algorithm is surveying images all over the world, locating trash on a global scale so that our network of cleanup teams can target the worst locations. We are thankful for mentorship from Walter Yu at CalTrans, who inspired its development and for support from Microsoft.</p>
 
                         <p className="center tighter">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/vOgIjAhoK4o?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/vOgIjAhoK4o?controls=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </p>
 
                         <p className="center tighter">This is the story of how we achieved it.</p>
@@ -45,7 +45,7 @@ export default class AI extends Component {
 
                         <p className="center tighter">The machine learning project was divided into 5 steps :</p>
 
-                        <p className="center tighter">
+                        <div className="center tighter">
                             <ol>
                                 <li>Collecting images – Luckily for us, this part was mostly done by the Let’s Do It World foundation and UC Riverside, who are experts at identifying and cleaning up trash. We had thousands of images collected through the World Cleanup App and scraped from Google Street View to use for our model.</li>
 
@@ -57,7 +57,7 @@ export default class AI extends Component {
                             
                                 <li>Result validation, Testing the training – After each training cycle, the best model was chosen and tested by having it predict trash on test images. These images were not in the training dataset and were used to assess the accuracy of the model. </li>
                             </ol>
-                        </p>
+                        </div>
 
                         <p className="center tighter">How did it go? Read on to find out.</p>
 
@@ -175,7 +175,7 @@ export default class AI extends Component {
                         <img className="fluid-image" src="https://s3.eu-central-1.amazonaws.com/wwp-assets/images/image28.png" />
 
                         <h2>Next steps</h2>
-                        <p className="center tighter">
+                        <div className="center tighter">
 
                             <ol>
                                 <li>Looking for funding and partners with whom to verify our AI solution for the entire world;</li>
@@ -184,7 +184,7 @@ export default class AI extends Component {
                             </ol>
 
                             We are looking for collaborations with anyone interested in developing the trash detection tool further with Let’s Do It Foundation. Join with us in <a href="http://github.com/letsdoitworld" target="_blank">GitHub</a> or contact with Kristiina Kerge from Let’s Do It Foundation <a target="_blank" href="mailto:kristiina@letsdoitworld.org">kristiina@letsdoitworld.org</a>.
-                        </p>
+                        </div>
 
                         <h2>Conclusion</h2>
 

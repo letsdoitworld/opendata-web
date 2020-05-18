@@ -8,6 +8,7 @@ import TrashPointSize from './TrashPointSize';
 import {nFormatter} from '../utils/styleFormatter';
 
 export default class CountryDetails extends Component {
+
     static propTypes = {
         selectedCountry: PropTypes.object,
         selectedTrashPoint: PropTypes.object,
@@ -32,30 +33,46 @@ export default class CountryDetails extends Component {
     }
 
     setTrashSize() {
+
         if (this.props.selectedTrashPoint.bulky) {
+
             this.props.selectedTrashPoint.sizeState = 4;
+
         } else if (this.props.selectedTrashPoint.litter) {
+
             this.props.selectedTrashPoint.sizeState = 3;
+
         } else if (this.props.selectedTrashPoint.uncategorized) {
+
             this.props.selectedTrashPoint.sizeState = 2;
+
         } else {
+
             this.props.selectedTrashPoint.sizeState = 1;
         }
     }
 
     getTrashStatus() {
+
         for (let i = 0; i < this.state.trashpoints.length; i++) {
+
             if (this.state.trashpoints[i].hazardous) {
+
                 this.state.trashpoints[i].trashViewStatus = 'two';
+
             } else if (this.state.trashpoints[i].status === 'CLEANED') {
+
                 this.state.trashpoints[i].trashViewStatus = 'three';
+
             } else {
+
                 this.state.trashpoints[i].trashViewStatus = 'one';
             }
         }
     }
 
     async loadData() {
+
         const countrycode = this.props.selectedCountry != null ?
             this.props.selectedCountry.code.toLowerCase() :
             this.props.selectedTrashPoint.country_code.toLowerCase();
@@ -96,6 +113,7 @@ export default class CountryDetails extends Component {
     }
 
     render() {
+
         const settings = {
             infinite: true,
             slidesToShow: 1,
@@ -147,9 +165,9 @@ export default class CountryDetails extends Component {
 
 
                         {this.props.selectedCountry.reportCount && (
-                            <a href="#" className="btn-detailed-data" onClick={this.showDetailedData}>
+                            <button className="btn-detailed-data" onClick={this.showDetailedData}>
                                 <span>Get last 50 by date</span>
-                            </a>)
+                            </button>)
                         }
                         { this.props.selectedCountry.resources && this.props.selectedCountry.resources.length && (
                             <div className="data-collectors">
@@ -229,13 +247,13 @@ export default class CountryDetails extends Component {
                                 <div className="gallery">
                                     <div className="gallery-images">
                                         <Slider {... settings}>
-                                            <a href="#" className="gallery-images__item">
+                                            <button className="gallery-images__item">
                                                 <img
                                                     src="http://via.placeholder.com/160x100"
                                                     alt=""
                                                     className="gallery-images__image"
                                                 />
-                                            </a>
+                                            </button>
                                         </Slider>
                                     </div>
                                 </div>)

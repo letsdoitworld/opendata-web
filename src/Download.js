@@ -37,6 +37,7 @@ export default class Download extends Component {
     }
 
     selectFilterDates(momentsArray) {
+
         if (!momentsArray) {
             delete this.state.selectedFilter.start_date;
             delete this.state.selectedFilter.end_date;
@@ -45,9 +46,14 @@ export default class Download extends Component {
         }
 
         if (momentsArray[0]) {
+
+            //this.setState( { 'selectedFilter.start_date' : [momentsArray[0].format('YYYYMMDD')] });
             this.state.selectedFilter.start_date = [momentsArray[0].format('YYYYMMDD')];
         }
+
         if (momentsArray[1]) {
+
+            //this.setState( { 'selectedFilter.end_date' : [momentsArray[1].format('YYYYMMDD')] });
             this.state.selectedFilter.end_date = [momentsArray[1].format('YYYYMMDD')];
         }
 
