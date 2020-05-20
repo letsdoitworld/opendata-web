@@ -10,7 +10,6 @@ CSS preprocessor is [SASS](http://sass-lang.com/).
 
 ## Data
 
-Currently no back end server is needed.
 
 Check those files in `./public/json` & `./src/json`
 
@@ -20,6 +19,7 @@ Check those files in `./public/json` & `./src/json`
 ## Prerequisites
 
 1. [Node.js](https://nodejs.org/en/).
+2. Api running at https://wwpapi.letsdoitworld.org/api
 
 ## How to run
 
